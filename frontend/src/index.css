@@ -1,0 +1,102 @@
+/* ═══════════════════════════════════════════════════════
+   Argus — Global Design System (Approx Light)
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  --bg-base:           #f9fbfd;
+  --bg-surface:        #ffffff;
+  --bg-elevated:       #f4f6f9;
+  --bg-hover:          #edf2f9;
+
+  --text-primary:      #25282d;
+  --text-secondary:    #7a82b1;
+  --text-tertiary:     #95a0c5;
+
+  --accent-primary:    #3167f3;
+  --accent-hover:      #2752c2;
+  --accent-subtle:     rgba(49,103,243,0.08);
+  --accent-faint:      rgba(49,103,243,0.04);
+  --accent-light:      #e8edfe;
+
+  --positive:          #0da684;
+  --positive-subtle:   rgba(13,166,132,0.08);
+  --positive-border:   #9edbce;
+  --negative:          #ef3463;
+  --negative-subtle:   rgba(239,52,99,0.08);
+  --warning:           #f4a14d;
+  --warning-subtle:    rgba(244,161,77,0.08);
+  --warning-border:    #fbd9b8;
+
+  --border-default:    #edf2f9;
+  --border-subtle:     #f3f5f9;
+  --border-strong:     #d9e1ec;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC',
+    'Microsoft YaHei', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  --font-xs:   10px;
+  --font-sm:   12px;
+  --font-base: 13px;
+  --font-lg:   15px;
+  --font-xl:   18px;
+  --font-2xl:  24px;
+
+  --radius-sm: 4px;
+  --radius:    6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-base);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  line-height: 1.6;
+  height: 100%;
+  min-height: 100vh;
+}
+
+#root {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-tertiary); }
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.12s;
+}
+a:hover { color: var(--accent-hover); }
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: rgba(49,103,243,0.2);
+  color: var(--text-primary);
+}

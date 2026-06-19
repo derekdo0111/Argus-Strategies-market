@@ -1,0 +1,3348 @@
+[
+  {
+    "ts_code": "600398.SH",
+    "name": "海澜之家",
+    "industry": "服饰",
+    "pr": 6.464285708901918,
+    "pe": 12.4172,
+    "pb": 1.3965,
+    "roe": 20.2076,
+    "dividend_yield": 3.2143,
+    "gross_margin": 45.3234,
+    "debt_ratio": 41.8604,
+    "market_cap": 268.9551368,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              2.069483020545692,
+              1.0733894133090205,
+              1.7718642769028377
+            ],
+            "avg_3y": 1.6382455702525167,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.06450735000432899,
+              0.05846940735311771,
+              0.04669010978195396
+            ],
+            "avg_3y": 0.05655562237980022,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.5002807663635145,
+              0.571991915744507,
+              0.43371541666551683,
+              0.5093867918998976,
+              0.40223425618298153
+            ],
+            "cv": 0.13821570932559832,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              44.824814746,
+              23.170212065900003,
+              52.3047680433,
+              31.3745320977,
+              43.6124894846
+            ],
+            "cv": 0.2977413627385537,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 6.464285708901918,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.2938256778604493,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "002032.SZ",
+    "name": "苏泊尔",
+    "industry": "家用电器",
+    "pr": 6.068729863573016,
+    "pe": 15.652,
+    "pb": 4.8351,
+    "roe": 30.9172,
+    "dividend_yield": 6.8216,
+    "gross_margin": 25.0671,
+    "debt_ratio": 48.7624,
+    "market_cap": 328.17771646,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.2618666381455967,
+              1.1510652655551226,
+              0.9335310880727833
+            ],
+            "avg_3y": 1.1154876639245008,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.12117733860601672,
+              0.11994508801863386,
+              0.13416514487396553
+            ],
+            "avg_3y": 0.12509585716620536,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.10575119129608608,
+              0.11441206754133246,
+              0.10620957763572052,
+              0.123691502582632,
+              0.14345469137705213
+            ],
+            "cv": 0.13184671019203045,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              26.4578130968,
+              25.835021381999997,
+              20.349093362,
+              31.5995524584,
+              20.498815686900002
+            ],
+            "cv": 0.188279094395269,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 6.068729863573016,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.21135287798831467,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "002027.SZ",
+    "name": "分众传媒",
+    "industry": "广告包装",
+    "pr": 4.90039841519659,
+    "pe": 24.6068,
+    "pb": 4.6939,
+    "roe": 48.212,
+    "dividend_yield": 7.5697,
+    "gross_margin": 68.7408,
+    "debt_ratio": 25.3028,
+    "market_cap": 724.9984249400001,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              2.4467073650570317,
+              1.2883226800448269,
+              1.5906018147854368
+            ],
+            "avg_3y": 1.7752106199624318,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.2798416036435915,
+              0.19035013864098752,
+              0.15299751531943648
+            ],
+            "avg_3y": 0.20772975253467182,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.00045767235239936414,
+              0.0006745970523656167,
+              0.000786899872414276,
+              0.0014200509038416306,
+              0.0006929452431944253
+            ],
+            "cv": 0.4508670315436307,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              72.0881342981,
+              66.4181119052,
+              76.779967536,
+              66.9896102548,
+              95.904168896
+            ],
+            "cv": 0.15981058995044142,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 4.90039841519659,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.1989196563401269,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "000651.SZ",
+    "name": "格力电器",
+    "industry": "家用电器",
+    "pr": 4.564270152494794,
+    "pe": 7.0918,
+    "pb": 1.353,
+    "roe": 16.3304,
+    "dividend_yield": 8.1462,
+    "gross_margin": 27.4158,
+    "debt_ratio": 59.1541,
+    "market_cap": 2056.8361881,
+    "cq_passed": false,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          5
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.599246608049978,
+              0.9125257920470865,
+              1.9436079885442796
+            ],
+            "avg_3y": 1.4851267962137813,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.09379557932125465,
+              0.08898055745057819,
+              0.078927027254859
+            ],
+            "avg_3y": 0.08723438800889728,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.16535025304633927,
+              0.14754901333219345,
+              0.1597178997931819,
+              0.20273297339850588,
+              0.227635356588115
+            ],
+            "cv": 0.18496149647000557,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              463.8311475402,
+              293.6925057066,
+              563.9842635417,
+              286.68435921270003,
+              18.9436325872
+            ],
+            "cv": 0.6381422916312118,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 4.564270152494794,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.7944728269951068,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "002555.SZ",
+    "name": "三七互娱",
+    "industry": "互联网",
+    "pr": 4.419004168668591,
+    "pe": 13.3258,
+    "pb": 2.666,
+    "roe": 24.9244,
+    "dividend_yield": 5.6917,
+    "gross_margin": 77.8771,
+    "debt_ratio": 34.7936,
+    "market_cap": 386.47790872,
+    "cq_passed": false,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          4
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.22001944426011,
+              1.1215708053321973,
+              1.183733024700754
+            ],
+            "avg_3y": 1.1751077580976872,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.07025088934630076,
+              0.06952987973896053,
+              0.08939863190492145
+            ],
+            "avg_3y": 0.07639313366339424,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.029748062473957896,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "cv": 2.2360679774997894,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              35.3833467762,
+              29.979826827300002,
+              31.4703733646,
+              35.5716889726,
+              36.5874894103
+            ],
+            "cv": 0.0855430251125164,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 4.419004168668591,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.18393364661616637,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "601225.SH",
+    "name": "陕西煤业",
+    "industry": "煤炭开采",
+    "pr": 4.250761863299956,
+    "pe": 13.2835,
+    "pb": 2.1812,
+    "roe": 16.922,
+    "dividend_yield": 5.5644,
+    "gross_margin": 31.1233,
+    "debt_ratio": 40.1002,
+    "market_cap": 2226.9415,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              2.1037739935762056,
+              1.8940359417738026,
+              1.8173232467174896
+            ],
+            "avg_3y": 1.9383777273558327,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.0374580957625959,
+              0.025301090814691868,
+              0.017193805880475796
+            ],
+            "avg_3y": 0.026650997485921188,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.0233132401158493,
+              0.022505301150303712,
+              0.014074943060778253,
+              0.016052467685441867,
+              0.023747547920658522
+            ],
+            "cv": 0.22703733173040816,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              352.69272762059995,
+              423.50239402910006,
+              385.98156413870004,
+              561.3922343657,
+              511.2089475077
+            ],
+            "cv": 0.1949765830406466,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 4.250761863299956,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.3517305133081985,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "000568.SZ",
+    "name": "泸州老窖",
+    "industry": "白酒",
+    "pr": 4.184623433773849,
+    "pe": 10.9984,
+    "pb": 2.3086,
+    "roe": 29.264,
+    "dividend_yield": 7.3532,
+    "gross_margin": 85.8178,
+    "debt_ratio": 21.8137,
+    "market_cap": 1191.20980302,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              0.6576869004093254,
+              1.423720598087518,
+              0.8038689149875412
+            ],
+            "avg_3y": 0.9617588044947949,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.00023611861746412974,
+              0.00035332140699716684,
+              0.0005775544905188717
+            ],
+            "avg_3y": 0.0003889981716600561,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.5983453941383979,
+              0.42930785735907384,
+              0.3844120031156438,
+              0.39169373661125007,
+              0.3525569660909874
+            ],
+            "cv": 0.22563586140098474,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              71.2321867788,
+              191.81768363650002,
+              106.48364935459999,
+              82.6264826972,
+              76.9864810451
+            ],
+            "cv": 0.471552615709456,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 4.184623433773849,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.5670622242940532,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "600887.SH",
+    "name": "伊利股份",
+    "industry": "乳制品",
+    "pr": 3.99010721456442,
+    "pe": 13.2686,
+    "pb": 2.5752,
+    "roe": 37.7764,
+    "dividend_yield": 7.0074,
+    "gross_margin": 38.3747,
+    "debt_ratio": 59.4984,
+    "market_cap": 1534.53248156,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.240269259680454,
+              2.5718798620727448,
+              1.7538751203323213
+            ],
+            "avg_3y": 1.8553414140285067,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.02583469297896811,
+              0.02494427123268394,
+              0.024528572773573783
+            ],
+            "avg_3y": 0.02510251232840861,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.0935963155105448,
+              0.09311349444284925,
+              0.09949076087515622,
+              0.12091610547737194,
+              0.08095944164965327
+            ],
+            "cv": 0.15023551693512796,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              143.4392049032,
+              217.3974039338,
+              182.9035765056,
+              134.2032058036,
+              155.2751968007
+            ],
+            "cv": 0.20262008242331342,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 3.99010721456442,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.7176831772607407,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "300628.SZ",
+    "name": "亿联网络",
+    "industry": "通信设备",
+    "pr": 3.8554217506546737,
+    "pe": 16.1734,
+    "pb": 4.2129,
+    "roe": 27.1668,
+    "dividend_yield": 5.4078,
+    "gross_margin": 65.2371,
+    "debt_ratio": 7.5776,
+    "market_cap": 420.6066832,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              0.7045990586531806,
+              0.9475320897985905,
+              0.896366323386452
+            ],
+            "avg_3y": 0.8494991572794077,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.2563584259916497,
+              0.163957078009592,
+              0.1895645649099588
+            ],
+            "avg_3y": 0.2032933563037335,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.24247832020412124,
+              0.14466106463402717,
+              0.16712473672093053,
+              0.11717915524391456,
+              0.1981118489217318
+            ],
+            "cv": 0.2788526384290579,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              18.3238622328,
+              25.089297970300002,
+              18.0189758504,
+              21.228299434500002,
+              11.070846938599999
+            ],
+            "cv": 0.2746230685831568,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 3.8554217506546737,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.358720602885969,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "000999.SZ",
+    "name": "华润三九",
+    "industry": "中成药",
+    "pr": 3.780146729569578,
+    "pe": 11.4223,
+    "pb": 1.681,
+    "roe": 18.9504,
+    "dividend_yield": 2.9683,
+    "gross_margin": 57.6796,
+    "debt_ratio": 31.7612,
+    "market_cap": 390.75836291999997,
+    "cq_passed": false,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          2
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.611540743659636,
+              1.3071094174232225,
+              1.469275623193166
+            ],
+            "avg_3y": 1.4626419280920082,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 3,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.25832290174877426,
+              0.23935758118293146,
+              0.24989758258673775
+            ],
+            "avg_3y": 0.2491926885061478,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.19762931274907714,
+              0.17861288864234268,
+              0.20665766696199617,
+              0.13821587182252215,
+              0.15068487787685994
+            ],
+            "cv": 0.1689127111877236,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              55.1308284018,
+              44.0219938717,
+              41.917429498000004,
+              30.0637501625,
+              18.7051596848
+            ],
+            "cv": 0.36787283666560056,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 3.780146729569578,
+        "threshold": 2.7,
+        "disposable_cash_cv": 1.5310665365698262,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "600600.SH",
+    "name": "青岛啤酒",
+    "industry": "啤酒",
+    "pr": 3.74768094822868,
+    "pe": 16.0263,
+    "pb": 2.2666,
+    "roe": 22.8216,
+    "dividend_yield": 4.0816,
+    "gross_margin": 42.743,
+    "debt_ratio": 37.629,
+    "market_cap": 735.3011589,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.0009607820029185,
+              1.186347590799266,
+              0.6508115854490929
+            ],
+            "avg_3y": 0.9460399860837592,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 4,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.0039103627812234155,
+              0.003186909217151658,
+              0.0029582088231660053
+            ],
+            "avg_3y": 0.003351826940513693,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.09967330739002803,
+              0.11128279428472955,
+              0.10430733673027141,
+              0.1290638814575585,
+              0.11578945179469212
+            ],
+            "cv": 0.10150301989194892,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              45.92509302,
+              51.54661132,
+              27.7756714,
+              48.78771322,
+              60.43111455
+            ],
+            "cv": 0.25566388699332954,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 3.74768094822868,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.34929949368241975,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "000513.SZ",
+    "name": "丽珠集团",
+    "industry": "化学制药",
+    "pr": 3.74061421229852,
+    "pe": 12.8584,
+    "pb": 1.7931,
+    "roe": 16.2524,
+    "dividend_yield": 3.7854,
+    "gross_margin": 65.8685,
+    "debt_ratio": 35.5889,
+    "market_cap": 260.1568096,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.5544495307087705,
+              1.445273684523671,
+              1.6630065805286907
+            ],
+            "avg_3y": 1.5542432652537108,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.18704458158187748,
+              0.16385425956123517,
+              0.17020531953833953
+            ],
+            "avg_3y": 0.1737013868938174,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.12988037531996538,
+              0.16911488240100242,
+              0.16577995384451563,
+              0.16194851343829703,
+              0.13786860233199177
+            ],
+            "cv": 0.11636403308680507,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              31.450389680900003,
+              29.788475267600003,
+              32.489341918,
+              27.7267129503,
+              19.0232813903
+            ],
+            "cv": 0.1915639007680705,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 3.74061421229852,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.6165835829764871,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "000596.SZ",
+    "name": "古井贡酒",
+    "industry": "白酒",
+    "pr": 3.5491371925100967,
+    "pe": 12.1698,
+    "pb": 1.6533,
+    "roe": 25.12,
+    "dividend_yield": 7.343,
+    "gross_margin": 77.8457,
+    "debt_ratio": 32.9709,
+    "market_cap": 431.91905999999994,
+    "cq_passed": false,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          1
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              0.5486484733712721,
+              0.8568855778378879,
+              0.9797440193223679
+            ],
+            "avg_3y": 0.795092690177176,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.002867286671405348,
+              0.002961232844318985,
+              0.003387455460557035
+            ],
+            "avg_3y": 0.003071991658760456,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.570295486669353,
+              0.39291920861965735,
+              0.3712776883629308,
+              0.3624735963867348,
+              0.35143313701360723
+            ],
+            "cv": 0.22229272563281308,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              19.47212977,
+              47.276528738500005,
+              44.9620603442,
+              31.0791457948,
+              52.5430812779
+            ],
+            "cv": 0.3461600173543774,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 3.5491371925100967,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.6085668690521541,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "000423.SZ",
+    "name": "东阿阿胶",
+    "industry": "中成药",
+    "pr": 3.5409584069221482,
+    "pe": 16.9185,
+    "pb": 2.7256,
+    "roe": 17.22,
+    "dividend_yield": 5.5582,
+    "gross_margin": 75.5156,
+    "debt_ratio": 20.0158,
+    "market_cap": 294.16860224000004,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.3165892193426314,
+              1.394225397879942,
+              1.6973450488926232
+            ],
+            "avg_3y": 1.4693865553717322,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.019736317872323873,
+              0.013376376357202003,
+              0.013358568995575842
+            ],
+            "avg_3y": 0.015490421075033905,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.12469831738424794,
+              0.15644031622079801,
+              0.21471918276965477,
+              0.3064442974939368,
+              0.42760686086130084
+            ],
+            "cv": 0.49934280405890047,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              22.8920777527,
+              21.708100259299997,
+              19.534380095,
+              21.4487818539,
+              28.0090252825
+            ],
+            "cv": 0.14056451395457495,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 3.5409584069221482,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.1393621226846395,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "603369.SH",
+    "name": "今世缘",
+    "industry": "白酒",
+    "pr": 3.4075908601994698,
+    "pe": 11.6075,
+    "pb": 1.6839,
+    "roe": 32.1048,
+    "dividend_yield": 4.9505,
+    "gross_margin": 74.4003,
+    "debt_ratio": 34.7358,
+    "market_cap": 302.22432000000003,
+    "cq_passed": false,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          1
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              0.5792387820779783,
+              0.8402046540714194,
+              0.8929463764675574
+            ],
+            "avg_3y": 0.7707966042056517,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 4,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.0063650099521382186,
+              0.0030195044248133096,
+              0.004806562655121148
+            ],
+            "avg_3y": 0.004730359010690892,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.6859412349629965,
+              0.48236740171634007,
+              0.4947599857825293,
+              0.4958591526997111,
+              0.49866767934850137
+            ],
+            "cv": 0.16283667618065936,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              15.081586101600001,
+              28.6671549003,
+              28.003182330999998,
+              27.79747984,
+              30.2410291158
+            ],
+            "cv": 0.23712129830572878,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 3.4075908601994698,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.8808786299228808,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "300760.SZ",
+    "name": "迈瑞医疗",
+    "industry": "医疗保健",
+    "pr": 3.406899507176855,
+    "pe": 20.8651,
+    "pb": 4.2322,
+    "roe": 23.8316,
+    "dividend_yield": 3.3069,
+    "gross_margin": 61.8701,
+    "debt_ratio": 24.7744,
+    "market_cap": 1697.5391957400002,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.2469577913590608,
+              1.0654372847369402,
+              0.9550862859883467
+            ],
+            "avg_3y": 1.089160454028116,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.10240080427565036,
+              0.08765785677954437,
+              0.09432995873720916
+            ],
+            "avg_3y": 0.09479620659746796,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.15034233263718552,
+              0.12953922905731624,
+              0.11389679574587218,
+              0.1325483450656155,
+              0.14109176264848639
+            ],
+            "cv": 0.10204587170229006,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              101.44968535,
+              124.32041281,
+              110.62025295,
+              121.41147876,
+              89.98649175
+            ],
+            "cv": 0.12975592419241783,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 3.406899507176855,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.367028600837552,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "603198.SH",
+    "name": "迎驾贡酒",
+    "industry": "白酒",
+    "pr": 3.3845189595738012,
+    "pe": 12.8563,
+    "pb": 2.2257,
+    "roe": 30.204,
+    "dividend_yield": 4.7007,
+    "gross_margin": 75.5959,
+    "debt_ratio": 21.4057,
+    "market_cap": 255.28,
+    "cq_passed": false,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          1
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              0.6216635045630882,
+              0.7365339098588202,
+              0.960592633304569
+            ],
+            "avg_3y": 0.7729300159088258,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.024852736429738134,
+              0.026544181203658028,
+              0.00577338892704984
+            ],
+            "avg_3y": 0.019056768853482002,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.8683763523578092,
+              0.6867236169101114,
+              0.6623619448298598,
+              0.7284556493329668,
+              0.7643938362412255
+            ],
+            "cv": 0.10875856649689307,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              12.3440327326,
+              19.070852678199998,
+              21.976557137600004,
+              18.3997357691,
+              15.1715243771
+            ],
+            "cv": 0.21371302434893785,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 3.3845189595738012,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.3717213322057296,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "603444.SH",
+    "name": "吉比特",
+    "industry": "互联网",
+    "pr": 3.2868312582566137,
+    "pe": 13.0995,
+    "pb": 3.9124,
+    "roe": 35.9528,
+    "dividend_yield": 4.9169,
+    "gross_margin": 93.7666,
+    "debt_ratio": 21.6029,
+    "market_cap": 234.96204765,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.5587256919905195,
+              1.3214211790136328,
+              1.05366699871197
+            ],
+            "avg_3y": 1.311271289905374,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 4,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.05371750197466922,
+              0.046254668452285395,
+              0.057052622423563196
+            ],
+            "avg_3y": 0.05234159761683927,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [],
+            "cv": null,
+            "threshold": 0.5,
+            "reason": "industry_no_inventory"
+          },
+          "dimdim5": {
+            "values": [
+              27.9583339676,
+              12.4863697954,
+              11.8550098367,
+              17.5239396254,
+              24.182884309299997
+            ],
+            "cv": 0.37850658544003013,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 3.2868312582566137,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.3440391843959922,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "600519.SH",
+    "name": "贵州茅台",
+    "industry": "白酒",
+    "pr": 2.852921812981777,
+    "pe": 18.4505,
+    "pb": 5.6068,
+    "roe": 42.2748,
+    "dividend_yield": 4.258,
+    "gross_margin": 89.7592,
+    "debt_ratio": 12.1227,
+    "market_cap": 15188.49144,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              0.747353678822432,
+              1.0723145052465903,
+              0.8910694458265694
+            ],
+            "avg_3y": 0.9035792099651972,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              1.5452960268677804e-05,
+              0.00011102566921642284,
+              0.00040877470904982925
+            ],
+            "avg_3y": 0.0001784177795116433,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.36382440267474003,
+              0.3179845214773106,
+              0.314402137204061,
+              0.31284788970059013,
+              0.31447703540845096
+            ],
+            "cv": 0.06759294079089699,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              615.2220498935,
+              924.6369216843,
+              665.9324772109,
+              366.9859583003,
+              640.2867614737
+            ],
+            "cv": 0.30810848185022804,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 2.852921812981777,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.3261450768220374,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "600598.SH",
+    "name": "北大荒",
+    "industry": "种植业",
+    "pr": 2.844702481746076,
+    "pe": 21.0057,
+    "pb": 2.8548,
+    "roe": 28.0216,
+    "dividend_yield": 3.9913,
+    "gross_margin": 64.2689,
+    "debt_ratio": 45.4312,
+    "market_cap": 244.96429021999998,
+    "cq_passed": true,
+    "pr_passed": true,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.0637154738828096,
+              1.3739859562386745,
+              1.4239537443065196
+            ],
+            "avg_3y": 1.2872183914760011,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.0,
+              0.009381788538637142,
+              0.0021624285914931267
+            ],
+            "avg_3y": 0.0038480723767100895,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.06363987193069864,
+              0.029912800508849223,
+              0.04852329957457574,
+              0.04337791595954718,
+              0.04954326549751931
+            ],
+            "cv": 0.25857414693637004,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              12.404864504,
+              14.938113388900002,
+              15.146795573499999,
+              12.594204596800001,
+              12.260746663499999
+            ],
+            "cv": 0.10714706805008158,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": true,
+        "pr": 2.844702481746076,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.05521214430374506,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "600690.SH",
+    "name": "海尔智家",
+    "industry": "家用电器",
+    "pr": 2.6760616823897707,
+    "pe": 9.3283,
+    "pb": 1.457,
+    "roe": 15.2584,
+    "dividend_yield": 6.2841,
+    "gross_margin": 25.3438,
+    "debt_ratio": 55.1547,
+    "market_cap": 1823.94897665,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.3298834097071675,
+              1.416301786544989,
+              1.52214027730832
+            ],
+            "avg_3y": 1.4227751578534922,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.0895191897121807,
+              0.0925690199632245,
+              0.07752848300957295
+            ],
+            "avg_3y": 0.08653889756165939,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.1549505176803186,
+              0.15051482556830614,
+              0.1511851806843178,
+              0.17059712192456153,
+              0.17517949815144865
+            ],
+            "cv": 0.07204294163164858,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              260.0294196992,
+              265.4308191196,
+              252.623762283,
+              201.5350578335,
+              231.2964041772
+            ],
+            "cv": 0.10804420178265095,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 2.6760616823897707,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.17189443839749205,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "002223.SZ",
+    "name": "鱼跃医疗",
+    "industry": "医疗保健",
+    "pr": 2.5889967637415086,
+    "pe": 16.7238,
+    "pb": 1.8155,
+    "roe": 12.7428,
+    "dividend_yield": 3.2362,
+    "gross_margin": 50.2117,
+    "debt_ratio": 18.5046,
+    "market_cap": 247.81229685,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.014257597959946,
+              1.0058531725506175,
+              0.8877746658577061
+            ],
+            "avg_3y": 0.9692951454560899,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 4,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.08915907978866232,
+              0.09452331682222866,
+              0.05622502299748887
+            ],
+            "avg_3y": 0.07996913986945994,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.18585696106592475,
+              0.19036087371116917,
+              0.17716494334208568,
+              0.2124822420793853,
+              0.18356296624252214
+            ],
+            "cv": 0.07108836150017243,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              15.0292171579,
+              18.1626973277,
+              21.2697784198,
+              23.049194087600004,
+              12.0120163389
+            ],
+            "cv": 0.2510968017457174,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 2.5889967637415086,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.374334809903504,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "600660.SH",
+    "name": "福耀玻璃",
+    "industry": "汽车配件",
+    "pr": 2.5825826142495423,
+    "pe": 13.9983,
+    "pb": 3.3304,
+    "roe": 17.8524,
+    "dividend_yield": 5.4054,
+    "gross_margin": 37.3791,
+    "debt_ratio": 46.6335,
+    "market_cap": 1303.5668782500002,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.2945335931709232,
+              1.1419331281591494,
+              1.3544562224314127
+            ],
+            "avg_3y": 1.2636409812538285,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.1851565204898872,
+              0.20781459173847117,
+              0.2149518141196931
+            ],
+            "avg_3y": 0.2026409754493505,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.14849140851413353,
+              0.15211113322900807,
+              0.15511039594752327,
+              0.1922989298414577,
+              0.1833257157691532
+            ],
+            "cv": 0.1206443242410109,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              120.55090552,
+              85.62187329,
+              76.2458089,
+              58.93041655,
+              56.77009641
+            ],
+            "cv": 0.3246536304954036,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 2.5825826142495423,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.37890196364329504,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "600809.SH",
+    "name": "山西汾酒",
+    "industry": "白酒",
+    "pr": 2.4276130381281944,
+    "pe": 11.2848,
+    "pb": 3.0695,
+    "roe": 50.8652,
+    "dividend_yield": 5.3496,
+    "gross_margin": 75.0468,
+    "debt_ratio": 29.2569,
+    "market_cap": 1381.97544576,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              0.7360180813309769,
+              0.9942365716530537,
+              0.692182819259276
+            ],
+            "avg_3y": 0.8074791574144355,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 4,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              2.5003062083979815e-06,
+              2.0903617242211023e-06,
+              7.23844191435526e-06
+            ],
+            "avg_3y": 3.943036615658115e-06,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.3716987659085184,
+              0.3685044504092128,
+              0.36245244599094534,
+              0.36810855324121,
+              0.4100447083439558
+            ],
+            "cv": 0.051125676473876815,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              90.13519822149999,
+              121.7232333721,
+              72.2508346039,
+              103.10203977440001,
+              76.4510507797
+            ],
+            "cv": 0.218308205676321,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 2.4276130381281944,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.22346771254825443,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "603939.SH",
+    "name": "益丰药房",
+    "industry": "医药商业",
+    "pr": 2.2613065065510707,
+    "pe": 14.3741,
+    "pb": 2.0254,
+    "roe": 16.814,
+    "dividend_yield": 3.5177,
+    "gross_margin": 40.0365,
+    "debt_ratio": 51.8562,
+    "market_cap": 241.26610750000003,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              2.0008843017139126,
+              2.7615671291760613,
+              3.274638693517332
+            ],
+            "avg_3y": 2.679030041469102,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.08026010636397818,
+              0.08827076950333511,
+              0.09466321910987346
+            ],
+            "avg_3y": 0.08773136499239559,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.18978962023817014,
+              0.18818357326222504,
+              0.1685817834685757,
+              0.181759897864234,
+              0.1983918227126447
+            ],
+            "cv": 0.05983175271236647,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              33.5844801441,
+              42.2126708453,
+              46.237407956000006,
+              39.2026730415,
+              21.499699723499997
+            ],
+            "cv": 0.2625351964924456,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 2.2613065065510707,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.3941573213334206,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "000429.SZ",
+    "name": "粤高速A",
+    "industry": "路桥",
+    "pr": 2.2094395554988524,
+    "pe": 15.739,
+    "pb": 2.4603,
+    "roe": 15.968,
+    "dividend_yield": 3.8569,
+    "gross_margin": 68.2196,
+    "debt_ratio": 48.0381,
+    "market_cap": 283.51330716,
+    "cq_passed": false,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          4
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.9760284611712402,
+              2.084576707457774,
+              2.3453052308254256
+            ],
+            "avg_3y": 2.1353034664848134,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.021634967133950897,
+              0.018022494847542543,
+              0.02867339631236232
+            ],
+            "avg_3y": 0.022776952764618587,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.00012104248837364384
+            ],
+            "cv": 2.2360679774997894,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              35.5949439528,
+              32.563635939099996,
+              38.317855634699995,
+              27.5202655838,
+              36.6974472116
+            ],
+            "cv": 0.12463604764741656,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 2.2094395554988524,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.7361314191823326,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "002532.SZ",
+    "name": "天山铝业",
+    "industry": "铝",
+    "pr": 2.1576763089251454,
+    "pe": 11.577,
+    "pb": 1.7808,
+    "roe": 29.152,
+    "dividend_yield": 3.2993,
+    "gross_margin": 35.6052,
+    "debt_ratio": 39.9421,
+    "market_cap": 557.76286875,
+    "cq_passed": false,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          2,
+          5
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.6714607574433402,
+              1.171649223472529,
+              1.7758648815394678
+            ],
+            "avg_3y": 1.5396582874851124,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 3,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.016041970354958947,
+              0.010348307930392583,
+              0.017525330265365253
+            ],
+            "avg_3y": 0.01463853618357226,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.24362040507875896,
+              0.3141371611459984,
+              0.32936592656913155,
+              0.28876252119438434,
+              0.3073391628704495
+            ],
+            "cv": 0.11135562473117708,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              80.5284303514,
+              52.201752513500004,
+              39.1633505757,
+              31.571420771,
+              19.7914598178
+            ],
+            "cv": 0.5208390077362839,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 2.1576763089251454,
+        "threshold": 2.7,
+        "disposable_cash_cv": 1.7719063678592386,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "600012.SH",
+    "name": "皖通高速",
+    "industry": "路桥",
+    "pr": 2.156019642139094,
+    "pe": 14.8158,
+    "pb": 2.0825,
+    "roe": 16.4048,
+    "dividend_yield": 3.7101,
+    "gross_margin": 52.6855,
+    "debt_ratio": 53.1144,
+    "market_cap": 278.15876132,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.8852722954672985,
+              1.5750675382282404,
+              1.5985459153093502
+            ],
+            "avg_3y": 1.6862952496682964,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 4,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "avg_3y": 0.0,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.0006675479924217741,
+              0.0006256500981513325,
+              0.0006722772266420024,
+              0.0009038492382677114,
+              0.0013758702736101892
+            ],
+            "cv": 0.36995069661296603,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              35.3949297251,
+              26.2875799425,
+              26.5347226921,
+              19.3769997746,
+              20.9706084601
+            ],
+            "cv": 0.2439456010006547,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 2.156019642139094,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.7467048940154324,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "002415.SZ",
+    "name": "海康威视",
+    "industry": "IT设备",
+    "pr": 2.1362228985623113,
+    "pe": 20.8537,
+    "pb": 3.4396,
+    "roe": 13.1332,
+    "dividend_yield": 3.4106,
+    "gross_margin": 49.0855,
+    "debt_ratio": 30.2572,
+    "market_cap": 2960.2535268,
+    "cq_passed": false,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          3
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.7850473570939385,
+              1.10743340285032,
+              1.1783172997152676
+            ],
+            "avg_3y": 1.3569326865531754,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.3222688271940942,
+              0.4098590573644906,
+              0.4008868468336142
+            ],
+            "avg_3y": 0.377671577130733,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.22130236292000852,
+              0.20661228674217227,
+              0.21503766696597956,
+              0.228436494421976,
+              0.22075780629314912
+            ],
+            "cv": 0.037260922695906036,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              253.39411083099998,
+              132.6409202273,
+              166.2325430592,
+              101.64135382379999,
+              127.0852468699
+            ],
+            "cv": 0.37776020062317067,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 2.1362228985623113,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.5059519173986935,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "600900.SH",
+    "name": "长江电力",
+    "industry": "水力发电",
+    "pr": 2.120255065152396,
+    "pe": 18.9064,
+    "pb": 2.8623,
+    "roe": 12.04,
+    "dividend_yield": 3.5371,
+    "gross_margin": 55.6463,
+    "debt_ratio": 57.3271,
+    "market_cap": 6523.22683882,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.7553041916323942,
+              1.8355536399764116,
+              2.3759605593295468
+            ],
+            "avg_3y": 1.9889394636461175,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.08408724943508707,
+              0.1103848688982119,
+              0.10895112730512083
+            ],
+            "avg_3y": 0.10114108187947327,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.009700603767778484,
+              0.007598126828954185,
+              0.007509104975577119,
+              0.008709052708763912,
+              0.008446773800425276
+            ],
+            "cv": 0.10699876052560071,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              605.6292557041,
+              596.4846828422,
+              647.1872044175,
+              309.12732230119997,
+              357.32461733260004
+            ],
+            "cv": 0.3124669468851505,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 2.120255065152396,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.34028912313048426,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "002128.SZ",
+    "name": "电投能源",
+    "industry": "煤炭开采",
+    "pr": 2.0003243832766398,
+    "pe": 13.1672,
+    "pb": 1.7972,
+    "roe": 20.5496,
+    "dividend_yield": 2.5132,
+    "gross_margin": 46.5209,
+    "debt_ratio": 22.9248,
+    "market_cap": 713.54148832,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.6990825472346494,
+              1.4884031103052426,
+              1.5069771796228704
+            ],
+            "avg_3y": 1.5648209457209208,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.06391384601600171,
+              0.06739024715805064,
+              0.07034190114539883
+            ],
+            "avg_3y": 0.06721533143981706,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.04609649595168473,
+              0.042125513434960106,
+              0.05384751468662872,
+              0.0671160352616833,
+              0.059508888274794156
+            ],
+            "cv": 0.18736673431829456,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              92.07479881219999,
+              79.5047386361,
+              68.71291630510001,
+              85.0412817949,
+              63.327526619
+            ],
+            "cv": 0.1510047395646036,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 2.0003243832766398,
+        "threshold": 2.7,
+        "disposable_cash_cv": 1.1602270602318068,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "000963.SZ",
+    "name": "华东医药",
+    "industry": "化学制药",
+    "pr": 1.9266054474614343,
+    "pe": 14.5565,
+    "pb": 1.9314,
+    "roe": 15.8624,
+    "dividend_yield": 3.2822,
+    "gross_margin": 33.9431,
+    "debt_ratio": 34.6304,
+    "market_cap": 497.00903746,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.2434643833398862,
+              1.0674308501592884,
+              1.384082327208849
+            ],
+            "avg_3y": 1.2316591869026745,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.20603471309310584,
+              0.20105516379047847,
+              0.18351936300074223
+            ],
+            "avg_3y": 0.19686974662810885,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.1269321440055862,
+              0.11397963609166929,
+              0.10560843919131409,
+              0.11919746791729065,
+              0.11499334574812473
+            ],
+            "cv": 0.06706988185352811,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              42.4560437117,
+              37.4892888235,
+              39.292167067,
+              23.818526686,
+              31.697578679499998
+            ],
+            "cv": 0.21031605723473812,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 1.9266054474614343,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.637961916787426,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "002001.SZ",
+    "name": "新和成",
+    "industry": "化学制药",
+    "pr": 1.8928571305395547,
+    "pe": 12.7222,
+    "pb": 2.4495,
+    "roe": 21.5164,
+    "dividend_yield": 3.2101,
+    "gross_margin": 42.881,
+    "debt_ratio": 25.6351,
+    "market_cap": 860.558076,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.3005872606513642,
+              1.2052498518450299,
+              1.8930912923702385
+            ],
+            "avg_3y": 1.4663094682888775,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.1497182372543915,
+              0.16907658718149113,
+              0.16427485688937177
+            ],
+            "avg_3y": 0.16102322710841813,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.2089197727482569,
+              0.1892722823605715,
+              0.28570557359778714,
+              0.2601080556789695,
+              0.21581698347508507
+            ],
+            "cv": 0.17101418570032645,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              87.97431340920001,
+              70.7306418333,
+              51.193708633199996,
+              43.6148108361,
+              58.378780515699994
+            ],
+            "cv": 0.27975176787680817,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 1.8928571305395547,
+        "threshold": 2.7,
+        "disposable_cash_cv": 1.1599496013489201,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "600329.SH",
+    "name": "达仁堂",
+    "industry": "中成药",
+    "pr": 1.664242206881667,
+    "pe": 13.6744,
+    "pb": 3.8738,
+    "roe": 23.1872,
+    "dividend_yield": 3.3827,
+    "gross_margin": 77.7066,
+    "debt_ratio": 27.9198,
+    "market_cap": 291.40372096000004,
+    "cq_passed": false,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          1
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              0.2163590396671976,
+              0.41477495349958443,
+              0.6977629800479912
+            ],
+            "avg_3y": 0.44296565773825775,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 4,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.19791287957767448,
+              0.10350620525843836,
+              0.2642444018857096
+            ],
+            "avg_3y": 0.1885544955739408,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.23040277991800953,
+              0.175959247360648,
+              0.19052032623780799,
+              0.1732826463977647,
+              0.22078598165987634
+            ],
+            "cv": 0.13161452545854807,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              4.6106577321,
+              9.2467200413,
+              6.8848788038999995,
+              6.7724507823,
+              8.5240123163
+            ],
+            "cv": 0.24942834949002576,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 1.664242206881667,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.278974710496244,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "600415.SH",
+    "name": "小商品城",
+    "industry": "商品城",
+    "pr": 1.3092227974361166,
+    "pe": 13.7495,
+    "pb": 2.4215,
+    "roe": 16.9248,
+    "dividend_yield": 3.131,
+    "gross_margin": 33.7785,
+    "debt_ratio": 45.7309,
+    "market_cap": 577.9671396800001,
+    "cq_passed": false,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          5
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              2.504839740303047,
+              1.4612265268040332,
+              0.6894373245338254
+            ],
+            "avg_3y": 1.5518345305469685,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 4,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.021972050521576744,
+              0.03089144138200596,
+              0.05246674643462821
+            ],
+            "avg_3y": 0.03511007944607031,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.11970187455881279,
+              0.08627779922819205,
+              0.11037866958515023,
+              0.17459379455532498,
+              0.21999289241380787
+            ],
+            "cv": 0.38112740849711063,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              105.29211443,
+              44.9133909033,
+              18.4505984992,
+              14.0009071377,
+              20.3308250776
+            ],
+            "cv": 0.9389793503490358,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 1.3092227974361166,
+        "threshold": 2.7,
+        "disposable_cash_cv": 6.450200571587365,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "603605.SH",
+    "name": "珀莱雅",
+    "industry": "日用化工",
+    "pr": 1.2840348123580516,
+    "pe": 17.0895,
+    "pb": 4.0275,
+    "roe": 23.3796,
+    "dividend_yield": 3.0628,
+    "gross_margin": 74.5251,
+    "debt_ratio": 26.5195,
+    "market_cap": 255.9588864,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.4642928209659207,
+              0.7132756035917851,
+              1.2302814382442524
+            ],
+            "avg_3y": 1.1359499542673195,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.006619588773148746,
+              0.048054815276535504,
+              0.038695867520910775
+            ],
+            "avg_3y": 0.031123423856865007,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.059893546924007696,
+              0.06136434261341264,
+              0.08952872987746746,
+              0.10477745147591934,
+              0.09668124412849093
+            ],
+            "cv": 0.25037398110045533,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              21.9314664913,
+              11.070006641900001,
+              14.687938145799999,
+              11.1113611723,
+              8.2967094382
+            ],
+            "cv": 0.3928209193219596,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 1.2840348123580516,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.42508400423825987,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "000538.SZ",
+    "name": "云南白药",
+    "industry": "中成药",
+    "pr": 1.1707453046670546,
+    "pe": 16.7676,
+    "pb": 2.0527,
+    "roe": 19.842,
+    "dividend_yield": 4.5509,
+    "gross_margin": 30.6331,
+    "debt_ratio": 25.3069,
+    "market_cap": 864.11837718,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              0.8925401430563988,
+              0.9047435716410018,
+              0.8556250148851688
+            ],
+            "avg_3y": 0.8843029098608565,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.246681220960338,
+              0.24787766440536024,
+              0.25481567848637554
+            ],
+            "avg_3y": 0.2497915212840246,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.15129492228910768,
+              0.15722831213522118,
+              0.1647144460984451,
+              0.21906175759030863,
+              0.23036349599330425
+            ],
+            "cv": 0.20159770051732623,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              45.996938804399996,
+              42.9700314227,
+              35.0274234802,
+              32.094100325700005,
+              52.232782825
+            ],
+            "cv": 0.19638885358412134,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 1.1707453046670546,
+        "threshold": 2.7,
+        "disposable_cash_cv": 5.380977353056695,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "601600.SH",
+    "name": "中国铝业",
+    "industry": "铝",
+    "pr": 0.9722814514236523,
+    "pe": 12.6964,
+    "pb": 1.9953,
+    "roe": 28.4232,
+    "dividend_yield": 2.7507,
+    "gross_margin": 25.8276,
+    "debt_ratio": 43.2655,
+    "market_cap": 1609.1363079399998,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              2.68996067356598,
+              2.645706668301054,
+              4.025785680841514
+            ],
+            "avg_3y": 3.1204843409028493,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.02145034876215373,
+              0.022066037249119735,
+              0.017880256210843447
+            ],
+            "avg_3y": 0.020465547407372303,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.0996229067157252,
+              0.10300770762513195,
+              0.10151084405054978,
+              0.0849255877413642,
+              0.06924188107375621
+            ],
+            "cv": 0.1578269679260958,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              340.92341,
+              328.07186,
+              270.40981,
+              278.06188,
+              283.06356
+            ],
+            "cv": 0.10676426275542858,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 0.9722814514236523,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.11075431120935761,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "000683.SZ",
+    "name": "博源化工",
+    "industry": "化工原料",
+    "pr": 0.0,
+    "pe": 24.8139,
+    "pb": 1.7951,
+    "roe": 13.1356,
+    "dividend_yield": 4.7719,
+    "gross_margin": 32.5054,
+    "debt_ratio": 57.1809,
+    "market_cap": 233.78870135,
+    "cq_passed": true,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": true,
+        "failed_dimensions": [],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              2.7169682839648095,
+              2.488238348061407,
+              2.227438221915983
+            ],
+            "avg_3y": 2.4775482846474,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 5,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.003632607882353757,
+              0.003817613742994793,
+              0.004971006427897204
+            ],
+            "avg_3y": 0.004140409351081918,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.051055839136178074,
+              0.058229577265731566,
+              0.04440729719938227,
+              0.07065525031564104,
+              0.05561258089900737
+            ],
+            "cv": 0.17378390363582366,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              25.598446738000003,
+              45.0668517259,
+              31.4050373096,
+              32.496352521599995,
+              34.8924118135
+            ],
+            "cv": 0.21008867287741192,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 0.0,
+        "threshold": 2.7,
+        "disposable_cash_cv": 3.230538510747948,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "600377.SH",
+    "name": "宁沪高速",
+    "industry": "路桥",
+    "pr": 0.0,
+    "pe": 13.2253,
+    "pb": 1.4019,
+    "roe": 12.8892,
+    "dividend_yield": 4.063,
+    "gross_margin": 36.5971,
+    "debt_ratio": 42.7849,
+    "market_cap": 607.5523485,
+    "cq_passed": false,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          2,
+          4
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.4718827170565716,
+              1.2768538929397217,
+              1.6750439975277773
+            ],
+            "avg_3y": 1.4745935358413569,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 2,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.1034841225143933,
+              0.08032020165400952,
+              0.10861171600528223
+            ],
+            "avg_3y": 0.09747201339122835,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.09247400138949917,
+              0.08619380423052458,
+              0.1473305134025985,
+              0.19501324042694804,
+              0.28197765671446684
+            ],
+            "cv": 0.5046182739159966,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              67.6163874835,
+              63.1620243354,
+              73.9242408175,
+              55.279210464399995,
+              54.672655356899995
+            ],
+            "cv": 0.13045844292125489,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 0.0,
+        "threshold": 2.7,
+        "disposable_cash_cv": 1.2471084429110844,
+        "cv_warning": true
+      }
+    }
+  },
+  {
+    "ts_code": "600674.SH",
+    "name": "川投能源",
+    "industry": "水力发电",
+    "pr": 0.0,
+    "pe": 14.6726,
+    "pb": 1.504,
+    "roe": 12.7328,
+    "dividend_yield": 2.7952,
+    "gross_margin": 54.0482,
+    "debt_ratio": 32.6311,
+    "market_cap": 697.55623308,
+    "cq_passed": false,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          1,
+          2,
+          3
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              0.16046834240128088,
+              0.1950995417138362,
+              0.13537334847148297
+            ],
+            "avg_3y": 0.16364707752886667,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 2,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.4648843235189562,
+              0.49845578472594493,
+              0.49940743867665327
+            ],
+            "avg_3y": 0.48758251564051813,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.06011471555736885,
+              0.04920520282965295,
+              0.04681747737106528,
+              0.07120102003017961,
+              0.09595895150667291
+            ],
+            "cv": 0.309339365141606,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              7.6289030036000005,
+              8.7945522651,
+              5.9566124731,
+              6.135337098300001,
+              5.468623169500001
+            ],
+            "cv": 0.20268057081471902,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 0.0,
+        "threshold": 2.7,
+        "disposable_cash_cv": 0.33834391478213643,
+        "cv_warning": false
+      }
+    }
+  },
+  {
+    "ts_code": "601058.SH",
+    "name": "赛轮轮胎",
+    "industry": "汽车配件",
+    "pr": 0.0,
+    "pe": 10.7348,
+    "pb": 1.6869,
+    "roe": 19.1932,
+    "dividend_yield": 3.3043,
+    "gross_margin": 26.8622,
+    "debt_ratio": 51.2359,
+    "market_cap": 378.13153450000004,
+    "cq_passed": false,
+    "pr_passed": false,
+    "gate_summary": {
+      "screener": {
+        "passed": true
+      },
+      "cash_quality": {
+        "passed": false,
+        "failed_dimensions": [
+          2,
+          5
+        ],
+        "details": {
+          "dimdim1": {
+            "ratios": [
+              1.1863181577055144,
+              0.5633690038799333,
+              1.7187582919563484
+            ],
+            "avg_3y": 1.156148484513932,
+            "threshold": 0.8
+          },
+          "dimdim2": {
+            "positive_count": 2,
+            "valid_years": 5,
+            "total_years": 5,
+            "threshold": 4
+          },
+          "dimdim3": {
+            "ratios": [
+              0.16706733465048404,
+              0.15072561491132117,
+              0.12997330446387442
+            ],
+            "avg_3y": 0.14925541800855988,
+            "threshold": 0.3
+          },
+          "dimdim4": {
+            "ratios": [
+              0.19404091094626885,
+              0.20514670570540244,
+              0.1902249877431591,
+              0.18790018449199974,
+              0.23933866305227575
+            ],
+            "cv": 0.10421373327390124,
+            "threshold": 0.5
+          },
+          "dimdim5": {
+            "values": [
+              41.7879750536,
+              22.8878460599,
+              53.1339604912,
+              21.990156706999997,
+              8.3667062636
+            ],
+            "cv": 0.5980254176494928,
+            "threshold": 0.5
+          }
+        }
+      },
+      "penetration_return": {
+        "passed": false,
+        "pr": 0.0,
+        "threshold": 2.7,
+        "disposable_cash_cv": 2.30200380561892,
+        "cv_warning": true
+      }
+    }
+  }
+]

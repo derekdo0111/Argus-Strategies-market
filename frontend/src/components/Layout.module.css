@@ -1,0 +1,27 @@
+.layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Sidebar 面板：只折叠自身，不影响右侧主内容 */
+.sidebarPanel {
+  flex-shrink: 0;
+  width: 260px;
+  height: 100vh;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 20;
+  border-right: 1px solid var(--border-default);
+}
+
+.sidebarCollapsed {
+  width: 56px;
+}
+
+/* 主内容区：始终占据剩余空间 */
+.contentArea {
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+}

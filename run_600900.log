@@ -1,0 +1,24 @@
+﻿
+============================================================
+python : Traceback (most recent call last):
+所在位置 行:1 字符: 201
++ ...  Strategy"; python scripts/run_single_stock_analysis.py 600900.SH 2>& ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "D:\project\Investment Strategy\scripts\run_single_stock_analysis.py", line 131, in <module>
+    asyncio.run(main())
+  File "C:\Users\harry\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\harry\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harry\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_comp
+lete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\project\Investment Strategy\scripts\run_single_stock_analysis.py", line 20, in main
+    print(f"\U0001f680 ����ȫ���̷���: {ts_code}")
+UnicodeEncodeError: 'gbk' codec can't encode character '\U0001f680' in position 0: illegal multibyte sequence

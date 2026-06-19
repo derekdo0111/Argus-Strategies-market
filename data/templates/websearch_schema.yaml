@@ -1,0 +1,53 @@
+# WebSearch Agent 输出模板 Schema
+# 对应 stock_cache/{ts_code}/websearch.yaml
+
+meta:
+  ts_code: ""
+  name: ""
+  search_date: ""
+  search_engine: ""
+
+# === 模块2: 竞争优势与护城河 ===
+moat_search:
+  query: ""                   # 搜索词
+  results:
+    - source: ""              # 来源URL
+      source_type: ""         # official_report | financial_media | forum | social_media
+      title: ""
+      snippet: ""             # 摘要
+      confidence: ""          # 🟢 | 🟡 | 🟠 | 🔴
+      relevance: ""           # 与护城河分析的相关性说明
+      extracted_info: ""      # 提取的关键信息
+
+# === 模块3: 外部环境 ===
+external_env_search:
+  query: ""
+  results:
+    - source: ""
+      source_type: ""
+      title: ""
+      snippet: ""
+      confidence: ""
+      relevance: ""
+      extracted_info: ""
+
+# === 模块4: 管理层与公司治理 ===
+management_search:
+  query: ""
+  results:
+    - source: ""
+      source_type: ""
+      title: ""
+      snippet: ""
+      confidence: ""
+      relevance: ""
+      extracted_info: ""
+
+# === 汇总 ===
+summary:
+  total_results: 0
+  high_confidence_count: 0    # 🟢
+  medium_confidence_count: 0  # 🟡
+  low_confidence_count: 0     # 🟠
+  unreliable_count: 0         # 🔴
+  search_quality: ""          # excellent | good | acceptable | poor

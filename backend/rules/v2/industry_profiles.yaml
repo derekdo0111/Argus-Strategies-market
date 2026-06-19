@@ -1,0 +1,112 @@
+# 行业特殊指标配置 v1
+# 
+# DataSummarizer 读取公司行业后加载对应 profile，决定:
+#   1. 哪些额外指标需要从 raw_data 计算并突出展示
+#   2. 哪些指标对该行业不适用 (skip)
+#   3. 行业生命周期判断线索
+#   4. WebSearch 增强关键词 (补充行业特有的搜索维度)
+#
+# 匹配规则: 精确匹配 > 关键字模糊匹配 > 默认规则
+
+IT设备:
+  name: "信息技术"
+  extra_metrics:
+    - 研发人员占比
+    - 海外收入占比
+    - 人均创收
+    - 前5大客户集中度
+  skip_metrics: []  # IT设备通用性强, 无不适用指标
+  lifecycle_clues:
+    -政府采购占比趋势
+    -国产替代进度
+  websearch_extra:
+    - "【公司名】 研发人员 人才结构 员工数量"
+    - "【公司名】 客户集中度 前五大客户"
+    - "【公司名】 国产替代 自主可控 信创"
+
+银行:
+  name: "金融"
+  extra_metrics:
+    - 不良贷款率
+    - 拨备覆盖率
+    - 净息差
+    - 核心一级资本充足率
+    - ROA
+  skip_metrics:
+    - inventory_turnover_days
+    - gross_margin_pct
+    - inventory_billion
+  lifecycle_clues:
+    - 净息差趋势
+    - 不良率走势
+  websearch_extra:
+    - "【公司名】 不良率 拨备覆盖率 资产质量"
+    - "【公司名】 净息差 非息收入占比"
+
+医药:
+  name: "医药生物"
+  extra_metrics:
+    - 研发费用率
+    - 在研管线数量
+    - 集采影响占比
+    - 专利到期时间
+  skip_metrics: []
+  lifecycle_clues:
+    - 集采范围是否扩大
+    - 研发管线进度
+  websearch_extra:
+    - "【公司名】 在研管线 临床进度 新药上市"
+    - "【公司名】 集采影响 中标情况"
+
+食品饮料:
+  name: "消费品"
+  extra_metrics:
+    - 经销商数量
+    - 渠道库存天数
+    - 单品贡献占比
+  skip_metrics: []
+  lifecycle_clues:
+    - 行业渗透率
+    - 量价拆分
+  websearch_extra:
+    - "【公司名】 渠道库存 经销商 终端动销"
+    - "【公司名】 市场份额 品牌力 提价能力"
+
+电力:
+  name: "公用事业"
+  extra_metrics:
+    - 装机容量
+    - 发电小时数
+    - 上网电价
+    - 资产负债率 (高负债行业正常)
+  skip_metrics:
+    - gross_margin_pct  # 公用事业毛利含义不同
+  lifecycle_clues:
+    - 电力市场化改革进度
+    - 绿电占比
+  websearch_extra:
+    - "【公司名】 装机容量 发电量 上网电价"
+    - "【公司名】 新能源 绿电装机 政策补贴"
+
+房地产:
+  name: "房地产"
+  extra_metrics:
+    - 合同负债
+    - 土地储备
+    - 净负债率
+    - 现金短债比
+  skip_metrics: []
+  lifecycle_clues:
+    - 行业销售面积趋势
+    - 政策放松/收紧信号
+  websearch_extra:
+    - "【公司名】 土地储备 销售金额 去化率"
+    - "【公司名】 融资成本 三道红线"
+
+# 默认规则: 所有未匹配行业使用
+_default:
+  name: "通用"
+  extra_metrics: []
+  skip_metrics: []
+  lifecycle_clues: []
+  websearch_extra: []

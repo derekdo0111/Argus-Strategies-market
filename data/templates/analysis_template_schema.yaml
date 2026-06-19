@@ -1,0 +1,69 @@
+# 分析Agent输入模板 Schema
+# 整合 raw_data + computed，构建给LLM消费的统一模板
+# 对应 stock_cache/{ts_code}/template.yaml
+
+meta:
+  ts_code: ""
+  name: ""
+  rule_version: ""
+  build_date: ""
+
+# === 章节1: 公司基本信息 (引用 raw_data.basic_info) ===
+ch1_company_profile:
+  source: "raw_data.yaml §basic_info"
+  name: ""
+  industry: ""
+  list_date: ""
+  market_cap_billion: 0.0
+  pe: 0.0
+  pb: 0.0
+  dividend_yield: 0.0
+
+# === 章节2: 财务数据概览 (引用 raw_data.annual_financials) ===
+ch2_financial_overview:
+  source: "raw_data.yaml §annual_financials"
+  revenue_trend: []           # 近5年营收列表
+  net_profit_trend: []        # 近5年净利润列表
+  gross_margin_trend: []      # 近5年毛利率列表
+  roe_trend: []               # 近5年ROE列表
+  fcf_trend: []               # 近5年FCF列表
+  debt_ratio_trend: []        # 近5年负债率列表
+  dividend_trend: []          # 近5年分红列表
+  key_ratios_summary: ""
+
+# === 章节3: 现金质量分析 (引用 computed.cash_quality) ===
+ch3_cash_quality:
+  source: "computed.yaml §cash_quality"
+  overall: ""                 # passed / failed
+  dim1_opcf_netprofit: {}
+  dim2_fcf_positive: {}
+  dim3_receivables: {}
+  dim4_inventory: {}
+  dim5_ocf_stability: {}
+  interpretation_guide: ""    # 给LLM的解读提示
+
+# === 章节4: 穿透回报率 (引用 computed.penetration_return) ===
+ch4_penetration_return:
+  source: "computed.yaml §penetration_return"
+  disposable_cash: 0.0
+  distribution_ratio: 0.0
+  repurchase_avg: 0.0
+  pr: 0.0
+  risk_free_rate: 0.0
+  threshold: 0.0
+  passed: false
+  interpretation_guide: ""
+
+# === 章节5: 分红与回购历史 (引用 raw_data) ===
+ch5_dividend_repurchase:
+  source: "raw_data.yaml §dividend_history, §repurchase_history"
+  dividend_consistency: ""    # 连续分红年数
+  dividend_growth: ""         # 分红增长趋势
+  repurchase_activity: ""     # 回购活跃度
+
+# === 章节6: 估值历史 (引用 raw_data.valuation_history) ===
+ch6_valuation_history:
+  source: "raw_data.yaml §valuation_history"
+  pe_percentile: {}
+  pb_percentile: {}
+  current_vs_history: ""

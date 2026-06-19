@@ -1,0 +1,12 @@
+﻿python : INFO:     Will watch for changes in these directories: ['D:\\project\\Investment Strategy\\backend']
+所在位置 行:1 字符: 209
++ ... y\backend"; python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (INFO:     Will ...tegy\\backend']:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [15644] using StatReload
+INFO:     Started server process [10512]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

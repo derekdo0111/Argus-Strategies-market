@@ -1,0 +1,86 @@
+# 原始数据模板 Schema
+# 对应 stock_cache/{ts_code}/raw_data.yaml
+# 数据来源: Tushare
+
+meta:
+  ts_code: ""              # 股票代码 e.g. "000001.SZ"
+  name: ""                 # 股票名称
+  industry: ""             # 申万行业分类
+  data_date: ""            # 数据拉取日期 YYYY-MM-DD
+  data_completeness: full  # full | partial
+  missing_fields: []       # 缺失字段列表
+
+# === 基本信息 ===
+basic_info:
+  list_date: ""            # 上市日期
+  total_mv: 0.0            # 总市值（亿）
+  circ_mv: 0.0             # 流通市值（亿）
+  pe: 0.0                  # PE-TTM
+  pb: 0.0                  # PB
+  dividend_yield: 0.0      # 股息率（%）
+
+# === 近10年财务数据（年度） ===
+annual_financials:         # 列表，最新年份在前
+  - year: 2024
+    income:
+      revenue: 0.0           # 营业收入（亿）
+      revenue_yoy: 0.0       # 营收同比（%）
+      gross_profit: 0.0      # 毛利
+      gross_margin: 0.0      # 毛利率（%）
+      operating_profit: 0.0  # 营业利润
+      net_profit: 0.0        # 归母净利润
+      net_profit_yoy: 0.0    # 净利润同比（%）
+      roe: 0.0               # ROE（%）
+      eps: 0.0               # EPS
+    balance_sheet:
+      total_assets: 0.0      # 总资产
+      total_liabilities: 0.0 # 总负债
+      debt_ratio: 0.0        # 资产负债率（%）
+      current_ratio: 0.0     # 流动比率
+      quick_ratio: 0.0       # 速动比率
+      receivables: 0.0       # 应收账款
+      inventory: 0.0         # 存货
+      goodwill: 0.0          # 商誉
+      fixed_assets: 0.0      # 固定资产
+      intangible_assets: 0.0 # 无形资产
+      total_equity: 0.0      # 归母权益
+    cashflow:
+      operating_cf: 0.0      # 经营活动CF
+      investing_cf: 0.0      # 投资活动CF
+      financing_cf: 0.0      # 筹资活动CF
+      capex: 0.0             # 资本支出（购建固定资产）
+      depreciation: 0.0      # 折旧
+      amortization: 0.0      # 摊销
+      fcf: 0.0               # 自由现金流 = opCF - capex
+      interest_expense: 0.0  # 利息支出
+
+# === 分红数据 ===
+dividend_history:
+  - year: 2024
+    dividend_per_share: 0.0  # 每股分红
+    total_dividend: 0.0      # 总分红金额（亿）
+    payout_ratio: 0.0        # 分红率（%）
+
+# === 回购数据 ===
+repurchase_history:
+  - year: 2024
+    repurchase_amount: 0.0   # 回购金额（亿）
+    repurchase_shares: 0     # 回购股数
+    is_cancellation: false   # 是否注销
+
+# === 行情数据摘要 ===
+price_summary:
+  latest_price: 0.0         # 最新价
+  ma_60: 0.0                # 60日均价
+  ma_250: 0.0               # 年线
+  year_high: 0.0            # 年内最高
+  year_low: 0.0             # 年内最低
+  volatility_1y: 0.0        # 年化波动率
+
+# === 估值历史 ===
+valuation_history:
+  - date: ""
+    pe: 0.0
+    pb: 0.0
+    ps: 0.0
+    ev_ebitda: 0.0

@@ -1,0 +1,101 @@
+# 确定性计算结果模板 Schema
+# 对应 stock_cache/{ts_code}/computed.yaml
+
+meta:
+  ts_code: ""
+  name: ""
+  rule_version: "v1"
+  computed_date: ""         # 计算日期
+
+# === 现金质量5子维度 ===
+cash_quality:
+  dimension_1_opcf_to_netprofit:
+    description: "经营CF/净利润比（近3年均值）"
+    values:                  # 逐年值
+      - year: 2024
+        ratio: 0.0
+        op_cf: 0.0
+        net_profit: 0.0
+    avg_3y: 0.0
+    threshold: 0.8
+    passed: false
+
+  dimension_2_fcf_positive_years:
+    description: "FCF正年数（近5年）"
+    fcf_by_year:
+      - year: 2024
+        fcf: 0.0
+        is_positive: false
+    positive_count: 0
+    threshold: 4            # ≥ 4/5
+    passed: false
+
+  dimension_3_receivables_ratio:
+    description: "应收/营收比（近3年均值）"
+    values:
+      - year: 2024
+        ratio: 0.0
+    avg_3y: 0.0
+    threshold: 0.3           # < 0.3
+    passed: false
+
+  dimension_4_inventory_stability:
+    description: "存货/营收波动率（近5年CV）"
+    values:
+      - year: 2024
+        inventory_revenue_ratio: 0.0
+    cv: 0.0                  # 变异系数
+    threshold: 0.5           # CV < 0.5
+    passed: false
+
+  dimension_5_ocf_stability:
+    description: "经营CF波动率（近5年CV）"
+    values:
+      - year: 2024
+        operating_cf: 0.0
+    cv: 0.0
+    threshold: 0.5
+    passed: false
+
+  overall_passed: false      # 5项全部通过才为true
+  failed_dimensions: []      # 未通过的维度编号
+
+# === 穿透回报率 ===
+penetration_return:
+  disposable_cash:
+    description: "可支配现金 = 经营CF - 维持性CAPEX - 利息支出"
+    operating_cf_avg_3y: 0.0
+    maintenance_capex: 0.0     # ≈ 折旧摊销 × 1.1
+    depreciation_amortization_avg_3y: 0.0
+    interest_expense_avg_3y: 0.0
+    disposable_cash: 0.0
+
+  distribution_ratio:
+    description: "近3年分红 / 近3年可支配现金"
+    total_dividend_3y: 0.0
+    total_disposable_cash_3y: 0.0
+    ratio: 0.0
+    ratio_capped: 0.0         # 上限 1.0
+
+  repurchase:
+    description: "近3年年均回购注销金额"
+    avg_repurchase_3y: 0.0
+    is_cancellation: false
+
+  pr_result:
+    pr: 0.0                   # 穿透回报率 (%)
+    formula: "(disposable_cash × distribution_ratio + repurchase) / total_mv"
+    risk_free_rate: 0.0       # 无风险利率 (%)
+    threshold: 0.0            # 无风险利率 + 3%
+    passed: false
+
+# === 其他计算指标 ===
+other_metrics:
+  revenue_cagr_5y: 0.0        # 营收5年CAGR
+  net_profit_cagr_5y: 0.0     # 净利润5年CAGR
+  dividend_cagr_5y: 0.0       # 分红5年CAGR
+  avg_roe_5y: 0.0
+  avg_roic_5y: 0.0
+  debt_to_equity: 0.0
+  interest_coverage: 0.0      # 利息保障倍数
+  market_cap_billion: 0.0     # 总市值（亿）

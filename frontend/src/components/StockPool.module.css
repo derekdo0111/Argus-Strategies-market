@@ -1,0 +1,258 @@
+/* ═══════════════════════════════════════════════════════
+   StockPool — 中间股池栏
+   ═══════════════════════════════════════════════════════ */
+
+.container {
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-right: 1px solid var(--border-default);
+}
+
+/* ---- Header ---- */
+.header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: background 0.12s, color 0.12s;
+}
+
+.hamburger:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.meta {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  background: var(--bg-elevated);
+  padding: 4px 10px;
+  border-radius: var(--radius);
+}
+
+/* ---- Table ---- */
+.tableWrap {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--font-sm);
+}
+
+.table thead {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.table th {
+  background: var(--bg-elevated);
+  padding: 11px 14px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.table tbody tr:nth-child(even) td {
+  background: rgba(168,181,209,0.03);
+}
+
+.table tbody tr:hover td {
+  background: var(--accent-faint);
+}
+
+/* ---- Row ---- */
+.row {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.row.selected td {
+  background: var(--accent-light) !important;
+}
+
+/* ---- Name ---- */
+.nameCol {
+  font-weight: 600;
+}
+
+.codeCol {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+}
+
+/* ---- Score ---- */
+.scoreInline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scoreBar {
+  width: 80px;
+  height: 6px;
+  background: #eaeff5;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.scoreFill {
+  height: 100%;
+  background: var(--accent-primary);
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.scoreNum {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.noScore {
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+}
+
+/* ---- PR ---- */
+.prGood {
+  color: var(--positive);
+  font-weight: 600;
+}
+
+.prWarn {
+  color: var(--warning);
+  font-weight: 600;
+}
+
+/* ---- Gates ---- */
+.gateGroup {
+  display: flex;
+  gap: 4px;
+}
+
+.gateBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius);
+  font-size: var(--font-xs);
+  font-weight: 600;
+}
+
+.gatePass {
+  background: var(--positive-subtle);
+  color: var(--positive);
+  border: 1px solid var(--positive-border);
+}
+
+.gateFail {
+  background: var(--negative-subtle);
+  color: var(--negative);
+  border: 1px solid rgba(239,52,99,0.25);
+}
+
+/* ---- States ---- */
+.loading,
+.empty {
+  padding: 32px;
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: var(--font-sm);
+}
+
+.error {
+  padding: 32px;
+  text-align: center;
+  color: var(--negative);
+  font-size: var(--font-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.retryBtn {
+  padding: 6px 18px;
+  background: var(--accent-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.retryBtn:hover {
+  background: var(--accent-hover);
+}
+
+/* ---- 展开行：打分卡 ---- */
+.expandedRow td {
+  padding: 0;
+  border-bottom: 2px solid var(--accent-primary);
+  background: var(--accent-faint) !important;
+}
+
+.expandedCell {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.expandedInner {
+  padding: 12px 16px 16px;
+  animation: expandIn 0.25s ease-out;
+}
+
+@keyframes expandIn {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    max-height: 600px;
+    transform: translateY(0);
+  }
+}

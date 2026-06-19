@@ -1,0 +1,38 @@
+# 龟龟策略现金质量门规则 v2
+
+version: "v2"
+updated: "2026-06-17"
+gate_type: soft  # v0.3.0: 软门，标记不淘汰，交QRV Agent综合研判
+
+dimensions:
+  - id: dim1_opcf_netprofit
+    description: "经营CF/净利润比（近3年均值）"
+    threshold: 0.8
+    operator: ">"
+    lookback_years: 3
+
+  - id: dim2_fcf_positive
+    description: "FCF正年数（近5年）"
+    threshold: 4
+    operator: ">="
+    lookback_years: 5
+
+  - id: dim3_receivables_ratio
+    description: "应收/营收比（近3年均值）"
+    threshold: 0.3
+    operator: "<"
+    lookback_years: 3
+
+  - id: dim4_inventory_stability
+    description: "存货/营收波动率 CV"
+    threshold: 0.5
+    operator: "<"
+    lookback_years: 5
+
+  - id: dim5_ocf_stability
+    description: "经营CF波动率 CV"
+    threshold: 0.5
+    operator: "<"
+    lookback_years: 5
+
+pass_condition: all  # 所有维度必须通过

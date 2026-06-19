@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+}
+
+.left {
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.divider {
+  flex-shrink: 0;
+  width: 4px;
+  cursor: col-resize;
+  background: transparent;
+  transition: background 0.15s;
+  position: relative;
+  user-select: none;
+  z-index: 10;
+}
+
+/* 默认微弱的中间线 */
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background: var(--border-subtle);
+}
+
+.divider:hover,
+.dividerActive {
+  background: var(--accent-subtle);
+}
+
+.divider:hover::after,
+.dividerActive::after {
+  background: var(--accent-primary);
+  width: 2px;
+}

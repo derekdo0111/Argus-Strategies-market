@@ -1,0 +1,35 @@
+# 龟龟策略穿透回报率规则 v2
+
+version: "v2"
+updated: "2026-06-18"
+note: "v0.5.3: raw_data 全部金额归一化为亿元，PR公式简化无需单位换算"
+gate_type: soft  # v0.3.0: 软门，标记不淘汰，交QRV Agent综合研判
+
+formula:
+  description: "PR = (可支配现金均值 × 分配比率 + 回购注销) / 总市值 × 100%"
+  disposable_cash:
+    formula: "经营CF − 购建固定资产(CAPEX) − 并购子公司 − max(0, 长投净增) − 财务费用"
+    lookback_years: 5
+    per_year_calc: true  # 逐年计算后取均值
+    cv_gate: 0.5  # CV < 0.5 软门（标记警告，不提前返回，交QRV Agent综合研判）
+    fields:
+      operating_cf: "n_cashflow_act (现金流量表)"
+      capex: "c_pay_acq_const_fiolta (现金流量表)"
+      acq_subsidiary: "n_disp_subs_oth_biz (现金流量表)"
+      lt_eqt_invest: "lt_eqt_invest (资产负债表, 需2年数据算增量)"
+      fin_exp: "fin_exp (利润表)"
+  distribution_ratio:
+    formula: "5年分红总额 / 5年可支配现金总额"
+    max_ratio: 1.0  # 上限100%
+    lookback_years: 5
+    method: "total_over_total"  # 总额/总额，CV门已在分母端平滑大小年偏差
+  repurchase:
+    formula: "近5年年均回购注销金额"
+    only_cancellation: true  # 仅计入注销回购
+    lookback_years: 5
+
+threshold:
+  base: "无风险利率"
+  spread: 1.0  # +1.0%
+  risk_free_source: "10年期国债收益率"
+  default_risk_free: 1.7  # 2026年约1.7%，取自 .env TURTLE_RISK_FREE_RATE
