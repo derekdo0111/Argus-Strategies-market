@@ -1,9 +1,8 @@
 # Investment Strategy
-## 个人投资策略分析平台 | v0.6.15
+## 个人投资策略分析平台 | v0.7.7
 ## 龟龟策略-->已实现    
-目前实现的策略基于（类红利股）的全流程 A 股分析工具：选股 → 硬门筛选 → QRV 深度报告，从全市场自动筛选出高质量标的并生成 10 维度量化报告。
+目前实现的策略基于（类红利股）的全流程 A 股分析工具：选股 → 软门筛选 → QRV 深度报告，从全市场自动筛选出高质量标的并生成 10 维度量化报告。
 <img width="1901" height="865" alt="image" src="https://github.com/user-attachments/assets/71e47d50-92d2-45c1-8752-2adb96b1e045" />
-
 ## 高景气价值策略 -->待开发
  
 
@@ -38,7 +37,7 @@
 | **数据** | Tushare (主) + AKShare (备) + YAML 本地缓存 |
 | **LLM** | DeepSeek V4 (OpenAI 兼容) |
 | **搜索** | Tavily API |
-| **测试** | pytest 76 测试 + Playwright E2E 13 用例 |
+| **测试** | pytest 98 测试 + Playwright E2E 13 用例 |
 
 ---
 
@@ -52,7 +51,7 @@
 │   │   ├── strategies/turtle/  龟龟策略 (选股器/CQ/PR/Coordinator)
 │   │   └── services/       QRV Agent / WebSearch / 数据拉取 / DataSummarizer
 │   ├── rules/v2/           规则定义 (screener/cq/pr/qrv)
-│   ├── tests/              76 个测试用例
+│   ├── tests/              98 个测试用例
 │   └── .env.example        环境变量模板
 ├── frontend/               React SPA
 │   ├── src/
@@ -140,7 +139,7 @@ cd backend && python -m scripts.diagnose_analyze 600900.SH
 
 | 类型 | 数量 | 说明 |
 |------|------|------|
-| 单元测试 | 76 | 选股器 / CQ / PR / SPEC 合规 / DataSummarizer |
+| 单元测试 | 98 | 选股器 / CQ / PR / SPEC 合规 / DataSummarizer / WebSearchExtractor |
 | E2E | 13 | Playwright Chromium, `page.route()` 零后端依赖 |
 
 ---
