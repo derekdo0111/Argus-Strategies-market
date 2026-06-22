@@ -2,7 +2,8 @@
 ## 个人投资策略分析平台 | v0.7.14
 ## 龟龟策略-->已实现    
 目前实现的策略基于（类红利股）的全流程 A 股分析工具：选股 → 软门筛选 → QRV 深度报告，从全市场自动筛选出高质量标的并生成 10 维度量化报告。
-<img width="1901" height="865" alt="image" src="https://github.com/user-attachments/assets/71e47d50-92d2-45c1-8752-2adb96b1e045" />
+![Uploading image.png…]()
+
 ## 高景气价值策略 -->待开发
  
 
