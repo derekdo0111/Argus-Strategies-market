@@ -179,7 +179,7 @@ export default function StockPool({ selectedStock, onSelectStock, onToggleSideba
                           </div>
                         ) : (
                           <span className={styles.noScore}>
-                            {item.has_report ? '—' : '未分析'}
+                            {item.has_report ? '—' : '点击分析 →'}
                           </span>
                         )}
                       </td>

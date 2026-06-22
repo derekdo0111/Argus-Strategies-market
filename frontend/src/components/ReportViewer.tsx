@@ -93,10 +93,10 @@ function preprocessCitations(md: string): string {
  *  cite 默认不在 tagNames 中，需显式加入。 */
 const sanitizeSchema = {
   ...defaultSchema,
-  tagNames: [...defaultSchema.tagNames, 'cite'],
+  tagNames: [...(defaultSchema.tagNames || []), 'cite'],
   attributes: {
     ...defaultSchema.attributes,
-    a: [...(defaultSchema.attributes?.a || ['href']), ['id', /.*/], ['name', /.*/]],
+    a: [...((defaultSchema.attributes?.a || ['href']) as Array<string | [string, RegExp]>), ['id', /.*/], ['name', /.*/]],
     cite: ['dataRef', 'id', 'className'],
   },
 };
@@ -255,16 +255,32 @@ function TdRenderer({ children }: { children?: ReactNode }) {
     );
   }
 
-  // 趋势判断列着色 (up → 绿, down → 红, stable → 灰)
+  // 趋势判断列着色 (v0.7.14: pill badges)
   const trendClass = TREND_MAP[text];
   if (trendClass) {
+    const label =
+      text === 'up' ? '▲ 上升'
+      : text === 'down' ? '▼ 下降'
+      : text === 'stable' ? '─ 持平'
+      : text === '快速增长' ? '▲ 快速增长'
+      : text === '中速增长' ? '▲ 中速增长'
+      : text === '缓慢增长' ? '▲ 缓慢增长'
+      : text === '吃老本' ? '▼ 吃老本'
+      : text === '收缩' ? '▼ 收缩'
+      : text;
     return (
       <td>
-        <span className={styles[trendClass as keyof typeof styles] || styles.trendStable}>
-          {text === 'up' ? '▲ up' : text === 'down' ? '▼ down' : text === 'stable' ? '─ stable' : text}
+        <span className={`${styles.trendBadge} ${styles[trendClass] || styles.trendStable}`}>
+          {label}
         </span>
       </td>
     );
+  }
+
+  // 数字列右对齐检测：纯数字 / 带% / 带亿/万单位
+  const isNumeric = /^-?[\d,]+(\.\d+)?[%亿万千百]?$/.test(text.trim()) && text.trim().length > 0;
+  if (isNumeric) {
+    return <td className={styles.tdNumeric}>{children}</td>;
   }
 
   // 仅在评分表中才渲染 ScoreBar，避免把 YoY、固定资产占比等数据误判为评分
@@ -309,13 +325,14 @@ function TrRenderer({ children }: any) {
   return <tr id={rowId} className={cls || undefined}>{children}</tr>;
 }
 
-// ── TOC Panel ──────────────────────────────────────────
+// ── TOC Panel (v0.7.13 redesign) ───────────────────────
 
 function TocPanel({
   toc,
   expandedSet,
   activeId,
   onScrollTo,
+  onToggle,
   onExpandAll,
   onCollapseAll,
 }: {
@@ -323,46 +340,110 @@ function TocPanel({
   expandedSet: Set<string>;
   activeId: string;
   onScrollTo: (id: string) => void;
+  onToggle: (id: string) => void;
   onExpandAll: () => void;
   onCollapseAll: () => void;
 }) {
   return (
     <div className={styles.toc}>
+      {/* ── Header ── */}
       <div className={styles.tocHeader}>
         <h3 className={styles.tocTitle}>报告目录</h3>
         <div className={styles.tocActions}>
-          <button className={styles.tocBtn} onClick={onExpandAll} title="展开全部">
-            展开
+          <button
+            className={styles.tocActionBtn}
+            onClick={onExpandAll}
+            title="展开全部章节"
+            aria-label="展开全部章节"
+          >
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <path d="M4.5 6.5l3 3 3-3" stroke="currentColor" strokeWidth="1.6"
+                strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M4.5 10.5l3 3 3-3" stroke="currentColor" strokeWidth="1.6"
+                strokeLinecap="round" strokeLinejoin="round" opacity="0.35" />
+            </svg>
           </button>
-          <button className={styles.tocBtn} onClick={onCollapseAll} title="折叠全部">
-            折叠
+          <button
+            className={styles.tocActionBtn}
+            onClick={onCollapseAll}
+            title="折叠全部章节"
+            aria-label="折叠全部章节"
+          >
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <path d="M4.5 6.5l3-3 3 3" stroke="currentColor" strokeWidth="1.6"
+                strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M4.5 10.5l3-3 3 3" stroke="currentColor" strokeWidth="1.6"
+                strokeLinecap="round" strokeLinejoin="round" opacity="0.35" />
+            </svg>
           </button>
         </div>
       </div>
+
+      {/* ── Nav ── */}
       <nav className={styles.tocNav}>
-        {toc.map((item) => (
-          <div key={item.id} className={styles.tocGroup}>
-            <button
-              className={`${styles.tocLink} ${activeId === item.id ? styles.tocLinkActive : ''}`}
-              onClick={() => onScrollTo(item.id)}
-            >
-              {item.title}
-            </button>
-            {item.children.length > 0 && expandedSet.has(item.id) && (
-              <div className={styles.tocSub}>
-                {item.children.map((sub) => (
-                  <button
-                    key={sub.id}
-                    className={styles.tocSubLink}
-                    onClick={() => onScrollTo(sub.id)}
-                  >
-                    {sub.title}
-                  </button>
-                ))}
+        {toc.map((item) => {
+          const isExpanded = expandedSet.has(item.id);
+          const hasChildren = item.children.length > 0;
+          const isActive = activeId === item.id
+            || item.children.some((c) => c.id === activeId);
+
+          return (
+            <div key={item.id} className={styles.tocGroup}>
+              {/* Parent row: chevron + title + badge */}
+              <div
+                className={`${styles.tocRow} ${isActive ? styles.tocRowActive : ''}`}
+              >
+                <button
+                  className={`${styles.tocChevron} ${isExpanded ? styles.tocChevronOpen : ''} ${!hasChildren ? styles.tocChevronHidden : ''}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (hasChildren) onToggle(item.id);
+                  }}
+                  aria-label={isExpanded ? '折叠子章节' : '展开子章节'}
+                  tabIndex={hasChildren ? 0 : -1}
+                >
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path
+                      d="M4.5 2.5L8 6l-3.5 3.5"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+
+                <button
+                  className={styles.tocLabel}
+                  onClick={() => onScrollTo(item.id)}
+                  title={item.title}
+                >
+                  {item.title}
+                </button>
+
+                {hasChildren && (
+                  <span className={styles.tocBadge}>{item.children.length}</span>
+                )}
               </div>
-            )}
-          </div>
-        ))}
+
+              {/* Children — always rendered for CSS transition */}
+              {hasChildren && (
+                <div className={`${styles.tocChildren} ${isExpanded ? styles.tocChildrenOpen : ''}`}>
+                  {item.children.map((sub) => (
+                    <button
+                      key={sub.id}
+                      className={`${styles.tocChildItem} ${activeId === sub.id ? styles.tocChildActive : ''}`}
+                      onClick={() => onScrollTo(sub.id)}
+                      title={sub.title}
+                    >
+                      {sub.title}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </nav>
     </div>
   );
@@ -754,9 +835,17 @@ export default function ReportViewer({ selectedStock }: ReportViewerProps) {
   if (!selectedStock) {
     return (
       <div className={styles.emptyState}>
-        <div className={styles.emptyIcon}>📊</div>
-        <div className={styles.emptyText}>请从股池选择一只股票</div>
-        <div className={styles.emptyHint}>点击左侧股池中的个股查看 QRV 深度分析报告</div>
+        <svg className={styles.emptyIllustration} width="72" height="72" viewBox="0 0 72 72" fill="none">
+          <rect x="10" y="14" width="52" height="44" rx="6" fill="var(--accent-light)" />
+          <rect x="18" y="22" width="36" height="5" rx="2.5" fill="var(--accent-primary)" opacity="0.25" />
+          <rect x="18" y="32" width="28" height="4" rx="2" fill="var(--text-tertiary)" opacity="0.15" />
+          <rect x="18" y="40" width="32" height="4" rx="2" fill="var(--text-tertiary)" opacity="0.15" />
+          <rect x="18" y="48" width="22" height="4" rx="2" fill="var(--text-tertiary)" opacity="0.15" />
+          <circle cx="52" cy="20" r="10" fill="var(--bg-surface)" />
+          <path d="M48 20l3 3 6-6" stroke="var(--accent-primary)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <div className={styles.emptyText}>从左侧股池选一只股票，查看深度分析报告</div>
+        <div className={styles.emptyHint}>我们会帮你分析生意本质、护城河、增长引擎等 10 个维度</div>
       </div>
     );
   }
@@ -765,8 +854,8 @@ export default function ReportViewer({ selectedStock }: ReportViewerProps) {
     return (
       <div className={styles.emptyState}>
         <GateSummary data={gateData} />
-        <div className={styles.emptyText}>加载报告中...</div>
-        <div className={styles.emptyHint}>{selectedStock.name}（{selectedStock.ts_code}）正在获取分析报告</div>
+        <div className={styles.emptyText}>正在为你准备分析报告...</div>
+        <div className={styles.emptyHint}>{selectedStock.name}（{selectedStock.ts_code}）正在获取数据</div>
       </div>
     );
   }
@@ -776,7 +865,7 @@ export default function ReportViewer({ selectedStock }: ReportViewerProps) {
       <div className={styles.emptyState}>
         <GateSummary data={gateData} />
         <div className={styles.emptyText}>
-          {isAnalyzing ? '正在分析中...' : isTimeout ? '分析超时' : isError ? '分析失败' : isSuccess ? '分析完成' : '暂无分析报告'}
+          {isAnalyzing ? '正在分析中...' : isTimeout ? '分析超时' : isError ? '分析失败' : isSuccess ? '分析完成' : '尚未生成分析报告'}
         </div>
         <div className={styles.emptyHint}>
           {isSuccess
@@ -787,7 +876,7 @@ export default function ReportViewer({ selectedStock }: ReportViewerProps) {
                 ? `${selectedStock.name}（${selectedStock.ts_code}）后台任务超过10分钟未响应，可重新触发`
                 : isError
                   ? currentStatus?.message || '未知错误'
-                  : `${selectedStock.name}（${selectedStock.ts_code}）尚未生成 QRV 分析报告`
+                  : `${selectedStock.name}（${selectedStock.ts_code}）尚未生成分析报告`
           }
         </div>
 
@@ -839,7 +928,7 @@ export default function ReportViewer({ selectedStock }: ReportViewerProps) {
           ) : isError ? (
             '⚠️ 分析失败，点击重试'
           ) : (
-            '🔍 分析个股'
+            '🔍 开始分析'
           )}
         </button>
 
@@ -929,9 +1018,11 @@ function ReportContent({
     return init;
   });
   const [activeId, setActiveId] = useState('');
+  const [showBackTop, setShowBackTop] = useState(false);
 
   const sectionEls = useRef<Map<string, HTMLElement>>(new Map());
   const mountedRef = useRef(true);
+  const mainRef = useRef<HTMLElement>(null);
 
   // 卸载守卫
   useEffect(() => {
@@ -953,6 +1044,15 @@ function ReportContent({
     sectionEls.current.forEach((el) => obs.observe(el));
     return () => obs.disconnect();
   }, [sections]);
+
+  // Scroll listener for floating back-to-top button
+  useEffect(() => {
+    const el = mainRef.current;
+    if (!el) return;
+    const onScroll = () => setShowBackTop(el.scrollTop > 400);
+    el.addEventListener('scroll', onScroll);
+    return () => el.removeEventListener('scroll', onScroll);
+  }, []);
 
   const registerSection = useCallback(
     (id: string) => (el: HTMLHeadingElement | null) => {
@@ -1089,6 +1189,20 @@ function ReportContent({
       strong: ({ children }: { children?: ReactNode }) => (
         <strong className={styles.highlight}>{children}</strong>
       ),
+      // v0.7.14: blockquote → 结论洞察框
+      blockquote: ({ children }: { children?: ReactNode }) => (
+        <blockquote className={styles.insight}>
+          <svg className={styles.insightIcon} width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+            <path d="M8 1.5a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13Z" stroke="currentColor" strokeWidth="1.3" />
+            <path d="M8 5v4M8 11v.01" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          </svg>
+          <div className={styles.insightContent}>{children}</div>
+        </blockquote>
+      ),
+      // v0.7.14: paragraph → better spacing + text-indent hint
+      p: ({ children }: { children?: ReactNode }) => (
+        <p className={styles.paragraph}>{children}</p>
+      ),
       h3: ({ children }: { children?: ReactNode }) => {
         const id = typeof children === 'string' ? slugify(children) : undefined;
         return <h3 id={id} className={styles.h3}>{children}</h3>;
@@ -1096,17 +1210,22 @@ function ReportContent({
       h4: ({ children }: { children?: ReactNode }) => (
         <h4 className={styles.h4}>{children}</h4>
       ),
-      a: ({ href, children, ...rest }: { href?: string; children?: ReactNode; [key: string]: unknown }) => {
+      a: ({ href, children, ...rest }: { href?: string; children?: ReactNode }) => {
         const isExternal = href && /^https?:\/\//.test(href);
         return (
           <a
             href={href}
             target={isExternal ? '_blank' : undefined}
             rel={isExternal ? 'noopener noreferrer' : undefined}
-            className={styles.link}
+            className={`${styles.link} ${isExternal ? styles.linkExternal : ''}`}
             {...rest}
           >
             {children}
+            {isExternal && (
+              <svg className={styles.linkArrow} width="10" height="10" viewBox="0 0 10 10" aria-hidden>
+                <path d="M1 9l8-8M3 1h6v6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            )}
           </a>
         );
       },
@@ -1126,12 +1245,13 @@ function ReportContent({
           expandedSet={expandedSet}
           activeId={activeId}
           onScrollTo={scrollToSection}
+          onToggle={toggleExpand}
           onExpandAll={expandAll}
           onCollapseAll={collapseAll}
         />
       }
       right={
-        <main className={styles.main} onClick={handleContentClick}>
+        <main className={styles.main} ref={mainRef} onClick={handleContentClick}>
           <div className={styles.contentInner}>
             <h1 className={styles.reportH1}>
               {stockName} {tsCode}
@@ -1167,7 +1287,7 @@ function ReportContent({
                   ) : isError ? (
                     '⚠️ 分析失败，点击重试'
                   ) : (
-                    '🔄 重新分析'
+                    '🔄 重新生成报告'
                   )}
                 </button>
                 {analysisStatus &&
@@ -1212,7 +1332,18 @@ function ReportContent({
                     onClick={() => toggleExpand(sec.id)}
                     ref={registerSection(sec.id)}
                   >
-                    <span className={styles.toggle}>{open ? '▾' : '▸'}</span>
+                    <svg
+                      className={`${styles.toggle} ${open ? styles.toggleOpen : ''}`}
+                      width="18" height="18" viewBox="0 0 18 18" fill="none"
+                    >
+                      <path
+                        d="M7 5l4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                     {sec.title}
                   </h2>
                   {open && (
@@ -1227,8 +1358,8 @@ function ReportContent({
             })}
 
             <button
-              className={styles.backTop}
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className={`${styles.floatingBack} ${showBackTop ? styles.visible : ''}`}
+              onClick={() => mainRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               ↑ 回到顶部
             </button>

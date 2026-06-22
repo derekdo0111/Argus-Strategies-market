@@ -1,25 +1,26 @@
 /* ═══════════════════════════════════════════════════════
    ScoreCard — QRV 综合打分卡
+   v0.7.12: 分数放大 / 分组间距 / 分隔线 / 动效优化
    ═══════════════════════════════════════════════════════ */
 
 .card {
   background: var(--bg-elevated);
   border: 1px solid var(--border-default);
   border-radius: var(--radius);
-  padding: 16px 20px;
+  padding: 18px 22px;
   margin-bottom: 16px;
 }
 
 /* ---- Header ---- */
 .header {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .titleRow {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .title {
@@ -29,60 +30,73 @@
 }
 
 .totalScore {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--accent-primary);
   font-family: var(--font-mono);
+  letter-spacing: -1px;
 }
 
 .totalMax {
   font-size: var(--font-xs);
   font-weight: 400;
   color: var(--text-tertiary);
+  letter-spacing: 0;
 }
 
 .totalBar {
-  height: 6px;
+  height: 8px;
   background: #eaeff5;
-  border-radius: 3px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
 .totalFill {
   height: 100%;
   background: var(--accent-primary);
-  border-radius: 3px;
-  transition: width 0.4s ease;
+  border-radius: 4px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ---- Groups ---- */
 .groups {
   display: flex;
-  gap: 14px;
+  gap: 20px;
 }
 
 .group {
   flex: 1;
   min-width: 0;
+  position: relative;
+}
+
+/* 分组间竖线分隔 */
+.group:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: var(--border-default);
 }
 
 .groupHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .groupLabel {
   font-size: 11px;
   font-weight: 600;
   color: var(--text-secondary);
-  text-transform: uppercase;
   letter-spacing: 0.3px;
 }
 
 .groupScore {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text-primary);
   font-family: var(--font-mono);
@@ -93,7 +107,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .dimLabel {
@@ -108,16 +122,16 @@
 
 .dimBar {
   flex: 1;
-  height: 4px;
+  height: 5px;
   background: #eaeff5;
-  border-radius: 2px;
+  border-radius: 3px;
   overflow: hidden;
 }
 
 .dimFill {
   height: 100%;
-  border-radius: 2px;
-  transition: width 0.3s ease;
+  border-radius: 3px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .barHigh {
@@ -133,7 +147,7 @@
 }
 
 .dimValue {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--text-primary);
   font-family: var(--font-mono);
@@ -143,7 +157,7 @@
 
 /* ---- 紧凑模式 (StockPool 内嵌) ---- */
 .compact {
-  padding: 12px 16px;
+  padding: 14px 18px;
   margin-bottom: 0;
 }
 
@@ -152,18 +166,22 @@
 }
 
 .compact .totalScore {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .compact .groups {
-  gap: 10px;
+  gap: 14px;
+}
+
+.compact .group:not(:first-child)::before {
+  left: -7px;
 }
 
 .compact .dim {
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 
 .compact .dimLabel {
-  font-size: 9px;
+  font-size: 10px;
   width: 44px;
 }

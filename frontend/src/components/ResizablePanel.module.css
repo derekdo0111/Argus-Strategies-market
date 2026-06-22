@@ -1,3 +1,8 @@
+/* ═══════════════════════════════════════════════════════
+   ResizablePanel — 可拖拽分隔面板
+   v0.7.12: 手柄视觉增强 + cursor 锁定
+   ═══════════════════════════════════════════════════════ */
+
 .container {
   display: flex;
   flex: 1;
@@ -21,13 +26,16 @@
 
 .divider {
   flex-shrink: 0;
-  width: 4px;
+  width: 6px;
   cursor: col-resize;
   background: transparent;
   transition: background 0.15s;
   position: relative;
   user-select: none;
   z-index: 10;
+  /* 扩大点击热区 */
+  margin: 0 -4px;
+  padding: 0 4px;
 }
 
 /* 默认微弱的中间线 */
@@ -40,6 +48,7 @@
   transform: translateX(-50%);
   width: 1px;
   background: var(--border-subtle);
+  transition: width 0.15s, background 0.15s;
 }
 
 .divider:hover,

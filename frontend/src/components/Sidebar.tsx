@@ -28,6 +28,36 @@ function StrategyIcon({ type, active }: { type: string; active?: boolean }) {
   );
 }
 
+/** Argus 百眼巨人 Logo — 中央眼 + 环周"百眼" + 十字准星 */
+function LogoIcon() {
+  // 8 个卫星眼的位置 (半径 8, 以 (13,13) 为圆心)
+  const eyes = [0, 45, 90, 135, 180, 225, 270, 315].map((deg) => {
+    const rad = (deg * Math.PI) / 180;
+    return { cx: (13 + 8 * Math.cos(rad)).toFixed(2), cy: (13 + 8 * Math.sin(rad)).toFixed(2) };
+  });
+
+  return (
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+      {/* 底座 */}
+      <circle cx="13" cy="13" r="11" fill="var(--accent-primary)" />
+
+      {/* 8 卫星眼：「百眼」环 — 代表百眼巨人的无数眼睛 */}
+      {eyes.map((e, i) => (
+        <circle key={i} cx={e.cx} cy={e.cy} r="1.6" fill="#fff" opacity="0.85" />
+      ))}
+
+      {/* 中央眼瞳孔 */}
+      <circle cx="13" cy="13" r="4.5" fill="none" stroke="#fff" strokeWidth="1.5" />
+
+      {/* 十字准星 — 精准/投资隐喻 */}
+      <line x1="13" y1="1.5" x2="13" y2="6.5" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="13" y1="19.5" x2="13" y2="24.5" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="1.5" y1="13" x2="6.5" y2="13" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="19.5" y1="13" x2="24.5" y2="13" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const strategies = [
   { id: 'turtle', name: '龟龟策略', icon: 'turtle', active: true },
   { id: 'growth', name: '高景气价值股策略', icon: 'growth', badge: '预留' },
@@ -60,7 +90,7 @@ export default function Sidebar({ collapsed = false }: SidebarProps) {
     <aside className={`${styles.sidebar} ${collapsed ? styles.collapsed : ''}`}>
       <div className={styles.header}>
         <div className={styles.logo}>
-          <span className={styles.logoIcon}>A</span>
+          <LogoIcon />
           {!collapsed && 'Argus'}
         </div>
         {!collapsed && <span className={styles.subtitle}>Investment Strategy {health?.version || 'v0.6.15'}</span>}

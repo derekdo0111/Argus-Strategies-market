@@ -32,12 +32,26 @@
 - 每次改完代码后跑 `pytest tests\ -v` + `cd frontend && npm test` 确认无回归
 - 现有后端 76 测试 + 前端 13 测试 全部通过 (v2026-06-19)
 
-## 版本号 (v0.7.11 / 2026-06-22)
-- 全局版本: `pyproject.toml`, `main.py`, `config.py`, `CONTEXT.md` — 统一为 `0.7.11`
+## 版本号 (v0.7.14 / 2026-06-22)
+- 全局版本: `pyproject.toml`, `main.py`, `config.py`, `CONTEXT.md` — 统一为 `0.7.12`
+- 前端版本: `frontend/package.json` — 统一为 `0.7.14`
 - 规则版本: 当前使用 **v2**（`rules/v2/` 目录），代码默认值统一为 `"v2"`
-- `CHANGELOG.md` 从 v0.1.0 开始记录, 当前最新 v0.7.11
+- `CHANGELOG.md` 从 v0.1.0 开始记录, 当前最新 v0.7.14
 - `rules/v2/` 包含 turtle_pr / turtle_cash_quality / turtle_screener / turtle_qrv / industry_profiles 五份规则
 - `.env.example` 已脱敏 (2026-06-17)，v0.6.15 补全 TAVILY_API_KEY/CORS_ORIGINS/DEBUG 等 5 项
+
+## v0.7.12 前端全面 UI 优化 (2026-06-22)
+- **动机**: 散户/个人投资者反馈界面偏冷硬、信息层次不够清晰。设计方向：清晰·现代·友好 (Notion/Linear 风格)。
+- **Phase 1 设计基础层**: 暖底微米色 (`#faf9f7`), 主色 oklch 更通透；新增 3 个语义化表面 + 3 个软状态色；排版层级加大 (H1 24→28px, Body 13→14px)；Inter cv01/cv04 启用；流体间距 clamp()
+- **Phase 2 组件层级 (6 组件)**:
+  - **Sidebar**: Logo SVG Argus之眼 (靶心+准星) 替换蓝色方块"A"
+  - **StockPool**: 行高 36→44px, 评分条 8px, hover 左侧蓝线 (2px动画), "未分析"→"点击分析→"
+  - **ScoreCard**: 综合总分 22→28px + letter-spacing:-1px, 分组间竖线分隔, 进度条 4→5px
+  - **ReportViewer**: 卡片解构 (去 box-shadow/border-radius), 空状态 emoji→SVG (72×72), 悬浮回顶胶囊 (scroll>400px渐入), H2 2px→1px 软边框
+  - **ResizablePanel**: 手柄 4→6px + 点击热区扩大, 拖拽时全局 cursor 锁定
+- **Phase 3 交互**: 错误/警告框左侧 3px 竖线指示；所有动效 ease→cubic-bezier(0.16,1,0.3,1)；UX 文案 6 处优化
+- **涉及文件 (13个)**: index.css, Sidebar/StockPool/ScoreCard/ReportViewer/ResizablePanel TSX+CSS, Layout.module.css, package.json, CONTEXT.md, CHANGELOG.md
+- **测试**: 37/37 vitest ✅ | tsc --noEmit 零错误 ✅ | 零业务逻辑变更
 
 ## v0.7.11 股池 QRV 评分栏不显示分数 (2026-06-22)
 - **根因**: `qrv_agent.py` 写的 `qrv_analysis.json` 从来不包含 `scores` 字段。LLM 确实输出了综合打分卡表格（如 Q1=8, V3=9, 综合=7.7），但数字嵌在 markdown 文本中从未被解析。

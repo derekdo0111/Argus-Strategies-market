@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "investment-strategy-backend"
-version = "0.7.11"
+version = "0.7.14"
 description = "投资策略分析网站后端 - 龟龟策略等"
 authors = ["harry"]
 readme = "README.md"

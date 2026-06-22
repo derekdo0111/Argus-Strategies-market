@@ -1,47 +1,80 @@
 /* ═══════════════════════════════════════════════════════
-   Argus — Global Design System (Approx Light)
+   Argus — Global Design System (Light · Modern · Friendly)
+   v0.7.12: 暖色调 + 语义化表面 + 流体间距 + 排版层级
    ═══════════════════════════════════════════════════════ */
 
 :root {
-  --bg-base:           #f9fbfd;
-  --bg-surface:        #ffffff;
-  --bg-elevated:       #f4f6f9;
-  --bg-hover:          #edf2f9;
+  /* ── 背景：暖底微米，不再冷冰冰 ── */
+  --bg-base:           #faf9f7;
+  --bg-surface:        #fdfdfc;
+  --bg-elevated:       #f5f4f1;
+  --bg-hover:          #efeeea;
 
+  /* ── 新增语义化表面层级 ── */
+  --surface-raised:    oklch(98% 0.005 90);    /* 轻微浮起 */
+  --surface-overlay:   oklch(100% 0 0 / 0.7);  /* 毛玻璃替代 */
+
+  /* ── 文字：层次对比加大 ── */
   --text-primary:      #25282d;
-  --text-secondary:    #7a82b1;
-  --text-tertiary:     #95a0c5;
+  --text-secondary:    oklch(52% 0.02 260);
+  --text-tertiary:     oklch(68% 0.01 260);
+  --text-muted:        oklch(78% 0.01 260);
 
-  --accent-primary:    #3167f3;
-  --accent-hover:      #2752c2;
-  --accent-subtle:     rgba(49,103,243,0.08);
-  --accent-faint:      rgba(49,103,243,0.04);
-  --accent-light:      #e8edfe;
+  /* ── 主色：更通透的蓝 (oklch) ── */
+  --accent-primary:    oklch(52% 0.16 250);
+  --accent-hover:      oklch(45% 0.16 250);
+  --accent-subtle:     oklch(52% 0.16 250 / 0.08);
+  --accent-faint:      oklch(52% 0.16 250 / 0.04);
+  --accent-light:      oklch(90% 0.04 250);
 
+  /* ── 语义色 ── */
   --positive:          #0da684;
   --positive-subtle:   rgba(13,166,132,0.08);
   --positive-border:   #9edbce;
   --negative:          #ef3463;
   --negative-subtle:   rgba(239,52,99,0.08);
+  --negative-border:   rgba(239,52,99,0.25);
   --warning:           #f4a14d;
   --warning-subtle:    rgba(244,161,77,0.08);
   --warning-border:    #fbd9b8;
 
-  --border-default:    #edf2f9;
-  --border-subtle:     #f3f5f9;
-  --border-strong:     #d9e1ec;
+  /* ── 新增软状态色 ── */
+  --positive-soft:     oklch(95% 0.04 160);
+  --warning-soft:      oklch(95% 0.06 70);
+  --negative-soft:     oklch(95% 0.04 10);
 
+  /* ── 边框：暖调 ── */
+  --border-default:    oklch(90% 0.01 90);
+  --border-subtle:     oklch(94% 0.01 90);
+  --border-strong:     oklch(82% 0.02 90);
+
+  /* ── 字体 ── */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC',
     'Microsoft YaHei', 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
 
-  --font-xs:   10px;
+  /* ── 排版层级：更大的层次对比 ── */
+  --font-xs:   11px;
   --font-sm:   12px;
-  --font-base: 13px;
-  --font-lg:   15px;
-  --font-xl:   18px;
-  --font-2xl:  24px;
+  --font-base: 14px;
+  --font-lg:   16px;
+  --font-xl:   20px;
+  --font-2xl:  28px;
 
+  /* ── 间距：流体 ├ 基础 ├ 中等 ├ 宽阔 ── */
+  --space-xs:  4px;
+  --space-sm:  6px;
+  --space-md:  8px;
+  --space-lg:  12px;
+  --space-xl:  16px;
+  --space-2xl: 20px;
+  --space-3xl: 24px;
+  --space-4xl: 32px;
+  --space-section: clamp(32px, 4vw, 48px);
+  --space-block:   clamp(16px, 2vw, 24px);
+  --space-gutter:  clamp(12px, 1.5vw, 20px);
+
+  /* ── 圆角 ── */
   --radius-sm: 4px;
   --radius:    6px;
   --radius-lg: 8px;
@@ -66,6 +99,7 @@ body {
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv01" 1, "cv04" 1;
   overflow: hidden;
   line-height: 1.6;
   height: 100%;
@@ -78,11 +112,13 @@ body {
   display: flex;
 }
 
+/* ── 滚动条 ── */
 ::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-tertiary); }
 
+/* ── 链接 ── */
 a {
   color: var(--accent-primary);
   text-decoration: none;
@@ -90,13 +126,31 @@ a {
 }
 a:hover { color: var(--accent-hover); }
 
+/* ── 表格 ── */
 table {
   border-collapse: separate;
   border-spacing: 0;
   font-variant-numeric: tabular-nums;
 }
 
+/* ── 选中 ── */
 ::selection {
-  background: rgba(49,103,243,0.2);
+  background: oklch(52% 0.16 250 / 0.2);
   color: var(--text-primary);
+}
+
+/* ── 全局焦点可见性 ── */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── 交互基础动效 ── */
+button {
+  font-family: inherit;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.97) translateY(1px);
 }

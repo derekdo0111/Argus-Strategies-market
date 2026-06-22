@@ -1,5 +1,6 @@
 /* ═══════════════════════════════════════════════════════
    Sidebar — 左侧导航
+   v0.7.12: Logo SVG + 激活态软边 + 间距优化
    ═══════════════════════════════════════════════════════ */
 
 .sidebar {
@@ -13,7 +14,7 @@
 
 /* ---- Header ---- */
 .header {
-  padding: 22px 20px 18px;
+  padding: 24px 20px 20px;
   border-bottom: 1px solid var(--border-subtle);
   flex-shrink: 0;
 }
@@ -22,30 +23,16 @@
   font-size: var(--font-xl);
   font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: -0.3px;
+  letter-spacing: -0.4px;
   display: flex;
   align-items: center;
-  gap: 8px;
-}
-
-.logoIcon {
-  width: 28px;
-  height: 28px;
-  background: var(--accent-primary);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
+  gap: 10px;
 }
 
 .subtitle {
-  font-size: var(--font-xs);
+  font-size: 11px;
   color: var(--text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   margin-top: 4px;
   display: block;
   font-weight: 400;
@@ -62,8 +49,7 @@
   font-size: 11px;
   font-weight: 600;
   color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
   padding: 0 8px;
   margin-bottom: 6px;
 }
@@ -117,16 +103,16 @@
 
 /* ---- Footer ---- */
 .footer {
-  padding: 12px 20px;
+  padding: 16px 20px;
   border-top: 1px solid var(--border-subtle);
-  font-size: 10px;
+  font-size: 11px;
   color: var(--text-tertiary);
   flex-shrink: 0;
 }
 
 /* ---- Collapsed: 图标栏模式 ---- */
 .collapsed .header {
-  padding: 16px 0 12px;
+  padding: 18px 0 14px;
   display: flex;
   flex-direction: column;
   align-items: center;

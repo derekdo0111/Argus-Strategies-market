@@ -1,3 +1,8 @@
+/* ═══════════════════════════════════════════════════════
+   Layout — 三栏布局
+   v0.7.12: sidebar transition smooth
+   ═══════════════════════════════════════════════════════ */
+
 .layout {
   display: flex;
   width: 100%;
@@ -9,7 +14,7 @@
   flex-shrink: 0;
   width: 260px;
   height: 100vh;
-  transition: width 0.3s ease;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
   z-index: 20;
   border-right: 1px solid var(--border-default);

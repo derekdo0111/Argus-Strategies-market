@@ -4,6 +4,181 @@ All notable changes to Investment Strategy project.
 
 ---
 
+## v0.7.14 (2026-06-22)
+
+### Changed — 报告内容排版全面优化（结论突出 + 可读性 + 趋势可视化）
+
+#### 1. 结论洞察框 (`blockquote` → `.insight`)
+- LLM 输出的 `> 结论...` 引用块自动渲染为**左侧蓝色 3px 色条 + 浅蓝背景 + ⓘ 图标**的洞察框
+- 结论文字更醒目，用户滚动时一眼看到关键判断
+
+#### 2. 趋势箭头 → Pill Badge
+- `▲ up` / `▼ down` / `─ stable` 纯文本 → **绿底/红底/灰底圆角药丸徽章**
+- 中文字面化：`上升`/`下降`/`持平`/`快速增长`/`吃老本`/`收缩`
+- 表格中趋势列可瞬间扫描
+
+#### 3. 排版层级优化
+- **正文**: 14→15px, line-height 1.6→1.72, `text-align: justify`
+- **H3**: 16→17px, Weight 600→650, 新增顶部 1px 分隔线
+- **H4**: 14→15px, Weight 600→650
+- **Strong**: Weight 600→650
+- **段落**: 新增 `.paragraph` margin-bottom 14px
+
+#### 4. 表格优化
+- **数字列右对齐**: 自动检测纯数字/百分比/亿/万 → `font-variant-numeric: tabular-nums` + 等宽字体
+- **PASS/FAIL 徽章加强**: padding 2→3px, Weight 600→700, FAIL 行首列左侧 3px 红线指示
+- **斑马纹**保留，hover 淡蓝高亮保留
+
+#### 5. 超链接升级
+- 下划线：dashed → solid (半透明蓝)
+- 外部链接：新增 ↗ 箭头图标，hover 时向右上微移
+- 内部引用链接无箭头，保持简洁
+
+### Files Changed
+- `frontend/src/components/ReportViewer.tsx` — `mdComponents` 新增 `blockquote`/`p` 渲染器, `TdRenderer` 趋势升级 + 数字检测
+- `frontend/src/components/ReportViewer.module.css` — ~100行变更 (insight/paragraph/trendBadge/tdNumeric/linkExternal/linkArrow)
+- `frontend/package.json` — 0.7.13→0.7.14
+- `CHANGELOG.md` — 本条目
+
+### Verified
+- ✅ 37/37 vitest 全部通过
+- ✅ TypeScript `tsc --noEmit` 零错误
+- ✅ Vite build 成功
+
+---
+
+## v0.7.13 (2026-06-22)
+
+### Changed — Argus 百眼巨人 Logo + 报告目录全面重设计
+
+#### 1. Logo: "百眼巨人" 概念重设计 (`Sidebar.tsx`)
+- 旧: 中央单眼 + 十字准星 (4 条方向线)
+- 新: 中央瞳孔 + **8 颗卫星"百眼"**均匀环布 + 十字准星
+- 底座蓝色圆，8 个小白点代表 Argus 的无数眼睛；中央眼 + 准星保留精准/投资隐喻
+
+#### 2. 报告目录 TOC 全面重设计 (`ReportViewer.tsx` + `.module.css`)
+- **Header**: 标题 13px 加粗，右置 SVG 图标按钮（⊟ 折叠全部 / ⊞ 展开全部）替代旧文字按钮
+- **父级条目新增**:
+  - SVG chevron 图标 ▸/▾（`rotate(90deg)` 旋转动画，`cubic-bezier(0.16,1,0.3,1)`）
+  - 子项计数 Badge（灰色 pill，active 时联动蓝底）
+  - 分离点击行为：chevron → 折叠/展开；文字 → 滚动到章节
+- **子项文件树层级**:
+  - 左侧 `1.5px` 竖线连接器（`border-left`），父子视觉清晰
+  - `max-height` + `opacity` 过渡动画（0→600px, 0.35s）
+- **交互增强**:
+  - 父行 hover 浅色高亮；active 蓝色左边框 + 淡蓝背景
+  - IntersectionObserver 联动当前阅读位置高亮
+  - 隐藏无子项父级的 chevron 占位
+
+### Files Changed
+- `frontend/src/components/Sidebar.tsx` — `LogoIcon` SVG 百眼环重设计
+- `frontend/src/components/ReportViewer.tsx` — `TocPanel` 全面重写 + `onToggle` prop
+- `frontend/src/components/ReportViewer.module.css` — 旧 8 个 TOC class → 新 14 个 class
+- `frontend/package.json` — v0.7.12 → v0.7.13
+- `CHANGELOG.md` — 本条目
+
+### Verified
+- ✅ 37/37 vitest 全部通过
+- ✅ TypeScript `tsc --noEmit` 零错误
+- ✅ Vite build 成功
+
+---
+
+## v0.7.12 (2026-06-22)
+
+### Changed — 前端全面 UI 优化 (设计系统 + 组件层级 + 交互细节)
+
+**动机**: 散户/个人投资者使用反馈：界面偏冷硬、信息层次不够清晰、缺少品牌辨识度。
+
+**设计方向**: 清晰 · 现代 · 友好 (Notion/Linear 风格)，纯桌面端，不改业务逻辑。
+
+---
+
+#### Phase 1: 设计基础层 (`index.css`)
+- **色彩系统**: 冷灰白 → 暖底微米 (`#faf9f7`)，主色 `#3167f3` → `oklch(52% 0.16 250)` 更通透
+- **新增语义化表面**: `--surface-raised` / `--surface-overlay` 替代卡片嵌套
+- **新增软状态色**: `--positive-soft` / `--warning-soft` / `--negative-soft` 状态背景
+- **排版层级加大**: H1 24→28px, H2 18→20px, H3 15→16px, Body 13→14px, Caption 10→11px
+- **字体细节**: `font-feature-settings: "cv01" 1, "cv04" 1` 启用 Inter 替代字符集
+- **流体间距**: `--space-section/block/gutter` 基于 `clamp()` 自适应视口
+- **全局焦点环**: `:focus-visible` 2px 蓝色 + 2px offset
+- **按钮动效优化**: `:active` scale(0.97) translateY(1px) 下压感
+
+#### Phase 2: 组件层级 (6 组件 TSX + CSS)
+
+**Sidebar**:
+- Logo: 蓝色方块"A" → SVG Argus之眼 (圆形靶心+准星)
+- 激活态保留 `border-left` + 微背景，移除 uppercase 标签
+- Footer 字号 10→11px，间距增加
+
+**StockPool**:
+- 表格行高 36→44px (14px body + 呼吸感)
+- 评分条 6→8px，过渡 0.3s→0.8s cubic-bezier
+- hover 左侧蓝色指示线 (`td:first-child::before` 2px 动画)
+- "未分析" → "点击分析 →" 蓝色引导文案
+- 表头移除 `text-transform: uppercase`
+- 门控标签新增 `transition` 颜色过渡
+- 展开动画 `ease` → `cubic-bezier(0.16, 1, 0.3, 1)`
+
+**ScoreCard**:
+- 综合总分 22→28px + `letter-spacing: -1px`
+- 分组间距 14→20px + 分组间竖线分隔
+- 子分数 13→15px，维度进度条 4→5px
+- 进度条过渡 `ease` → `cubic-bezier`
+
+**ReportViewer**:
+- **卡片解构**: `contentInner` 去掉 `box-shadow` + `border-radius`，内容自然融入背景
+- **空状态重建**: emoji 48px → SVG 内联插画 (72×72 简洁图表) + 引导性文案
+- **悬浮回顶**: 固定 `.backTop` → 右下悬浮胶囊 (`floatingBack`)，scroll>400px 时渐入，hover 上浮
+- **H2 段落标题**: `border-bottom: 2px accent` → `1px border-default`，hover 时变 accent
+- **H3 颜色统一**: `#555b7e` → `var(--text-secondary)`
+- **TOC 按钮**: 实线边框 → ghost button (hover 时显现)
+- **Gate 门控标签**: 新增 `transition` 过渡
+- **所有动效**: `ease` → `cubic-bezier(0.16, 1, 0.3, 1)`
+- **按钮 spinner**: outline/error 变体适配度提升
+
+**UX 文案优化**:
+- 空状态主文案: "请从股池选择一只股票" → "从左侧股池选一只股票，查看深度分析报告"
+- 空状态副文案: "点击左侧股池中的个股..." → "我们会帮你分析生意本质、护城河、增长引擎等 10 个维度"
+- 加载中: "加载报告中..." → "正在为你准备分析报告..."
+- 分析按钮: "🔍 分析个股" → "🔍 开始分析"
+- 重新分析: "🔄 重新分析" → "🔄 重新生成报告"
+- StockPool 未分析: "未分析" → "点击分析 →"
+
+**ResizablePanel**:
+- 手柄视觉宽度 4→6px，点击热区扩大 (margin hack)
+- 拖拽时 `document.body` 全局 cursor 锁定 + `userSelect: none`
+
+#### Phase 3: 交互与细节
+- **错误框增强**: 新增左侧 3px 红色竖线指示 + `--negative-soft` 背景
+- **警告框增强**: 左侧 3px 橙色竖线
+- **StockPool 错误**: 圆角卡片 + 红色软背景
+- **Sidebar 过渡**: `ease` → `cubic-bezier(0.16, 1, 0.3, 1)`
+
+### Files Changed
+- `frontend/src/index.css` — 设计 token 全面重塑 (~90行)
+- `frontend/src/components/Sidebar.tsx` — Logo SVG + `LogoIcon` 组件 (+20行)
+- `frontend/src/components/Sidebar.module.css` — 激活态 + 间距 (~10行)
+- `frontend/src/components/StockPool.tsx` — "点击分析 →" 文案 (1行)
+- `frontend/src/components/StockPool.module.css` — 行高/hover指示线/动画 (~40行)
+- `frontend/src/components/ScoreCard.module.css` — 分数/间距/分隔线 (~30行)
+- `frontend/src/components/ReportViewer.tsx` — 空状态SVG + 悬浮按钮 + 文案 + 类型修复 (~30行)
+- `frontend/src/components/ReportViewer.module.css` — 卡片解构/H2/动效/错误框 (~60行)
+- `frontend/src/components/ResizablePanel.tsx` — cursor 锁定 (+4行)
+- `frontend/src/components/ResizablePanel.module.css` — 手柄视觉 (~10行)
+- `frontend/src/components/Layout.module.css` — 过渡优化 (1行)
+- `frontend/package.json` — 版本 0.7.10 → 0.7.12
+- `docs/CONTEXT.md` — 版本 0.7.11 → 0.7.12
+- `CHANGELOG.md` — 本条目
+
+### Verified
+- ✅ 37/37 vitest 全部通过
+- ✅ TypeScript `tsc --noEmit` 零错误
+- ✅ 零业务逻辑变更 (仅 CSS + 文案 + SVG)
+
+---
+
+
 ## v0.7.11 (2026-06-22)
 
 ### Fixed — 股池 QRV 评分栏不显示分数
