@@ -1,9 +1,11 @@
-/** 策略信息 */
+/** 策略信息 — 从 GET /api/strategies 返回 */
 export interface Strategy {
   id: string;
   name: string;
   description: string;
   status: 'active' | 'inactive';
+  icon?: string;
+  badge?: string | null;
 }
 
 /** QRV 评分维度 */

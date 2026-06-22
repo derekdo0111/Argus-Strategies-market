@@ -918,11 +918,11 @@ class TurtleCoordinator:
     async def _run_qrv_analysis(self, ts_code: str, qrv_input_path: Path) -> dict:
         """Step 8: QRV Agent 单次 LLM 分析
 
-        委托给 app.services.qrv_agent.QRVAgent 执行。
+        委托给 .qrv_agent.QRVAgent 执行。
         coordinator 只负责 Step 6-7 (数据包构建 + WebSearch)。
         """
         if self.qrv_agent is None:
-            from app.services.qrv_agent import QRVAgent  # 延迟导入，断开循环import
+            from .qrv_agent import QRVAgent  # 延迟导入，断开循环import
             self.qrv_agent = QRVAgent(
                 cache_dir=self.cache_dir,
                 rule_version=self.rule_version,

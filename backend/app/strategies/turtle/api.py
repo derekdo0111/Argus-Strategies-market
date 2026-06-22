@@ -1,4 +1,4 @@
-"""股票相关 API"""
+"""龟龟策略 API 端点"""
 
 import asyncio
 import json
@@ -12,14 +12,14 @@ from typing import Optional, Dict, Any
 from fastapi import APIRouter, HTTPException, Path as PathParam, Query, Response
 from pydantic import BaseModel
 
-from app.core.config import settings  # v0.6.15: 统一走 settings 路径
+from app.core.config import settings
 
-logger = logging.getLogger(__name__)  # v0.6.15: 统一 logger 定义在模块顶部
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
-# 缓存目录 — 统一走 settings
-CACHE_DIR = settings.STOCK_CACHE_DIR
+# 缓存目录 — 龟龟策略专属
+CACHE_DIR = settings.TURTLE_CACHE_DIR
 
 # 分析任务状态追踪 (内存)
 _analysis_tasks: Dict[str, dict] = {}
@@ -62,18 +62,18 @@ def _read_yaml(path: Path) -> dict:
         return yaml.safe_load(f) or {}
 
 
-# ── ts_code → 股票中文名 映射 (从 turtle_pool.json 懒加载，零目录遍历) ──
+# ── ts_code → 股票中文名 映射 (从 pool.json 懒加载，零目录遍历) ──
 
 _name_map: Optional[Dict[str, str]] = None
 
 
 def _load_name_map() -> Dict[str, str]:
-    """从 turtle_pool.json 构建 ts_code → name 映射，只读 1 个 JSON，不遍历目录"""
+    """从 pool.json 构建 ts_code → name 映射，只读 1 个 JSON，不遍历目录"""
     global _name_map
     if _name_map is not None:
         return _name_map
     _name_map = {}
-    pool_file = CACHE_DIR / "turtle_pool.json"
+    pool_file = CACHE_DIR / "pool.json"
     if pool_file.exists():
         try:
             with open(pool_file, "r", encoding="utf-8") as f:
@@ -84,7 +84,7 @@ def _load_name_map() -> Dict[str, str]:
                 if ts_code and name:
                     _name_map[ts_code] = name
         except Exception:
-            logger.warning("turtle_pool.json 解析失败，名称映射为空", exc_info=True)
+            logger.warning("pool.json 解析失败，名称映射为空", exc_info=True)
     return _name_map
 
 
@@ -128,8 +128,8 @@ def _cache_set(cache: dict, key: str, data):
 
 @router.get("/status")
 async def get_data_status():
-    """返回数据新鲜度（turtle_pool.json 最后修改时间）"""
-    pool_file = CACHE_DIR / "turtle_pool.json"
+    """返回数据新鲜度（pool.json 最后修改时间）"""
+    pool_file = CACHE_DIR / "pool.json"
     if not pool_file.exists():
         return {"data_updated_at": None, "status": "no_data"}
     from datetime import datetime
@@ -140,14 +140,13 @@ async def get_data_status():
     }
 
 
-@router.get("/pool/{strategy_id}", response_model=list[StockPoolItem])
+@router.get("/pool", response_model=list[StockPoolItem])
 async def get_stock_pool(
-    strategy_id: str,
     response: Response,
     limit: int = Query(default=100, ge=1, le=500),
     offset: int = Query(default=0, ge=0),
 ):
-    """获取策略股池列表（读 turtle_pool.json，5分钟缓存，按 PR 降序）"""
+    """获取龟龟策略股池列表（读 pool.json，1小时缓存，按 PR 降序）"""
     response.headers["Cache-Control"] = "no-store"
     now = time.time()
 
@@ -155,16 +154,16 @@ async def get_stock_pool(
     if _pool_cache["data"] is not None and (now - _pool_cache["timestamp"]) < _POOL_CACHE_TTL:
         return _pool_cache["data"][offset : offset + limit]
 
-    pool_file = CACHE_DIR / "turtle_pool.json"
+    pool_file = CACHE_DIR / "pool.json"
     if not pool_file.exists():
-        raise HTTPException(status_code=503, detail="turtle_pool.json 不存在，请先运行策略刷新")
+        raise HTTPException(status_code=503, detail="pool.json 不存在，请先运行策略刷新")
 
     try:
         with open(pool_file, "r", encoding="utf-8") as f:
             pool_data = json.load(f)
     except Exception as e:
-        logger.error(f"turtle_pool.json 读取失败: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail="turtle_pool.json 读取失败")
+        logger.error(f"pool.json 读取失败: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail="pool.json 读取失败")
 
     results = []
     for item in pool_data:
@@ -255,7 +254,7 @@ async def get_stock_analysis(ts_code: str = PathParam(..., pattern=r"^\d{6}\.(SH
 
 async def _run_analysis_background(ts_code: str):
     """后台任务：执行单股全流程分析"""
-    from app.strategies.turtle.coordinator import TurtleCoordinator
+    from .coordinator import TurtleCoordinator
 
     _logger = logging.getLogger(__name__)
     _logger.info(f"[{ts_code}] 🔥 后台任务已启动")
@@ -279,7 +278,7 @@ async def _run_analysis_background(ts_code: str):
             status_callback=update_status,
         )
         update_status("done", "分析完成", 100)
-        # v0.7.7: 分析完成 → 回填 QRV 分数到股池缓存，前端立即看到分数更新
+        # 分析完成 → 回填 QRV 分数到股池缓存，前端立即看到分数更新
         if _pool_cache["data"] is not None:
             name = _load_name_map().get(ts_code, "")
             stock_dir = CACHE_DIR / f"{name}_{ts_code}" if name else None
@@ -305,7 +304,6 @@ async def _run_analysis_background(ts_code: str):
         err_msg = f"分析失败: {str(e)}"
         update_status("error", err_msg, 0)
         _logger.error(f"[{ts_code}] 后台分析异常:\n{traceback.format_exc()}")
-        # P2: error 状态 5 分钟后自动清理
         async def _cleanup_error():
             await asyncio.sleep(300)
             _analysis_tasks.pop(ts_code, None)
@@ -325,7 +323,6 @@ async def trigger_stock_analysis(ts_code: str = PathParam(..., pattern=r"^\d{6}\
     # 防止重复提交
     existing = _analysis_tasks.get(ts_code)
     if existing and existing.get("status") not in ("done", "error"):
-        # 检查是否超时（>30 分钟未完成，视为僵尸任务）
         started_at = existing.get("started_at", "")
         if started_at:
             from datetime import datetime, timedelta
@@ -345,17 +342,14 @@ async def trigger_stock_analysis(ts_code: str = PathParam(..., pattern=r"^\d{6}\
             "progress": existing.get("progress", 0),
         }
 
-    # 清除该股的内存缓存（不触碰股池缓存，避免影响其他用户浏览股池）
     _gates_cache.pop(ts_code, None)
     _analysis_cache.pop(ts_code, None)
-    # 股池缓存中仅更新该股的 has_report 状态，不清空全量
     if _pool_cache["data"] is not None:
         for item in _pool_cache["data"]:
             if item.ts_code == ts_code:
                 item.has_report = True
                 break
 
-    # 初始化任务状态
     _analysis_tasks[ts_code] = {
         "ts_code": ts_code,
         "status": "fetching",
@@ -366,7 +360,6 @@ async def trigger_stock_analysis(ts_code: str = PathParam(..., pattern=r"^\d{6}\
 
     logger.info(f"[{ts_code}] 📥 收到分析请求 → 创建后台任务")
 
-    # 启动后台分析任务（防 GC：保持引用）
     task = asyncio.create_task(_run_analysis_background(ts_code))
     _bg_tasks.add(task)
     task.add_done_callback(_bg_tasks.discard)
@@ -414,7 +407,6 @@ async def get_stock_gate_results(ts_code: str = PathParam(..., pattern=r"^\d{6}\
     cash_quality = computed.get("cash_quality", {})
     penetration_return = computed.get("penetration_return", {})
 
-    # 从 qrv_analysis.json 提取摘要 + 评分
     qrv_summary = None
     scores = None
     qrv_path = stock_dir / "qrv_analysis.json"

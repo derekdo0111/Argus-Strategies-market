@@ -4,6 +4,54 @@ All notable changes to Investment Strategy project.
 
 ---
 
+## v0.8.0 (2026-06-22)
+
+### 🏗️ 架构重构：单策略 → 多策略平台
+
+**目标**: 为高景气价值策略（及未来更多策略）提供干净的扩展底座，龟龟策略功能零退化。
+
+#### 1. 策略注册表 `app/core/registry.py`
+- 新增 `StrategyMeta` 数据类 + `STRATEGIES` 字典，策略元信息唯一真相来源
+- `main.py` 遍历注册表自动挂载各策略 API 路由
+- `api/strategies.py` 从注册表动态读取策略列表
+- 加新策略：注册 1 行 + 新建 3 个目录 + 前端映射表 1 行 = 5 分钟
+
+#### 2. 后端：龟龟代码自包含化
+- `stocks.py` (400行) → `strategies/turtle/api.py` — 龟龟专属 API 端点
+- `services/qrv_agent.py` → `strategies/turtle/qrv_agent.py`
+- `services/data_summarizer.py` → `strategies/turtle/data_summarizer.py`
+- `services/websearch_extractor.py` → `strategies/turtle/websearch_extractor.py`
+- `services/` 只保留纯基础设施：`tushare_client.py` + `data_fetcher.py`
+- API 路径：`/api/stocks/*` → `/api/turtle/*`
+
+#### 3. 数据缓存：按策略隔离
+- `data/stock_cache/turtle/` — 龟龟专属（42 个股 + pool.json + 全局文件）
+- `data/stock_cache/prosperity/` — 高景气预留（空）
+- `config.py` 新增 `TURTLE_CACHE_DIR` / `PROSPERITY_CACHE_DIR`
+- 所有路径常量从 `settings.STOCK_CACHE_DIR` → `settings.TURTLE_CACHE_DIR`
+
+#### 4. 前端：策略切换 + 组件分目录
+- Sidebar 策略列表动态化：`GET /api/strategies` 替代硬编码数组
+- Sidebar 点击切换策略 → `selectedStrategy` 状态 → Layout 组件映射表分发
+- 组件目录重组：
+  - `components/turtle/` — 龟龟股池 + 评分卡 + 报告（移入）
+  - `components/prosperity/` — 高景气占位组件（新建）
+  - `components/` 根目录 — Layout/Sidebar/ResizablePanel（共享）
+- API 路径全部更新为 `/api/turtle/*`
+
+#### 5. 测试验证
+- 98/98 pytest 全部通过
+- 37/37 vitest 全部通过
+- tsc --noEmit 零错误
+- vite build 成功
+
+### 影响
+- 🟢 龟龟策略功能零退化：所有业务逻辑一行未改
+- 🟢 高景气策略开发入口就绪：`strategies/prosperity/` + `components/prosperity/`
+- 🟢 加第三个策略只需改 1 行注册表 + 3 个新建目录
+
+---
+
 ## v0.7.14 (2026-06-22)
 
 ### Changed — 报告内容排版全面优化（结论突出 + 可读性 + 趋势可视化）

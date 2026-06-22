@@ -16,7 +16,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "backend"))
 
 from app.core.config import settings
 from app.services.data_fetcher import DataFetcher
-from app.services.qrv_agent import QRVAgent
+from app.strategies.turtle.qrv_agent import QRVAgent
 from app.strategies.turtle.cash_quality import CashQualityGate
 from app.strategies.turtle.penetration_return import PenetrationReturnCalculator
 from app.strategies.turtle.utils import find_stock_dir
@@ -30,7 +30,7 @@ async def main():
     print(f"[START] Single stock analysis: {ts_code} {'(force)' if force else ''}")
     print(f"{'='*60}\n", flush=True)
 
-    cache_dir = settings.STOCK_CACHE_DIR
+    cache_dir = settings.TURTLE_CACHE_DIR
 
     # v0.5.2: 先查股票名称，确保创建 {name}_{ts_code} 目录（而非纯代码目录）
     print("[0/5] Getting stock name...", flush=True)

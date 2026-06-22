@@ -5,7 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from app.services.websearch_extractor import WebSearchExtractor
+from app.strategies.turtle.websearch_extractor import WebSearchExtractor
 
 
 def make_snippet(content: str, module: str = "q_websearch", index: int = 0) -> dict:

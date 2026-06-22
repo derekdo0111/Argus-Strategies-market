@@ -1,7 +1,7 @@
 import { useRef, useCallback, useState, Fragment } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
-import type { StockPoolItem, GateResult, AnalysisReport } from '../types';
+import type { StockPoolItem, GateResult, AnalysisReport } from '../../types';
 import ScoreCard from './ScoreCard';
 import styles from './StockPool.module.css';
 
@@ -39,7 +39,7 @@ export default function StockPool({ selectedStock, onSelectStock, onToggleSideba
   } = useQuery<StockPoolItem[]>({
     queryKey: ['stockPool', 'turtle'],
     queryFn: async () => {
-      const { data } = await axios.get('/api/stocks/pool/turtle?limit=200');
+      const { data } = await axios.get('/api/turtle/pool?limit=200');
       return data;
     },
     staleTime: 5 * 60 * 1000,
@@ -49,7 +49,7 @@ export default function StockPool({ selectedStock, onSelectStock, onToggleSideba
   const { data: expandedGate } = useQuery<GateResult>({
     queryKey: ['gates', selectedStock?.ts_code],
     queryFn: async () => {
-      const { data } = await axios.get(`/api/stocks/${selectedStock!.ts_code}/gates`);
+      const { data } = await axios.get(`/api/turtle/${selectedStock!.ts_code}/gates`);
       return data;
     },
     enabled: !!selectedStock,
@@ -63,7 +63,7 @@ export default function StockPool({ selectedStock, onSelectStock, onToggleSideba
     queryClient.prefetchQuery({
       queryKey: ['gates', ts_code],
       queryFn: async () => {
-        const { data } = await axios.get<GateResult>(`/api/stocks/${ts_code}/gates`);
+        const { data } = await axios.get<GateResult>(`/api/turtle/${ts_code}/gates`);
         return data;
       },
       staleTime: 10 * 60 * 1000,
@@ -73,7 +73,7 @@ export default function StockPool({ selectedStock, onSelectStock, onToggleSideba
     queryClient.prefetchQuery({
       queryKey: ['analysis', ts_code],
       queryFn: async () => {
-        const { data } = await axios.get<AnalysisReport>(`/api/stocks/${ts_code}/analysis`);
+        const { data } = await axios.get<AnalysisReport>(`/api/turtle/${ts_code}/analysis`);
         return data;
       },
       staleTime: 10 * 60 * 1000,

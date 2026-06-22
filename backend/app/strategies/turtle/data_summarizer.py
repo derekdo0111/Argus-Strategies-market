@@ -532,7 +532,7 @@ class DataSummarizer:
         if not industry:
             return None
 
-        stats_path = settings.STOCK_CACHE_DIR / "industry_stats.yaml"
+        stats_path = settings.TURTLE_CACHE_DIR / "industry_stats.yaml"
         if not stats_path.exists():
             return None
 

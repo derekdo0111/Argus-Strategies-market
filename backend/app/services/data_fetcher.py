@@ -93,7 +93,7 @@ class DataFetcher:
         cache_dir: Optional[Path] = None,
     ):
         self.client = client or TushareClient()
-        self.cache_dir = cache_dir or settings.STOCK_CACHE_DIR
+        self.cache_dir = cache_dir or settings.TURTLE_CACHE_DIR
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.trace_id = get_trace_id()
 

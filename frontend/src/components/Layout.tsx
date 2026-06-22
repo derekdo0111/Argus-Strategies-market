@@ -1,11 +1,25 @@
 import { useState, useCallback } from 'react';
 import Sidebar from './Sidebar';
-import StockPool from './StockPool';
-import ReportViewer from './ReportViewer';
+import TurtleStockPool from './turtle/StockPool';
+import TurtleReportViewer from './turtle/ReportViewer';
 import ResizablePanel from './ResizablePanel';
+import ProsperityStockPool from './prosperity/StockPool';
+import ProsperityReportViewer from './prosperity/ReportViewer';
 import styles from './Layout.module.css';
 
+// 策略组件映射表 — 加新策略只需在此注册一行
+const poolComponents: Record<string, React.ComponentType<any>> = {
+  turtle: TurtleStockPool,
+  prosperity: ProsperityStockPool,
+};
+
+const reportComponents: Record<string, React.ComponentType<any>> = {
+  turtle: TurtleReportViewer,
+  prosperity: ProsperityReportViewer,
+};
+
 export default function Layout() {
+  const [selectedStrategy, setSelectedStrategy] = useState('turtle');
   const [selectedStock, setSelectedStock] = useState<{
     ts_code: string;
     name: string;
@@ -18,28 +32,38 @@ export default function Layout() {
       if (prev?.ts_code === ts_code) return prev;
       return { ts_code, name };
     });
-    setSidebarCollapsed(true);   // 选股 → 自动缩进
+    setSidebarCollapsed(true);
     setSidebarHovered(false);
   }, []);
 
   const handleToggleSidebar = useCallback(() => {
-    setSidebarCollapsed(prev => !prev);  // 汉堡 → 手动切换
+    setSidebarCollapsed(prev => !prev);
+  }, []);
+
+  const handleStrategyChange = useCallback((id: string) => {
+    setSelectedStrategy(id);
+    setSelectedStock(null);  // 切换策略时清除当前选中股票
   }, []);
 
   const effectiveCollapsed = sidebarCollapsed && !sidebarHovered;
 
+  const PoolComponent = poolComponents[selectedStrategy] || TurtleStockPool;
+  const ReportComponent = reportComponents[selectedStrategy] || TurtleReportViewer;
+
   return (
     <div className={styles.layout}>
-      {/* Sidebar: 独立可折叠面板，不影响右侧主内容 */}
       <div
         className={`${styles.sidebarPanel} ${effectiveCollapsed ? styles.sidebarCollapsed : ''}`}
         onMouseEnter={() => setSidebarHovered(true)}
         onMouseLeave={() => setSidebarHovered(false)}
       >
-        <Sidebar collapsed={effectiveCollapsed} />
+        <Sidebar
+          collapsed={effectiveCollapsed}
+          selectedStrategy={selectedStrategy}
+          onStrategyChange={handleStrategyChange}
+        />
       </div>
 
-      {/* 主内容区：始终可见，不受 Sidebar 折叠影响 */}
       <div className={styles.contentArea}>
         <ResizablePanel
           defaultLeftWidth={380}
@@ -47,14 +71,14 @@ export default function Layout() {
           maxLeftWidth={720}
           storageKey="layout-stockpool"
           left={
-            <StockPool
+            <PoolComponent
               selectedStock={selectedStock}
               onSelectStock={handleSelectStock}
               onToggleSidebar={handleToggleSidebar}
             />
           }
           right={
-            <ReportViewer selectedStock={selectedStock} />
+            <ReportComponent selectedStock={selectedStock} />
           }
         />
       </div>

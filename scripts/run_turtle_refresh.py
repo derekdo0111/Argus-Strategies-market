@@ -37,7 +37,7 @@ async def run_full_refresh(dry_run: bool = False, skip_fetch: bool = False,
     from app.strategies.turtle.coordinator import TurtleCoordinator
 
     coordinator = TurtleCoordinator(
-        cache_dir=settings.STOCK_CACHE_DIR,
+        cache_dir=settings.TURTLE_CACHE_DIR,
         rule_version=settings.TURTLE_RULE_VERSION,
         risk_free_rate=settings.TURTLE_RISK_FREE_RATE,
     )
@@ -67,7 +67,7 @@ async def run_full_refresh(dry_run: bool = False, skip_fetch: bool = False,
         print(f"\n🚀 计算模式: 使用所有缓存，只跑计算 (~30s)...", flush=True)
 
     print(f"\n🚀 开始全量刷新流程...", flush=True)
-    print(f"📊 候选池由 coordinator 自动生成，数据将拉取至 {settings.STOCK_CACHE_DIR}", flush=True)
+    print(f"📊 候选池由 coordinator 自动生成，数据将拉取至 {settings.TURTLE_CACHE_DIR}", flush=True)
     pool = await coordinator.run_full_refresh(
         stocks=stocks,
         fetch_data=fetch_data,
@@ -85,7 +85,7 @@ async def run_full_refresh(dry_run: bool = False, skip_fetch: bool = False,
             )
 
     # 输出 JSON 供后续使用
-    output_path = settings.STOCK_CACHE_DIR / "turtle_pool.json"
+    output_path = settings.TURTLE_CACHE_DIR / "pool.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(pool, f, ensure_ascii=False, indent=2)
@@ -98,7 +98,7 @@ async def fetch_single_stock(ts_code: str):
     fetcher = DataFetcher()
     # 尝试从缓存读取中文名
     name = ""
-    stock_basic_path = settings.STOCK_CACHE_DIR / "_stock_basic_cache.parquet"
+    stock_basic_path = settings.TURTLE_CACHE_DIR / "_stock_basic_cache.parquet"
     if stock_basic_path.exists():
         import pandas as pd
         try:
@@ -113,9 +113,9 @@ async def fetch_single_stock(ts_code: str):
 
     # 查看缓存文件（兼容新旧命名）
     safe_name = name.replace("/", "-").replace("\\", "-") if name else ""
-    raw_path = settings.STOCK_CACHE_DIR / f"{safe_name}_{ts_code}" / "raw_data.yaml"
+    raw_path = settings.TURTLE_CACHE_DIR / f"{safe_name}_{ts_code}" / "raw_data.yaml"
     if not raw_path.exists():
-        raw_path = settings.STOCK_CACHE_DIR / ts_code / "raw_data.yaml"
+        raw_path = settings.TURTLE_CACHE_DIR / ts_code / "raw_data.yaml"
     if raw_path.exists():
         import yaml
         with open(raw_path, "r", encoding="utf-8") as f:

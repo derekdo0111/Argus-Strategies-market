@@ -1,5 +1,16 @@
 # Investment Strategy — 长期记忆
 
+## v0.8.0 双策略平台重构 (2026-06-22)
+- **架构**: 单策略 → 多策略平台。龟龟功能零退化。
+- **策略注册表**: `app/core/registry.py` — StrategyMeta 数据类 + STRATEGIES 字典，策略元信息唯一真相来源
+- **后端隔离**: `strategies/turtle/` 自包含（api.py + coordinator + screener + gate + qrv_agent + summarizer + extractor）
+- **数据隔离**: `data/stock_cache/turtle/` + `data/stock_cache/prosperity/` 各自独立
+- **前端隔离**: `components/turtle/` + `components/prosperity/` 各自独立，Layout 组件映射表分发
+- **API**: `/api/turtle/*` + `/api/prosperity/*`（将来），main.py 遍历 registry 自动挂载
+- **共用**: `services/tushare_client.py` + `services/data_fetcher.py` + `core/config.py` + `core/logging.py`
+- **加新策略**: registry 注册 1 行 + 新建 3 目录 + Layout 映射 1 行 = 5 分钟
+- **测试**: 98/98 pytest + 37/37 vitest 全部通过
+
 ## 项目位置
 - `D:\project\Investment Strategy\` — 投资策略分析个人网站
 - 独立项目，与 `D:\project\stock-analysis-framework\` 无关
@@ -32,13 +43,11 @@
 - 每次改完代码后跑 `pytest tests\ -v` + `cd frontend && npm test` 确认无回归
 - 现有后端 76 测试 + 前端 13 测试 全部通过 (v2026-06-19)
 
-## 版本号 (v0.7.14 / 2026-06-22)
-- 全局版本: `pyproject.toml`, `main.py`, `config.py`, `CONTEXT.md` — 统一为 `0.7.12`
-- 前端版本: `frontend/package.json` — 统一为 `0.7.14`
-- 规则版本: 当前使用 **v2**（`rules/v2/` 目录），代码默认值统一为 `"v2"`
-- `CHANGELOG.md` 从 v0.1.0 开始记录, 当前最新 v0.7.14
-- `rules/v2/` 包含 turtle_pr / turtle_cash_quality / turtle_screener / turtle_qrv / industry_profiles 五份规则
-- `.env.example` 已脱敏 (2026-06-17)，v0.6.15 补全 TAVILY_API_KEY/CORS_ORIGINS/DEBUG 等 5 项
+## 版本号 (v0.8.0 / 2026-06-22)
+- 全局版本: `pyproject.toml`, `main.py`, `config.py`, `CONTEXT.md` — 0.8.0
+- 前端版本: `frontend/package.json` — 0.8.0
+- 规则版本: 龟龟 v2 (`rules/v2/`), 高景气 v3 (`rules/v3/` 预留)
+- `CHANGELOG.md` 当前最新 v0.8.0
 
 ## v0.7.12 前端全面 UI 优化 (2026-06-22)
 - **动机**: 散户/个人投资者反馈界面偏冷硬、信息层次不够清晰。设计方向：清晰·现代·友好 (Notion/Linear 风格)。

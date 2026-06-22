@@ -7,7 +7,7 @@ v0.3.0: 取代原 Step 8 (基本面门) + Step 9 (估值门)
 单次 LLM 调用，读取 qrv_input.yaml，输出定量+定性分析报告。
 
 调用入口：
-- 命令行: python -m app.services.qrv_agent --ts_code 600900.SH
+- 命令行: python -m app.strategies.turtle.qrv_agent --ts_code 600900.SH
 - 程序中: QRVAgent.analyze(ts_code)
 """
 
@@ -26,8 +26,8 @@ import yaml
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from app.core.config import settings
-from app.services.data_summarizer import DataSummarizer
-from app.strategies.turtle.utils import find_stock_dir
+from .data_summarizer import DataSummarizer
+from .utils import find_stock_dir
 
 logger = logging.getLogger(__name__)
 
@@ -41,7 +41,7 @@ class QRVAgent:
         rule_version: str = "v2",
         llm_model: str | None = None,
     ):
-        self.cache_dir = cache_dir or settings.STOCK_CACHE_DIR
+        self.cache_dir = cache_dir or settings.TURTLE_CACHE_DIR
         self.rule_version = rule_version
         self.llm_model = llm_model or getattr(settings, "LLM_MODEL", "deepseek-v4-flash")
 
@@ -191,7 +191,7 @@ class QRVAgent:
             data_summary = summarizer.build_summary()
 
         # === v0.5.0: WebSearchExtractor 预提取结构化事实 (Layer 2) ===
-        from app.services.websearch_extractor import WebSearchExtractor
+        from .websearch_extractor import WebSearchExtractor
         extractor = WebSearchExtractor()
         ws_data = qrv_input.get("websearch_results", {})
         extracted_facts = extractor.extract(ws_data, company_name)
@@ -421,7 +421,7 @@ async def main():
     parser.add_argument("--cache-dir", help="缓存目录（默认 data/stock_cache）")
     args = parser.parse_args()
 
-    cache_dir = Path(args.cache_dir) if args.cache_dir else settings.STOCK_CACHE_DIR
+    cache_dir = Path(args.cache_dir) if args.cache_dir else settings.TURTLE_CACHE_DIR
     agent = QRVAgent(cache_dir=cache_dir)
     result = await agent.analyze_async(args.ts_code)
 

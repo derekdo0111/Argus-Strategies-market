@@ -7,13 +7,15 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     # 应用
     APP_NAME: str = "Investment Strategy"
-    APP_VERSION: str = "0.7.14"
+    APP_VERSION: str = "0.8.0"
     DEBUG: bool = False
 
     # 路径
     PROJECT_ROOT: Path = Path(__file__).parent.parent.parent.parent
     DATA_DIR: Path = PROJECT_ROOT / "data"
-    STOCK_CACHE_DIR: Path = DATA_DIR / "stock_cache"
+    STOCK_CACHE_DIR: Path = DATA_DIR / "stock_cache"  # 向后兼容，指向 turtle
+    TURTLE_CACHE_DIR: Path = DATA_DIR / "stock_cache" / "turtle"
+    PROSPERITY_CACHE_DIR: Path = DATA_DIR / "stock_cache" / "prosperity"
     TEMPLATES_DIR: Path = DATA_DIR / "templates"
     RULES_DIR: Path = Path(__file__).parent.parent.parent / "rules"
 

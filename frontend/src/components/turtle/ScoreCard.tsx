@@ -1,4 +1,4 @@
-import type { QrvScores } from '../types';
+import type { QrvScores } from '../../types';
 import styles from './ScoreCard.module.css';
 
 interface ScoreCardProps {

@@ -627,14 +627,14 @@ class TestQRVAgentOutput:
 
     def test_qrv_agent_module_importable(self):
         """QRV Agent 模块可导入"""
-        from app.services.qrv_agent import QRVAgent
+        from app.strategies.turtle.qrv_agent import QRVAgent
         agent = QRVAgent()
         assert agent is not None
         assert agent.rule_version == "v2"
 
     def test_qrv_prompt_contains_qrv_framework(self, temp_cache_dir):
         """QRV prompt 包含 Q/R/V 三维度 (v4: 含 R4 重大事件与资本运作)"""
-        from app.services.qrv_agent import QRVAgent
+        from app.strategies.turtle.qrv_agent import QRVAgent
         agent = QRVAgent(cache_dir=temp_cache_dir)
         qrv_input = {
             "company_profile": {"name": "测试公司", "industry": "测试行业"},
@@ -665,7 +665,7 @@ class TestQRVAgentOutput:
 
     def test_llm_placeholder_when_no_key(self, temp_cache_dir):
         """LLM_API_KEY 未配置时返回占位结果"""
-        from app.services.qrv_agent import QRVAgent
+        from app.strategies.turtle.qrv_agent import QRVAgent
         agent = QRVAgent(cache_dir=temp_cache_dir)
         import asyncio
         result = asyncio.run(agent._call_llm("test prompt"))
@@ -814,14 +814,14 @@ class TestR4CorporateEvents:
 
     def test_data_sufficiency_has_r4(self):
         """data_summarizer.py data_sufficiency 含 R4_corporate_events"""
-        ds_path = Path(__file__).parent.parent / "app" / "services" / "data_summarizer.py"
+        ds_path = Path(__file__).parent.parent / "app" / "strategies" / "turtle" / "data_summarizer.py"
         with open(ds_path, "r", encoding="utf-8") as f:
             content = f.read()
         assert "R4_corporate_events" in content, "data_summarizer 的 data_sufficiency 必须包含 R4_corporate_events"
 
     def test_websearch_extractor_has_corporate_events(self):
         """websearch_extractor.py 含 _extract_corporate_events 方法"""
-        from app.services.websearch_extractor import WebSearchExtractor
+        from app.strategies.turtle.websearch_extractor import WebSearchExtractor
         extractor = WebSearchExtractor()
         assert hasattr(extractor, "_extract_corporate_events"), "WebSearchExtractor 必须有 _extract_corporate_events"
         # 验证 extract() 返回包含 corporate_events key

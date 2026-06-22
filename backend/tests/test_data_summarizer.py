@@ -8,7 +8,7 @@
 """
 
 import pytest
-from app.services.data_summarizer import DataSummarizer
+from app.strategies.turtle.data_summarizer import DataSummarizer
 
 
 # ── 测试数据工厂 ──

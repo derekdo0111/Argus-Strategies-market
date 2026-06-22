@@ -14,9 +14,9 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
-import ResizablePanel from './ResizablePanel';
+import ResizablePanel from '../ResizablePanel';
 import ScoreCard from './ScoreCard';
-import type { GateResult, AnalysisReport } from '../types';
+import type { GateResult, AnalysisReport } from '../../types';
 import styles from './ReportViewer.module.css';
 
 // ── Types ──────────────────────────────────────────────
@@ -482,7 +482,7 @@ export default function ReportViewer({ selectedStock }: ReportViewerProps) {
   const { data: gateData } = useQuery<GateResult>({
     queryKey: ['gates', selectedStock?.ts_code],
     queryFn: async () => {
-      const { data } = await axios.get(`/api/stocks/${selectedStock!.ts_code}/gates`);
+      const { data } = await axios.get(`/api/turtle/${selectedStock!.ts_code}/gates`);
       return data;
     },
     enabled: !!selectedStock,
@@ -498,7 +498,7 @@ export default function ReportViewer({ selectedStock }: ReportViewerProps) {
   } = useQuery<AnalysisReport>({
     queryKey: ['analysis', selectedStock?.ts_code],
     queryFn: async () => {
-      const { data } = await axios.get(`/api/stocks/${selectedStock!.ts_code}/analysis`);
+      const { data } = await axios.get(`/api/turtle/${selectedStock!.ts_code}/analysis`);
       return data;
     },
     enabled: !!selectedStock,
@@ -595,7 +595,7 @@ export default function ReportViewer({ selectedStock }: ReportViewerProps) {
 
       const results = await Promise.allSettled(
         activeCodes.map(async (code) => {
-          const { data } = await axios.get(`/api/stocks/${code}/analyze/status`);
+          const { data } = await axios.get(`/api/turtle/${code}/analyze/status`);
           return [code, data] as const;
         }),
       );
@@ -726,7 +726,7 @@ export default function ReportViewer({ selectedStock }: ReportViewerProps) {
   useEffect(() => {
     if (!selectedStock) return;
     const code = selectedStock.ts_code;
-    axios.get(`/api/stocks/${code}/analyze/status`)
+    axios.get(`/api/turtle/${code}/analyze/status`)
       .then(({ data }) => {
         if (data.status && !['done', 'error', 'not_started'].includes(data.status)) {
           setAnalysisMap(prev => ({
@@ -750,7 +750,7 @@ export default function ReportViewer({ selectedStock }: ReportViewerProps) {
       const activeCodes = Object.keys(map).filter(k => !['done', 'error'].includes(map[k].status));
       if (activeCodes.length === 0) return;
       activeCodes.forEach(code => {
-        axios.get(`/api/stocks/${code}/analyze/status`).then(({ data }) => {
+        axios.get(`/api/turtle/${code}/analyze/status`).then(({ data }) => {
           if (!data.status || ['done', 'error', 'not_started'].includes(data.status)) return;
           setAnalysisMap(prev => {
             const old = prev[code];
@@ -788,7 +788,7 @@ export default function ReportViewer({ selectedStock }: ReportViewerProps) {
   // Analyze mutation — per-stock tracking via analysisMap
   const analyzeMutation = useMutation({
     mutationFn: async (tsCode: string) => {
-      await axios.post(`/api/stocks/${tsCode}/analyze`);
+      await axios.post(`/api/turtle/${tsCode}/analyze`);
     },
     onMutate: (tsCode) => {
       // v0.6.21: 用 onMutate 提前设初始状态（mutationFn 执行前即触发），

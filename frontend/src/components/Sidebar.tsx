@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import styles from './Sidebar.module.css';
+import type { Strategy } from '../types';
 
 // ── SVG 图标组件 ─────────────────────────────────────
 function StrategyIcon({ type, active }: { type: string; active?: boolean }) {
@@ -30,7 +31,6 @@ function StrategyIcon({ type, active }: { type: string; active?: boolean }) {
 
 /** Argus 百眼巨人 Logo — 中央眼 + 环周"百眼" + 十字准星 */
 function LogoIcon() {
-  // 8 个卫星眼的位置 (半径 8, 以 (13,13) 为圆心)
   const eyes = [0, 45, 90, 135, 180, 225, 270, 315].map((deg) => {
     const rad = (deg * Math.PI) / 180;
     return { cx: (13 + 8 * Math.cos(rad)).toFixed(2), cy: (13 + 8 * Math.sin(rad)).toFixed(2) };
@@ -38,18 +38,11 @@ function LogoIcon() {
 
   return (
     <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-      {/* 底座 */}
       <circle cx="13" cy="13" r="11" fill="var(--accent-primary)" />
-
-      {/* 8 卫星眼：「百眼」环 — 代表百眼巨人的无数眼睛 */}
       {eyes.map((e, i) => (
         <circle key={i} cx={e.cx} cy={e.cy} r="1.6" fill="#fff" opacity="0.85" />
       ))}
-
-      {/* 中央眼瞳孔 */}
       <circle cx="13" cy="13" r="4.5" fill="none" stroke="#fff" strokeWidth="1.5" />
-
-      {/* 十字准星 — 精准/投资隐喻 */}
       <line x1="13" y1="1.5" x2="13" y2="6.5" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
       <line x1="13" y1="19.5" x2="13" y2="24.5" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
       <line x1="1.5" y1="13" x2="6.5" y2="13" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
@@ -58,16 +51,13 @@ function LogoIcon() {
   );
 }
 
-const strategies = [
-  { id: 'turtle', name: '龟龟策略', icon: 'turtle', active: true },
-  { id: 'growth', name: '高景气价值股策略', icon: 'growth', badge: '预留' },
-];
-
 interface SidebarProps {
   collapsed?: boolean;
+  selectedStrategy: string;
+  onStrategyChange: (id: string) => void;
 }
 
-export default function Sidebar({ collapsed = false }: SidebarProps) {
+export default function Sidebar({ collapsed = false, selectedStrategy, onStrategyChange }: SidebarProps) {
   const { data: health } = useQuery({
     queryKey: ['health'],
     queryFn: async () => {
@@ -77,10 +67,20 @@ export default function Sidebar({ collapsed = false }: SidebarProps) {
     staleTime: Infinity,
   });
 
+  // 动态策略列表 — 从 /api/strategies 获取
+  const { data: strategies = [] } = useQuery<Strategy[]>({
+    queryKey: ['strategies'],
+    queryFn: async () => {
+      const { data } = await axios.get('/api/strategies');
+      return data;
+    },
+    staleTime: Infinity,
+  });
+
   const { data: status } = useQuery({
     queryKey: ['status'],
     queryFn: async () => {
-      const { data } = await axios.get('/api/stocks/status');
+      const { data } = await axios.get('/api/turtle/status');
       return data as { data_updated_at: string };
     },
     staleTime: 60 * 60 * 1000,
@@ -93,24 +93,33 @@ export default function Sidebar({ collapsed = false }: SidebarProps) {
           <LogoIcon />
           {!collapsed && 'Argus'}
         </div>
-        {!collapsed && <span className={styles.subtitle}>Investment Strategy {health?.version || 'v0.6.15'}</span>}
+        {!collapsed && <span className={styles.subtitle}>Investment Strategy {health?.version || 'v0.8.0'}</span>}
       </div>
 
       <nav className={styles.nav}>
         {!collapsed && <div className={styles.navLabel}>策略</div>}
-        {strategies.map((s) => (
-          <div
-            key={s.id}
-            className={`${styles.navItem} ${s.active ? styles.active : ''}`}
-            title={collapsed ? s.name : undefined}
-          >
-            <span className={styles.navIcon}>
-              <StrategyIcon type={s.icon} active={s.active} />
-            </span>
-            {!collapsed && <span className={styles.navName}>{s.name}</span>}
-            {!collapsed && s.badge && <span className={styles.badge}>{s.badge}</span>}
-          </div>
-        ))}
+        {strategies.map((s) => {
+          const isActive = s.id === selectedStrategy;
+          return (
+            <div
+              key={s.id}
+              className={`${styles.navItem} ${isActive ? styles.active : ''}`}
+              title={collapsed ? s.name : undefined}
+              onClick={() => {
+                if (s.status === 'active') {
+                  onStrategyChange(s.id);
+                }
+              }}
+              style={s.status === 'inactive' ? { opacity: 0.5, cursor: 'not-allowed' } : { cursor: 'pointer' }}
+            >
+              <span className={styles.navIcon}>
+                <StrategyIcon type={s.icon || 'growth'} active={isActive} />
+              </span>
+              {!collapsed && <span className={styles.navName}>{s.name}</span>}
+              {!collapsed && s.badge && <span className={styles.badge}>{s.badge}</span>}
+            </div>
+          );
+        })}
       </nav>
 
       {!collapsed && (

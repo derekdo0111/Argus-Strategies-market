@@ -1,13 +1,15 @@
-"""FastAPI 应用工厂"""
+"""FastAPI 应用工厂 — 遍历 registry 自动挂载策略路由"""
+
+import importlib
+import uuid
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .core.config import settings
 from .core.logging import setup_logging, set_trace_id
-from .api import strategies, stocks
-
-import uuid
+from .core.registry import active_strategies
+from .api import strategies
 
 
 def create_app() -> FastAPI:
@@ -36,9 +38,22 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
 
-    # 注册路由
+    # 注册通用路由
     app.include_router(strategies.router, prefix="/api/strategies", tags=["strategies"])
-    app.include_router(stocks.router, prefix="/api/stocks", tags=["stocks"])
+
+    # 遍历 registry 自动挂载各策略 API 路由
+    for strategy_id, meta in active_strategies().items():
+        try:
+            api_module = importlib.import_module(
+                f"app.strategies.{strategy_id}.api"
+            )
+            app.include_router(api_module.router, prefix=meta.api_prefix, tags=[strategy_id])
+        except (ModuleNotFoundError, AttributeError) as e:
+            # 策略骨架未实现，跳过不阻塞启动
+            import logging
+            logging.getLogger(__name__).warning(
+                f"策略 {strategy_id} 的 api.py 未就绪: {e}"
+            )
 
     @app.get("/api/health")
     async def health():
