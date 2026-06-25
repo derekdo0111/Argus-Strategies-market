@@ -1,4 +1,4 @@
-<img width="1897" height="860" alt="image" src="https://github.com/user-attachments/assets/8fad065f-0bf3-4c65-9545-936ba80486f8" /># Investment Strategy
+# Investment Strategy
 ## 个人投资策略分析平台 | v0.7.14
 ## 龟龟策略-->已实现    
 目前实现的策略基于（类红利股）的全流程 A 股分析工具：选股 → 软门筛选 → QRV 深度报告，从全市场自动筛选出高质量标的并生成 10 维度量化报告。
