@@ -219,8 +219,9 @@ class Coordinator:
             self.update_step(session_id, "report")
             report_result = self._run_report_agent(industry_name, session_id, counter_result, history)
 
-            # Step 6: Track
-            report_result = self._run_track_agent(industry_name, session_id, report_result)
+            # Step 6: Track (needs hypotheses from counter_result, not simplified report_result)
+            track_input = {**report_result, "hypotheses": counter_result.get("hypotheses", [])}
+            report_result = self._run_track_agent(industry_name, session_id, track_input)
 
             # Done
             self.update_step(session_id, "done")
