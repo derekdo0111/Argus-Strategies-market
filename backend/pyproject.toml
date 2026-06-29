@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "investment-strategy-backend"
-version = "0.8.0"
-description = "投资策略分析网站后端 - 多策略平台（龟龟 + 高景气）"
+version = "0.8.4"
+description = "投资策略分析网站后端 - 龟龟策略平台"
 authors = ["harry"]
 readme = "README.md"
 python = "^3.11"
@@ -15,6 +15,7 @@ alembic = "^1.13.0"
 pydantic = "^2.9.0"
 pydantic-settings = "^2.6.0"
 httpx = "^0.28.0"
+beautifulsoup4 = "^4.12.0"
 pyyaml = "^6.0.2"
 tushare = "^1.4.0"
 akshare = "^1.14.0"
@@ -23,6 +24,7 @@ structlog = "^24.4.0"
 openai = "^1.55.0"
 jinja2 = "^3.1.4"
 aiohttp = "^3.12.0"
+yfinance = "^0.2.40"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.0"

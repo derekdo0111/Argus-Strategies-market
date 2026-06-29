@@ -2,13 +2,258 @@
 
 All notable changes to Investment Strategy project.
 
+## v0.14.0 (2026-06-29)
+
+### Wiki 智能增强 — 重复行业研究优化
+
+**动机**: v0.13.2 暴露 wiki 系统架构问题 — 重复行业无冷却判断、搜索新旧混杂、仅 Hypothesize 读历史、评级行无限追加。
+
+**方案**: 5 天冷却硬门控 + 全链历史锚定 + URL 去重新旧分流 + 评级行去重 + key_indicators 全量入 watchlist。
+
+**关键决策**:
+- `start_session(force=True)` 跳过冷却，CooldownError 异常通知调用方
+- `IndustryHistory` 数据类 — Coordinator 预加载后逐级传入 6 Agent
+- Search URL 去重 → 新结果 300 字 / 旧结果 100 字摘要
+- 报告结构化截取 ~3000 字（L0-L3+股池，不含验证/反推）
+- Verify/Counter 也注入历史上下文
+- Track 全量假设 key_indicators 提取 + 按指标名合并去重
+- 只取最近一次 session 历史假设
+- 指标自动巡检触发逻辑本次不做（只铺管道）
+
+**新增文件**: `industry_history.py`
+**修改文件**: coordinator.py, search_agent.py, hypothesize_agent.py, verify_agent.py, counter_agent.py, report_agent.py, track_agent.py
+**测试**: 23/23 prosperity ✅ | 126/126 全量 ✅ (118→126, +8 新增)
+**版本**: v0.13.2 → v0.14.0 | pyproject.toml: v0.8.3 → v0.8.4
+
+## v0.13.2 (2026-06-29)
+
+### B: 景气打分系统 5 大 Bug 修复（P0+P1）
+
+**Bug 1 — 5/6 打分维度失效（fina_indicator 字段不全）**
+- `get_fina_indicator()` 新增 `revenue_yoy, net_profit_yoy, debt_to_assets` 字段（原先只拉 ROE/毛利率/流动比率，缺营收增速/利润增速）
+- `UNIVERSAL_METRICS` 字段名修正：`gross_margin`→`grossprofit_margin`, `debt_ratio`→`debt_to_assets`（必须与 Tushare API 原始字段名一致）
+
+**Bug 2 — quality_score 恒为 0（字段跨表+名称错误）**
+- `_quality_score` 字段修正：`ocf`→`n_cashflow_act`, `capital_expend`→`c_pay_acq_const_fiolta`, `gross_margin`→`grossprofit_margin`
+- `_get_stock_data()` 新增 `get_cashflow()` 调用，合并 fina_indicator + cashflow 两个表的数据
+
+**Bug 1b — 百分位分只有 4 档离散**
+- `_percentile_score` 从 P25/P50/P75 四档分桶改为 `bisect` 连续百分位排名
+- `_compute_distribution` 新增 `sorted_values` 全量排序值返回
+
+**Bug 3 — 股池无中文名**
+- `score_stocks()` 新增 `name_map` 参数
+- `get_stock_name_map()` 复用 stock_basic 缓存生成 `{ts_code: name}` 映射
+- `report_agent._generate_stock_pool()` 传入 name_map
+
+**Bug 4 — LLM 不可复现**
+- `_call_llm` 的 `temperature`: 0.3 → 0.0（确定性输出）
+
+**Bug 5 — hypothesize_agent 不引用 wiki 历史**
+- `_build_prompt` 新增 `_load_wiki_history()` 锚定注入
+- 读 `wiki/industries/{行业}.md` 最近 3 条评级 + 最近报告摘要（前 500 字）
+- 因 Bug 5 先修，Tavily 搜索结果差异被历史锚点拉回，Bug 4 自然改善 ~80%
+
+### 改动文件
+- `tushare_client.py`（+3 字段）
+- `stock_screener.py`（百分位连续化、quality 跨表修复、name_map）
+- `industry_metrics.py`（字段名修正、sorted_values、get_stock_name_map）
+- `hypothesize_agent.py`（wiki 历史锚定、temperature=0）
+- `report_agent.py`（传入 name_map）
+
+## v0.13.1 (2026-06-29)
+
+### B1: Tushare 行业分类映射
+
+- `industry_metrics.py` 新增 `get_industry_ts_codes()`：精确匹配（stock_basic 的 industry 字段）+ 申万分类（index_classify L1/L2/L3）双信源取并集 + 结果缓存
+- `verify_agent.py` / `report_agent.py` 替换 `str.contains()` 模糊匹配为 `get_industry_ts_codes()` 统一调用
+- 改动文件：`industry_metrics.py`（+110行）、`verify_agent.py`（-12/+5）、`report_agent.py`（-10/+5）
+
+### D: acceleration stub 真实化
+
+- `_compute_acceleration` 从占位 stub 改为拉取最近 2 期 `fina_indicator`，比较 `revenue_yoy[t]` vs `revenue_yoy[t-1]`
+- 返回 `{ratio, accelerating, decelerating, flat, total}`
+- 新增 `_safe_float()` 辅助函数
+
+### A: API 4 分步端点完善
+
+- 新增 `StepRequest` model（含 `industry` + `session_id`）
+- `/hypothesize` / `/verify` / `/counter` / `/report` 四个端点从 400 stub 改为真实实现
+- Coordinator 新增 `pipeline_cache` 暂存中间结果，支持分步调用时跨请求传递
+- `/search` 端点同步存储结果到 cache
+- 端点从 DB 回退加载（缓存失效时自动从 Hypothesis 表重建）
+
+### C: 前端集成测试
+
+- 新增 `tests/prosperity-components.test.tsx`：26 个测试用例
+- **IndustrySelector**（8 tests）：渲染、空输入保护、disabled 状态、API 调成功/失败、Enter 键提交、loading 态
+- **HypothesisBoard**（10 tests）：空状态、session 选择器、L0-L3 层级渲染、状态文字/emoji、derives_from 箭头、time_horizon、investment_implication、空假设、count badges
+- **ReportViewer**（8 tests）：空状态、auto-load 最新报告、loading 态、报告加载失败、session 切换
+
+## v0.13.0 (2026-06-29)
+
+### 📋 SPEC 同步：v0.1.0 → v0.12.2
+
+将高景气策略 SPEC 从原始三层平铺假设模型同步到实际 v0.12.2 因果推理链架构。
+
+#### SPEC 更新（Phase A）
+
+| 章节 | 更新内容 |
+|------|---------|
+| §2.2 | 三层平铺（核心→子→数据）→ **4层因果推理链** (L0→L3)，含强制字段（derives_from/chain_level/time_horizon/investment_implication） |
+| §2.3 | 新增级联规则 + **UNREACHABLE 🚫** 状态（上游推翻→下游不可达） |
+| §2.4 | 新增 CounterAgent **三遍扫描** 级联处理（DISPUTED→OVERTURNED→级联→降级） |
+| §2.5 | 新增叙事体裁报告 + Mermaid 因果图 |
+| §4 | 更新 hypotheses 表 v2 列 + 状态流转图（含不可达） |
+| §10 | 新增 3 条 v2 设计决策（因果链选择/UNREACHABLE/叙事报告） |
+| 版本号 | v0.1.0 → v0.12.2，状态「待实现」→「核心已实现」 |
+
+#### 代码实现（Phase B）
+
+| 文件 | 改动 |
+|------|------|
+| `tools/source_crawler.py` | **Stub → 真实实现**：SIA 半导体销售数据爬取（httpx+BeautifulSoup），新增信源路由分发 + SOURCE_HANDLERS 映射 |
+| `tools/stock_screener.py` | **动量因子真实化**：`_momentum_stub` → `_momentum_score`，接入 Tushare daily 数据计算近 3/6 月收益率分档，含 in-memory 缓存 |
+| `components/prosperity/IndustrySelector.tsx` | **新建**：行业输入 + 研究触发前端组件 |
+| `components/prosperity/HypothesisBoard.tsx` | **新建**：4层因果推理链假设看板（L0-L3 分栏 + 状态 emoji + derives_from 箭头） |
+| `components/prosperity/ReportViewer.tsx` | **新建**：综合报告渲染（react-markdown + 会话选择） |
+| `components/Layout.tsx` | 组件映射表新增 prosperity 条目 |
+| `pyproject.toml` | 新增 beautifulsoup4 依赖 |
+| `tests/test_prosperity_coordinator.py` | 新增 8 个测试（source_crawler 5 + stock_screener 3） |
+
+#### 文档同步
+
+- `CONTEXT.md`：v0.10.0 → v0.13.0，策略状态从「设计中」→「运行中」，核心范式更新为 v2 因果推理链
+
+## v0.12.2 (2026-06-29)
+
+### 🧠 高景气策略 v2：4层因果推理链（HypothesizeAgent 重写）
+
+用户核心诉求：假设不能是平铺的信息摘录，必须是「推演」而非「罗列」，
+每条假设应有因果箭头，直到产生可操作的投资落点。
+
+#### 改动文件（5 个 + 1 个迁移）
+
+| 文件 | 改动 |
+|------|------|
+| `hypothesize_agent.py` | **重写** Prompt（L0现状→L1一阶→L2二阶→L3落点）+ 新 Markdown 模板（含推理链可视化、时间窗口、投资含义） |
+| `verify_agent.py` | 新增级联规则：上游 DISPUTED/OVERTURNED → 下游自动 UNREACHABLE |
+| `counter_agent.py` | 新增级联处理：上游推翻 → 连锁标记下游 unreachable |
+| `report_agent.py` | 重写报告渲染：叙事体裁 + Mermaid 推理链图 + 按层级分章节 + 投资含义章节 |
+| `models.py` | Hypothesis 新增 `chain_level`/`derives_from`/`time_horizon` 三列 + `migrate_v2()` |
+| `coordinator.py` | 启动时自动执行 migrate_v2() |
+
+#### 新推理结构
+
+```
+L0 现状诊断 (2-3条) → L1 一阶推演 (2-4条) → L2 二阶推演+拐点 (2-4条) → L3 投资落点 (2-3条)
+```
+
+每条假设强制要求：
+- `id`: H{层级}-{序号} 格式
+- `derives_from`: 引用上游假设 id
+- `time_horizon`: L2/L3 必填时间窗口
+- `investment_implication`: L3 必填可操作选股方向
+- `key_indicators`: L3 必填跟踪指标
+
+#### 新增状态
+
+- `unreachable` 🚫：上游被推翻，本条不可达（不参与景气评级）
+
+## v0.12.1 (2026-06-29)
+
+### 🏗️ 高景气策略完整实现（13 Tasks Inline Execution）
+
+从 writing-plans 直接推进到全量实现，13 个 Task 全部完成，110 测试全绿。
+
+#### 实现产出
+- **13 个文件新建**: coordinator + 6 Agent + 4 确定性工具 + api + models + 7 个基础文件
+- **6 个规则文件**: source_registry + scoring_weights + semiconductor profile + 6 Skills
+- **1 个测试文件**: 7 项集成测试 (coordinator/session/models/tools/agents/api/directories)
+- **1 个注册项**: registry.py 新增 prosperity (inactive)
+
+#### Task 明细
+| # | Task | 核心产出 |
+|---|------|---------|
+| 1 | 脚手架 | 16 目录 + SCHEMA×2 + index/log/watchlist + registry + config |
+| 2 | 数据模型 | 6 ORM 表 (Industry/ResearchSession/Hypothesis/IndustryMetrics/StockPool/TrackingItem) |
+| 3 | 确定性工具 | industry_metrics (百分位聚合) + stock_screener (行业内排名) |
+| 4 | 确定性工具 | wiki_indexer (索引/孤页/日志) + source_crawler (stub) |
+| 5 | Coordinator | 会话管理 + 6 Agent 管道编排 |
+| 6 | SearchAgent | Tavily 搜索 + 去重 + YAML 落盘 |
+| 7 | HypothesizeAgent | LLM 三层假设 + wiki 页面 + DB 同步 |
+| 8 | VerifyAgent | 多信源交叉验证 + Tushare 数据支撑 |
+| 9 | CounterAgent | DISPUTED→OVERTURNED 推翻标注 |
+| 10 | ReportAgent | 景气度判断 + 股池 Top20 + 行业页更新 |
+| 11 | TrackAgent | 跟踪项提取 + yaml/DB 双写 |
+| 12 | API+Skills | 9 端点 + 6 CodeBuddy Skills |
+| 13 | 规则+测试 | 3 yaml profile + 7 integration tests |
+
+#### Files Changed
+- `backend/app/strategies/prosperity/` — **新建** 完整策略包 (15 文件)
+- `backend/app/core/registry.py` — **修改** 新增 prosperity 注册项
+- `backend/app/core/config.py` — **修改** 新增 3 个路径配置
+- `data/prosperity/` — **新建** 数据目录 (7 子目录 + 4 文件)
+- `backend/rules/prosperity/` — **新建** 规则配置 (3 文件)
+- `backend/tests/test_prosperity_coordinator.py` — **新建** 7 集成测试
+
+#### 测试
+- 新增 7/7 全绿
+- 全量 110/110 全绿，零回归
+
+---
+
+## v0.12.0 (2026-06-29)
+
+### 📐 新高景气策略设计（brainstorming 产出）
+
+**动机**: 用户希望新增一条与龟龟策略完全独立的高景气策略。经过 brainstorming 流程完成完整设计。
+
+#### 设计产出
+- **Spec 文档**: `docs/specs/2026-06-29-prosperity-strategy-design.md`（完整设计 Spec）
+- **核心范式**: 假设驱动研究 — 输入行业 → 情报搜索 → 假设形成 → 交叉验证 → 反推修正 → 报告+股池 → 知识库沉淀
+- **6 Agent 认知循环**: SearchAgent / HypothesizeAgent / VerifyAgent / CounterAgent / ReportAgent / TrackAgent
+- **知识库**: 融合 Karpathy LLM Wiki 理念 — raw/ 只读 + wiki/ LLM 维护 + 假设页含推翻历史 + 跟踪项巡检
+- **双形态**: CodeBuddy Skills（对话式）+ Web 管道式，共用同一套 Agent + 确定性脚本
+- **打分公式**: 行业内百分位排名（非绝对阈值），消除行业间差异
+- **数据库**: SQLite + SQLAlchemy ORM（可无缝迁移 PostgreSQL）
+- **首个行业**: 半导体
+
+#### 关键设计决策
+1. ✅ 假设状态四态：CONFIRMED / PARTIAL / DISPUTED / UNVERIFIED
+2. ✅ 假设不设硬上限，分层（核心判断 → 子假设 → 数据假设）
+3. ✅ 渗透率等非财务数据优先 Tier 1 协会公开数据
+4. ✅ 股池打分用行业内百分位，不写死阈值
+5. ✅ 前端暂缓，先跑通 Agent + 后端
+6. ✅ SQLite 零配置，上线换 PostgreSQL 一行连接字符串
+
+#### Files Changed
+- `docs/specs/2026-06-29-prosperity-strategy-design.md` — **新建** 完整设计 Spec
+- `docs/CONTEXT.md` — v0.8.0→v0.10.0 + 高景气策略概览
+- `CHANGELOG.md` — 本条目
+
+---
+
+## v0.11.1 (2026-06-29)
+
+### 🧹 深度清理：高景气残留 + 临时文件
+- 删除 `registry.py` 中注释的 prosperity 策略注册项（L49-62）
+- 删除 `data/knowledge_graph/` 空目录树（entities/tracks/ / memory/）
+- 删除 4 个 pytest 临时输出：`.pytest_output.txt`, `backend/test_full.txt`, `test_result1.txt`, `test_result2.txt`
+- 删除 `backend/0.2.40` yfinance 残留空文件
+- 删除根目录乱码文件名 `{v}')`
+
+
+
+
+
 ---
 
 ## v0.8.0 (2026-06-22)
 
 ### 🏗️ 架构重构：单策略 → 多策略平台
 
-**目标**: 为高景气价值策略（及未来更多策略）提供干净的扩展底座，龟龟策略功能零退化。
+**目标**: 为未来更多策略提供干净的扩展底座，龟龟策略功能零退化。
 
 #### 1. 策略注册表 `app/core/registry.py`
 - 新增 `StrategyMeta` 数据类 + `STRATEGIES` 字典，策略元信息唯一真相来源
@@ -26,8 +271,7 @@ All notable changes to Investment Strategy project.
 
 #### 3. 数据缓存：按策略隔离
 - `data/stock_cache/turtle/` — 龟龟专属（42 个股 + pool.json + 全局文件）
-- `data/stock_cache/prosperity/` — 高景气预留（空）
-- `config.py` 新增 `TURTLE_CACHE_DIR` / `PROSPERITY_CACHE_DIR`
+- `config.py` 新增 `TURTLE_CACHE_DIR`
 - 所有路径常量从 `settings.STOCK_CACHE_DIR` → `settings.TURTLE_CACHE_DIR`
 
 #### 4. 前端：策略切换 + 组件分目录
@@ -35,7 +279,6 @@ All notable changes to Investment Strategy project.
 - Sidebar 点击切换策略 → `selectedStrategy` 状态 → Layout 组件映射表分发
 - 组件目录重组：
   - `components/turtle/` — 龟龟股池 + 评分卡 + 报告（移入）
-  - `components/prosperity/` — 高景气占位组件（新建）
   - `components/` 根目录 — Layout/Sidebar/ResizablePanel（共享）
 - API 路径全部更新为 `/api/turtle/*`
 
@@ -47,8 +290,6 @@ All notable changes to Investment Strategy project.
 
 ### 影响
 - 🟢 龟龟策略功能零退化：所有业务逻辑一行未改
-- 🟢 高景气策略开发入口就绪：`strategies/prosperity/` + `components/prosperity/`
-- 🟢 加第三个策略只需改 1 行注册表 + 3 个新建目录
 
 ---
 

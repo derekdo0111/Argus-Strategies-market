@@ -7,7 +7,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     # 应用
     APP_NAME: str = "Investment Strategy"
-    APP_VERSION: str = "0.8.0"
+    APP_VERSION: str = "0.14.0"
     DEBUG: bool = False
 
     # 路径
@@ -15,7 +15,6 @@ class Settings(BaseSettings):
     DATA_DIR: Path = PROJECT_ROOT / "data"
     STOCK_CACHE_DIR: Path = DATA_DIR / "stock_cache"  # 向后兼容，指向 turtle
     TURTLE_CACHE_DIR: Path = DATA_DIR / "stock_cache" / "turtle"
-    PROSPERITY_CACHE_DIR: Path = DATA_DIR / "stock_cache" / "prosperity"
     TEMPLATES_DIR: Path = DATA_DIR / "templates"
     RULES_DIR: Path = Path(__file__).parent.parent.parent / "rules"
 
@@ -27,6 +26,8 @@ class Settings(BaseSettings):
 
     # Tushare
     TUSHARE_TOKEN: str = ""
+    # 🧪 TEST-ONLY: 代理服务器地址，上线前删除 (空=走官方)
+    TUSHARE_PROXY_URL: str = ""
 
     # LLM — DeepSeek (OpenAI 兼容协议)
     LLM_API_KEY: str = ""
@@ -52,6 +53,11 @@ class Settings(BaseSettings):
 
     # WebSearch — Tavily (v0.3.0: Brave 已移除)
     TAVILY_API_KEY: str = ""
+
+    # 高景气策略
+    PROSPERITY_DIR: Path = Path(__file__).parent.parent / "strategies" / "prosperity"
+    PROSPERITY_DATA_DIR: Path = PROJECT_ROOT / "data" / "prosperity"
+    PROSPERITY_RULES_DIR: Path = Path(__file__).parent.parent.parent / "rules" / "prosperity"
 
     # 调度
     FULL_REFRESH_CRON: str = "0 6 * * 1-5"  # 工作日早6点
