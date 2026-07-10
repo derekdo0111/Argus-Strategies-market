@@ -9,7 +9,6 @@
 ### 高景气策略 ✅ 运行中
 LLM 多 Agent 认知循环体系：搜索 → 产业学习 → 假设形成 → 交叉验证 → 反推修正 → 精选股池 → 综合报告。基于产业链拓扑和 Wiki-Centric 知识复用，实现假设驱动的行业景气分析。
 
-<img width="1901" height="865" alt="image" src="https://github.com/user-attachments/assets/71e47d50-92d2-45c1-8752-2adb96b1e045" />
 
 ---
 
