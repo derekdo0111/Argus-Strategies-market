@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "investment-strategy-backend"
-version = "0.8.4"
+version = "1.2.1"
 description = "投资策略分析网站后端 - 龟龟策略平台"
 authors = ["harry"]
 readme = "README.md"
@@ -18,7 +18,7 @@ httpx = "^0.28.0"
 beautifulsoup4 = "^4.12.0"
 pyyaml = "^6.0.2"
 tushare = "^1.4.0"
-akshare = "^1.14.0"
+rapidfuzz = "^3.14.0"
 apscheduler = "^3.10.0"
 structlog = "^24.4.0"
 openai = "^1.55.0"

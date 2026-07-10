@@ -1,0 +1,6561 @@
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T11:23:52.467478'
+    trend: rising
+    triggered: false
+    value: 76878亿元
+    value_numeric: 76878
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 全球AI市场规模指数级增长
+  indicator: 全球AI市场规模年度值
+  industry: 人工智能
+  last_updated: '2026-07-08T11:23:52.467478'
+  last_value: 76878
+  last_value_text: 76878亿元
+  search_query: 2026年全球人工智能市场规模 预测 报告大厅
+  source_session: 97
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T11:24:06.441320'
+    trend: rising
+    triggered: false
+    value: 2025年全球AI市场同比增长18.7%
+    value_numeric: 18.7
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 全球AI市场规模指数级增长
+  indicator: 全球AI市场年度增长率
+  industry: 人工智能
+  last_updated: '2026-07-08T11:24:06.441320'
+  last_value: 18.7
+  last_value_text: 2025年全球AI市场同比增长18.7%
+  search_query: 全球AI市场规模 复合年增长率 2026
+  source_session: 97
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T11:24:11.247304'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 企业研发投入加码
+  indicator: 人工智能上市公司研发支出总和
+  industry: 人工智能
+  last_updated: '2026-07-08T11:24:11.247304'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 2026年 AI 上市公司 研发支出 同比增长 Wind
+  source_session: 97
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T11:24:16.444077'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 企业研发投入加码
+  indicator: AI领域专利授权数量
+  industry: 人工智能
+  last_updated: '2026-07-08T11:24:16.443174'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 2026年 人工智能 专利 授权 数量 国家知识产权局
+  source_session: 97
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T11:24:23.427395'
+    trend: rising
+    triggered: false
+    value: 英伟达数据中心业务2026财年第四季度及全年营收均创历史新高，具体金额未披露
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 聚焦算力硬件龙头
+  indicator: 英伟达数据中心业务营收
+  industry: 人工智能
+  last_updated: '2026-07-08T11:24:23.427395'
+  last_value: null
+  last_value_text: 英伟达数据中心业务2026财年第四季度及全年营收均创历史新高，具体金额未披露
+  search_query: 2026年英伟达 数据中心 营收 财报
+  source_session: 97
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T11:24:28.683511'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 聚焦算力硬件龙头
+  indicator: 光模块龙头出口数据
+  industry: 人工智能
+  last_updated: '2026-07-08T11:24:28.683511'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 2026年 光模块 出口 金额 海关
+  source_session: 97
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T06:16:19.039126'
+    trend: rising
+    triggered: false
+    value: 375.93亿美元（2026年预测）
+    value_numeric: 375.93
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 全球规模高速增长
+  indicator: 全球人工智能市场规模
+  industry: 人工智能
+  last_updated: '2026-07-08T06:16:19.039126'
+  last_value: 375.93
+  last_value_text: 375.93亿美元（2026年预测）
+  search_query: 全球人工智能市场规模 2026
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T06:16:45.256960'
+    trend: rising
+    triggered: false
+    value: 突破1.7万亿元
+    value_numeric: 17000
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 全球规模高速增长
+  indicator: 中国人工智能核心产业规模
+  industry: 人工智能
+  last_updated: '2026-07-08T06:16:45.256960'
+  last_value: 17000
+  last_value_text: 突破1.7万亿元
+  search_query: 中国人工智能核心产业规模 2026
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T06:16:52.386103'
+    trend: rising
+    triggered: false
+    value: 6.02亿人
+    value_numeric: 6.02
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 应用场景深度渗透
+  indicator: 生成式AI用户规模
+  industry: 人工智能
+  last_updated: '2026-07-08T06:16:52.386103'
+  last_value: 6.02
+  last_value_text: 6.02亿人
+  search_query: 生成式AI用户规模 2026
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T01:56:24.836145'
+    trend: rising
+    triggered: false
+    value: 34亿-50亿美元（全球）
+    value_numeric: null
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 应用场景深度渗透
+  indicator: AI智能体市场规模
+  industry: 人工智能
+  last_updated: '2026-07-06T01:56:24.835265'
+  last_value: null
+  last_value_text: 34亿-50亿美元（全球）
+  search_query: AI智能体 市场规模 2026
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T06:17:01.676301'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 产业链盈利释放
+  indicator: A股人工智能公司净利润合计
+  industry: 人工智能
+  last_updated: '2026-07-08T06:17:01.676301'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: A股人工智能公司 净利润 2026
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T06:17:07.903626'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 产业链盈利释放
+  indicator: AI公司业绩预喜比例
+  industry: 人工智能
+  last_updated: '2026-07-08T06:17:07.903626'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI公司 业绩预告 2026
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:11:54.712631'
+    trend: rising
+    triggered: false
+    value: 2026年全球四大云厂商资本开支预计上调至8000亿美元以上
+    value_numeric: 8000
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 企业投资持续扩大
+  indicator: 全球主要云厂商资本开支
+  industry: 人工智能
+  last_updated: '2026-07-06T02:11:54.712631'
+  last_value: 8000
+  last_value_text: 2026年全球四大云厂商资本开支预计上调至8000亿美元以上
+  search_query: 云厂商 资本开支 2026 AI
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T06:18:17.657649'
+    trend: rising
+    triggered: false
+    value: 未找到2026年国产AI芯片出货量具体数值，仅有份额突破50%的定性描述
+    value_numeric: null
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 企业投资持续扩大
+  indicator: 国产AI芯片出货量
+  industry: 人工智能
+  last_updated: '2026-07-05T06:18:17.657649'
+  last_value: null
+  last_value_text: 未找到2026年国产AI芯片出货量具体数值，仅有份额突破50%的定性描述
+  search_query: 国产AI芯片 出货量 2026
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T06:17:16.657845'
+    trend: rising
+    triggered: false
+    value: 预计2026年全球HBM出货量5.7BGB，同比增长约39%
+    value_numeric: 39.0
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 算力需求强劲拉动
+  indicator: HBM出货量同比增速
+  industry: 人工智能
+  last_updated: '2026-07-08T06:17:16.657845'
+  last_value: 39.0
+  last_value_text: 预计2026年全球HBM出货量5.7BGB，同比增长约39%
+  search_query: HBM 出货量 2026 同比
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:29:11.759492'
+    trend: rising
+    triggered: false
+    value: 370万台
+    value_numeric: 370
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 算力需求强劲拉动
+  indicator: AI服务器出货量
+  industry: 人工智能
+  last_updated: '2026-07-05T03:29:11.759492'
+  last_value: 370
+  last_value_text: 370万台
+  search_query: AI服务器 出货量 2026
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:21:27.971997'
+    trend: unclear
+    triggered: false
+    value: 未找到具体HBM月均价格数值
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 基础硬件需求旺盛
+  indicator: HBM月均价格
+  industry: 人工智能
+  last_updated: '2026-07-08T02:21:27.971997'
+  last_value: null
+  last_value_text: 未找到具体HBM月均价格数值
+  search_query: HBM 价格 2026 月
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T08:59:01.415250'
+    trend: rising
+    triggered: false
+    value: 同比增长2.79%
+    value_numeric: 2.79
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 基础硬件需求旺盛
+  indicator: 光模块出口金额增速
+  industry: 人工智能
+  last_updated: '2026-07-08T08:59:01.415250'
+  last_value: 2.79
+  last_value_text: 同比增长2.79%
+  search_query: 光模块 出口金额 2026 增速
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T08:13:39.642242'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 应用创新持续涌现
+  indicator: AI垂直行业解决方案数量
+  industry: 人工智能
+  last_updated: '2026-07-08T08:13:39.642242'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI垂直行业 解决方案 2026
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T08:59:09.802887'
+    trend: rising
+    triggered: false
+    value: 重庆首批46辆L3自动驾驶车辆试点运营
+    value_numeric: 46
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 应用创新持续涌现
+  indicator: 自动驾驶车辆落地数量
+  industry: 人工智能
+  last_updated: '2026-07-08T08:59:09.802887'
+  last_value: 46
+  last_value_text: 重庆首批46辆L3自动驾驶车辆试点运营
+  search_query: 自动驾驶 落地 2026 数量
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T08:59:40.201081'
+    trend: rising
+    triggered: false
+    value: 52.3%
+    value_numeric: 52.3
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 聚焦核心算力环节
+  indicator: 国产AI芯片市场份额
+  industry: 人工智能
+  last_updated: '2026-07-08T08:59:40.201081'
+  last_value: 52.3
+  last_value_text: 52.3%
+  search_query: 国产AI芯片 市场份额 2026
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T08:59:53.798536'
+    trend: rising
+    triggered: false
+    value: 3500~4000万只
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 聚焦核心算力环节
+  indicator: 光模块400G/800G出货量
+  industry: 人工智能
+  last_updated: '2026-07-08T08:59:53.798536'
+  last_value: null
+  last_value_text: 3500~4000万只
+  search_query: 光模块 800G 出货量 2026
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T08:59:58.335673'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 深耕垂直行业应用
+  indicator: AI垂直行业客户数增速
+  industry: 人工智能
+  last_updated: '2026-07-08T08:59:58.335673'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI医疗影像 客户 2026
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T09:00:03.232753'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 深耕垂直行业应用
+  indicator: 垂直AI应用毛利率
+  industry: 人工智能
+  last_updated: '2026-07-08T09:00:03.232753'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI应用 毛利率 2026 行业
+  source_session: 92
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T08:13:45.822957'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 把握盈利扩散机会
+  indicator: AI产业链净利润扩散指数
+  industry: 人工智能
+  last_updated: '2026-07-08T08:13:45.822957'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI产业链 净利润 扩散 2026
+  source_session: 85
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:29:06.693014'
+    trend: rising
+    triggered: false
+    value: 全球主流模型合计日均Token消耗量已突破180万亿（180T）
+    value_numeric: 180
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI算力需求爆发
+  indicator: 全球日均Token消耗量
+  industry: 人工智能
+  last_updated: '2026-07-05T03:29:06.693014'
+  last_value: 180
+  last_value_text: 全球主流模型合计日均Token消耗量已突破180万亿（180T）
+  search_query: 全球日均Token消耗量 2026 人工智能
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:00:51.214036'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI算力需求爆发
+  indicator: HBM出货量季度增速
+  industry: 人工智能
+  last_updated: '2026-07-06T02:00:51.214036'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: HBM出货量 季度增速 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:01:05.911356'
+    trend: rising
+    triggered: false
+    value: 103.9%
+    value_numeric: 103.9
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI产业链盈利提升
+  indicator: 电子行业规模以上企业利润增速
+  industry: 人工智能
+  last_updated: '2026-07-06T02:01:05.911356'
+  last_value: 103.9
+  last_value_text: 103.9%
+  search_query: 电子行业利润增速 2026 月度
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:01:20.060079'
+    trend: rising
+    triggered: false
+    value: 74.29%
+    value_numeric: 74.29
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI产业链盈利提升
+  indicator: AI相关上市公司半年度业绩预喜比例
+  industry: 人工智能
+  last_updated: '2026-07-06T02:01:20.060079'
+  last_value: 74.29
+  last_value_text: 74.29%
+  search_query: AI上市公司 业绩预喜 比例 2026 上半年
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:21:05.922821'
+    trend: rising
+    triggered: false
+    value: 北美四大云厂商2026年Q1资本开支合计1316亿美元
+    value_numeric: 1316
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI基建投资扩张
+  indicator: 全球主要云厂商季度Capex
+  industry: 人工智能
+  last_updated: '2026-07-08T02:21:05.922821'
+  last_value: 1316
+  last_value_text: 北美四大云厂商2026年Q1资本开支合计1316亿美元
+  search_query: 全球云厂商 季度资本开支 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:21:13.205398'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI基建投资扩张
+  indicator: AI服务器出货量季度增速
+  industry: 人工智能
+  last_updated: '2026-07-08T02:21:13.205398'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI服务器 出货量 季度增速 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:18:59.484093'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 企业资本开支扩张
+  indicator: 企业AI相关IT支出占比
+  industry: 人工智能
+  last_updated: '2026-07-06T02:18:59.484093'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 企业IT支出 AI占比 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:19:06.166082'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 企业资本开支扩张
+  indicator: AI软件及服务采购预算指数
+  industry: 人工智能
+  last_updated: '2026-07-06T02:19:06.166082'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI软件采购 预算指数 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:19:18.697732'
+    trend: rising
+    triggered: false
+    value: Anthropic ARR突破440亿美元，较2025年底约90亿美元增长近五倍
+    value_numeric: null
+  hypothesis_ids:
+  - H1-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI商业化加速落地
+  indicator: AI企业ARR增速
+  industry: 人工智能
+  last_updated: '2026-07-06T02:19:18.697732'
+  last_value: null
+  last_value_text: Anthropic ARR突破440亿美元，较2025年底约90亿美元增长近五倍
+  search_query: AI企业 年度经常性收入 增速 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:19:25.554314'
+    trend: rising
+    triggered: false
+    value: 美图全球付费订阅用户超1790万
+    value_numeric: 17900000
+  hypothesis_ids:
+  - H1-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI商业化加速落地
+  indicator: AI产品付费用户数季度变化
+  industry: 人工智能
+  last_updated: '2026-07-06T02:19:25.554314'
+  last_value: 17900000
+  last_value_text: 美图全球付费订阅用户超1790万
+  search_query: AI应用 付费用户 季度 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:21:37.821027'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 元器件设备需求旺盛
+  indicator: 光模块出口金额季度增速
+  industry: 人工智能
+  last_updated: '2026-07-08T02:21:37.821027'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 光模块 出口金额 季度 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:21:49.261721'
+    trend: rising
+    triggered: false
+    value: 2025年47.5%
+    value_numeric: 47.5
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用推动行业变革
+  indicator: 制造业AI应用比例
+  industry: 人工智能
+  last_updated: '2026-07-08T02:21:49.261721'
+  last_value: 47.5
+  last_value_text: 2025年47.5%
+  search_query: 制造业 AI应用比例 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:22:04.340935'
+    trend: rising
+    triggered: false
+    value: 预计2026年达到25%以上
+    value_numeric: 25
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用推动行业变革
+  indicator: 自动驾驶L2+渗透率
+  industry: 人工智能
+  last_updated: '2026-07-08T02:22:04.340935'
+  last_value: 25
+  last_value_text: 预计2026年达到25%以上
+  search_query: 自动驾驶 渗透率 2026 季度
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:22:11.241468'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 利润传导至全产业链
+  indicator: 科创板AI产业链企业净利润增速
+  industry: 人工智能
+  last_updated: '2026-07-08T02:22:11.241468'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 科创板AI 净利润 增速 2026 季度
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:22:20.028373'
+    trend: rising
+    triggered: false
+    value: 20.6%
+    value_numeric: 20.6
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 利润传导至全产业链
+  indicator: AI应用企业毛利率变化
+  industry: 人工智能
+  last_updated: '2026-07-08T02:22:20.028373'
+  last_value: 20.6
+  last_value_text: 20.6%
+  search_query: AI应用 毛利率 2026 季度
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:22:36.822416'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 聚焦算力核心设备
+  indicator: AI芯片出货量增速
+  industry: 人工智能
+  last_updated: '2026-07-08T02:22:36.822416'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI芯片 出货量 2026 季度
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:22:43.041974'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 聚焦算力核心设备
+  indicator: 光模块出货量季度增速
+  industry: 人工智能
+  last_updated: '2026-07-08T02:22:43.041974'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 光模块 出货量 季度 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:19:47.462469'
+    trend: rising
+    triggered: false
+    value: 未找到具体数值
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 深耕AI垂直行业
+  indicator: 行业AI解决方案市场规模
+  industry: 人工智能
+  last_updated: '2026-07-06T02:19:47.462469'
+  last_value: null
+  last_value_text: 未找到具体数值
+  search_query: 行业AI方案 市场规模 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:22:57.538627'
+    trend: unclear
+    triggered: false
+    value: 北美地区金融大模型应用整体渗透率61%
+    value_numeric: 61
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 深耕AI垂直行业
+  indicator: 金融AI应用渗透率
+  industry: 人工智能
+  last_updated: '2026-07-08T02:22:57.538627'
+  last_value: 61
+  last_value_text: 北美地区金融大模型应用整体渗透率61%
+  search_query: 金融AI 渗透率 2026 季度
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:23:06.172210'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 把握电子结构性机会
+  indicator: 电子行业归母净利润中位数增速
+  industry: 人工智能
+  last_updated: '2026-07-08T02:23:06.172210'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 电子行业 归母净利润 中位数 增速 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-08T02:23:14.004520'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 把握电子结构性机会
+  indicator: AI算力链公司营收占比
+  industry: 人工智能
+  last_updated: '2026-07-08T02:23:14.004520'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI算力 营收占比 电子公司 2026
+  source_session: 73
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:00:59.696284'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用加速落地
+  indicator: 企业AI应用渗透率
+  industry: 人工智能
+  last_updated: '2026-07-06T02:00:59.696284'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 企业AI应用渗透率 2026
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:18:51.572212'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用加速落地
+  indicator: 生成式AI对消费者经济价值
+  industry: 人工智能
+  last_updated: '2026-07-06T02:18:51.572212'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 生成式AI 消费者 经济价值 2026
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:32:37.459766'
+    trend: rising
+    triggered: false
+    value: 20%—22%（二季度毛利率指引）
+    value_numeric: 21.0
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 利润传导至全产业链
+  indicator: AI芯片企业毛利率
+  industry: 人工智能
+  last_updated: '2026-07-06T02:32:37.459766'
+  last_value: 21.0
+  last_value_text: 20%—22%（二季度毛利率指引）
+  search_query: AI芯片 毛利率 2026 季度
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:32:43.585351'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 利润传导至全产业链
+  indicator: SaaS企业净利润率
+  industry: 人工智能
+  last_updated: '2026-07-06T02:32:43.585351'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: SaaS 净利润率 2026 季度 AI
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:26:28.516893'
+    trend: rising
+    triggered: false
+    value: 中国金融机构AI渗透率约61%
+    value_numeric: 61
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用推动行业变革
+  indicator: 行业AI渗透率（金融/医疗/制造）
+  industry: 人工智能
+  last_updated: '2026-07-06T02:26:28.516893'
+  last_value: 61
+  last_value_text: 中国金融机构AI渗透率约61%
+  search_query: 金融 AI 渗透率 2026
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:26:33.514499'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用推动行业变革
+  indicator: AI提升生产效率案例数
+  industry: 人工智能
+  last_updated: '2026-07-06T02:26:33.514499'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI 提升效率 案例 2026
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:26:41.415547'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 利润传导至全产业链
+  indicator: 产业链各环节利润率变化
+  industry: 人工智能
+  last_updated: '2026-07-06T02:26:41.415547'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI产业链 利润率 2026
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:26:46.897656'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 利润传导至全产业链
+  indicator: 全产业链净利润增速
+  industry: 人工智能
+  last_updated: '2026-07-06T02:26:46.897656'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI全产业链 净利润 增速 2026
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:26:56.867036'
+    trend: rising
+    triggered: false
+    value: 营收年增长率可达50.5%
+    value_numeric: 50.5
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 深耕AI垂直行业
+  indicator: AI行业解决方案营收增速
+  industry: 人工智能
+  last_updated: '2026-07-06T02:26:56.867036'
+  last_value: 50.5
+  last_value_text: 营收年增长率可达50.5%
+  search_query: AI行业解决方案 营收 增长 2026
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:27:04.078189'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 深耕AI垂直行业
+  indicator: 智能体平台客户数
+  industry: 人工智能
+  last_updated: '2026-07-06T02:27:04.078189'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 智能体平台 客户数 2026
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:19:32.761092'
+    trend: rising
+    triggered: false
+    value: 中国金融机构AI渗透率约61%
+    value_numeric: 61
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用推动行业变革
+  indicator: 垂直行业AI应用渗透率
+  industry: 人工智能
+  last_updated: '2026-07-06T02:19:32.761092'
+  last_value: 61
+  last_value_text: 中国金融机构AI渗透率约61%
+  search_query: 金融AI渗透率 2026
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:19:39.278692'
+    trend: rising
+    triggered: false
+    value: 2026年被预测为企业多智能体规模化上岗元年，81%组织计划推进部署，Gartner预测30%企业将采用多智能体系统
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用推动行业变革
+  indicator: 智能体协同系统部署数量
+  industry: 人工智能
+  last_updated: '2026-07-06T02:19:39.278692'
+  last_value: null
+  last_value_text: 2026年被预测为企业多智能体规模化上岗元年，81%组织计划推进部署，Gartner预测30%企业将采用多智能体系统
+  search_query: 智能体协同 部署 2026 企业
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T02:19:55.034393'
+    trend: rising
+    triggered: false
+    value: 年增487%
+    value_numeric: 487
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 深耕AI垂直行业
+  indicator: 垂直AI厂商ARR增速
+  industry: 人工智能
+  last_updated: '2026-07-06T02:19:55.034393'
+  last_value: 487
+  last_value_text: 年增487%
+  search_query: 医疗AI公司ARR 2026
+  source_session: 60
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-06T01:56:31.453056'
+    trend: rising
+    triggered: false
+    value: 40%的企业应用将集成任务型AI智能体
+    value_numeric: 40
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI智能体应用加速
+  indicator: 企业应用AI智能体比例
+  industry: 人工智能
+  last_updated: '2026-07-06T01:56:31.453056'
+  last_value: 40
+  last_value_text: 40%的企业应用将集成任务型AI智能体
+  search_query: 企业 AI Agent 集成比例 2026 Gartner
+  source_session: 59
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:53:58.689202'
+    trend: rising
+    triggered: false
+    value: 截至2026年6月，豆包大模型日均tokens调用量达180万亿
+    value_numeric: 180000000000000
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - Token消耗指数级增长
+  indicator: 豆包大模型日均Token调用量
+  industry: 人工智能
+  last_updated: '2026-07-05T07:53:58.689202'
+  last_value: 180000000000000
+  last_value_text: 截至2026年6月，豆包大模型日均tokens调用量达180万亿
+  search_query: 豆包 日均Token 调用量 2026
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:54:08.303061'
+    trend: rising
+    triggered: false
+    value: 北美云厂商2026年资本支出合计同比增速预期上调至79%
+    value_numeric: 79
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 算力基础设施投资加码
+  indicator: 北美云厂商Capex合计同比增速
+  industry: 人工智能
+  last_updated: '2026-07-05T07:54:08.303061'
+  last_value: 79
+  last_value_text: 北美云厂商2026年资本支出合计同比增速预期上调至79%
+  search_query: 北美云厂商 资本支出 2026 Q1
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:54:14.603269'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI应用从选修到必修
+  indicator: Wind软件指数单季营收增速
+  industry: 人工智能
+  last_updated: '2026-07-05T07:54:14.603269'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: Wind软件指数 2026 Q1 营收
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:36:52.626979'
+    trend: rising
+    triggered: false
+    value: 42%
+    value_numeric: 42
+  hypothesis_ids:
+  - H1-3
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI全面赋能制造业
+  indicator: 制造业AI应用渗透率
+  industry: 人工智能
+  last_updated: '2026-07-04T15:36:52.626979'
+  last_value: 42
+  last_value_text: 42%
+  search_query: 制造业 AI 应用 渗透率 2026
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:54:20.156307'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  - H3-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 算力产业链结构性分化
+  - 锁定算力硬科技龙头
+  indicator: HBM3e合约价环比
+  industry: 人工智能
+  last_updated: '2026-07-05T07:54:20.156307'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: HBM 合约价 2026 月度
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: weekly
+  history:
+  - timestamp: '2026-07-05T07:54:33.535239'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 算力产业链结构性分化
+  indicator: DRAM现货价走势
+  industry: 人工智能
+  last_updated: '2026-07-05T07:54:33.535239'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: DRAM 现货价 2026 7月
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:54:40.449770'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI应用业绩分化加剧
+  indicator: 头部AI SaaS公司ARR同比增速
+  industry: 人工智能
+  last_updated: '2026-07-05T07:54:40.449770'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI SaaS ARR 2026 Q1 增速
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:54:47.873764'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI应用业绩分化加剧
+  indicator: 软件行业净利润中位数变化
+  industry: 人工智能
+  last_updated: '2026-07-05T07:54:47.873764'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 软件开发 净利润 中位数 2026
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:54:56.097995'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 制造业AI落地加速
+  indicator: 工业软件上市公司新签订单同比
+  industry: 人工智能
+  last_updated: '2026-07-05T07:54:56.097995'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业软件 新签订单 2026 季度
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:55:02.290176'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 制造业AI落地加速
+  indicator: 物理AI引擎客户数
+  industry: 人工智能
+  last_updated: '2026-07-05T07:55:02.290176'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 物理AI 引擎 试点 客户 2026
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:55:12.136229'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 锁定算力硬科技龙头
+  indicator: 先进封装产能利用率
+  industry: 人工智能
+  last_updated: '2026-07-05T07:55:12.136229'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 先进封装 产能利用率 2026 Q2
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:55:20.384795'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 锁定算力硬科技龙头
+  indicator: AI芯片出货量同比
+  industry: 人工智能
+  last_updated: '2026-07-05T07:55:20.384795'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI 芯片 出货量 2026 季度 同比
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:55:25.899090'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI应用平台型公司机会
+  indicator: 百亿Token消耗客户数
+  industry: 人工智能
+  last_updated: '2026-07-05T07:55:25.899090'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 大模型 客户 数量 月活 2026
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:55:39.492902'
+    trend: rising
+    triggered: false
+    value: 三位数同比增长（阿里云AI相关产品收入）
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI应用平台型公司机会
+  indicator: 云AI服务营收增速
+  industry: 人工智能
+  last_updated: '2026-07-05T07:55:39.492902'
+  last_value: null
+  last_value_text: 三位数同比增长（阿里云AI相关产品收入）
+  search_query: 云AI 营收 增速 2026 Q2 阿里巴巴 百度
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:55:45.417015'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI+制造业场景领军者
+  indicator: 工业软件新签订单同比
+  industry: 人工智能
+  last_updated: '2026-07-05T07:55:45.417015'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业软件 订单 2026 季度 公告
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:55:52.173294'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI+制造业场景领军者
+  indicator: 工业AI项目中标数
+  industry: 人工智能
+  last_updated: '2026-07-05T07:55:52.173294'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业AI 项目 中标 2026 6月
+  source_session: 55
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:33:53.492678'
+    trend: rising
+    triggered: false
+    value: 5.7BGB
+    value_numeric: 5.7
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI算力需求爆发
+  indicator: HBM出货量
+  industry: 人工智能
+  last_updated: '2026-07-05T07:33:53.492678'
+  last_value: 5.7
+  last_value_text: 5.7BGB
+  search_query: HBM出货量 2026 季度
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:42:22.979227'
+    trend: rising
+    triggered: false
+    value: 888亿美元
+    value_numeric: 888
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 产业链盈利高增
+  indicator: 全球半导体月度销售额
+  industry: 人工智能
+  last_updated: '2026-07-03T07:42:22.979227'
+  last_value: 888
+  last_value_text: 888亿美元
+  search_query: 全球半导体月度销售额 2026 WSTS
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:29:24.727364'
+    trend: rising
+    triggered: false
+    value: 2026年第二季度一般型DRAM合约价预计环比上涨58%-63%，NAND闪存合约价环比上涨70%-75%
+    value_numeric: null
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 产业链盈利高增
+  indicator: 存储芯片合约价
+  industry: 人工智能
+  last_updated: '2026-07-05T03:29:24.727364'
+  last_value: null
+  last_value_text: 2026年第二季度一般型DRAM合约价预计环比上涨58%-63%，NAND闪存合约价环比上涨70%-75%
+  search_query: 存储芯片合约价 2026 DRAM
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:34:00.903985'
+    trend: rising
+    triggered: false
+    value: 1567.85%
+    value_numeric: 1567.85
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 产业链盈利高增
+  indicator: 龙头公司归母净利润同比
+  industry: 人工智能
+  last_updated: '2026-07-05T07:34:00.903985'
+  last_value: 1567.85
+  last_value_text: 1567.85%
+  search_query: 佰维存储 归母净利润 2026 季度
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:37:25.062903'
+    trend: rising
+    triggered: false
+    value: 404.1亿美元
+    value_numeric: 404.1
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用加速落地
+  indicator: 企业AI市场规模
+  industry: 人工智能
+  last_updated: '2026-07-05T03:37:25.062903'
+  last_value: 404.1
+  last_value_text: 404.1亿美元
+  search_query: 企业AI市场规模 2026 Gartner
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:34:08.159266'
+    trend: rising
+    triggered: false
+    value: 日均Token调用量突破140万亿
+    value_numeric: 140000000000000
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用加速落地
+  indicator: 日均Token消耗量
+  industry: 人工智能
+  last_updated: '2026-07-05T07:34:08.159266'
+  last_value: 140000000000000
+  last_value_text: 日均Token调用量突破140万亿
+  search_query: 中国日均Token消耗量 2026 人工智能
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:34:15.920839'
+    trend: rising
+    triggered: false
+    value: 近80%的企业将部署至少一种AI智能体
+    value_numeric: 80
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用加速落地
+  indicator: AI智能体企业部署比例
+  industry: 人工智能
+  last_updated: '2026-07-05T07:34:15.920839'
+  last_value: 80
+  last_value_text: 近80%的企业将部署至少一种AI智能体
+  search_query: AI智能体 企业部署比例 2026 Gartner
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:29:40.409013'
+    trend: rising
+    triggered: false
+    value: 近6000亿美元
+    value_numeric: 6000
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI基建投资扩张
+  indicator: 全球云厂商资本开支
+  industry: 人工智能
+  last_updated: '2026-07-05T03:29:40.409013'
+  last_value: 6000
+  last_value_text: 近6000亿美元
+  search_query: 全球云厂商资本开支 2026 季度
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:29:46.809347'
+    trend: rising
+    triggered: false
+    value: 未找到直接数据，但定性描述为需求旺盛
+    value_numeric: null
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI基建投资扩张
+  indicator: AI服务器订单增速
+  industry: 人工智能
+  last_updated: '2026-07-05T03:29:46.809347'
+  last_value: null
+  last_value_text: 未找到直接数据，但定性描述为需求旺盛
+  search_query: AI服务器订单 2026 增速
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:29:53.177361'
+    trend: rising
+    triggered: false
+    value: 2027年HBM合约价格将大幅上涨或倍数增长（未给出具体数值）
+    value_numeric: null
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 存储涨价周期延续
+  indicator: HBM合约价
+  industry: 人工智能
+  last_updated: '2026-07-05T03:29:53.176328'
+  last_value: null
+  last_value_text: 2027年HBM合约价格将大幅上涨或倍数增长（未给出具体数值）
+  search_query: HBM合约价 2026 每月
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:34:26.309018'
+    trend: rising
+    triggered: false
+    value: DDR5 8GB SO-DIMM 平均价 109.00
+    value_numeric: 109.0
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 存储涨价周期延续
+  indicator: DRAM合约价
+  industry: 人工智能
+  last_updated: '2026-07-05T07:34:26.308024'
+  last_value: 109.0
+  last_value_text: DDR5 8GB SO-DIMM 平均价 109.00
+  search_query: DRAM合约价 2026 每月
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:29:58.930343'
+    trend: falling
+    triggered: false
+    value: 115天
+    value_numeric: 115
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 存储涨价周期延续
+  indicator: 存储厂商库存周转天数
+  industry: 人工智能
+  last_updated: '2026-07-05T03:29:58.930343'
+  last_value: 115
+  last_value_text: 115天
+  search_query: 存储厂商 库存周转天数 2026 季度
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:43:43.469020'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 推理算力需求扩张
+  indicator: 推理芯片出货量占比
+  industry: 人工智能
+  last_updated: '2026-07-05T03:43:43.469020'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 推理芯片 出货量 占比 2026 季度
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:05:22.231244'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-3
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 推理算力需求扩张
+  - 布局端侧AI与应用
+  indicator: 端侧AI芯片出货量
+  industry: 人工智能
+  last_updated: '2026-07-03T10:05:22.231244'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 端侧AI芯片 出货量 2026 季度
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:30:05.211953'
+    trend: unclear
+    triggered: false
+    value: 排期至2026年
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 算力投资过热风险
+  indicator: AI芯片交期
+  industry: 人工智能
+  last_updated: '2026-07-05T03:30:05.211953'
+  last_value: null
+  last_value_text: 排期至2026年
+  search_query: AI芯片 交期 2026 每月
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:30:10.628664'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 算力投资过热风险
+  indicator: 数据中心利用率
+  industry: 人工智能
+  last_updated: '2026-07-05T03:30:10.628664'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 数据中心 利用率 2026 季度
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:43:49.671835'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 推理算力结构分化
+  indicator: 端侧AI芯片市场规模
+  industry: 人工智能
+  last_updated: '2026-07-05T03:43:49.671835'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 端侧AI芯片 市场规模 2026
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:43:56.052844'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 推理算力结构分化
+  indicator: 大模型移动端部署数量
+  industry: 人工智能
+  last_updated: '2026-07-05T03:43:56.052844'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 大模型 移动端 部署 数量 2026
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:34:34.895462'
+    trend: rising
+    triggered: false
+    value: 68%
+    value_numeric: 68
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 聚焦算力与国产替代
+  indicator: 国产替代龙头营收增速
+  industry: 人工智能
+  last_updated: '2026-07-05T07:34:34.895462'
+  last_value: 68
+  last_value_text: 68%
+  search_query: 海光信息 营收 增速 2026 季度
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:34:46.304137'
+    trend: rising
+    triggered: false
+    value: 41%（2025年国产AI芯片市场份额）
+    value_numeric: 41
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 聚焦算力与国产替代
+  indicator: AI芯片市场份额
+  industry: 人工智能
+  last_updated: '2026-07-05T07:34:46.304137'
+  last_value: 41
+  last_value_text: 41%（2025年国产AI芯片市场份额）
+  search_query: 国产AI芯片 市场份额 2026
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T07:34:57.493173'
+    trend: rising
+    triggered: false
+    value: 8.51亿
+    value_numeric: 8.51
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 布局端侧AI与应用
+  indicator: AI应用月活跃用户
+  industry: 人工智能
+  last_updated: '2026-07-05T07:34:57.493173'
+  last_value: 8.51
+  last_value_text: 8.51亿
+  search_query: AI应用 月活跃用户 2026 增长
+  source_session: 54
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:29:18.559954'
+    trend: rising
+    triggered: false
+    value: 887.8亿美元
+    value_numeric: 887.8
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 产业链盈利高增
+  indicator: 半导体月度销售额
+  industry: 人工智能
+  last_updated: '2026-07-05T03:29:18.559954'
+  last_value: 887.8
+  last_value_text: 887.8亿美元
+  search_query: 半导体 月度销售额 2026 WSTS
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:37:33.694693'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用加速落地
+  indicator: AI应用渗透率
+  industry: 人工智能
+  last_updated: '2026-07-05T03:37:33.694693'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI 应用渗透率 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T06:18:07.805394'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-4
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 国产替代加速
+  indicator: 国产半导体设备招标份额
+  industry: 人工智能
+  last_updated: '2026-07-05T06:18:07.805394'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 国产半导体设备 招标 份额 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T06:18:26.660252'
+    trend: rising
+    triggered: false
+    value: 4000万只
+    value_numeric: 4000
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 聚焦算力核心设备
+  indicator: 高速光模块出货量
+  industry: 人工智能
+  last_updated: '2026-07-05T06:18:26.660252'
+  last_value: 4000
+  last_value_text: 4000万只
+  search_query: 光模块 800G 出货量 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T06:18:31.784710'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 聚焦算力核心设备
+  indicator: PCB厂商AI板收入占比
+  industry: 人工智能
+  last_updated: '2026-07-05T06:18:31.784710'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI PCB 收入 占比 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T06:18:37.275919'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 聚焦算力核心设备
+  indicator: 服务器电源厂商订单指引
+  industry: 人工智能
+  last_updated: '2026-07-05T06:18:37.275919'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 服务器电源 订单 指引 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T06:18:43.844957'
+    trend: rising
+    triggered: false
+    value: 美图公司AI生产力应用ARR约为5.8亿元，同比增长56.2%
+    value_numeric: 5.8
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - disputed
+  hypothesis_titles:
+  - 布局端侧AI和应用软件
+  indicator: AI软件企业ARR增长
+  industry: 人工智能
+  last_updated: '2026-07-05T06:18:43.844957'
+  last_value: 5.8
+  last_value_text: 美图公司AI生产力应用ARR约为5.8亿元，同比增长56.2%
+  search_query: AI 软件 ARR 增长 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T06:18:53.223721'
+    trend: rising
+    triggered: false
+    value: 企业订单金额同比增长80%
+    value_numeric: 80
+  hypothesis_ids:
+  - H3-4
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 配置国产替代龙头
+  indicator: 国产半导体设备订单增速
+  industry: 人工智能
+  last_updated: '2026-07-05T06:18:53.223721'
+  last_value: 80
+  last_value_text: 企业订单金额同比增长80%
+  search_query: 国产半导体设备 订单 增速 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T06:19:01.206847'
+    trend: rising
+    triggered: false
+    value: 至少有九家中国AI芯片公司出货量或订单量已超过1万卡
+    value_numeric: 9
+  hypothesis_ids:
+  - H3-4
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 配置国产替代龙头
+  indicator: 国产AI芯片标杆客户验证进展
+  industry: 人工智能
+  last_updated: '2026-07-05T06:19:01.206847'
+  last_value: 9
+  last_value_text: 至少有九家中国AI芯片公司出货量或订单量已超过1万卡
+  search_query: 国产AI芯片 客户 验证 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T06:19:11.891090'
+    trend: unclear
+    triggered: false
+    value: 广东省级电子信息产业化项目补助比例30%（最高1000万元），深圳EDA/IP工具采购补贴最高500万元/年
+    value_numeric: 1000
+  hypothesis_ids:
+  - H3-4
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 配置国产替代龙头
+  indicator: 国产替代政策补贴金额
+  industry: 人工智能
+  last_updated: '2026-07-05T06:19:11.891090'
+  last_value: 1000
+  last_value_text: 广东省级电子信息产业化项目补助比例30%（最高1000万元），深圳EDA/IP工具采购补贴最高500万元/年
+  search_query: 半导体 国产替代 补贴 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:30:15.579307'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - disputed
+  hypothesis_titles:
+  - 存储结构分化：HBM胜出
+  indicator: HBM出货量季度环比
+  industry: 人工智能
+  last_updated: '2026-07-05T03:30:15.579307'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: HBM 出货量 季度 环比 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:30:25.529905'
+    trend: falling
+    triggered: false
+    value: 1~2倍（HBM3e与Server DDR5价差）
+    value_numeric: 1.5
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - disputed
+  hypothesis_titles:
+  - 存储结构分化：HBM胜出
+  indicator: HBM与DRAM价差
+  industry: 人工智能
+  last_updated: '2026-07-05T03:30:25.529905'
+  last_value: 1.5
+  last_value_text: 1~2倍（HBM3e与Server DDR5价差）
+  search_query: HBM DRAM 价差 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:30:32.746661'
+    trend: unclear
+    triggered: false
+    value: ''
+    value_numeric: null
+  - timestamp: '2026-07-05T03:37:46.344829'
+    trend: rising
+    triggered: false
+    value: 同比增长28%以上
+    value_numeric: 28.0
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 聚焦算力核心设备
+  indicator: AI服务器出货量同比增速
+  industry: 人工智能
+  last_updated: '2026-07-05T03:37:46.344829'
+  last_value: 28.0
+  last_value_text: 同比增长28%以上
+  search_query: AI服务器出货量同比增速 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:30:40.396809'
+    trend: rising
+    triggered: false
+    value: 同比增长67%
+    value_numeric: 67
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 聚焦算力核心设备
+  indicator: 主要云厂商资本开支增速
+  industry: 人工智能
+  last_updated: '2026-07-05T03:30:40.396809'
+  last_value: 67
+  last_value_text: 同比增长67%
+  search_query: 主要云厂商资本开支增速 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:30:46.119381'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 布局HBM存储弹性标的
+  indicator: HBM 3E出货量季度环比
+  industry: 人工智能
+  last_updated: '2026-07-05T03:30:46.119381'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: HBM 3E 出货量 2026 季度
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:30:54.481344'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 布局HBM存储弹性标的
+  indicator: HBM合约价月度环比
+  industry: 人工智能
+  last_updated: '2026-07-05T03:30:54.481344'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: HBM 合约价 2026 月度
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:31:02.331565'
+    trend: unclear
+    triggered: false
+    value: 封测厂HBM封测产能利用率逼近100%
+    value_numeric: 100
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 布局HBM存储弹性标的
+  indicator: HBM封测厂商产能利用率
+  industry: 人工智能
+  last_updated: '2026-07-05T03:31:02.331565'
+  last_value: 100
+  last_value_text: 封测厂HBM封测产能利用率逼近100%
+  search_query: HBM封测产能利用率 2026
+  source_session: 47
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:04:24.651043'
+    trend: rising
+    triggered: false
+    value: 140万亿
+    value_numeric: 140000000000000
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - Token消耗指数增长
+  indicator: 中国日均Token调用量
+  industry: 人工智能
+  last_updated: '2026-07-03T10:04:24.651043'
+  last_value: 140000000000000
+  last_value_text: 140万亿
+  search_query: 日均Token调用量 中国 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:36:27.223767'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI主导电子景气分化
+  indicator: 电子行业归母净利润前10集中度
+  industry: 人工智能
+  last_updated: '2026-07-04T15:36:27.223767'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 电子行业净利润集中度 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:29:34.712957'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用向物理世界扩散
+  indicator: 制造业AI渗透率
+  industry: 人工智能
+  last_updated: '2026-07-05T02:29:34.712957'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 制造业AI渗透率 2026 中国
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:37:01.317652'
+    trend: rising
+    triggered: false
+    value: 2026上半年全球赛道融资超640亿美元
+    value_numeric: 640
+  hypothesis_ids:
+  - H0-3
+  - H1-3
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  - confirmed
+  - unverified
+  hypothesis_titles:
+  - AI应用向物理世界扩散
+  - 物理AI商业化起步
+  - 物理AI商业化待验证
+  indicator: 物理AI相关融资额
+  industry: 人工智能
+  last_updated: '2026-07-04T15:37:01.317652'
+  last_value: 640
+  last_value_text: 2026上半年全球赛道融资超640亿美元
+  search_query: 物理AI 融资 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:04:47.860160'
+    trend: rising
+    triggered: false
+    value: 预计2026年全球AI服务器出货量年增28%以上
+    value_numeric: 28
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 算力基础设施需求刚性
+  indicator: AI服务器出货量季度同比
+  industry: 人工智能
+  last_updated: '2026-07-03T10:04:47.860160'
+  last_value: 28
+  last_value_text: 预计2026年全球AI服务器出货量年增28%以上
+  search_query: AI服务器出货量 2026 季度
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:21:41.824928'
+    trend: rising
+    triggered: false
+    value: 77%
+    value_numeric: 77
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 算力基础设施需求刚性
+  indicator: 全球科技巨头Capex同比
+  industry: 人工智能
+  last_updated: '2026-07-05T03:21:41.824928'
+  last_value: 77
+  last_value_text: 77%
+  search_query: 科技巨头资本支出 2026 AI
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:21:48.494608'
+    trend: unclear
+    triggered: false
+    value: 167个
+    value_numeric: 167
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 物理AI商业化待验证
+  indicator: 工业软件AI化落地案例数
+  industry: 人工智能
+  last_updated: '2026-07-05T03:21:48.494608'
+  last_value: 167
+  last_value_text: 167个
+  search_query: 工业软件AI化 案例 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:21:53.827872'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 物理AI与工业软件潜力股
+  indicator: 工业软件AI化项目数量
+  industry: 人工智能
+  last_updated: '2026-07-05T03:21:53.827872'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业软件AI化 项目 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T03:21:58.406019'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 物理AI与工业软件潜力股
+  indicator: 机器人公司AI训练平台用户数
+  industry: 人工智能
+  last_updated: '2026-07-05T03:21:58.406019'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 机器人 AI训练平台 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:36:45.300373'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用全面加速落地
+  indicator: 企业AI采用率
+  industry: 人工智能
+  last_updated: '2026-07-04T15:36:45.300373'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 企业AI采用率 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:29:40.468199'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 物理AI商业化待验证
+  indicator: 物理AI相关企业收入增速
+  industry: 人工智能
+  last_updated: '2026-07-05T02:29:40.468199'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 物理AI 收入 增速 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:29:45.349276'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 物理AI商业化待验证
+  indicator: 政策文件数量
+  industry: 人工智能
+  last_updated: '2026-07-05T02:29:45.349276'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 物理AI 政策 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:29:52.548250'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 物理AI与工业软件潜力股
+  indicator: 工业软件龙头营收增速
+  industry: 人工智能
+  last_updated: '2026-07-05T02:29:52.548250'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业软件 营收 增速 2026 季度
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:29:58.298168'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 物理AI与工业软件潜力股
+  indicator: 物理AI相关合同金额
+  industry: 人工智能
+  last_updated: '2026-07-05T02:29:58.298168'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 物理AI 合同 订单 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:37:08.340815'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 物理AI商业化待验证
+  indicator: 物理AI相关公司营收占比
+  industry: 人工智能
+  last_updated: '2026-07-04T15:37:08.340815'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 物理AI 营收 占比 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:24:14.990915'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 物理AI商业化待验证
+  indicator: 工业软件企业AI模块收入增速
+  industry: 人工智能
+  last_updated: '2026-07-05T02:24:14.990915'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业软件 AI 收入 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:24:22.833169'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 国产替代加速但遇瓶颈
+  indicator: 国产半导体设备销售额占比
+  industry: 人工智能
+  last_updated: '2026-07-05T02:24:22.833169'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 国产半导体设备 销售额 占比 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:24:27.111248'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 国产替代加速但遇瓶颈
+  indicator: HBM国产化率
+  industry: 人工智能
+  last_updated: '2026-07-05T02:24:27.111248'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: HBM 国产化率 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:24:32.427687'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 物理AI与工业软件潜力股
+  indicator: 工业软件AI模块收入增速
+  industry: 人工智能
+  last_updated: '2026-07-05T02:24:32.427687'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业软件 AI 收入 增速 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:24:38.345017'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 物理AI与工业软件潜力股
+  indicator: 物理AI融资额季度同比
+  industry: 人工智能
+  last_updated: '2026-07-05T02:24:38.345017'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 物理AI 融资 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:24:44.910598'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 国产半导体设备市场规模增速
+  industry: 人工智能
+  last_updated: '2026-07-05T02:24:44.910598'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 国产半导体设备 市场规模 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:24:50.696936'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 中微公司新签订单增速
+  industry: 人工智能
+  last_updated: '2026-07-05T02:24:50.696936'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 中微公司 新签订单 2026
+  source_session: 44
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:05:08.819189'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 算力基础设施需求刚性
+  indicator: 高速PCB价格指数
+  industry: 人工智能
+  last_updated: '2026-07-03T10:05:08.819189'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 高速PCB 价格指数 2026
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:16:57.718004'
+    trend: rising
+    triggered: false
+    value: DDR4 8Gb 5月环比上涨25%，DDR5 5月环比上涨4%
+    value_numeric: null
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 存储与互联环节供需紧张加剧
+  indicator: 存储均价月度环比
+  industry: 人工智能
+  last_updated: '2026-07-05T02:16:57.718004'
+  last_value: null
+  last_value_text: DDR4 8Gb 5月环比上涨25%，DDR5 5月环比上涨4%
+  search_query: 存储 均价 月度 环比 2026
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:17:07.653387'
+    trend: rising
+    triggered: false
+    value: 159点
+    value_numeric: 159
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 存储与互联环节供需紧张加剧
+  indicator: CCL价格指数
+  industry: 人工智能
+  last_updated: '2026-07-05T02:17:07.653387'
+  last_value: 159
+  last_value_text: 159点
+  search_query: CCL 价格 指数 2026
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T15:23:29.588877'
+    trend: rising
+    triggered: false
+    value: 未找到具体月度环比数值
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 硬件涨价延续但周期性风险上升
+  - 算力核心硬件与涨价受益标的
+  indicator: DRAM合约价月度环比
+  industry: 人工智能
+  last_updated: '2026-07-03T15:23:29.588877'
+  last_value: null
+  last_value_text: 未找到具体月度环比数值
+  search_query: DRAM 合约价 2026 月度
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:17:24.689084'
+    trend: rising
+    triggered: false
+    value: 2026年DRAM资本支出计划613亿美元
+    value_numeric: 613
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 硬件涨价延续但周期性风险上升
+  indicator: 主要存储厂商资本开支计划
+  industry: 人工智能
+  last_updated: '2026-07-05T02:17:24.689084'
+  last_value: 613
+  last_value_text: 2026年DRAM资本支出计划613亿美元
+  search_query: 存储厂商 资本开支 2026 计划
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:06:40.398884'
+    trend: unclear
+    triggered: false
+    value: 2024年整体国产化率约20-25%
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 国产替代加速但面临技术瓶颈
+  indicator: 半导体设备国产化率
+  industry: 人工智能
+  last_updated: '2026-07-03T10:06:40.398884'
+  last_value: null
+  last_value_text: 2024年整体国产化率约20-25%
+  search_query: 半导体设备 国产化率 2026
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:17:34.224248'
+    trend: rising
+    triggered: false
+    value: 预计50.2%~106.7%
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 国产替代加速但面临技术瓶颈
+  indicator: 国产设备龙头营收增速
+  industry: 人工智能
+  last_updated: '2026-07-05T02:17:34.224248'
+  last_value: null
+  last_value_text: 预计50.2%~106.7%
+  search_query: 中微公司 营收 增长 2026 季度
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:17:41.655741'
+    trend: rising
+    triggered: false
+    value: 未找到具体毛利率数值，但行业趋势显示毛利率预计环比增长
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 算力核心硬件与涨价受益标的
+  indicator: 存储厂商毛利率
+  industry: 人工智能
+  last_updated: '2026-07-05T02:17:41.655741'
+  last_value: null
+  last_value_text: 未找到具体毛利率数值，但行业趋势显示毛利率预计环比增长
+  search_query: 存储 毛利率 2026 季度
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:17:46.700509'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 物理AI与工业软件潜在标的
+  indicator: 工业软件新增订单
+  industry: 人工智能
+  last_updated: '2026-07-05T02:17:46.700509'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业软件 新增订单 2026 季度
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:17:56.195256'
+    trend: unclear
+    triggered: false
+    value: 19起
+    value_numeric: 19
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 物理AI与工业软件潜在标的
+  indicator: 机器人融资事件数量
+  industry: 人工智能
+  last_updated: '2026-07-05T02:17:56.195256'
+  last_value: 19
+  last_value_text: 19起
+  search_query: 机器人 融资 2026 季度
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:18:12.598068'
+    trend: rising
+    triggered: false
+    value: 111%
+    value_numeric: 111
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 物理AI与工业软件潜在标的
+  indicator: 物理AI相关公司营收同比
+  industry: 人工智能
+  last_updated: '2026-07-05T02:18:12.598068'
+  last_value: 111
+  last_value_text: 111%
+  search_query: 机器人 营收 增长 2026
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:18:17.698611'
+    trend: rising
+    triggered: false
+    value: 同比增长34.13%
+    value_numeric: 34.13
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 龙头设备公司营收增速
+  industry: 人工智能
+  last_updated: '2026-07-05T02:18:17.698611'
+  last_value: 34.13
+  last_value_text: 同比增长34.13%
+  search_query: 中微公司 营收 2026 季度
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:18:25.716921'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 国产设备中标率
+  industry: 人工智能
+  last_updated: '2026-07-05T02:18:25.716921'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 国产半导体设备 中标 2026
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-05T02:18:33.401370'
+    trend: rising
+    triggered: false
+    value: 2-3万片（深算三号一季度出货量）
+    value_numeric: 2.5
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 国产算力芯片出货量
+  industry: 人工智能
+  last_updated: '2026-07-05T02:18:33.401370'
+  last_value: 2.5
+  last_value_text: 2-3万片（深算三号一季度出货量）
+  search_query: 海光信息 出货量 2026 季度
+  source_session: 43
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:37:17.451736'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 物理AI开启新赛道但商业化待验证
+  indicator: 工业软件AI许可收入
+  industry: 人工智能
+  last_updated: '2026-07-04T15:37:17.451736'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业软件 AI 订阅 收入 2026
+  source_session: 42
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:28:07.357144'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI主导电子产业链景气
+  indicator: 电子行业AI相关公司归母净利润中位数同比
+  industry: 人工智能
+  last_updated: '2026-07-03T10:28:07.357144'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 电子行业 AI 归母净利润 中位数 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:47:21.315830'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI主导电子产业链景气
+  indicator: 前14家龙头利润贡献占比
+  industry: 人工智能
+  last_updated: '2026-07-04T14:47:21.315830'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 前14家 电子 利润 占比 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:04:39.972738'
+    trend: rising
+    triggered: false
+    value: 77%
+    value_numeric: 77
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 科技巨头资本支出扩张
+  indicator: 主要科技公司AI资本支出同比增速
+  industry: 人工智能
+  last_updated: '2026-07-03T10:04:39.972738'
+  last_value: 77
+  last_value_text: 77%
+  search_query: 科技巨头 AI 资本支出 同比 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:47:28.176538'
+    trend: rising
+    triggered: false
+    value: 40%
+    value_numeric: 40.0
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 科技巨头资本支出扩张
+  indicator: 阿里云外部收入增速
+  industry: 人工智能
+  last_updated: '2026-07-04T14:47:28.176538'
+  last_value: 40.0
+  last_value_text: 40%
+  search_query: 阿里云 收入 增速 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:47:36.331871'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 算力基础设施需求刚性
+  indicator: 100G/400G光模块出货量
+  industry: 人工智能
+  last_updated: '2026-07-04T14:47:36.331871'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 光模块 出货量 2026 400G
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:04:54.911950'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 业绩分化加剧龙头受益
+  indicator: 电子行业利润集中度（前10占比）
+  industry: 人工智能
+  last_updated: '2026-07-03T10:04:54.911950'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 电子行业 利润集中度 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:05:01.374074'
+    trend: rising
+    triggered: false
+    value: 企业订单金额同比增长80%
+    value_numeric: null
+  hypothesis_ids:
+  - H1-3
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 设备材料国产化加速
+  indicator: 国内半导体设备厂商新增订单金额
+  industry: 人工智能
+  last_updated: '2026-07-03T10:05:01.374074'
+  last_value: null
+  last_value_text: 企业订单金额同比增长80%
+  search_query: 半导体设备 新增订单 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:47:46.585372'
+    trend: rising
+    triggered: false
+    value: 2025年为23.2%
+    value_numeric: 23.2
+  hypothesis_ids:
+  - H1-3
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 设备材料国产化加速
+  indicator: 国产设备招标份额
+  industry: 人工智能
+  last_updated: '2026-07-04T14:47:46.585372'
+  last_value: 23.2
+  last_value_text: 2025年为23.2%
+  search_query: 国产设备 招标 份额 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T15:32:59.593507'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-4
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用扩散加速
+  indicator: 端侧AI芯片出货量季度同比
+  industry: 人工智能
+  last_updated: '2026-07-03T15:32:59.593507'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 端侧AI芯片 出货量 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:57:29.965393'
+    trend: rising
+    triggered: false
+    value: 到2026年底近80%的企业将部署至少一种AI智能体
+    value_numeric: 80
+  hypothesis_ids:
+  - H1-4
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用扩散加速
+  indicator: 企业AI智能体采用率
+  industry: 人工智能
+  last_updated: '2026-07-04T14:57:29.965393'
+  last_value: 80
+  last_value_text: 到2026年底近80%的企业将部署至少一种AI智能体
+  search_query: 企业 AI 智能体 采用率 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:05:54.720632'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 硬件涨价与供给瓶颈
+  indicator: HBM价格指数
+  industry: 人工智能
+  last_updated: '2026-07-03T10:05:54.720632'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: HBM 价格 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:29:13.932876'
+    trend: rising
+    triggered: false
+    value: 最长超过2年
+    value_numeric: 24
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 硬件涨价与供给瓶颈
+  indicator: 高端PCB交期
+  industry: 人工智能
+  last_updated: '2026-07-04T15:29:13.932876'
+  last_value: 24
+  last_value_text: 最长超过2年
+  search_query: 高端PCB 交期 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:57:37.980437'
+    trend: rising
+    triggered: false
+    value: 34亿-50亿美元
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用商业化窗口开启
+  indicator: 企业AI智能体市场规模
+  industry: 人工智能
+  last_updated: '2026-07-04T14:57:37.980437'
+  last_value: null
+  last_value_text: 34亿-50亿美元
+  search_query: 企业AI智能体 市场规模 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:29:18.830408'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI应用商业化窗口开启
+  indicator: Gartner企业AI采用率调查
+  industry: 人工智能
+  last_updated: '2026-07-04T15:29:18.830408'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: Gartner AI 采用率 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:29:29.039747'
+    trend: rising
+    triggered: false
+    value: 62204%—74394%
+    value_numeric: 74394
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 算力核心硬件与龙头标的
+  indicator: 存储龙头盈利增速
+  industry: 人工智能
+  last_updated: '2026-07-04T15:29:29.039747'
+  last_value: 74394
+  last_value_text: 62204%—74394%
+  search_query: 存储 龙头 业绩 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:29:41.879212'
+    trend: unclear
+    triggered: false
+    value: 深南电路PCB业务毛利率36.91%
+    value_numeric: 36.91
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 算力核心硬件与龙头标的
+  indicator: 高端PCB龙头毛利率
+  industry: 人工智能
+  last_updated: '2026-07-04T15:29:41.879212'
+  last_value: 36.91
+  last_value_text: 深南电路PCB业务毛利率36.91%
+  search_query: 高端PCB 毛利率 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:29:51.701220'
+    trend: rising
+    triggered: false
+    value: 2026年全球九大云服务商资本支出预计达8300亿美元，同比增长约79%
+    value_numeric: 0.79
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 算力核心硬件与龙头标的
+  indicator: 云厂商Capex增速
+  industry: 人工智能
+  last_updated: '2026-07-04T15:29:51.701220'
+  last_value: 0.79
+  last_value_text: 2026年全球九大云服务商资本支出预计达8300亿美元，同比增长约79%
+  search_query: 云厂商 资本支出 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:30:01.039304'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用与智能体标的
+  indicator: AI智能体中标项目数
+  industry: 人工智能
+  last_updated: '2026-07-04T15:30:01.039304'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI智能体 中标 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T15:30:06.578643'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用与智能体标的
+  indicator: 企业AI软件收入增速
+  industry: 人工智能
+  last_updated: '2026-07-04T15:30:06.578643'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 企业AI 软件 收入 增速 2026
+  source_session: 37
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:57:47.014133'
+    trend: rising
+    triggered: false
+    value: 49%的工业制造企业已有成熟AI应用场景并产出商业价值
+    value_numeric: 49
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用商业化窗口开启
+  indicator: 工业AI在制造业渗透率
+  industry: 人工智能
+  last_updated: '2026-07-04T14:57:47.014133'
+  last_value: 49
+  last_value_text: 49%的工业制造企业已有成熟AI应用场景并产出商业价值
+  search_query: 工业AI 渗透率 2026 制造业
+  source_session: 36
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: breaking
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:57:54.624351'
+    trend: rising
+    triggered: false
+    value: 禁止向中国境外的中企出口先进AI芯片
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备国产化订单高峰与管制风险
+  indicator: 美国出口管制政策更新
+  industry: 人工智能
+  last_updated: '2026-07-04T14:57:54.624351'
+  last_value: null
+  last_value_text: 禁止向中国境外的中企出口先进AI芯片
+  search_query: 美国对华半导体管制 2026 新规
+  source_session: 36
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:57:59.848562'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备国产化订单高峰与管制风险
+  indicator: 国内设备公司订单同比增长率
+  industry: 人工智能
+  last_updated: '2026-07-04T14:57:59.848562'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 半导体设备 订单 同比增长 2026
+  source_session: 36
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:58:05.257618'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用与智能体标的
+  indicator: 智能体平台客户数季度增长
+  industry: 人工智能
+  last_updated: '2026-07-04T14:58:05.257618'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 智能体 企业客户 2026 增长
+  source_session: 36
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T15:33:06.220947'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用与智能体标的
+  indicator: 工业软件AI功能采用率
+  industry: 人工智能
+  last_updated: '2026-07-03T15:33:06.220947'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业软件 AI 采用率 2026
+  source_session: 36
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:58:10.950414'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 国内半导体设备订单同比增长率
+  industry: 人工智能
+  last_updated: '2026-07-04T14:58:10.950414'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 半导体设备 订单 同比增长 2026
+  source_session: 36
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:58:29.187958'
+    trend: rising
+    triggered: false
+    value: 国产设备中标率超过60%（2022年5月）
+    value_numeric: 60
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 国产设备在存储/逻辑产线中标份额
+  industry: 人工智能
+  last_updated: '2026-07-04T14:58:29.187958'
+  last_value: 60
+  last_value_text: 国产设备中标率超过60%（2022年5月）
+  search_query: 国产半导体设备 中标 2026 中芯
+  source_session: 36
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:47:56.800451'
+    trend: rising
+    triggered: false
+    value: 预计2026年高阶智驾渗透率突破40%
+    value_numeric: null
+  hypothesis_ids:
+  - H1-4
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用扩散加速
+  indicator: L3级及以上自动驾驶渗透率
+  industry: 人工智能
+  last_updated: '2026-07-04T14:47:56.800451'
+  last_value: null
+  last_value_text: 预计2026年高阶智驾渗透率突破40%
+  search_query: L3自动驾驶渗透率 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:48:02.554553'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 供应链瓶颈与涨价机会
+  indicator: 高密度PCB价格指数
+  industry: 人工智能
+  last_updated: '2026-07-04T14:48:02.554553'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 高密度PCB价格 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T15:23:38.057331'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 供应链瓶颈与涨价机会
+  - 存储与高速PCB弹性标的
+  indicator: HBM产能利用率
+  industry: 人工智能
+  last_updated: '2026-07-03T15:23:38.057331'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: HBM产能利用率 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:48:11.898563'
+    trend: rising
+    triggered: false
+    value: 83%的企业已在至少一个业务职能中常态化使用生成式AI
+    value_numeric: 83
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用商业化窗口开启
+  indicator: 中国AI应用渗透率
+  industry: 人工智能
+  last_updated: '2026-07-04T14:48:11.898563'
+  last_value: 83
+  last_value_text: 83%的企业已在至少一个业务职能中常态化使用生成式AI
+  search_query: 中国AI应用渗透率 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:48:20.931767'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用商业化窗口开启
+  indicator: 工业软件上市公司AI业务收入占比
+  industry: 人工智能
+  last_updated: '2026-07-04T14:48:20.931767'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业软件AI业务收入占比 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:48:31.579012'
+    trend: rising
+    triggered: false
+    value: 预计2026年L2+渗透率超95%
+    value_numeric: 95
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用商业化窗口开启
+  indicator: 智能驾驶方案前装搭载率
+  industry: 人工智能
+  last_updated: '2026-07-04T14:48:31.579012'
+  last_value: 95
+  last_value_text: 预计2026年L2+渗透率超95%
+  search_query: L2+自动驾驶前装搭载率 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:48:39.186459'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备材料订单高峰与管制升级风险
+  indicator: 北方华创/中微公司新增订单同比
+  industry: 人工智能
+  last_updated: '2026-07-04T14:48:39.186459'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 北方华创新增订单 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:48:48.752214'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备材料订单高峰与管制升级风险
+  indicator: 美国BIS实体清单更新频率
+  industry: 人工智能
+  last_updated: '2026-07-04T14:48:48.752214'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 美国BIS实体清单 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:48:57.967633'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备材料订单高峰与管制升级风险
+  indicator: 国产光刻胶/气体导入进度
+  industry: 人工智能
+  last_updated: '2026-07-04T14:48:57.967633'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 国产光刻胶导入 2026 晶圆厂
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:49:04.963096'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-4
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 龙头估值溢价与业绩确定性
+  indicator: AI算力龙头公司PE(TTM)中位数
+  industry: 人工智能
+  last_updated: '2026-07-04T14:49:04.963096'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI算力龙头PE估值 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:49:14.610250'
+    trend: falling
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-4
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 龙头估值溢价与业绩确定性
+  indicator: 电子行业非AI公司净利润同比
+  industry: 人工智能
+  last_updated: '2026-07-04T14:49:14.610250'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 电子行业非AI公司净利润同比 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:49:22.833535'
+    trend: rising
+    triggered: false
+    value: 多家存储厂商已宣布2026年扩产计划，Capex指引呈现上升趋势
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 存储与高速PCB弹性标的
+  indicator: 主要存储厂商Capex指引
+  industry: 人工智能
+  last_updated: '2026-07-04T14:49:22.833535'
+  last_value: null
+  last_value_text: 多家存储厂商已宣布2026年扩产计划，Capex指引呈现上升趋势
+  search_query: 存储厂商Capex 2026 扩产
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:49:29.171942'
+    trend: rising
+    triggered: false
+    value: 35.63%
+    value_numeric: 35.63
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 存储与高速PCB弹性标的
+  indicator: 沪电股份毛利率
+  industry: 人工智能
+  last_updated: '2026-07-04T14:49:29.171942'
+  last_value: 35.63
+  last_value_text: 35.63%
+  search_query: 沪电股份毛利率 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:49:37.921864'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI应用扩散方向标的
+  indicator: 瑞芯微AI芯片营收占比
+  industry: 人工智能
+  last_updated: '2026-07-04T14:49:37.921864'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 瑞芯微AI芯片营收 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:49:45.337606'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI应用扩散方向标的
+  indicator: 中望软件AI模块收入增速
+  industry: 人工智能
+  last_updated: '2026-07-04T14:49:45.337606'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 中望软件AI功能收入 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:49:51.417795'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI应用扩散方向标的
+  indicator: 德赛西威智能驾驶域控制器出货量
+  industry: 人工智能
+  last_updated: '2026-07-04T14:49:51.417795'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 德赛西威IPU出货量 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:49:58.449801'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 中微公司新增订单金额
+  industry: 人工智能
+  last_updated: '2026-07-04T14:49:58.449801'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 中微公司新增订单 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:50:07.919460'
+    trend: rising
+    triggered: false
+    value: 45-50%以上（成熟制程28nm及以上基本覆盖）
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 国内晶圆厂设备国产化率
+  industry: 人工智能
+  last_updated: '2026-07-04T14:50:07.919460'
+  last_value: null
+  last_value_text: 45-50%以上（成熟制程28nm及以上基本覆盖）
+  search_query: 中国半导体设备国产化率 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:50:18.455590'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: BIS实体清单涉及半导体设备条款
+  industry: 人工智能
+  last_updated: '2026-07-04T14:50:18.455590'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: BIS半导体设备出口管制 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:50:24.903115'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-4
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI算力链综合龙头
+  indicator: 海光信息DCU出货收入同比
+  industry: 人工智能
+  last_updated: '2026-07-04T14:50:24.903115'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 海光信息DCU营收 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:50:31.670277'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-4
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI算力链综合龙头
+  indicator: 通富微电先进封装产能利用率
+  industry: 人工智能
+  last_updated: '2026-07-04T14:50:31.670277'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 通富微电先进封装产能利用率 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-04T14:50:40.056745'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-4
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI算力链综合龙头
+  indicator: 浪潮信息AI服务器收入占比
+  industry: 人工智能
+  last_updated: '2026-07-04T14:50:40.056745'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 浪潮信息AI服务器营收占比 2026
+  source_session: 26
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:05:16.316696'
+    trend: rising
+    triggered: false
+    value: 未找到具体数值，但趋势显示上涨
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 供应链瓶颈与涨价机会
+  indicator: HBM现货价格
+  industry: 人工智能
+  last_updated: '2026-07-03T10:05:16.316696'
+  last_value: null
+  last_value_text: 未找到具体数值，但趋势显示上涨
+  search_query: HBM 现货价格 2026
+  source_session: 25
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T15:33:14.062224'
+    trend: rising
+    triggered: false
+    value: 企业订单金额同比增长80%
+    value_numeric: 80
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备材料订单高峰与管制风险
+  indicator: 国内半导体设备厂商新增订单同比增速
+  industry: 人工智能
+  last_updated: '2026-07-03T15:33:14.062224'
+  last_value: 80
+  last_value_text: 企业订单金额同比增长80%
+  search_query: 国产半导体设备 订单 同比 2026
+  source_session: 25
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:12:17.395105'
+    trend: rising
+    triggered: false
+    value: 2026年5月31日美国商务部发布新规，禁止向中国境外的中企出口先进AI芯片，进一步收紧对华出口管制
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备材料订单高峰与管制风险
+  indicator: 美国对华半导体出口管制政策动态
+  industry: 人工智能
+  last_updated: '2026-07-03T10:12:17.395105'
+  last_value: null
+  last_value_text: 2026年5月31日美国商务部发布新规，禁止向中国境外的中企出口先进AI芯片，进一步收紧对华出口管制
+  search_query: 美国半导体出口管制 2026 新政
+  source_session: 25
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T15:33:24.142322'
+    trend: rising
+    triggered: false
+    value: 国产半导体设备企业订单金额同比增长80%
+    value_numeric: 80
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 国内半导体设备厂商新增订单金额季度同比
+  industry: 人工智能
+  last_updated: '2026-07-03T15:33:24.142322'
+  last_value: 80
+  last_value_text: 国产半导体设备企业订单金额同比增长80%
+  search_query: 国产半导体设备 订单 金额 同比 2026
+  source_session: 25
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T15:33:30.095383'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 美国对华出口管制政策力度指数
+  industry: 人工智能
+  last_updated: '2026-07-03T15:33:30.095383'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 美国半导体出口管制 2026 最新
+  source_session: 25
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T15:23:13.095360'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备材料订单高峰与管制风险
+  indicator: 国内半导体设备市场份额
+  industry: 人工智能
+  last_updated: '2026-07-03T15:23:13.095360'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 半导体设备国产化率 2026
+  source_session: 21
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: breaking
+  frequency: weekly
+  history:
+  - timestamp: '2026-07-03T15:23:22.022020'
+    trend: rising
+    triggered: false
+    value: 2026年5月31日，美国商务部发布新规，禁止向中国境外的中国实体出口先进AI芯片，封堵监管漏洞
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备材料订单高峰与管制风险
+  indicator: 美国对华半导体出口管制政策事件
+  industry: 人工智能
+  last_updated: '2026-07-03T15:23:22.022020'
+  last_value: null
+  last_value_text: 2026年5月31日，美国商务部发布新规，禁止向中国境外的中国实体出口先进AI芯片，封堵监管漏洞
+  search_query: 美国半导体出口管制 2026
+  source_session: 21
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T15:23:43.904074'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 国产刻蚀设备市场份额
+  industry: 人工智能
+  last_updated: '2026-07-03T15:23:43.904074'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 国产刻蚀设备市场份额 2026
+  source_session: 21
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T15:23:50.468162'
+    trend: stable
+    triggered: false
+    value: 约81亿美元，与2025年持平
+    value_numeric: 81
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 中芯国际资本支出计划
+  industry: 人工智能
+  last_updated: '2026-07-03T15:23:50.468162'
+  last_value: 81
+  last_value_text: 约81亿美元，与2025年持平
+  search_query: 中芯国际 资本支出 2026
+  source_session: 21
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: breaking
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:28:21.059160'
+    trend: rising
+    triggered: false
+    value: 2026年美国主导的半导体出口管制体系进入复杂升级阶段，规则进一步收紧，实质性重塑全球芯片贸易与制造格局
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备材料订单高峰与管制风险
+  indicator: 美国出口管制政策动态
+  industry: 人工智能
+  last_updated: '2026-07-03T10:28:21.059160'
+  last_value: null
+  last_value_text: 2026年美国主导的半导体出口管制体系进入复杂升级阶段，规则进一步收紧，实质性重塑全球芯片贸易与制造格局
+  search_query: 美国 半导体 出口管制 2026 更新
+  source_session: 20
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:28:27.535878'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备材料订单高峰与管制风险
+  indicator: 国产设备公司海外采购占比
+  industry: 人工智能
+  last_updated: '2026-07-03T10:28:27.535878'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 半导体设备 海外采购占比 2026
+  source_session: 20
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:28:34.082948'
+    trend: rising
+    triggered: false
+    value: 北方华创在手订单规模突破820亿元
+    value_numeric: 820
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 国内设备龙头在手订单金额
+  industry: 人工智能
+  last_updated: '2026-07-03T10:28:34.082948'
+  last_value: 820
+  last_value_text: 北方华创在手订单规模突破820亿元
+  search_query: 北方华创 在手订单 2026
+  source_session: 20
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: breaking
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:28:41.368996'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 美国出口管制政策更新频率
+  industry: 人工智能
+  last_updated: '2026-07-03T10:28:41.368996'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 美国 半导体 出口管制 2026 新规
+  source_session: 20
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:04:31.565387'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - disputed
+  hypothesis_titles:
+  - AI主导电子产业链景气
+  indicator: 电子行业AI相关公司归母净利润同比
+  industry: 人工智能
+  last_updated: '2026-07-03T10:04:31.565387'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 电子行业AI公司 归母净利润 2026
+  source_session: 19
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:12:24.640659'
+    trend: rising
+    triggered: false
+    value: 在手订单充足，存货金额创历史新高
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备材料订单高峰与管制风险
+  indicator: 国内设备厂商在手订单
+  industry: 人工智能
+  last_updated: '2026-07-03T10:12:24.640659'
+  last_value: null
+  last_value_text: 在手订单充足，存货金额创历史新高
+  search_query: 半导体设备 在手订单 2026
+  source_session: 19
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:12:30.705009'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 国内半导体设备厂商新增订单
+  industry: 人工智能
+  last_updated: '2026-07-03T10:12:30.705009'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 北方华创 新增订单 2026
+  source_session: 19
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: breaking
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:12:39.717369'
+    trend: rising
+    triggered: false
+    value: 美国商务部于2026年5月31日发布新指南，禁止向中国境外的中国实体出口先进AI芯片，进一步封堵监管漏洞
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 美国出口管制政策
+  industry: 人工智能
+  last_updated: '2026-07-03T10:12:39.717369'
+  last_value: null
+  last_value_text: 美国商务部于2026年5月31日发布新指南，禁止向中国境外的中国实体出口先进AI芯片，进一步封堵监管漏洞
+  search_query: 美国 对华 半导体 管制 2026
+  source_session: 19
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:05:28.001080'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI应用扩散带来新增长点
+  indicator: 工业软件AI功能渗透率
+  industry: 人工智能
+  last_updated: '2026-07-03T10:05:28.001080'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业软件 AI 渗透率 2026
+  source_session: 18
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:05:37.241456'
+    trend: rising
+    triggered: false
+    value: 新建产线设备国产化率突破55%
+    value_numeric: 55
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备材料订单高峰与管制风险
+  indicator: 国内半导体设备国产化率
+  industry: 人工智能
+  last_updated: '2026-07-03T10:05:37.241456'
+  last_value: 55
+  last_value_text: 新建产线设备国产化率突破55%
+  search_query: 半导体设备国产化率 2026
+  source_session: 18
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: breaking
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:05:45.916283'
+    trend: rising
+    triggered: false
+    value: 美国商务部2026年5月31日发布新规，禁止向中国境外的中国实体出口先进AI芯片，以封堵监管漏洞。
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备材料订单高峰与管制风险
+  indicator: 美国对华出口管制政策更新
+  industry: 人工智能
+  last_updated: '2026-07-03T10:05:45.916283'
+  last_value: null
+  last_value_text: 美国商务部2026年5月31日发布新规，禁止向中国境外的中国实体出口先进AI芯片，以封堵监管漏洞。
+  search_query: 美国 对华 半导体 出口管制 2026
+  source_session: 18
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:06:05.386855'
+    trend: unclear
+    triggered: false
+    value: 产能利用率99%
+    value_numeric: 99
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 存储与高速PCB弹性标的
+  indicator: 高速PCB产能利用率
+  industry: 人工智能
+  last_updated: '2026-07-03T10:06:05.386855'
+  last_value: 99
+  last_value_text: 产能利用率99%
+  search_query: 高速PCB 产能利用率 沪电股份 2026
+  source_session: 18
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:06:12.545910'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 存储与高速PCB弹性标的
+  indicator: 大客户AI服务器出货指引
+  industry: 人工智能
+  last_updated: '2026-07-03T10:06:12.545910'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 英伟达 AI服务器 出货指引 2026
+  source_session: 18
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:06:19.485718'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - AI应用扩散方向标的
+  indicator: 工业软件AI功能客户数
+  industry: 人工智能
+  last_updated: '2026-07-03T10:06:19.485718'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 工业软件 AI 客户数 2026
+  source_session: 18
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T10:06:29.432131'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 半导体设备国产替代龙头
+  indicator: 国内主要设备公司新增订单金额
+  industry: 人工智能
+  last_updated: '2026-07-03T10:06:29.432131'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 中微公司 新增订单 2026
+  source_session: 18
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:42:34.750525'
+    trend: rising
+    triggered: false
+    value: 海光信息一季度净利润同比增长近36%
+    value_numeric: 36
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI 驱动电子全链景气
+  indicator: AI 相关公司季度利润增速
+  industry: 人工智能
+  last_updated: '2026-07-03T07:42:34.750525'
+  last_value: 36
+  last_value_text: 海光信息一季度净利润同比增长近36%
+  search_query: AI 产业链公司 2026 利润预告
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: daily
+  history:
+  - timestamp: '2026-07-03T07:42:50.306681'
+    trend: rising
+    triggered: false
+    value: 日均Token调用量已超过140万亿
+    value_numeric: 140000000000000
+  - timestamp: '2026-07-04T14:50:48.381658'
+    trend: rising
+    triggered: false
+    value: 中国日均Token调用量已突破140万亿
+    value_numeric: 140000000000000
+  - timestamp: '2026-07-06T01:44:22.266083'
+    trend: unclear
+    triggered: false
+    value: ''
+    value_numeric: null
+  - timestamp: '2026-07-06T01:46:11.316922'
+    trend: unclear
+    triggered: false
+    value: ''
+    value_numeric: null
+  - timestamp: '2026-07-06T01:47:19.582067'
+    trend: unclear
+    triggered: false
+    value: ''
+    value_numeric: null
+  - timestamp: '2026-07-06T01:50:06.568976'
+    trend: rising
+    triggered: false
+    value: 140万亿
+    value_numeric: 140000000000000
+  - timestamp: '2026-07-07T10:02:07.953185'
+    trend: rising
+    triggered: false
+    value: 140万亿
+    value_numeric: 140000000000000
+  - timestamp: '2026-07-08T11:24:38.842859'
+    trend: rising
+    triggered: false
+    value: 140万亿
+    value_numeric: 140000000000000
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - Token 消耗爆发式增长
+  indicator: 中国日均 Token 消耗量
+  industry: 人工智能
+  last_updated: '2026-07-08T11:24:38.842859'
+  last_value: 140000000000000
+  last_value_text: 140万亿
+  search_query: 中国日均 Token 消耗量 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:43:03.874129'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - Token 消耗爆发式增长
+  indicator: 全球 AI 活跃用户数
+  industry: 人工智能
+  last_updated: '2026-07-03T07:43:03.874129'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 全球 AI 活跃用户 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:43:11.414055'
+    trend: rising
+    triggered: false
+    value: 预计2027年HBM合约价格将大幅上涨，可能达倍数涨幅
+    value_numeric: null
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 存储芯片成为领涨引擎
+  indicator: HBM 平均售价变动
+  industry: 人工智能
+  last_updated: '2026-07-03T07:43:11.411822'
+  last_value: null
+  last_value_text: 预计2027年HBM合约价格将大幅上涨，可能达倍数涨幅
+  search_query: HBM 价格走势 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:43:24.419020'
+    trend: rising
+    triggered: false
+    value: 美光2026年第二财季营收同比增长167%
+    value_numeric: 167
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 存储芯片成为领涨引擎
+  indicator: 存储原厂营收增速
+  industry: 人工智能
+  last_updated: '2026-07-03T07:43:24.419020'
+  last_value: 167
+  last_value_text: 美光2026年第二财季营收同比增长167%
+  search_query: 三星 SK 海力士 美光 营收 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:43:31.780099'
+    trend: rising
+    triggered: false
+    value: 2026年三星存储芯片资本支出将较2025年大幅增长
+    value_numeric: null
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 存储厂商开启扩产周期
+  indicator: 三星/海力士/美光 Capex 指引
+  industry: 人工智能
+  last_updated: '2026-07-03T07:43:31.780099'
+  last_value: null
+  last_value_text: 2026年三星存储芯片资本支出将较2025年大幅增长
+  search_query: 2026 存储资本支出 计划
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:43:45.426820'
+    trend: rising
+    triggered: false
+    value: 60+台（2026年目标）
+    value_numeric: 60
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 存储厂商开启扩产周期
+  indicator: 设备出货量（ASML 光刻机）
+  industry: 人工智能
+  last_updated: '2026-07-03T07:43:45.426820'
+  last_value: 60
+  last_value_text: 60+台（2026年目标）
+  search_query: ASML EUV 出货 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:43:52.768563'
+    trend: rising
+    triggered: false
+    value: 未找到直接数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 数据中心能源需求激增
+  indicator: 数据中心电力需求增速
+  industry: 人工智能
+  last_updated: '2026-07-03T07:43:52.768563'
+  last_value: null
+  last_value_text: 未找到直接数据
+  search_query: IEA 数据中心电力需求 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:44:02.555403'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 数据中心能源需求激增
+  indicator: 绿电 PPA 签约量
+  industry: 人工智能
+  last_updated: '2026-07-03T07:44:02.555403'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 科技公司 绿电采购 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:44:10.297200'
+    trend: rising
+    triggered: false
+    value: 88%的企业AI采用率
+    value_numeric: 88
+  hypothesis_ids:
+  - H1-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI 应用从试点到规模部署
+  indicator: 企业 AI 使用率调查
+  industry: 人工智能
+  last_updated: '2026-07-03T07:44:10.297200'
+  last_value: 88
+  last_value_text: 88%的企业AI采用率
+  search_query: 2026 企业 AI 渗透率 调查
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:44:17.078146'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI 应用从试点到规模部署
+  indicator: AI 相关应用收入增速
+  industry: 人工智能
+  last_updated: '2026-07-03T07:44:17.078146'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: AI SaaS 公司 2026 收入增速
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:44:24.746918'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - disputed
+  hypothesis_titles:
+  - 存储供需反转风险
+  indicator: DRAM 合约价月度变动
+  industry: 人工智能
+  last_updated: '2026-07-03T07:44:24.746918'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: DRAM 合约价 2026 月度
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:44:33.020899'
+    trend: falling
+    triggered: false
+    value: 121天
+    value_numeric: 121
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - disputed
+  hypothesis_titles:
+  - 存储供需反转风险
+  indicator: 存储原厂库存天数
+  industry: 人工智能
+  last_updated: '2026-07-03T07:44:33.020899'
+  last_value: 121
+  last_value_text: 121天
+  search_query: 存储 库存 天数 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:44:39.652697'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 能源成本约束 AI 扩张
+  indicator: 数据中心电费占运营成本比例
+  industry: 人工智能
+  last_updated: '2026-07-03T07:44:39.652697'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 数据中心 电费 占比 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:44:48.706854'
+    trend: unclear
+    triggered: false
+    value: 346 TOPS/W
+    value_numeric: 346
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 能源成本约束 AI 扩张
+  indicator: AI 芯片单位功耗算力（TOPS/W）
+  industry: 人工智能
+  last_updated: '2026-07-03T07:44:48.706854'
+  last_value: 346
+  last_value_text: 346 TOPS/W
+  search_query: AI 芯片 能效比 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:45:04.349551'
+    trend: rising
+    triggered: false
+    value: 47%
+    value_numeric: 47
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI 基础设施与能效受益
+  indicator: 液冷渗透率
+  industry: 人工智能
+  last_updated: '2026-07-03T07:45:04.349551'
+  last_value: 47
+  last_value_text: 47%
+  search_query: 液冷服务器 渗透率 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:45:10.281349'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI 基础设施与能效受益
+  indicator: 科技公司核能合作协议
+  industry: 人工智能
+  last_updated: '2026-07-03T07:45:10.281349'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 科技公司 核能 SMR 合作 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-03T07:45:19.829719'
+    trend: unclear
+    triggered: false
+    value: 346 TOPS/W
+    value_numeric: 346
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - AI 基础设施与能效受益
+  indicator: AI 芯片能效比指标
+  industry: 人工智能
+  last_updated: '2026-07-03T07:45:19.829719'
+  last_value: 346
+  last_value_text: 346 TOPS/W
+  search_query: AI 芯片 TOPS/W 2026
+  source_session: 1
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold

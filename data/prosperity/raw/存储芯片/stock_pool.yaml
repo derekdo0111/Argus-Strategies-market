@@ -1,0 +1,386 @@
+- composite: 1.1874
+  final_score: 1.1874
+  hit_hypotheses:
+  - H0-1
+  - H1-1
+  - H1-3
+  - H3-3
+  - H2-3
+  name: 江波龙
+  prosperity_fit: 2.073
+  purity_estimate: 0.0
+  quality: 0.975
+  rank: 1
+  rank_overall: 1
+  raw_indicators:
+    gross_margin: 55.5
+    net_profit_yoy: 2644.0
+    revenue_yoy: 132.8
+    roe: 38.5
+  risk_exposure: 0.147
+  score_total: 118.7
+  segment: downstream
+  selection_reason: 模组龙头库存管理审慎，跌价准备计提充分，涨价受益确定性强
+  ts_code: 301308.SZ
+- composite: 0.9137
+  final_score: 0.9137
+  hit_hypotheses:
+  - H0-3
+  - H1-2
+  - H3-2
+  name: 中微公司
+  prosperity_fit: 1.63
+  purity_estimate: .nan
+  quality: 0.4934
+  rank: 1
+  rank_overall: 2
+  raw_indicators:
+    gross_margin: 39.9
+    net_profit_yoy: 197.2
+    revenue_yoy: 34.1
+    roe: 4.0
+  risk_exposure: 0
+  score_total: 91.4
+  segment: upstream
+  selection_reason: 刻蚀设备龙头，深度受益存储扩产及国产替代
+  ts_code: 688012.SH
+- composite: 0.5248
+  final_score: 0.5248
+  hit_hypotheses:
+  - H0-3
+  - H1-2
+  - H3-2
+  name: 拓荆科技
+  prosperity_fit: 0.7871
+  purity_estimate: 0.4829
+  quality: 0.6561
+  rank: 2
+  rank_overall: 3
+  raw_indicators:
+    gross_margin: 41.7
+    net_profit_yoy: 488.3
+    revenue_yoy: 57.0
+    roe: 8.2
+  risk_exposure: 0.0
+  score_total: 52.5
+  segment: upstream
+  selection_reason: CVD/PVD设备龙头，存储扩产核心受益者
+  ts_code: 688072.SH
+- composite: 0.515
+  final_score: 0.515
+  hit_hypotheses:
+  - H0-1
+  - H0-2
+  name: 北京君正
+  prosperity_fit: 0.7966
+  purity_estimate: 0.4979
+  quality: 0.5834
+  rank: 1
+  rank_overall: 4
+  raw_indicators:
+    gross_margin: 43.5
+    net_profit_yoy: 331.6
+    revenue_yoy: 47.1
+    roe: 2.5
+  risk_exposure: 0.0
+  score_total: 51.5
+  segment: mid
+  selection_reason: 车载存储芯片龙头，供需缺口下业绩弹性显著
+  ts_code: 300223.SZ
+- composite: 0.4969
+  final_score: 0.4969
+  hit_hypotheses:
+  - H0-1
+  name: 香农芯创
+  prosperity_fit: 0.7069
+  purity_estimate: 0.7069
+  quality: 0.7172
+  rank: 2
+  rank_overall: 5
+  raw_indicators:
+    gross_margin: 9.1
+    net_profit_yoy: 7835.1
+    revenue_yoy: 200.6
+    roe: 31.5
+  risk_exposure: 0.0
+  score_total: 49.7
+  segment: downstream
+  selection_reason: 电子元器件分销规模领先，存储涨价周期带动分销业绩弹性
+  ts_code: 300475.SZ
+- composite: 0.4388
+  final_score: 0.4388
+  hit_hypotheses:
+  - H0-3
+  - H1-2
+  name: 快克智能
+  prosperity_fit: 0.6552
+  purity_estimate: 0.4427
+  quality: 0.5562
+  rank: 3
+  rank_overall: 6
+  raw_indicators:
+    gross_margin: 49.8
+    net_profit_yoy: 16.1
+    revenue_yoy: 33.1
+    roe: 5.3
+  risk_exposure: 0.0
+  score_total: 43.9
+  segment: upstream
+  selection_reason: 封装设备供应商，受益存储封装产能扩张
+  ts_code: 603203.SH
+- composite: 0.4077
+  final_score: 0.4077
+  hit_hypotheses:
+  - H0-1
+  - H1-1
+  - H1-3
+  - H2-3
+  name: 大普微
+  prosperity_fit: 0.4869
+  purity_estimate: 0.2474
+  quality: 0.8756
+  rank: 3
+  rank_overall: 7
+  raw_indicators:
+    gross_margin: 37.6
+    net_profit_yoy: 398.9
+    revenue_yoy: 341.0
+    roe: 60.7
+  risk_exposure: 0.0364
+  score_total: 40.8
+  segment: downstream
+  selection_reason: 企业级SSD模组稀缺标的，AI算力需求与存储涨价双击
+  ts_code: 301666.SZ
+- composite: 0.3308
+  final_score: 0.3308
+  hit_hypotheses:
+  - H0-3
+  - H1-2
+  name: 长川科技
+  prosperity_fit: 0.37
+  purity_estimate: 0.25
+  quality: 0.7289
+  rank: 4
+  rank_overall: 8
+  raw_indicators:
+    gross_margin: 56.8
+    net_profit_yoy: 217.6
+    revenue_yoy: 69.1
+    roe: 7.2
+  risk_exposure: 0.0
+  score_total: 33.1
+  segment: upstream
+  selection_reason: 半导体测试设备龙头，存储扩产驱动测试需求增长
+  ts_code: 300604.SZ
+- composite: 0.3107
+  final_score: 0.3107
+  hit_hypotheses:
+  - H0-1
+  - H1-1
+  - H1-3
+  - H2-3
+  name: 德明利
+  prosperity_fit: 0.2379
+  purity_estimate: 0.1209
+  quality: 0.9856
+  rank: 4
+  rank_overall: 9
+  raw_indicators:
+    gross_margin: 57.4
+    net_profit_yoy: 4943.4
+    revenue_yoy: 502.1
+    roe: 67.6
+  risk_exposure: 0.0178
+  score_total: 31.1
+  segment: downstream
+  selection_reason: 移动/嵌入式/SSD模组全覆盖，涨价周期低价库存释放高利润弹性
+  ts_code: 001309.SZ
+- composite: 0.3004
+  final_score: 0.3004
+  hit_hypotheses:
+  - H0-3
+  - H1-2
+  - H3-2
+  name: 华海清科
+  prosperity_fit: 0.4075
+  purity_estimate: 0.25
+  quality: 0.483
+  rank: 5
+  rank_overall: 10
+  raw_indicators:
+    gross_margin: 42.3
+    net_profit_yoy: 5.9
+    revenue_yoy: 31.7
+    roe: 3.3
+  risk_exposure: 0.0
+  score_total: 30.0
+  segment: upstream
+  selection_reason: CMP设备独供，存储工艺关键设备需求爆发
+  ts_code: 688120.SH
+- composite: 0.294
+  final_score: 0.294
+  hit_hypotheses:
+  - H0-1
+  - H0-2
+  name: 恒烁股份
+  prosperity_fit: 0.3453
+  purity_estimate: 0.2158
+  quality: 0.6067
+  rank: 2
+  rank_overall: 11
+  raw_indicators:
+    gross_margin: 41.8
+    net_profit_yoy: 284.7
+    revenue_yoy: 192.1
+    roe: 3.7
+  risk_exposure: 0.0
+  score_total: 29.4
+  segment: mid
+  selection_reason: 高增长NOR Flash设计公司，涨价周期业绩弹性大
+  ts_code: 688416.SH
+- composite: 0.2875
+  final_score: 0.2875
+  hit_hypotheses:
+  - H0-1
+  - H0-2
+  name: 兆易创新
+  prosperity_fit: 0.2854
+  purity_estimate: 0.1784
+  quality: 0.7239
+  rank: 3
+  rank_overall: 12
+  raw_indicators:
+    gross_margin: 57.1
+    net_profit_yoy: 522.8
+    revenue_yoy: 119.4
+    roe: 6.6
+  risk_exposure: 0.0
+  score_total: 28.7
+  segment: mid
+  selection_reason: NOR Flash/DRAM龙头，全品类涨价直接增厚利润
+  ts_code: 603986.SH
+- composite: 0.2783
+  final_score: 0.2783
+  hit_hypotheses:
+  - H0-3
+  - H1-2
+  name: 中科飞测
+  prosperity_fit: 0.3582
+  purity_estimate: 0.242
+  quality: 0.4962
+  rank: 6
+  rank_overall: 13
+  raw_indicators:
+    gross_margin: 47.8
+    net_profit_yoy: -354.3
+    revenue_yoy: 34.6
+    roe: -1.3
+  risk_exposure: 0.0
+  score_total: 27.8
+  segment: upstream
+  selection_reason: 量测检测设备领先者，存储制造良率提升必备
+  ts_code: 688361.SH
+- composite: 0.2765
+  final_score: 0.2765
+  hit_hypotheses:
+  - H0-1
+  - H0-2
+  name: 东芯股份
+  prosperity_fit: 0.2842
+  purity_estimate: 0.1776
+  quality: 0.6722
+  rank: 4
+  rank_overall: 14
+  raw_indicators:
+    gross_margin: 53.2
+    net_profit_yoy: 333.4
+    revenue_yoy: 236.9
+    roe: 3.9
+  risk_exposure: 0.0
+  score_total: 27.7
+  segment: mid
+  selection_reason: NAND/MCP存储设计先锋，涨价周期量价弹性突出
+  ts_code: 688110.SH
+- composite: 0.2215
+  final_score: 0.2215
+  hit_hypotheses:
+  - H0-1
+  name: 澜起科技
+  prosperity_fit: 0.2354
+  purity_estimate: 0.2354
+  quality: 0.5189
+  rank: 5
+  rank_overall: 15
+  raw_indicators:
+    gross_margin: 69.8
+    net_profit_yoy: 61.3
+    revenue_yoy: 19.5
+    roe: 5.0
+  risk_exposure: 0.0
+  score_total: 22.1
+  segment: mid
+  selection_reason: DDR5内存接口芯片霸主，AI算力驱动量价齐升
+  ts_code: 688008.SH
+- composite: 0.2011
+  final_score: 0.2011
+  hit_hypotheses:
+  - H0-1
+  name: 中电港
+  prosperity_fit: 0.2497
+  purity_estimate: 0.2497
+  quality: 0.3811
+  rank: 5
+  rank_overall: 16
+  raw_indicators:
+    gross_margin: 2.8
+    net_profit_yoy: 87.4
+    revenue_yoy: 144.4
+    roe: 2.9
+  risk_exposure: 0.0
+  score_total: 20.1
+  segment: downstream
+  selection_reason: 存储器分销收入占比极高，直接映射行业景气度上行
+  ts_code: 001287.SZ
+- composite: 0.1983
+  final_score: 0.1983
+  hit_hypotheses:
+  - H0-1
+  - H1-1
+  - H1-3
+  - H2-3
+  name: 佰维存储
+  prosperity_fit: 0.012
+  purity_estimate: 0.0061
+  quality: 0.9628
+  rank: 6
+  rank_overall: 17
+  raw_indicators:
+    gross_margin: 53.3
+    net_profit_yoy: 1567.9
+    revenue_yoy: 341.5
+    roe: 41.6
+  risk_exposure: 0.0009
+  score_total: 19.8
+  segment: downstream
+  selection_reason: 嵌入式及PC存储模组主力，直接受益于消费级存储涨价与库存增值
+  ts_code: 688525.SH
+- composite: 0.1784
+  final_score: 0.1784
+  hit_hypotheses:
+  - H0-3
+  name: 伟测科技
+  prosperity_fit: 0.1367
+  purity_estimate: 0.1367
+  quality: 0.55
+  rank: 6
+  rank_overall: 18
+  raw_indicators:
+    gross_margin: 35.0
+    net_profit_yoy: 173.4
+    revenue_yoy: 71.8
+    roe: 2.0
+  risk_exposure: 0.0
+  score_total: 17.8
+  segment: mid
+  selection_reason: 第三方存储测试龙头，扩产周期测试需求爆发
+  ts_code: 688372.SH

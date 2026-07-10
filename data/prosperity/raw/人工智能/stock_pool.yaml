@@ -1,0 +1,401 @@
+- direction_score: 0.0
+  final_score: 0.4424
+  finance_score: 0.392
+  matched_l3: H3-1
+  matched_reason: 互联网广告及数字营销，属于AI应用而非算力硬件，搜索素材未提及
+  name: 智度股份
+  purity_detail:
+    matched_l3: H3-1
+    related_items:
+    - 互联网新媒体营销服务
+    - 互联网和相关服务
+    related_share: 0.4424
+  purity_score: 0.4424
+  rank: 1
+  raw_indicators:
+    gross_margin: 17.3
+    net_profit_yoy: 3.8
+    revenue_yoy: -4.7
+    roe: 1.1
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.0
+    finance_reference: 0.392
+    purity: 0.4424
+  score_total: 44.2
+  ts_code: 000676.SZ
+- direction_score: 0.0
+  final_score: 0.2495
+  finance_score: 0.757
+  matched_l3: H3-1
+  matched_reason: 视觉内容版权及AI生成内容平台，非算力硬件，搜索素材未提及
+  name: 视觉中国
+  purity_detail:
+    matched_l3: H3-1
+    related_items:
+    - 互联网传媒
+    related_share: 0.2495
+  purity_score: 0.2495
+  rank: 2
+  raw_indicators:
+    gross_margin: 42.4
+    net_profit_yoy: 1240.5
+    revenue_yoy: -2.2
+    roe: 6.4
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.0
+    finance_reference: 0.757
+    purity: 0.2495
+  score_total: 24.9
+  ts_code: 000681.SZ
+- direction_score: 0.2
+  final_score: 0.2131
+  finance_score: 0.486
+  matched_l3: H3-1
+  matched_reason: 主营氯碱化工，军工电子占比不大，AI芯片领域无明确批量供货，沾边但极弱，搜索素材未提及
+  name: 航锦科技
+  purity_detail:
+    matched_l3: H3-1
+    related_items:
+    - 电子-智算算力
+    - 智算算力业务
+    related_share: 0.2131
+  purity_score: 0.2131
+  rank: 3
+  raw_indicators:
+    gross_margin: 10.8
+    net_profit_yoy: 213.6
+    revenue_yoy: -30.8
+    roe: 0.7
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.2
+    finance_reference: 0.486
+    purity: 0.2131
+  score_total: 21.3
+  ts_code: 000818.SZ
+- direction_score: 0.0
+  final_score: 0.1534
+  finance_score: 0.261
+  matched_l3: H3-1
+  matched_reason: 环保及固废处理，与AI硬件无关，搜索素材未提及
+  name: '*ST启环'
+  purity_detail:
+    matched_l3: H3-1
+    related_items:
+    - 污水处理与自来水供应收入
+    - 污水处理与自来水供应收入(行业)
+    related_share: 0.1534
+  purity_score: 0.1534
+  rank: 4
+  raw_indicators:
+    gross_margin: 26.0
+    net_profit_yoy: -36.6
+    revenue_yoy: -12.5
+    roe: .nan
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.0
+    finance_reference: 0.261
+    purity: 0.1534
+  score_total: 15.3
+  ts_code: 000826.SZ
+- direction_score: 0.0
+  final_score: 0.0956
+  finance_score: 0.283
+  matched_l3: H3-1
+  matched_reason: 工业互联网及矿山智能化，与AI算力硬件无直接关联，搜索素材未提及
+  name: 云鼎科技
+  purity_detail:
+    matched_l3: H3-1
+    related_items:
+    - 工业互联网平台产品
+    - 电力、热力生产和供应业
+    related_share: 0.0956
+  purity_score: 0.0956
+  rank: 5
+  raw_indicators:
+    gross_margin: 33.8
+    net_profit_yoy: -37.2
+    revenue_yoy: -24.2
+    roe: 1.2
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.0
+    finance_reference: 0.283
+    purity: 0.0956
+  score_total: 9.6
+  ts_code: 000409.SZ
+- direction_score: 0.0
+  final_score: 0.0923
+  finance_score: 0.56
+  matched_l3: H3-1
+  matched_reason: 面板显示龙头，不生产AI算力芯片/光模块等核心硬件，搜索素材未提及
+  name: 京东方A
+  purity_detail:
+    matched_l3: H3-1
+    related_items:
+    - 物联网创新业务
+    - 物联网创新业务(行业)
+    related_share: 0.0923
+  purity_score: 0.0923
+  rank: 6
+  raw_indicators:
+    gross_margin: 15.6
+    net_profit_yoy: 5.8
+    revenue_yoy: 0.8
+    roe: 1.3
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.0
+    finance_reference: 0.56
+    purity: 0.0923
+  score_total: 9.2
+  ts_code: 000725.SZ
+- direction_score: 0.0
+  final_score: 0.0743
+  finance_score: 0.427
+  matched_l3: H3-1
+  matched_reason: 软件及信息技术服务（华为生态），不涉及AI算力硬件制造，搜索素材未提及
+  name: 常山北明
+  purity_detail:
+    matched_l3: H3-1
+    related_items:
+    - 互联网及运营商
+    related_share: 0.0743
+  purity_score: 0.0743
+  rank: 7
+  raw_indicators:
+    gross_margin: 9.2
+    net_profit_yoy: -1.8
+    revenue_yoy: 6.2
+    roe: -1.9
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.0
+    finance_reference: 0.427
+    purity: 0.0743
+  score_total: 7.4
+  ts_code: 000158.SZ
+- direction_score: 0.0
+  final_score: 0.0659
+  finance_score: 0.216
+  matched_l3: H3-1
+  matched_reason: 基因检测服务，与AI算力硬件无关，搜索素材未提及
+  name: 贝瑞基因
+  purity_detail:
+    matched_l3: H3-1
+    related_items:
+    - 基础科研服务
+    related_share: 0.0659
+  purity_score: 0.0659
+  rank: 8
+  raw_indicators:
+    gross_margin: 51.5
+    net_profit_yoy: -205.4
+    revenue_yoy: -3.5
+    roe: -1.3
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.0
+    finance_reference: 0.216
+    purity: 0.0659
+  score_total: 6.6
+  ts_code: 000710.SZ
+- direction_score: 0.0
+  final_score: 0.0435
+  finance_score: 0.356
+  matched_l3: H3-1
+  matched_reason: 广电传媒运营商，无AI算力硬件业务，搜索素材未提及
+  name: 华数传媒
+  purity_detail:
+    matched_l3: H3-1
+    related_items:
+    - 互联网电视
+    related_share: 0.0435
+  purity_score: 0.0435
+  rank: 9
+  raw_indicators:
+    gross_margin: 29.6
+    net_profit_yoy: -13.8
+    revenue_yoy: -4.9
+    roe: 0.7
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.0
+    finance_reference: 0.356
+    purity: 0.0435
+  score_total: 4.3
+  ts_code: 000156.SZ
+- direction_score: 0.0
+  final_score: 0.0323
+  finance_score: 0.651
+  matched_l3: H3-1
+  matched_reason: 火力发电业务，与AI基础设施无关联，搜索素材未提及
+  name: 建投能源
+  purity_detail:
+    matched_l3: H3-1
+    related_items:
+    - 热力供应
+    - 热力供应(行业)
+    related_share: 0.0323
+  purity_score: 0.0323
+  rank: 10
+  raw_indicators:
+    gross_margin: 23.0
+    net_profit_yoy: 35.1
+    revenue_yoy: -4.7
+    roe: 4.6
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.0
+    finance_reference: 0.651
+    purity: 0.0323
+  score_total: 3.2
+  ts_code: 000600.SZ
+- direction_score: 0.0
+  final_score: 0.0224
+  finance_score: 0.8
+  matched_l3: H3-1
+  matched_reason: 电力自动化设备，虽有智能电网概念但不属于AI算力基础设施，搜索素材未提及
+  name: 东方电子
+  purity_detail:
+    matched_l3: H3-1
+    related_items:
+    - 工业互联网及智能制造
+    related_share: 0.0224
+  purity_score: 0.0224
+  rank: 11
+  raw_indicators:
+    gross_margin: 30.4
+    net_profit_yoy: 95.1
+    revenue_yoy: 8.1
+    roe: 3.9
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.0
+    finance_reference: 0.8
+    purity: 0.0224
+  score_total: 2.2
+  ts_code: 000682.SZ
+- direction_score: 0.6
+  final_score: 0.0
+  finance_score: 0.763
+  matched_l3: H3-1
+  matched_reason: 冷链及工业制冷龙头，子公司涉足数据中心液冷解决方案，符合液冷散热受益环节，但AI液冷营收占比和龙头地位待确认，搜索素材未提及
+  name: 冰轮环境
+  purity_detail:
+    matched_l3: H3-1
+    related_items: []
+    related_share: 0.0
+  purity_score: 0.0
+  rank: 12
+  raw_indicators:
+    gross_margin: 24.9
+    net_profit_yoy: 25.1
+    revenue_yoy: 18.3
+    roe: 1.8
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.6
+    finance_reference: 0.763
+    purity: 0.0
+  score_total: 0.0
+  ts_code: 000811.SZ
+- direction_score: 0.5
+  final_score: 0.0
+  finance_score: 0.514
+  matched_l3: H3-1
+  matched_reason: 通信设备龙头，提供服务器、自研芯片（中兴微电子），有望受益于AI基础设施扩张，但AI相关营收占比不明确，未明显进入英伟达/AMD供应链，搜索素材未直接提及
+  name: 中兴通讯
+  purity_detail:
+    matched_l3: H3-1
+    related_items: []
+    related_share: 0.0
+  purity_score: 0.0
+  rank: 13
+  raw_indicators:
+    gross_margin: 28.3
+    net_profit_yoy: -46.6
+    revenue_yoy: 6.1
+    roe: 1.7
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.5
+    finance_reference: 0.514
+    purity: 0.0
+  score_total: 0.0
+  ts_code: 000063.SZ
+- direction_score: 0.5
+  final_score: 0.0
+  finance_score: 0.641
+  matched_l3: H3-1
+  matched_reason: 国产CPU飞腾为核心，可构成国产AI服务器算力基础，属于自主算力方向，但非英伟达/AMD供应链，订单确定性待验证，搜索素材未提及
+  name: 中国长城
+  purity_detail:
+    matched_l3: H3-1
+    related_items: []
+    related_share: 0.0
+  purity_score: 0.0
+  rank: 14
+  raw_indicators:
+    gross_margin: 18.8
+    net_profit_yoy: 47.6
+    revenue_yoy: 12.7
+    roe: -0.8
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.5
+    finance_reference: 0.641
+    purity: 0.0
+  score_total: 0.0
+  ts_code: 000066.SZ
+- direction_score: 0.5
+  final_score: 0.0
+  finance_score: 0.588
+  matched_l3: H3-1
+  matched_reason: 光纤光缆及光模块业务，子公司四川华拓有高速光模块产品，与AI光模块方向沾边，但批量供货大客户的记录不明确，搜索素材未提及
+  name: 特发信息
+  purity_detail:
+    matched_l3: H3-1
+    related_items: []
+    related_share: 0.0
+  purity_score: 0.0
+  rank: 15
+  raw_indicators:
+    gross_margin: 19.2
+    net_profit_yoy: 36.7
+    revenue_yoy: 5.1
+    roe: -0.9
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.5
+    finance_reference: 0.588
+    purity: 0.0
+  score_total: 0.0
+  ts_code: 000070.SZ
+- direction_score: 0.3
+  final_score: 0.0
+  finance_score: 0.311
+  matched_l3: H3-1
+  matched_reason: 子公司桑达股份具有洁净室工程业务，可间接服务半导体/数据中心建设，但与AI算力核心硬件（芯片、光模块）无直接关联，搜索素材未提及
+  name: 深桑达A
+  purity_detail:
+    matched_l3: H3-1
+    related_items: []
+    related_share: 0.0
+  purity_score: 0.0
+  rank: 16
+  raw_indicators:
+    gross_margin: 6.6
+    net_profit_yoy: -142.0
+    revenue_yoy: 2.1
+    roe: -1.1
+  score_detail:
+    direction_annotation: H3-1
+    direction_score: 0.3
+    finance_reference: 0.311
+    purity: 0.0
+  score_total: 0.0
+  ts_code: 000032.SZ

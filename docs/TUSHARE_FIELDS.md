@@ -651,6 +651,11 @@
 
 ### 同比增长率
 
+> **v0.9.8-hotfix**：`tushare_client.get_fina_indicator()` 内部做 rename：
+> Tushare API 字段 `or_yoy` → 代码内部名 `revenue_yoy`（营收同比），
+> `netprofit_yoy` → 代码内部名 `net_profit_yoy`（归母净利同比）。
+> 下游代码统一用内部名访问，不受 API 原始字段名影响。
+
 | 字段名 | 中文含义 |
 |--------|----------|
 | `basic_eps_yoy` | 基本每股收益同比增长率(%) |

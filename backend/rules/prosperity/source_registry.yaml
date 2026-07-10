@@ -1,0 +1,20 @@
+# 信源注册表 — 按行业配置定向信源
+# 不在配置中的行业使用 defaults
+
+defaults:
+  priority_sources:
+    - 国务院政策文件库
+    - 国家统计局数据
+  domestic_sources:
+    - 东方财富行业板块
+    - 同花顺行业分析
+
+industries:
+  semiconductor:
+    priority_sources:
+      - SIA 全球半导体销售报告
+      - SEMI 设备订单数据
+      - WSTS 半导体预测
+    domestic_sources:
+      - 中国半导体行业协会 (CSIA)
+      - 大基金二期投向公告

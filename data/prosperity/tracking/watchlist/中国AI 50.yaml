@@ -1,0 +1,220 @@
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 产业景气持续高涨
+  indicator: 中国人工智能核心产业规模增速
+  industry: 中国AI 50
+  last_updated: '2026-07-08T11:45:26.448933'
+  last_value: null
+  last_value_text: ''
+  search_query: 中国人工智能核心产业规模 2026 增速
+  source_session: 110
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 产业景气持续高涨
+  indicator: 全球AI市场规模
+  industry: 中国AI 50
+  last_updated: '2026-07-08T11:45:26.448933'
+  last_value: null
+  last_value_text: ''
+  search_query: 全球人工智能市场规模 2026 IDC
+  source_session: 110
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 算力需求指数级扩张
+  indicator: 北美云厂商AI资本开支合计
+  industry: 中国AI 50
+  last_updated: '2026-07-08T11:45:26.448933'
+  last_value: null
+  last_value_text: ''
+  search_query: 北美云计算厂商 AI资本开支 2026
+  source_session: 110
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 算力需求指数级扩张
+  indicator: 大模型Token调用量
+  industry: 中国AI 50
+  last_updated: '2026-07-08T11:45:26.448933'
+  last_value: null
+  last_value_text: ''
+  search_query: 大模型 API调用量 2026 趋势
+  source_session: 110
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 全产业链业绩高确定性
+  indicator: 申万计算机板块归母净利润同比增速
+  industry: 中国AI 50
+  last_updated: '2026-07-08T11:45:26.448933'
+  last_value: null
+  last_value_text: ''
+  search_query: 申万计算机 归母净利润 2026 季度
+  source_session: 110
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 全产业链业绩高确定性
+  indicator: AI应用公司经营现金流/营业收入
+  industry: 中国AI 50
+  last_updated: '2026-07-08T11:45:26.448933'
+  last_value: null
+  last_value_text: ''
+  search_query: AI应用 经营性现金流 2026 财报
+  source_session: 110
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 半导体景气周期延续
+  indicator: 全球半导体月度销售额同比
+  industry: 中国AI 50
+  last_updated: '2026-07-08T11:45:26.448933'
+  last_value: null
+  last_value_text: ''
+  search_query: 全球半导体销售额 同比 2026 每月
+  source_session: 110
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 半导体景气周期延续
+  indicator: AI半导体占全球半导体销售额比重
+  industry: 中国AI 50
+  last_updated: '2026-07-08T11:45:26.448933'
+  last_value: null
+  last_value_text: ''
+  search_query: AI半导体 销售额 占比 2026 行业
+  source_session: 110
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 关注国产芯片突破
+  indicator: 国产AI芯片量产交付数量
+  industry: 中国AI 50
+  last_updated: '2026-07-08T11:45:26.449935'
+  last_value: null
+  last_value_text: ''
+  search_query: 国产AI芯片 出货量 2026 华为昇腾 壁仞
+  source_session: 110
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 关注国产芯片突破
+  indicator: 国产芯片在AI服务器中的渗透率
+  industry: 中国AI 50
+  last_updated: '2026-07-08T11:45:26.449935'
+  last_value: null
+  last_value_text: ''
+  search_query: 国产AI芯片 服务器 渗透率 2026
+  source_session: 110
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold

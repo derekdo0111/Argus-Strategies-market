@@ -1,0 +1,98 @@
+industry: 存储芯片
+chain:
+  segments:
+  - id: upstream_materials_equipment_eda
+    name: 上游原材料、设备与EDA
+    position: upstream
+    description: 提供硅片、光刻胶等核心材料，刻蚀、光刻机等核心设备，以及EDA工具。
+    bottleneck:
+      level: medium
+      detail: AI驱动下设备环节确定性凸显，但高端设备与材料依赖进口。
+      localization_rate: null
+    representative_companies: []
+  - id: mid_design_manufacturing_testing
+    name: 中游设计、制造与封测
+    position: mid
+    description: 包含存储芯片设计（Fabless）、制造（IDM/代工）及封装测试，是产业链核心环节。
+    bottleneck:
+      level: high
+      detail: 全球产能严重短缺，HBM供应紧张，市场由少数寡头垄断。
+      localization_rate: 35
+    representative_companies:
+    - 兆易创新 (603986.SH)
+    - 澜起科技 (688008.SH)
+    - 北京君正 (300223.SZ)
+    - 东芯股份 (688110.SH)
+    - 长鑫科技
+    - 长江存储
+    - 三星电子
+    - SK海力士
+    - 美光科技
+  - id: downstream_module_application
+    name: 下游模组与终端应用
+    position: downstream
+    description: 将芯片集成为模组并应用于AI服务器、数据中心、手机、汽车电子等终端。
+    bottleneck:
+      level: low
+      detail: 受上游供给影响，模组厂受益于涨价和备货需求，但核心瓶颈仍在上游产能。
+      localization_rate: null
+    representative_companies:
+    - 佰维存储 (688525.SH)
+    - 江波龙 (301308.SZ)
+    - 德明利
+bottlenecks:
+- segment_id: mid_design_manufacturing_testing
+  severity: high
+  description: 全球存储芯片,尤其是HBM产能严重短缺，供给增速上修空间有限，新产能释放需待2027年底至2028年。
+- segment_id: mid_design_manufacturing_testing
+  severity: high
+  description: DRAM市场呈寡头垄断，SK海力士、美光、三星占据95%市场份额。
+- segment_id: upstream_materials_equipment_eda
+  severity: medium
+  description: 地缘政治影响，导致市场分割，全球供应链存在风险。
+supply_demand:
+  overall_judgment: 严重供需短缺
+  demand_drivers:
+  - driver: AI服务器与算力硬件需求爆发
+    certainty: high
+    window: 2026-2028
+  - driver: 汽车电子与工业控制需求增长
+    certainty: high
+    window: 2026+
+  - driver: 消费电子终端容量升级
+    certainty: medium
+    window: 2026+
+  supply_constraints:
+  - constraint: HBM产能偏紧且扩产周期长
+    detail: 生产复杂、良率低，新产能实质释放需至2027年底之后。
+  - constraint: 原厂主动将产能向高端产品倾斜
+    detail: 导致传统存储芯片产能分配减少，整体供应能力下降。
+technology_paths:
+- name: HBM
+  maturity: 规模化
+  representative: SK海力士、三星、美光
+- name: DDR5
+  maturity: 规模化
+  representative: 三星、SK海力士、澜起科技
+- name: NAND Flash
+  maturity: 规模化
+  representative: 三星、铠侠、长江存储
+- name: NOR Flash
+  maturity: 规模化
+  representative: 兆易创新、北京君正
+- name: 存算一体
+  maturity: 商业示范
+  representative: null
+tracking_indicators:
+- name: DRAM/NAND Flash合约价
+  frequency: monthly
+  meaning: 反映市场供需紧张程度和行业景气度。
+- name: 头部原厂季度财报
+  frequency: quarterly
+  meaning: 监测营收利润、产能利用率及资本开支，判断周期位置。
+- name: HBM市场渗透率与订单
+  frequency: quarterly
+  meaning: 衡量AI驱动的需求强度及高端产能扩张进度。
+- name: 存储芯片进出口数据（金额与单价）
+  frequency: monthly
+  meaning: 通过量价变化验证全球供需失衡格局。

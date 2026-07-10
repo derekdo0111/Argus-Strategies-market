@@ -46,20 +46,20 @@ STRATEGIES: dict[str, StrategyMeta] = {
         rules_version="v2",
         component_dir="turtle",
     ),
-    # 高景气价值策略 — 开发完成后取消注释即激活
-    # "high_prosperity": StrategyMeta(
-    #     id="high_prosperity",
-    #     name="高景气价值股策略",
-    #     icon="growth",
-    #     description="寻找景气上行期的价值标的",
-    #     status="inactive",
-    #     api_prefix="/api/prosperity",
-    #     cache_dir="prosperity",
-    #     rules_dir="rules/v3",
-    #     rules_version="v3",
-    #     component_dir="prosperity",
-    #     badge="开发中",
-    # ),
+    "prosperity": StrategyMeta(
+        id="prosperity",
+        name="高景气策略",
+        icon="prosperity",
+        description="LLM 假设驱动行业研究：情报搜索→假设→验证→反推→报告+股池",
+        status="active",
+        api_prefix="/api/prosperity",
+        cache_dir="",
+        rules_dir="rules/prosperity",
+        rules_version="v1",
+        component_dir="prosperity",
+        badge="开发中",
+    ),
+
 }
 
 

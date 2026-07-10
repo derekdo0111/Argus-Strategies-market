@@ -1,0 +1,9 @@
+# 股池打分权重配置
+# 默认值如不配则用 stock_screener.py 内置默认
+
+revenue_growth: 0.25
+earnings_growth: 0.25
+roe_level: 0.15
+momentum_3m: 0.15
+momentum_6m: 0.10
+quality: 0.10

@@ -1,9 +1,9 @@
 """龟龟策略 Coordinator — 流程编排执行器
 
-混合模式：turtle-coordinator.md 定义流程（给LLM读），
+turtle-coordinator.md 定义流程+维护规则（公式四件套/硬门确定性/测试铁律），
 本文件执行实际编排（Python硬逻辑）。
 
-全量刷新流程: Step 1-5
+全量刷新流程: Step 1-5 (v0.3.0: CQ/PR改为软门)
 按需分析流程: Step 6-8 (v0.4.0: QRV Agent v2 + DataSummarizer)
 """
 

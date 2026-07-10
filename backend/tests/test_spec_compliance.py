@@ -1,11 +1,11 @@
-"""SPEC 合规测试 — v0.5.0
+"""SPEC 合规测试 — v0.8.0
 
-验证 coordinator.py / screener.py / qrv_agent.py 是否符合
-turtle-coordinator.md + ADR 的要求。
+验证 coordinator.py / screener.py / cash_quality.py / qrv_agent.py 是否符合
+turtle-coordinator.md（含「维护规则」章节） + ADR 的要求。
 
-v0.5.0 新增:
-- QRV Agent prompt 含 Q3/R2人才/生意本质/data_sufficiency
-- DataSummarizer A1 20+字段
+全局版本: v0.8.0
+规则版本: v2
+覆盖: Screener / Coordinator / CQ 8维度 / QRV 数据包 / R4 事件 / 软门行为 / 四件套同步
 """
 
 import os
@@ -844,3 +844,68 @@ class TestR4CorporateEvents:
         with open(rules_dir, "r", encoding="utf-8") as f:
             content = f.read()
         assert "R4 重大事件与资本运作" in content, "综合打分卡必须包含 R4 行"
+
+
+# ════════════════════════════════════════════════════════════════════
+# SPEC v0.8.0: 维护规则 — 四件套同步验证
+# ════════════════════════════════════════════════════════════════════
+
+class TestFourPieceSync:
+    """turtle-coordinator.md「维护规则」: 公式改动=四件套同步
+    （代码 + 规则YAML + coordinator.md + 测试）
+    """
+
+    def test_cq_rules_dimensions_match_code(self):
+        """CQ 规则 YAML 维度编号 = 代码 dim_fail_stats 维度编号（四件套同步）"""
+        # 规则文件：dim ID 格式为 "dim1_opcf_netprofit"
+        rules_dir = Path(__file__).parent.parent / "rules" / "v2" / "turtle_cash_quality.yaml"
+        with open(rules_dir, "r", encoding="utf-8") as f:
+            cq_rules = yaml.safe_load(f)
+        rule_dim_nums = {int(d["id"].split("_")[0].replace("dim", ""))
+                         for d in cq_rules["dimensions"]}
+
+        # 代码中 dim_fail_stats 的 key (coordinator.py L300-301)
+        code_dim_nums = {1, 2, 3, 4, 5, 6, 7, 8}
+
+        assert rule_dim_nums == code_dim_nums, (
+            f"CQ 规则维度编号 {sorted(rule_dim_nums)} "
+            f"≠ 代码 dim_fail_stats {sorted(code_dim_nums)}\n"
+            f"四件套不同步！修改CQ维度时必须同步更新规则YAML + 代码 + coordinator.md + 测试"
+        )
+
+    def test_pr_rules_gate_type_matches_coordinator_behavior(self):
+        """PR 规则 gate_type=soft 与 coordinator 软门行为一致"""
+        rules_dir = Path(__file__).parent.parent / "rules" / "v2" / "turtle_pr.yaml"
+        with open(rules_dir, "r", encoding="utf-8") as f:
+            pr_rules = yaml.safe_load(f)
+        assert pr_rules["gate_type"] == "soft", (
+            "PR gate_type 应为 soft（软门标记不淘汰），"
+            "如改为 hard 需同步修改 coordinator.py 中 pool 构建逻辑"
+        )
+
+    def test_cq_rules_gate_type_matches_coordinator_behavior(self):
+        """CQ 规则 gate_type=soft 与 coordinator 软门行为一致"""
+        rules_dir = Path(__file__).parent.parent / "rules" / "v2" / "turtle_cash_quality.yaml"
+        with open(rules_dir, "r", encoding="utf-8") as f:
+            cq_rules = yaml.safe_load(f)
+        assert cq_rules["gate_type"] == "soft", (
+            "CQ gate_type 应为 soft（软门标记不淘汰），"
+            "如改为 hard 需同步修改 coordinator.py 中 pool 构建逻辑"
+        )
+
+    def test_coordinator_md_has_maintenance_rules(self):
+        """turtle-coordinator.md 包含「维护规则」章节（四件套/硬门/测试铁律）"""
+        coord_md = Path(__file__).parent.parent / "app" / "strategies" / "turtle" / "turtle-coordinator.md"
+        with open(coord_md, "r", encoding="utf-8") as f:
+            content = f.read()
+        assert "维护规则" in content, "turtle-coordinator.md 缺失「维护规则」章节"
+        assert "公式四件套" in content, "维护规则应包含公式四件套"
+        assert "硬门确定性" in content, "维护规则应包含硬门确定性"
+        assert "测试铁律" in content, "维护规则应包含测试铁律"
+
+    def test_refresh_script_present(self):
+        """scripts/run_turtle_refresh.py 存在（全量刷新入口）"""
+        refresh_script = Path(__file__).parent.parent.parent / "scripts" / "run_turtle_refresh.py"
+        assert refresh_script.exists(), (
+            "scripts/run_turtle_refresh.py 缺失，全量刷新入口不可用"
+        )

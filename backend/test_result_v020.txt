@@ -1,0 +1,72 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.3, pluggy-1.6.0
+rootdir: D:\project\Investment Strategy\backend
+configfile: pyproject.toml
+plugins: anyio-4.13.0, asyncio-1.4.0, cov-7.1.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 179 items
+
+tests\test_cash_quality.py ............                                  [  6%]
+tests\test_data_summarizer.py ..............                             [ 14%]
+tests\test_penetration_return.py .............                           [ 21%]
+tests\test_prosperity_coordinator.py ................................... [ 41%]
+.........................................                                [ 64%]
+tests\test_screener.py .....................                             [ 75%]
+tests\test_spec_compliance.py .....................................      [ 96%]
+tests\test_websearch_extractor.py ......                                 [100%]
+
+============================== warnings summary ===============================
+app\core\config.py:7
+  D:\project\Investment Strategy\backend\app\core\config.py:7: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class Settings(BaseSettings):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.11.9-final-0 _______________
+
+Name                                                    Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------
+app\__init__.py                                             0      0   100%
+app\api\__init__.py                                         0      0   100%
+app\api\strategies.py                                      27     27     0%   3-50
+app\core\__init__.py                                        0      0   100%
+app\core\config.py                                         41      0   100%
+app\core\logging.py                                        14      2    86%   26-41
+app\core\registry.py                                       20     20     0%   17-73
+app\main.py                                                30     30     0%   3-65
+app\models\__init__.py                                      0      0   100%
+app\services\__init__.py                                    0      0   100%
+app\services\data_fetcher.py                              429    310    28%   71-79, 117-127, 132-133, 177-178, 199-202, 236-242, 253-254, 267, 279-290, 294-300, 316-394, 407-793, 809-837, 841-853, 865-876
+app\services\tushare_client.py                             88     16    82%   46, 70-74, 88, 107, 118, 135, 217, 231, 247, 260, 274, 330
+app\strategies\prosperity\__init__.py                       0      0   100%
+app\strategies\prosperity\agents\__init__.py                0      0   100%
+app\strategies\prosperity\agents\hypothesize_agent.py     198    175    12%   44-46, 50-56, 73-133, 142-169, 177-200, 204-235, 239-284, 294-318, 325-382, 409
+app\strategies\prosperity\agents\learning_agent.py         73     27    63%   38-39, 55-56, 65-81, 106-140, 151
+app\strategies\prosperity\agents\report_agent.py          163     89    45%   69-93, 128, 136, 138, 155-156, 169-172, 175-178, 188-226, 233-235, 258-300
+app\strategies\prosperity\agents\screening_agent.py       174     76    56%   46-60, 78-79, 107-108, 145-149, 174, 220, 256, 279, 290-292, 322, 328-333, 340-395, 400-438
+app\strategies\prosperity\agents\search_agent.py           71     56    21%   36-37, 46-96, 100-107, 111-134, 138-152
+app\strategies\prosperity\agents\track_agent.py           384    290    24%   72-73, 81-157, 172-225, 236-266, 270-274, 283-307, 315-356, 366-389, 394-443, 447-472, 475, 492-515, 519-535, 544-557, 565-612, 657, 665, 683-718, 726-744, 752, 768
+app\strategies\prosperity\agents\verify_agent.py          455    396    13%   80, 105-108, 112-119, 146-224, 239-249, 260-286, 290-299, 307-348, 352-380, 388-411, 419-428, 435-467, 481-543, 547-559, 572-670, 681-728, 732-745, 749-766, 770-778, 786-817, 825-863, 867-881
+app\strategies\prosperity\api.py                          136     99    27%   39-43, 49-53, 60-82, 88-129, 135-154, 160-180, 186-199, 210-213, 219-230
+app\strategies\prosperity\coordinator.py                  322    195    39%   94, 98-99, 127-128, 134-136, 174, 201-326, 337-366, 369-371, 374-376, 379-382, 386-388, 391-393, 396-399, 402-404, 408-410, 427-438, 449-450, 475, 494, 506-510, 527-569
+app\strategies\prosperity\industry_history.py              34      9    74%   44, 48-55
+app\strategies\prosperity\models.py                       142     17    88%   144, 155-158, 165, 180-182, 189, 202-204, 215-217, 223
+app\strategies\prosperity\tools\__init__.py                 0      0   100%
+app\strategies\prosperity\tools\concept_builder.py        201    165    18%   80-108, 114, 120-122, 127-139, 144-179, 184-232, 237-274, 279-292, 302-332, 341-358, 363-365, 374-424
+app\strategies\prosperity\tools\industry_metrics.py       225     47    79%   67, 93-99, 146-147, 169-173, 231-232, 245, 274-275, 298-304, 308, 311-312, 328-331, 347, 376-382, 385, 404, 413, 422, 432-433, 449, 452-453, 461, 467
+app\strategies\prosperity\tools\purity_scorer.py          249    135    46%   39-41, 52, 63, 74-75, 122-166, 206, 232-327, 332-343, 355-387, 449-454, 465-498, 544, 547-548
+app\strategies\prosperity\tools\source_crawler.py          76     32    58%   31-61, 66-68, 109-110, 123-125, 150-152
+app\strategies\prosperity\tools\stock_screener.py          85     20    76%   53, 85-86, 116, 119-120, 131, 177-179, 184-193
+app\strategies\prosperity\tools\wiki_indexer.py            89     19    79%   28, 100-117, 132-133, 151, 179
+app\strategies\turtle\__init__.py                           5      0   100%
+app\strategies\turtle\cash_quality.py                     197      9    95%   108, 172-173, 190-191, 267-269, 278
+app\strategies\turtle\coordinator.py                      491    235    52%   35-66, 71-84, 89-98, 103-109, 206-215, 218-220, 242-243, 278-279, 344-347, 354, 369, 499-530, 557-642, 659-660, 666-667, 731, 743-791, 795-803, 808, 832-897, 924-931, 968, 1007, 1060
+app\strategies\turtle\data_summarizer.py                  436     80    82%   61-64, 90, 123, 127-129, 131, 136, 356-362, 369-371, 468-472, 477, 517, 533, 537, 542-544, 548, 553, 605, 608, 656-679, 788, 796, 802, 814, 826, 830, 834, 893, 897, 989-990, 1049, 1052-1055, 1060-1067, 1073
+app\strategies\turtle\penetration_return.py               134      7    95%   98, 208, 213, 218, 224, 233, 240
+app\strategies\turtle\qrv_agent.py                        176     97    45%   50-52, 56-138, 164, 169-170, 213, 260-317, 321, 360, 388-393, 402-411, 419-431, 435
+app\strategies\turtle\screener.py                         136      8    94%   134-139, 210-211
+app\strategies\turtle\utils.py                             12      1    92%   19
+app\strategies\turtle\websearch_extractor.py              201     25    88%   115, 143, 146, 149-150, 167, 209-210, 228-233, 281, 283, 326, 345, 364, 394, 398, 407-413, 417-418
+-------------------------------------------------------------------------------------
+TOTAL                                                    5514   2714    51%
+================== 179 passed, 1 warning in 89.22s (0:01:29) ==================

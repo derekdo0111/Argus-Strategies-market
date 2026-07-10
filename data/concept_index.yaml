@@ -1,0 +1,14 @@
+meta:
+  source: Tushare ths_index(type=N)
+  built_at: '2026-07-09T20:11:41'
+  total: 2
+  ttl_hours: 24
+concepts:
+- ts_code: 885800.TI
+  name: 新能源
+  count: 0
+  exchange: ''
+- ts_code: 885900.TI
+  name: 新能源汽车
+  count: 0
+  exchange: ''

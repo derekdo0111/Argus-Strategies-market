@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>存储芯片行业景气分析 · 阅读模式</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-base: #faf9f7; --bg-surface: #fdfdfc; --bg-elevated: #f5f4f1;
+  --text-primary: #25282d; --text-secondary: oklch(52% 0.02 260);
+  --text-tertiary: oklch(68% 0.01 260); --text-muted: oklch(78% 0.01 260);
+  --accent-primary: oklch(52% 0.16 250); --accent-hover: oklch(45% 0.16 250);
+  --accent-faint: oklch(52% 0.16 250 / 0.04);
+  --positive: #0da684; --positive-soft: oklch(95% 0.04 160);
+  --negative: #ef3463; --negative-soft: oklch(95% 0.04 10);
+  --warning: #f4a14d; --warning-soft: oklch(95% 0.06 70);
+  --border-default: oklch(90% 0.01 90); --border-subtle: oklch(94% 0.01 90);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-xs: 11px; --font-sm: 12.5px; --font-base: 14px; --font-lg: 16px; --font-xl: 20px; --font-2xl: 28px; --font-3xl: 38px;
+  --radius: 6px; --radius-lg: 8px; --radius-xl: 12px;
+  --l0: #0891b2; --l1: #2563eb; --l2: #7c3aed; --l3: #dc2626;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-sans); background: var(--bg-base); color: var(--text-primary); -webkit-font-smoothing: antialiased; line-height: 1.7; }
+::-webkit-scrollbar { width: 5px; } ::-webkit-scrollbar-thumb { background: var(--border-default); border-radius: 3px; }
+
+/* ═══ HERO ═══ */
+.hero {
+  background: linear-gradient(160deg, #0f172a 0%, #1e293b 40%, #0f172a 100%);
+  color: white; padding: 80px 0 64px; text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(56,189,248,0.08) 0%, transparent 60%),
+              radial-gradient(circle at 70% 50%, rgba(168,85,247,0.06) 0%, transparent 60%);
+}
+.hero-inner { position: relative; max-width: 720px; margin: 0 auto; padding: 0 var(--space-xl); }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 16px; border-radius: 20px;
+  background: rgba(255,255,255,0.1); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-size: var(--font-xs); font-weight: 500; color: rgba(255,255,255,0.8);
+  margin-bottom: 24px;
+}
+.hero h1 { font-size: var(--font-3xl); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; }
+.hero-sub { font-size: var(--font-lg); color: rgba(255,255,255,0.55); font-weight: 400; line-height: 1.6; }
+
+.hero-stats {
+  display: flex; gap: 48px; justify-content: center; margin-top: 40px;
+}
+.hero-stat { text-align: center; }
+.hero-stat-value { font-size: var(--font-2xl); font-weight: 800; letter-spacing: -0.01em; }
+.hero-stat-label { font-size: var(--font-xs); color: rgba(255,255,255,0.45); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+.hero-stat-value.rating { color: #0da684; }
+.hero-stat-value.signal { color: oklch(65% 0.16 250); }
+.hero-stat-value.quality { color: #f4a14d; }
+
+.hero-signal-bar {
+  width: 160px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;
+  margin: 8px auto 0; overflow: hidden;
+}
+.hero-signal-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #0da684, oklch(65% 0.16 250)); }
+
+/* ═══ CONTENT ═══ */
+.container { max-width: 780px; margin: 0 auto; padding: 64px 24px; }
+
+/* Section headers with connecting line */
+.section-header {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 48px; margin-top: 16px;
+}
+.section-header .level-indicator {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono, monospace); font-size: var(--font-sm); font-weight: 800; color: white;
+}
+.level-indicator.l0 { background: var(--l0); }
+.level-indicator.l1 { background: var(--l1); }
+.level-indicator.l2 { background: var(--l2); }
+.level-indicator.l3 { background: var(--l3); }
+
+.section-header .section-text { flex: 1; }
+.section-header .section-label {
+  font-size: var(--font-xs); font-weight: 600; color: var(--text-tertiary);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.section-header .section-title { font-size: 24px; font-weight: 700; }
+
+/* Hypothesis card */
+.h-block {
+  margin-bottom: 40px; position: relative; padding-left: 40px;
+}
+.h-block::before {
+  content: ''; position: absolute; left: 10px; top: 0; bottom: 0;
+  width: 2px; background: var(--border-default); border-radius: 1px;
+}
+.h-block.l0::before { background: var(--l0); opacity: 0.3; }
+.h-block.l1::before { background: var(--l1); opacity: 0.3; }
+.h-block.l2::before { background: var(--l2); opacity: 0.3; }
+.h-block.l3::before { background: var(--l3); opacity: 0.3; }
+
+.h-block .h-dot {
+  position: absolute; left: 0; top: 4px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: white; border: 2px solid var(--border-default);
+  display: flex; align-items: center; justify-content: center;
+}
+.h-block.l0 .h-dot { border-color: var(--l0); }
+.h-block.l1 .h-dot { border-color: var(--l1); }
+.h-block.l2 .h-dot { border-color: var(--l2); }
+.h-block.l3 .h-dot { border-color: var(--l3); }
+.h-block.confirmed .h-dot { background: var(--positive); border-color: var(--positive); }
+.h-block.partial .h-dot { background: var(--warning); border-color: var(--warning); }
+.h-dot::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--border-default); }
+.h-block.confirmed .h-dot::after { background: white; }
+.h-block.partial .h-dot::after { background: white; }
+
+.h-block-header {
+  display: flex; align-items: baseline; gap: var(--space-lg); margin-bottom: 12px;
+}
+.h-block-id {
+  font-family: 'Inter', monospace; font-size: var(--font-sm); font-weight: 700; color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+.h-block-status {
+  font-size: var(--font-xs); padding: 2px 10px; border-radius: 20px; font-weight: 600;
+}
+.status-confirmed { background: var(--positive-soft); color: var(--positive); }
+.status-partial { background: var(--warning-soft); color: var(--warning); }
+.status-unverified { background: var(--bg-elevated); color: var(--text-tertiary); }
+
+.h-block-title { font-size: var(--font-xl); font-weight: 700; color: var(--text-primary); margin-bottom: 16px; }
+.h-block-statement {
+  font-size: var(--font-lg); line-height: 1.85; color: var(--text-primary);
+  padding: 20px 24px; background: var(--bg-elevated); border-radius: var(--radius-xl);
+  border-left: 3px solid var(--accent-primary); margin-bottom: 20px;
+}
+.h-block-reasoning {
+  font-size: var(--font-sm); color: var(--text-secondary); line-height: 1.8;
+  margin-bottom: 16px;
+}
+.h-block-reasoning strong { color: var(--text-primary); }
+
+/* Inline tags */
+.h-tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.h-tag {
+  font-size: var(--font-xs); padding: 4px 12px; border-radius: 6px;
+  background: white; border: 1px solid var(--border-default);
+  color: var(--text-tertiary); font-weight: 500;
+  display: flex; align-items: center; gap: 4px;
+}
+.h-tag .tag-dot { width: 6px; height: 6px; border-radius: 50%; }
+.h-tag.l0 .tag-dot { background: var(--l0); } .h-tag.l1 .tag-dot { background: var(--l1); }
+.h-tag.l2 .tag-dot { background: var(--l2); } .h-tag.l3 .tag-dot { background: var(--l3); }
+
+/* Verification box */
+.verify-box {
+  background: white; border: 1px solid var(--border-subtle); border-radius: var(--radius);
+  padding: 16px 20px; margin-bottom: 12px;
+}
+.verify-box .v-label { font-size: var(--font-xs); font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; }
+.verify-box .v-text { font-size: var(--font-sm); color: var(--text-secondary); line-height: 1.7; }
+
+/* Track pills */
+.track-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.track-pill {
+  font-size: var(--font-xs); padding: 4px 12px; border-radius: 6px;
+  background: var(--bg-elevated); color: var(--text-tertiary);
+}
+
+/* Investment implication callout */
+.implication-callout {
+  background: linear-gradient(135deg, oklch(96% 0.04 250 / 0.5), oklch(98% 0.02 250 / 0.3));
+  border: 1px solid oklch(84% 0.06 250 / 0.25); border-radius: var(--radius);
+  padding: 16px 20px; margin-top: 12px;
+}
+.implication-callout .im-label {
+  font-size: var(--font-xs); font-weight: 700; color: var(--accent-primary);
+  text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;
+}
+.implication-callout .im-text { font-size: var(--font-sm); color: var(--text-secondary); line-height: 1.7; }
+
+/* Stock section divider */
+.stock-divider {
+  display: flex; align-items: center; gap: 12px; margin: 48px 0 24px;
+}
+.stock-divider .divider-line { flex: 1; height: 1px; background: var(--border-subtle); }
+.stock-divider .divider-label {
+  font-size: var(--font-sm); font-weight: 600; color: var(--text-tertiary);
+  text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap;
+}
+.stock-divider .divider-count {
+  font-size: var(--font-xs); color: var(--text-muted); font-weight: 400;
+}
+
+/* Stock cards */
+.stock-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+.stock-card {
+  background: white; border: 1px solid var(--border-subtle); border-radius: var(--radius);
+  padding: 16px 20px; transition: all 0.2s; cursor: default;
+}
+.stock-card:hover { border-color: var(--border-default); box-shadow: 0 2px 8px rgba(0,0,0,0.04); transform: translateY(-1px); }
+.stock-card.featured { border-color: var(--positive); background: linear-gradient(135deg, white, var(--positive-soft)); }
+.stock-card-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.stock-card-name { font-size: var(--font-base); font-weight: 700; }
+.stock-card-score {
+  font-family: 'Inter', monospace; font-weight: 800; font-size: var(--font-xl);
+  color: var(--positive);
+}
+.stock-card-score.mid { color: var(--accent-primary); }
+.stock-card-metrics {
+  display: flex; gap: 12px; margin-bottom: 8px;
+  font-size: var(--font-xs); color: var(--text-secondary);
+}
+.stock-card-metrics strong { color: var(--text-primary); font-weight: 600; }
+.stock-card-reason { font-size: var(--font-xs); color: var(--text-tertiary); line-height: 1.5; }
+
+/* Overview table */
+.ov-table-wrap {
+  background: white; border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); overflow: hidden; margin-bottom: 48px;
+}
+.ov-table { width: 100%; font-size: var(--font-sm); }
+.ov-table th {
+  text-align: left; padding: 10px 16px; font-size: var(--font-xs); font-weight: 600;
+  color: var(--text-tertiary); background: var(--bg-elevated); text-transform: uppercase; letter-spacing: 0.05em;
+}
+.ov-table td { padding: 8px 16px; border-top: 1px solid var(--border-subtle); }
+.ov-table tr:hover td { background: var(--accent-faint); }
+.ov-level-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; }
+.ov-level-dot.l0 { background: var(--l0); } .ov-level-dot.l1 { background: var(--l1); }
+.ov-level-dot.l2 { background: var(--l2); } .ov-level-dot.l3 { background: var(--l3); }
+
+/* Chain flow diagram */
+.chain-flow {
+  margin: 32px 0 48px; padding: 32px;
+  background: white; border: 1px solid var(--border-subtle); border-radius: var(--radius-xl);
+}
+.chain-flow h3 { font-size: var(--font-sm); font-weight: 600; color: var(--text-tertiary); margin-bottom: 24px; }
+.flow-level { margin-bottom: 8px; }
+.flow-level-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 6px;
+}
+.flow-level-label {
+  font-family: 'Inter', monospace; font-size: var(--font-xs); font-weight: 800;
+  padding: 2px 8px; border-radius: 4px; min-width: 36px; text-align: center;
+}
+.flow-level-label.l0 { background: oklch(93% 0.05 200); color: var(--l0); }
+.flow-level-label.l1 { background: oklch(93% 0.06 260); color: var(--l1); }
+.flow-level-label.l2 { background: oklch(93% 0.04 280); color: var(--l2); }
+.flow-level-label.l3 { background: oklch(93% 0.04 20); color: var(--l3); }
+.flow-level-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+.flow-pill {
+  font-size: 11px; padding: 2px 10px; border-radius: 4px;
+  background: var(--bg-elevated); color: var(--text-secondary);
+  border: 1px solid var(--border-subtle); font-weight: 500;
+}
+.flow-pill.confirmed { background: var(--positive-soft); border-color: transparent; color: var(--positive); }
+.flow-pill.partial { background: var(--warning-soft); border-color: transparent; color: var(--warning); }
+.flow-pill.overturned { text-decoration: line-through; opacity: 0.4; }
+.flow-arrow { margin: 0 0 0 18px; padding: 2px 0; }
+.flow-arrow svg { width: 16px; height: 12px; }
+</style>
+</head>
+<body>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">📈 景气分析报告</div>
+    <h1>存储芯片行业景气分析</h1>
+    <p class="hero-sub">AI与算力需求驱动存储芯片进入超级景气周期<br>12条推理链 · 4层因果推演 · 18只精选标的</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value rating">🔥 高景气</div>
+        <div class="hero-stat-label">综合评级</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value signal">4.26</div>
+        <div class="hero-stat-label">信号强度</div>
+        <div class="hero-signal-bar"><div class="hero-signal-fill" style="width:71%"></div></div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value quality">18 只</div>
+        <div class="hero-stat-label">精选标的</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="container">
+  <!-- Chain Flow Map -->
+  <div class="chain-flow">
+    <h3>🧠 推理链路</h3>
+    <div class="flow-level">
+      <div class="flow-level-header"><span class="flow-level-label l0">L0</span></div>
+      <div class="flow-level-pills" style="padding-left:44px">
+        <span class="flow-pill confirmed">H0-1 AI驱动超级景气</span>
+        <span class="flow-pill partial">H0-2 HBM产能结构性短缺</span>
+        <span class="flow-pill confirmed">H0-3 国产化扩产加速</span>
+      </div>
+    </div>
+    <div class="flow-arrow"><svg viewBox="0 0 16 12"><line x1="8" y1="0" x2="8" y2="8" stroke="#ddd" stroke-width="1.5"/><polygon points="3,4 8,11 13,4" fill="#ddd"/></svg></div>
+    <div class="flow-level">
+      <div class="flow-level-header"><span class="flow-level-label l1">L1</span></div>
+      <div class="flow-level-pills" style="padding-left:44px">
+        <span class="flow-pill">H1-1 全品类涨价超预期</span>
+        <span class="flow-pill partial">H1-2 国产设备业绩爆发</span>
+        <span class="flow-pill confirmed">H1-3 模组厂库存红利期</span>
+      </div>
+    </div>
+    <div class="flow-arrow"><svg viewBox="0 0 16 12"><line x1="8" y1="0" x2="8" y2="8" stroke="#ddd" stroke-width="1.5"/><polygon points="3,4 8,11 13,4" fill="#ddd"/></svg></div>
+    <div class="flow-level">
+      <div class="flow-level-header"><span class="flow-level-label l2">L2</span></div>
+      <div class="flow-level-pills" style="padding-left:44px">
+        <span class="flow-pill overturned">H2-1 远期产能过剩隐忧</span>
+        <span class="flow-pill">H2-2 设备订单持续性考验</span>
+        <span class="flow-pill">H2-3 模组厂库存风险积聚</span>
+      </div>
+    </div>
+    <div class="flow-arrow"><svg viewBox="0 0 16 12"><line x1="8" y1="0" x2="8" y2="8" stroke="#ddd" stroke-width="1.5"/><polygon points="3,4 8,11 13,4" fill="#ddd"/></svg></div>
+    <div class="flow-level">
+      <div class="flow-level-header"><span class="flow-level-label l3">L3</span></div>
+      <div class="flow-level-pills" style="padding-left:44px">
+        <span class="flow-pill partial">H3-1 HBM绑定标的弹性</span>
+        <span class="flow-pill">H3-2 设备龙头寻确定性</span>
+        <span class="flow-pill">H3-3 优选库存管理模组厂</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ L0 ═══════════ -->
+  <div class="section-header">
+    <div class="level-indicator l0">L0</div>
+    <div class="section-text">
+      <div class="section-label">Layer 0</div>
+      <div class="section-title">现状诊断</div>
+    </div>
+  </div>
+
+  <div class="h-block l0 confirmed">
+    <div class="h-dot"></div>
+    <div class="h-block-header">
+      <span class="h-block-id">H0-1</span>
+      <span class="h-block-status status-confirmed">✅ 已确认</span>
+    </div>
+    <div class="h-block-title">AI驱动超级景气</div>
+    <div class="h-tags"><span class="h-tag l0"><span class="tag-dot"></span>置信度 high</span><span class="h-tag">⏱ 当前</span></div>
+    <blockquote class="h-block-statement">AI与算力需求驱动存储芯片进入超级景气周期，2026年全品类涨价贯穿全年，HBM赛道景气有望延续至2028年。</blockquote>
+    <p class="h-block-reasoning"><strong>推理链：</strong>AI服务器与数据中心扩容 → 直接拉动存储容量与带宽需求 → 导致存储芯片全品类涨价、头部公司业绩高增，2026年产业景气度持续上升。</p>
+    <div class="verify-box"><div class="v-label">🔬 验证诊断 · 因果链强度: <span style="color:var(--positive);font-weight:700">strong</span></div><div class="v-text">信源[1][4]确认2026年全品类涨价贯穿全年、HBM景气延续至2028年；信源[7]指出行业陷入15年最严重供需短缺；Tushare行业营收增速中位数23.21%与高景气方向一致。</div></div>
+    <div class="track-pills"><span class="track-pill">📡 全球存储芯片月度销售额 · monthly</span><span class="track-pill">📡 DRAM合约价月度环比 · monthly</span></div>
+  </div>
+
+  <div class="h-block l0 partial">
+    <div class="h-dot"></div>
+    <div class="h-block-header">
+      <span class="h-block-id">H0-2</span>
+      <span class="h-block-status status-partial">⚠️ 部分验证</span>
+    </div>
+    <div class="h-block-title">HBM产能结构性短缺</div>
+    <div class="h-tags"><span class="h-tag l0"><span class="tag-dot"></span>置信度 high</span><span class="h-tag">⏱ 当前</span></div>
+    <blockquote class="h-block-statement">全球HBM产能严重短缺，原厂将七成以上先进产能投向HBM，通用型存储供给大幅压缩，DRAM/NAND供需缺口创15年新高。</blockquote>
+    <p class="h-block-reasoning"><strong>推理链：</strong>HBM生产复杂、良率低且单颗晶圆消耗是传统DRAM的3倍以上 → 原厂优先保障高价值HBM产品 → 通用DRAM/NAND产能分配不足，供需缺口扩大至4%~5%。</p>
+    <div class="verify-box"><div class="v-label">🔬 验证诊断 · 因果链强度: <span style="color:var(--positive);font-weight:700">strong</span></div><div class="v-text">信源[7]明确指出2026年全球存储芯片行业陷入15年最严重供需短缺，AI需求虹吸高端产能；Tushare行业营收增速23.21%一致。</div></div>
+    <div class="track-pills"><span class="track-pill">📡 HBM产能利用率 · quarterly</span><span class="track-pill">📡 DRAM/NAND供需缺口 · quarterly</span></div>
+  </div>
+
+  <div class="h-block l0 confirmed">
+    <div class="h-dot"></div>
+    <div class="h-block-header">
+      <span class="h-block-id">H0-3</span>
+      <span class="h-block-status status-confirmed">✅ 已确认</span>
+    </div>
+    <div class="h-block-title">国产化扩产加速</div>
+    <div class="h-tags"><span class="h-tag l0"><span class="tag-dot"></span>置信度 high</span><span class="h-tag">⏱ 当前</span></div>
+    <blockquote class="h-block-statement">中国存储产业链加速扩产，长江存储、长鑫科技资本开支提升，国产化率提升至35%，设备企业订单爆发。</blockquote>
+    <p class="h-block-reasoning"><strong>推理链：</strong>存储芯片高景气叠加国产替代战略 → 以"两长"为代表的本土厂商加大资本开支并加快产能建设 → 国产设备采购占比显著提升。</p>
+    <div class="verify-box"><div class="v-label">🔬 验证诊断 · 因果链强度: <span style="color:var(--positive);font-weight:700">strong</span></div><div class="v-text">信源[5]确认两长资本开支提升；信源[6]给出国产化率提升至35%的具体数据；信源[9]强调设备环节确定性凸显。</div></div>
+    <div class="track-pills"><span class="track-pill">📡 国产设备采购占比 · quarterly</span><span class="track-pill">📡 长鑫科技资本开支 · quarterly</span></div>
+  </div>
+
+  <!-- ═══════════ L1 ═══════════ -->
+  <div class="section-header">
+    <div class="level-indicator l1">L1</div>
+    <div class="section-text">
+      <div class="section-label">Layer 1</div>
+      <div class="section-title">一阶推演</div>
+    </div>
+  </div>
+
+  <div class="h-block l1">
+    <div class="h-dot"></div>
+    <div class="h-block-header">
+      <span class="h-block-id">H1-1</span>
+      <span class="h-block-status status-unverified">🔍 未验证</span>
+    </div>
+    <div class="h-block-title">全品类涨价超预期</div>
+    <div class="h-tags"><span class="h-tag l1"><span class="tag-dot"></span>置信度 medium</span><span class="h-tag">← H0-1, H0-2</span><span class="h-tag">⏱ 2026-2027Q1</span></div>
+    <blockquote class="h-block-statement">原厂产能向HBM倾斜放大通用存储供需矛盾，2026Q3 DRAM合约价环比涨幅从5-10%上调至10-20%，消费级存储涨价超预期。</blockquote>
+    <p class="h-block-reasoning"><strong>推理链：</strong>H0-1景气周期叠加H0-2结构性缺货 → 原厂将更多产能分配给HBM → Mobile DRAM、Enterprise SSD等合约价涨幅超预期上修。</p>
+    <div class="verify-box"><div class="v-label">🔬 验证诊断 · 因果链强度: <span style="color:var(--warning);font-weight:700">moderate</span></div><div class="v-text">正向素材缺乏对Q3 DRAM合约价涨幅上调至10-20%的具体支持；反例显示Trendforce预计Q3传统DRAM合约价环比上涨13-18%，涨幅与假设区间重叠。</div></div>
+    <div class="track-pills"><span class="track-pill">📡 Mobile DRAM合约价环比涨幅 · monthly</span><span class="track-pill">📡 Enterprise SSD合约价环比涨幅 · monthly</span></div>
+  </div>
+
+  <div class="h-block l1 confirmed">
+    <div class="h-dot"></div>
+    <div class="h-block-header">
+      <span class="h-block-id">H1-3</span>
+      <span class="h-block-status status-confirmed">✅ 已确认</span>
+    </div>
+    <div class="h-block-title">模组厂库存红利期</div>
+    <div class="h-tags"><span class="h-tag l1"><span class="tag-dot"></span>置信度 high</span><span class="h-tag">← H0-1, H0-2</span><span class="h-tag">⏱ 当前-2027H1</span></div>
+    <blockquote class="h-block-statement">存储芯片涨价周期中，模组厂低价库存释放利润，佰维存储、江波龙等直接受益于高价出货与存货增值。</blockquote>
+    <p class="h-block-reasoning"><strong>推理链：</strong>H0-1全品类涨价和H0-2供给短缺 → 模组厂在涨价前备有低价库存，销售价格随市价提升 → 毛利率大幅扩张。</p>
+    <div class="verify-box"><div class="v-label">🔬 验证诊断 · 因果链强度: <span style="color:var(--positive);font-weight:700">strong</span></div><div class="v-text">信源[1][8]提及佰维存储、江波龙等模组厂积极扩产，隐含受益于涨价周期；Tushare行业营收净利高增与逻辑方向一致。反例无矛盾。</div></div>
+    <div class="track-pills"><span class="track-pill">📡 模组厂库存周转天数 · quarterly</span><span class="track-pill">📡 模组厂毛利率 · quarterly</span></div>
+  </div>
+
+  <!-- ═══════════ L3 ═══════════ -->
+  <div class="section-header">
+    <div class="level-indicator l3">L3</div>
+    <div class="section-text">
+      <div class="section-label">Layer 3</div>
+      <div class="section-title">投资落点</div>
+    </div>
+  </div>
+
+  <div class="h-block l3 partial">
+    <div class="h-dot"></div>
+    <div class="h-block-header">
+      <span class="h-block-id">H3-1</span>
+      <span class="h-block-status status-partial">⚠️ 部分验证</span>
+    </div>
+    <div class="h-block-title">HBM绑定标的弹性</div>
+    <div class="h-tags"><span class="h-tag l3"><span class="tag-dot"></span>置信度 low</span><span class="h-tag">← H2-1</span><span class="h-tag">⏱ 2027-2028</span></div>
+    <blockquote class="h-block-statement">在远期产能过剩隐忧下，直接绑定HBM供应或封装的标的保留高弹性，如太极实业（海太半导体）、雅克科技（前驱体）等。</blockquote>
+    <p class="h-block-reasoning"><strong>推理链：</strong>H2-1提示一般存储可能远期过剩，而HBM需求持续强劲、供给仍紧缺 → HBM产业链不受一般存储产能过剩冲击。</p>
+    <div class="verify-box"><div class="v-label">🔬 验证诊断 · 因果链强度: <span style="color:var(--warning);font-weight:700">moderate</span></div><div class="v-text">信源[1][7]强调HBM景气延续至2028年。🔄 CounterAgent: 上游H2-1为unverified且因果链断裂，推理基础薄弱，需大幅降置信度。</div></div>
+    <div class="track-pills"><span class="track-pill">📡 HBM渗透率 · quarterly</span><span class="track-pill">📡 绑定标的HBM相关营收占比 · quarterly</span></div>
+    <div class="implication-callout">
+      <div class="im-label">💡 投资含义</div>
+      <div class="im-text">受益环节：HBM封装、前驱体、测试设备；典型标的特征：与SK海力士、三星HBM有直接供应关系，HBM相关营收占比超30%</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ STOCK POOL ═══════════ -->
+  <div class="stock-divider">
+    <div class="divider-line"></div>
+    <div class="divider-label">📈 上游设备与材料</div>
+    <div class="divider-line"></div>
+  </div>
+  <div class="stock-grid">
+    <div class="stock-card featured">
+      <div class="stock-card-top">
+        <span class="stock-card-name">中微公司</span>
+        <span class="stock-card-score">0.91</span>
+      </div>
+      <div class="stock-card-metrics"><span>ROE <strong>4.0%</strong></span><span>毛利率 <strong>39.9%</strong></span><span>营收增速 <strong>34.1%</strong></span></div>
+      <div class="stock-card-reason">刻蚀设备龙头，深度受益存储扩产及国产替代</div>
+    </div>
+    <div class="stock-card">
+      <div class="stock-card-top">
+        <span class="stock-card-name">拓荆科技</span>
+        <span class="stock-card-score mid">0.52</span>
+      </div>
+      <div class="stock-card-metrics"><span>ROE <strong>8.2%</strong></span><span>毛利率 <strong>41.7%</strong></span><span>营收增速 <strong>57.0%</strong></span></div>
+      <div class="stock-card-reason">CVD/PVD设备龙头，存储扩产核心受益者</div>
+    </div>
+    <div class="stock-card">
+      <div class="stock-card-top">
+        <span class="stock-card-name">快克智能</span>
+        <span class="stock-card-score mid">0.44</span>
+      </div>
+      <div class="stock-card-metrics"><span>ROE <strong>5.3%</strong></span><span>毛利率 <strong>49.8%</strong></span><span>营收增速 <strong>33.1%</strong></span></div>
+      <div class="stock-card-reason">封装设备供应商，受益存储封装产能扩张</div>
+    </div>
+    <div class="stock-card">
+      <div class="stock-card-top">
+        <span class="stock-card-name">长川科技</span>
+        <span class="stock-card-score mid">0.33</span>
+      </div>
+      <div class="stock-card-metrics"><span>ROE <strong>7.2%</strong></span><span>毛利率 <strong>56.8%</strong></span><span>营收增速 <strong>69.1%</strong></span></div>
+      <div class="stock-card-reason">半导体测试设备龙头，存储扩产驱动测试需求增长</div>
+    </div>
+  </div>
+
+  <div class="stock-divider">
+    <div class="divider-line"></div>
+    <div class="divider-label">📦 下游模组与应用</div>
+    <div class="divider-line"></div>
+  </div>
+  <div class="stock-grid">
+    <div class="stock-card featured">
+      <div class="stock-card-top">
+        <span class="stock-card-name">江波龙</span>
+        <span class="stock-card-score">1.19</span>
+      </div>
+      <div class="stock-card-metrics"><span>ROE <strong>38.5%</strong></span><span>毛利率 <strong>55.5%</strong></span><span>营收增速 <strong>132.8%</strong></span></div>
+      <div class="stock-card-reason">模组龙头库存管理审慎，跌价准备计提充分，涨价受益确定性强</div>
+    </div>
+    <div class="stock-card">
+      <div class="stock-card-top">
+        <span class="stock-card-name">德明利</span>
+        <span class="stock-card-score mid">0.31</span>
+      </div>
+      <div class="stock-card-metrics"><span>ROE <strong>67.6%</strong></span><span>毛利率 <strong>57.4%</strong></span><span>营收增速 <strong>502.1%</strong></span></div>
+      <div class="stock-card-reason">移动/嵌入式/SSD模组全覆盖，涨价周期低价库存释放高利润弹性</div>
+    </div>
+    <div class="stock-card">
+      <div class="stock-card-top">
+        <span class="stock-card-name">大普微</span>
+        <span class="stock-card-score mid">0.41</span>
+      </div>
+      <div class="stock-card-metrics"><span>ROE <strong>60.7%</strong></span><span>毛利率 <strong>37.6%</strong></span><span>营收增速 <strong>341.0%</strong></span></div>
+      <div class="stock-card-reason">企业级SSD模组稀缺标的，AI算力需求与存储涨价双击</div>
+    </div>
+    <div class="stock-card">
+      <div class="stock-card-top">
+        <span class="stock-card-name">佰维存储</span>
+        <span class="stock-card-score mid">0.20</span>
+      </div>
+      <div class="stock-card-metrics"><span>ROE <strong>41.6%</strong></span><span>毛利率 <strong>53.3%</strong></span><span>营收增速 <strong>341.5%</strong></span></div>
+      <div class="stock-card-reason">嵌入式及PC存储模组主力，直接受益于消费级存储涨价与库存增值</div>
+    </div>
+  </div>
+
+  <!-- Overview -->
+  <div class="section-header">
+    <div class="level-indicator" style="background:var(--text-tertiary)">📋</div>
+    <div class="section-text">
+      <div class="section-title">验证总览</div>
+    </div>
+  </div>
+  <div class="ov-table-wrap">
+    <table class="ov-table">
+      <thead><tr><th>层级</th><th>ID</th><th>假设</th><th>状态</th><th>上游</th><th>时间窗口</th></tr></thead>
+      <tbody>
+        <tr><td><span class="ov-level-dot l0"></span>L0</td><td>H0-1</td><td>AI驱动超级景气</td><td style="color:var(--positive)">✅ confirmed</td><td>—</td><td>当前</td></tr>
+        <tr><td><span class="ov-level-dot l0"></span>L0</td><td>H0-2</td><td>HBM产能结构性短缺</td><td style="color:var(--warning)">⚠️ partial</td><td>—</td><td>当前</td></tr>
+        <tr><td><span class="ov-level-dot l0"></span>L0</td><td>H0-3</td><td>国产化扩产加速</td><td style="color:var(--positive)">✅ confirmed</td><td>—</td><td>当前</td></tr>
+        <tr><td><span class="ov-level-dot l1"></span>L1</td><td>H1-1</td><td>全品类涨价超预期</td><td style="color:var(--text-tertiary)">🔍 unverified</td><td>H0-1, H0-2</td><td>2026-2027Q1</td></tr>
+        <tr><td><span class="ov-level-dot l1"></span>L1</td><td>H1-2</td><td>国产设备业绩爆发</td><td style="color:var(--warning)">⚠️ partial</td><td>H0-3</td><td>2026-2027</td></tr>
+        <tr><td><span class="ov-level-dot l1"></span>L1</td><td>H1-3</td><td>模组厂库存红利期</td><td style="color:var(--positive)">✅ confirmed</td><td>H0-1, H0-2</td><td>当前-2027H1</td></tr>
+        <tr><td><span class="ov-level-dot l2"></span>L2</td><td>H2-1</td><td>远期产能过剩隐忧</td><td style="color:var(--text-tertiary)">🔍 unverified</td><td>H1-1</td><td>2028-2029</td></tr>
+        <tr><td><span class="ov-level-dot l2"></span>L2</td><td>H2-2</td><td>设备订单持续性考验</td><td style="color:var(--text-tertiary)">🔍 unverified</td><td>H1-2</td><td>2027年后</td></tr>
+        <tr><td><span class="ov-level-dot l2"></span>L2</td><td>H2-3</td><td>模组厂库存风险积聚</td><td style="color:var(--text-tertiary)">🔍 unverified</td><td>H1-3</td><td>2027H2-2028</td></tr>
+        <tr><td><span class="ov-level-dot l3"></span>L3</td><td>H3-1</td><td>HBM绑定标的弹性</td><td style="color:var(--warning)">⚠️ partial</td><td>H2-1</td><td>2027-2028</td></tr>
+        <tr><td><span class="ov-level-dot l3"></span>L3</td><td>H3-2</td><td>设备龙头寻确定性</td><td style="color:var(--text-tertiary)">🔍 unverified</td><td>H2-2</td><td>2027-2028</td></tr>
+        <tr><td><span class="ov-level-dot l3"></span>L3</td><td>H3-3</td><td>优选库存管理模组厂</td><td style="color:var(--text-tertiary)">🔍 unverified</td><td>H2-3</td><td>2027-2028</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="text-align:center;color:var(--text-muted);font-size:var(--font-xs);margin-top:-16px;padding-bottom:48px">Argus 景气分析 · 2026-07-10 · 数据来源 Tushare / Tavily</p>
+</div>
+</body>
+</html>

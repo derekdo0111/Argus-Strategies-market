@@ -2,15 +2,15 @@ import { useState, useCallback } from 'react';
 import Sidebar from './Sidebar';
 import TurtleStockPool from './turtle/StockPool';
 import TurtleReportViewer from './turtle/ReportViewer';
-import ResizablePanel from './ResizablePanel';
-import ProsperityStockPool from './prosperity/StockPool';
+import ProsperityHypothesisBoard from './prosperity/HypothesisBoard';
 import ProsperityReportViewer from './prosperity/ReportViewer';
+import ResizablePanel from './ResizablePanel';
 import styles from './Layout.module.css';
 
 // 策略组件映射表 — 加新策略只需在此注册一行
 const poolComponents: Record<string, React.ComponentType<any>> = {
   turtle: TurtleStockPool,
-  prosperity: ProsperityStockPool,
+  prosperity: ProsperityHypothesisBoard,
 };
 
 const reportComponents: Record<string, React.ComponentType<any>> = {

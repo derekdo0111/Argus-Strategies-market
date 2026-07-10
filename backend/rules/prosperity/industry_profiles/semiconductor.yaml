@@ -1,0 +1,24 @@
+# 半导体行业专属指标配置
+industry: 半导体
+
+custom_metrics:
+  - name: 全球半导体销售额
+    source: source_crawler
+    unit: 亿美元
+    description: SIA 月度全球半导体销售额
+
+  - name: 晶圆产能利用率
+    source: source_crawler
+    unit: "%"
+    description: 全球晶圆代工产能利用率
+
+  - name: 芯片ASP趋势
+    source: source_crawler
+    unit: 美元
+    description: 存储/逻辑芯片平均售价趋势
+
+notes: |
+  半导体行业景气度高度依赖：
+  1. 全球半导体周期（约 3-4 年一轮）
+  2. 下游需求结构（手机/PC/服务器/AI）
+  3. 国产替代进度

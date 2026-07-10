@@ -40,3 +40,14 @@ test-results/
 playwright-report/
 frontend/test-results/
 test_output.txt
+
+# Logs & temp outputs
+*.log
+*.pytest_output.txt
+*_output.txt
+_output.txt
+.pipeline_output.txt
+backend/outputs/
+backend/data/
+.codebuddy/settings.local.json
+.codebuddy/skills/prompt-framework-optimizer/

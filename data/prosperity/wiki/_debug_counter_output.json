@@ -1,0 +1,7 @@
+{
+  "prompt_preview": "你是投资研究级联分析专家。以下是「人工智能」行业经过数据交叉验证后的假设链。\n\n## 任务一：级联裁决\n\n根据每条假设的完整五维验证结果，判断其与上下游的级联关系。\n\n### 级联规则（必须严格遵守）\n\n1. **disputed → overturned**：被数据证伪的假设，不论 sentiment 方向，一律标记 overturned\n2. **overturned / unreachable → 切断下游**：被推翻的假设，其下游自动 unreachable\n3. **partial → 降级下游置信度**：数据不充分，不切断链，只降低 confidence\n4. **confirmed → 正常传递**\n5. **参考 corrected_statement**：如果 LLM 验证给出了修正版陈述，级联时以修正版为判断依据\n\n## 任务二：sentiment 修正\n\n如果某条假设的 corrected_statement 非空，说明原假设被 LLM 验证修正了。请判断修正后的陈述是否改变 sentiment：\n\n- 原 sentiment=positive，但 correct",
+  "prompt_length": 1471,
+  "content_length": 41,
+  "finish_reason": "stop",
+  "raw_output": "```json\n{\n  \"cascade_decisions\": []\n}\n```"
+}

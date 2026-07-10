@@ -1,0 +1,96 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\harry\AppData\Local\Programs\Python\Python311\python.exe
+cachedir: .pytest_cache
+rootdir: d:\project\Investment Strategy\backend
+configfile: pyproject.toml
+plugins: anyio-4.13.0, asyncio-1.4.0, cov-7.1.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 41 items
+
+backend\tests\test_prosperity_coordinator.py::test_coordinator_import PASSED [  2%]
+backend\tests\test_prosperity_coordinator.py::test_session_lifecycle PASSED [  4%]
+backend\tests\test_prosperity_coordinator.py::test_models_import PASSED  [  7%]
+backend\tests\test_prosperity_coordinator.py::test_tools_import PASSED   [  9%]
+backend\tests\test_prosperity_coordinator.py::test_agents_import PASSED  [ 12%]
+backend\tests\test_prosperity_coordinator.py::test_api_router PASSED     [ 14%]
+backend\tests\test_prosperity_coordinator.py::test_data_directories PASSED [ 17%]
+backend\tests\test_prosperity_coordinator.py::TestSourceCrawler::test_sia_crawler_no_crash PASSED [ 19%]
+backend\tests\test_prosperity_coordinator.py::TestSourceCrawler::test_wsts_stub_returns_none PASSED [ 21%]
+backend\tests\test_prosperity_coordinator.py::TestSourceCrawler::test_crawl_single_source_known PASSED [ 24%]
+backend\tests\test_prosperity_coordinator.py::TestSourceCrawler::test_crawl_single_source_unknown PASSED [ 26%]
+backend\tests\test_prosperity_coordinator.py::TestSourceCrawler::test_crawl_industry_sources_semiconductor PASSED [ 29%]
+backend\tests\test_prosperity_coordinator.py::TestStockScreener::test_default_weights_no_momentum PASSED [ 31%]
+backend\tests\test_prosperity_coordinator.py::TestStockScreener::test_score_stocks_returns_raw_indicators PASSED [ 34%]
+backend\tests\test_prosperity_coordinator.py::TestWikiEnhancement::test_cooldown_first_study_returns_none PASSED [ 36%]
+backend\tests\test_prosperity_coordinator.py::TestWikiEnhancement::test_cooldown_within_5_days PASSED [ 39%]
+backend\tests\test_prosperity_coordinator.py::TestWikiEnhancement::test_cooldown_over_5_days_returns_none PASSED [ 41%]
+backend\tests\test_prosperity_coordinator.py::TestWikiEnhancement::test_start_session_force_bypasses_cooldown PASSED [ 43%]
+backend\tests\test_prosperity_coordinator.py::TestWikiEnhancement::test_load_history_returns_none_for_first_study PASSED [ 46%]
+backend\tests\test_prosperity_coordinator.py::TestWikiEnhancement::test_industry_history_dataclass PASSED [ 48%]
+backend\tests\test_prosperity_coordinator.py::TestWikiEnhancement::test_cooldown_error_exception PASSED [ 51%]
+backend\tests\test_prosperity_coordinator.py::TestWikiEnhancement::test_merge_indicators_dedup PASSED [ 53%]
+backend\tests\test_prosperity_coordinator.py::TestWikiEnhancement::test_merge_indicators_cross_industry_no_merge PASSED [ 56%]
+backend\tests\test_prosperity_coordinator.py::TestWikiEnhancement::test_load_watchlist_new_format PASSED [ 58%]
+backend\tests\test_prosperity_coordinator.py::TestWikiEnhancement::test_load_watchlist_old_format_compat PASSED [ 60%]
+backend\tests\test_prosperity_coordinator.py::TestConceptStockPool::test_concept_detail_fallback PASSED [ 63%]
+backend\tests\test_prosperity_coordinator.py::TestConceptStockPool::test_ths_concept_fallback PASSED [ 65%]
+backend\tests\test_prosperity_coordinator.py::TestConceptStockPool::test_cache_hit_skips_concept PASSED [ 68%]
+backend\tests\test_prosperity_coordinator.py::TestConceptStockPool::test_concept_builder_fallback PASSED [ 70%]
+backend\tests\test_prosperity_coordinator.py::TestV3Enhancement::test_pipeline_steps_v3 PASSED [ 73%]
+backend\tests\test_prosperity_coordinator.py::TestV3Enhancement::test_api_has_screening_not_counter PASSED [ 75%]
+backend\tests\test_prosperity_coordinator.py::TestV3Enhancement::test_models_have_v3_fields PASSED [ 78%]
+backend\tests\test_prosperity_coordinator.py::TestV3Enhancement::test_config_v018_no_old_weights PASSED [ 80%]
+backend\tests\test_prosperity_coordinator.py::TestV3Enhancement::test_rating_formula_v3 PASSED [ 82%]
+backend\tests\test_prosperity_coordinator.py::TestV018PurityScreening::test_purity_scorer_import PASSED [ 85%]
+backend\tests\test_prosperity_coordinator.py::TestV018PurityScreening::test_purity_scores_no_data_fallback PASSED [ 87%]
+backend\tests\test_prosperity_coordinator.py::TestV018PurityScreening::test_purity_scores_calculation PASSED [ 90%]
+backend\tests\test_prosperity_coordinator.py::TestV018PurityScreening::test_screening_agent_new_output_fields PASSED [ 92%]
+backend\tests\test_prosperity_coordinator.py::TestV018PurityScreening::test_screening_agent_has_purity_fields PASSED [ 95%]
+backend\tests\test_prosperity_coordinator.py::TestV018PurityScreening::test_screening_agent_sorts_by_purity PASSED [ 97%]
+backend\tests\test_prosperity_coordinator.py::TestV018PurityScreening::test_report_table_has_purity_columns PASSED [100%]
+
+============================== warnings summary ===============================
+tests/test_prosperity_coordinator.py::test_coordinator_import
+  d:\project\Investment Strategy\backend\app\core\config.py:7: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class Settings(BaseSettings):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.11.9-final-0 _______________
+
+Name                                                            Stmts   Miss  Cover   Missing
+---------------------------------------------------------------------------------------------
+backend\app\__init__.py                                             0      0   100%
+backend\app\api\__init__.py                                         0      0   100%
+backend\app\api\strategies.py                                      27     27     0%   3-50
+backend\app\core\__init__.py                                        0      0   100%
+backend\app\core\config.py                                         40      0   100%
+backend\app\core\logging.py                                        14     14     0%   3-41
+backend\app\core\registry.py                                       20     20     0%   17-73
+backend\app\main.py                                                30     30     0%   3-65
+backend\app\models\__init__.py                                      0      0   100%
+backend\app\services\__init__.py                                    0      0   100%
+backend\app\services\data_fetcher.py                              429    429     0%   7-876
+backend\app\services\tushare_client.py                             85     16    81%   46, 70-74, 88, 107, 118, 135, 209, 223, 239, 252, 266, 322
+backend\app\strategies\prosperity\__init__.py                       0      0   100%
+backend\app\strategies\prosperity\agents\__init__.py                0      0   100%
+backend\app\strategies\prosperity\agents\hypothesize_agent.py     171    150    12%   44-45, 62-122, 131-158, 278-301, 305-336, 340-382, 386-443, 470
+backend\app\strategies\prosperity\agents\report_agent.py          165     90    45%   63-87, 118, 126, 134, 136, 153-154, 167-170, 173-176, 186-224, 231-233, 255-297
+backend\app\strategies\prosperity\agents\screening_agent.py       148     61    59%   71-72, 108-112, 137, 225, 236-238, 268, 274-279, 286-375, 380-418
+backend\app\strategies\prosperity\agents\search_agent.py           71     56    21%   36-37, 46-96, 100-107, 111-134, 138-152
+backend\app\strategies\prosperity\agents\track_agent.py           375    288    23%   69-145, 160-213, 224-254, 258-262, 271-295, 303-344, 354-377, 382-450, 454-479, 482, 499-522, 526-542, 551-564, 572-619, 664, 672, 690-725, 733-751, 759, 775
+backend\app\strategies\prosperity\agents\verify_agent.py          293    262    11%   48-49, 75-147, 162-172, 183-209, 213-222, 230-278, 282-310, 318-327, 340-454, 461-490, 494-507, 511-528, 532-540, 548-579, 587-625, 629-643
+backend\app\strategies\prosperity\api.py                          136     99    27%   39-43, 49-53, 60-82, 88-129, 135-154, 160-180, 186-199, 210-213, 219-230
+backend\app\strategies\prosperity\coordinator.py                  284    159    44%   91, 95-96, 124-125, 131-133, 171, 198-302, 309-311, 314-316, 319-321, 324-326, 329-332, 335-337, 341-343, 360-371, 382-383, 408, 427, 439-443, 460-502
+backend\app\strategies\prosperity\industry_history.py              34      9    74%   44, 48-55
+backend\app\strategies\prosperity\models.py                       142     17    88%   144, 155-158, 165, 180-182, 189, 202-204, 215-217, 223
+backend\app\strategies\prosperity\tools\__init__.py                 0      0   100%
+backend\app\strategies\prosperity\tools\concept_builder.py        197     48    76%   71-72, 78-79, 84-85, 104-111, 127-128, 137-138, 166-168, 177-178, 200-205, 219-221, 246-248, 267-278, 350, 361, 369-371, 406-408
+backend\app\strategies\prosperity\tools\industry_metrics.py       221     49    78%   67, 93-99, 146-147, 169-173, 230-231, 273-274, 295-296, 306-307, 323-326, 342, 371-377, 380, 399, 408, 419-428, 445-448, 456, 462
+backend\app\strategies\prosperity\tools\purity_scorer.py          151     99    34%   39-41, 50-71, 113-114, 122-210, 272-277, 288-318, 328-359, 364-369
+backend\app\strategies\prosperity\tools\source_crawler.py          76     32    58%   31-61, 66-68, 109-110, 123-125, 150-152
+backend\app\strategies\prosperity\tools\stock_screener.py          83     18    78%   52, 84-85, 117-118, 175-177, 182-191
+backend\app\strategies\prosperity\tools\wiki_indexer.py            89     19    79%   28, 100-117, 132-133, 151, 179
+---------------------------------------------------------------------------------------------
+TOTAL                                                            3281   1992    39%
+================== 41 passed, 1 warning in 441.69s (0:07:21) ==================

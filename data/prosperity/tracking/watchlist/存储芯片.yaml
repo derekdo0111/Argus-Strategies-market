@@ -1,0 +1,1614 @@
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:05:31.446590'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI驱动超级景气
+  indicator: 全球存储芯片月度销售额
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:05:31.446590'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 全球存储芯片 月度销售额 2026 WSTS
+  source_session: 178
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:05:37.927761'
+    trend: rising
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - AI驱动超级景气
+  indicator: DRAM合约价月度环比
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:05:37.927761'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: DRAM合约价 环比 2026 存储芯片
+  source_session: 178
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T03:02:38.913965'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - HBM产能结构性短缺
+  indicator: HBM产能利用率
+  industry: 存储芯片
+  last_updated: '2026-07-10T03:02:38.913965'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: HBM 产能利用率 2026 存储芯片
+  source_session: 178
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T03:02:46.948546'
+    trend: rising
+    triggered: false
+    value: 2026年DRAM供不应求幅度达4.9%，NAND短缺规模历史高位
+    value_numeric: 4.9
+  hypothesis_ids:
+  - H0-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - HBM产能结构性短缺
+  indicator: DRAM/NAND供需缺口
+  industry: 存储芯片
+  last_updated: '2026-07-10T03:02:46.948546'
+  last_value: 4.9
+  last_value_text: 2026年DRAM供不应求幅度达4.9%，NAND短缺规模历史高位
+  search_query: DRAM NAND 供需缺口 2026 存储芯片
+  source_session: 178
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:05:45.600120'
+    trend: rising
+    triggered: false
+    value: 2025年半导体设备国产化率达到23.2%
+    value_numeric: 23.2
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 国产化扩产加速
+  indicator: 国产设备采购占比
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:05:45.600120'
+  last_value: 23.2
+  last_value_text: 2025年半导体设备国产化率达到23.2%
+  search_query: 国产设备采购占比 存储芯片 2026
+  source_session: 178
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:39:32.444973'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 国产化扩产加速
+  indicator: 长鑫科技资本开支
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:39:32.444973'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 长鑫科技 资本开支 2026
+  source_session: 178
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:06:04.491604'
+    trend: rising
+    triggered: false
+    value: 2026年第二季LPDDR4X合约价环比至少上涨70-75%，LPDDR5X合约价环比上涨78-83%
+    value_numeric: null
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 全品类涨价超预期
+  indicator: Mobile DRAM合约价环比涨幅
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:06:04.491604'
+  last_value: null
+  last_value_text: 2026年第二季LPDDR4X合约价环比至少上涨70-75%，LPDDR5X合约价环比上涨78-83%
+  search_query: Mobile DRAM 合约价 环比 2026
+  source_session: 178
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:06:17.087314'
+    trend: rising
+    triggered: false
+    value: 2026年第一季度Enterprise SSD合约价环比上涨80%
+    value_numeric: 80
+  hypothesis_ids:
+  - H1-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 全品类涨价超预期
+  indicator: Enterprise SSD合约价环比涨幅
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:06:17.087314'
+  last_value: 80
+  last_value_text: 2026年第一季度Enterprise SSD合约价环比上涨80%
+  search_query: Enterprise SSD 合约价 环比 2026
+  source_session: 178
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:06:24.000356'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 国产设备业绩爆发
+  indicator: 北方华创新增订单金额
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:06:24.000356'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 北方华创 新增订单 2026
+  source_session: 178
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:06:29.657454'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 国产设备业绩爆发
+  indicator: 中微公司刻蚀设备市占率
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:06:29.657454'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 中微公司 刻蚀设备 市占率 2026
+  source_session: 178
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H1-3
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 模组厂库存红利期
+  indicator: 模组厂库存周转天数
+  industry: 存储芯片
+  last_updated: '2026-07-10T06:19:39.805807'
+  last_value: null
+  last_value_text: ''
+  search_query: 佰维存储 存货周转天数 2026
+  source_session: 178
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H1-3
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 模组厂库存红利期
+  indicator: 模组厂毛利率
+  industry: 存储芯片
+  last_updated: '2026-07-10T06:19:39.805807'
+  last_value: null
+  last_value_text: ''
+  search_query: 江波龙 毛利率 2026 模组
+  source_session: 178
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 远期产能过剩隐忧
+  indicator: 原厂资本开支增速
+  industry: 存储芯片
+  last_updated: '2026-07-10T06:19:39.805807'
+  last_value: null
+  last_value_text: ''
+  search_query: 三星 存储 资本开支 2026 增速
+  source_session: 178
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: breaking
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 远期产能过剩隐忧
+  indicator: 2028年DRAM供给/需求增速预测
+  industry: 存储芯片
+  last_updated: '2026-07-10T06:19:39.805807'
+  last_value: null
+  last_value_text: ''
+  search_query: 2028 DRAM 供需 预测 过剩
+  source_session: 178
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备订单持续性考验
+  indicator: 设备企业在手订单覆盖年限
+  industry: 存储芯片
+  last_updated: '2026-07-10T06:19:39.805807'
+  last_value: null
+  last_value_text: ''
+  search_query: 北方华创 在手订单 覆盖 2026
+  source_session: 178
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: breaking
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备订单持续性考验
+  indicator: 长鑫/长江存储后续CAPEX计划
+  industry: 存储芯片
+  last_updated: '2026-07-10T06:19:39.805807'
+  last_value: null
+  last_value_text: ''
+  search_query: 长鑫科技 2027 资本开支 计划
+  source_session: 178
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: breaking
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 模组厂库存风险积聚
+  indicator: 存储器价格月环比
+  industry: 存储芯片
+  last_updated: '2026-07-10T06:19:39.805807'
+  last_value: null
+  last_value_text: ''
+  search_query: DRAM 现货价 月环比 2027
+  source_session: 178
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 模组厂库存风险积聚
+  indicator: 模组厂存货跌价准备
+  industry: 存储芯片
+  last_updated: '2026-07-10T06:19:39.805807'
+  last_value: null
+  last_value_text: ''
+  search_query: 江波龙 存货跌价准备 2027
+  source_session: 178
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T03:03:04.218164'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - HBM绑定标的弹性
+  indicator: HBM渗透率
+  industry: 存储芯片
+  last_updated: '2026-07-10T03:03:04.218164'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: HBM 渗透率 2027 存储
+  source_session: 178
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - HBM绑定标的弹性
+  indicator: 绑定标的HBM相关营收占比
+  industry: 存储芯片
+  last_updated: '2026-07-10T06:19:39.805807'
+  last_value: null
+  last_value_text: ''
+  search_query: 太极实业 HBM 营收 占比 2027
+  source_session: 178
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备龙头寻确定性
+  indicator: 北方华创刻蚀设备市占率
+  industry: 存储芯片
+  last_updated: '2026-07-10T06:19:39.805807'
+  last_value: null
+  last_value_text: ''
+  search_query: 北方华创 刻蚀 市占率 2027
+  source_session: 178
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备龙头寻确定性
+  indicator: 中微公司新增订单中两长占比
+  industry: 存储芯片
+  last_updated: '2026-07-10T06:19:39.805807'
+  last_value: null
+  last_value_text: ''
+  search_query: 中微公司 长江存储 订单 2027
+  source_session: 178
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:07:34.378434'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 优选库存管理模组厂
+  indicator: 模组厂存货周转天数
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:07:34.378434'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 江波龙 存货周转天数 2027 Q2
+  source_session: 178
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history: []
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 优选库存管理模组厂
+  indicator: 跌价准备/存货比值
+  industry: 存储芯片
+  last_updated: '2026-07-10T06:19:39.805807'
+  last_value: null
+  last_value_text: ''
+  search_query: 佰维存储 跌价准备 2027
+  source_session: 178
+  status: pending
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable_then_falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:39:38.058984'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备订单持续性考验
+  indicator: 北方华创在手订单/营收比
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:39:38.058984'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 北方华创 在手订单 2026
+  source_session: 176
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: peaking
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:39:44.034379'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备订单持续性考验
+  indicator: 长鑫存储资本开支变动
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:39:44.034379'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 长鑫科技 资本开支 2027 计划
+  source_session: 176
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable_high
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:39:49.292347'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备龙头寻确定性
+  indicator: 北方华创/中微存储客户收入占比
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:39:49.292347'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 北方华创 存储 客户 营收 占比 2026
+  source_session: 176
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:39:54.894236'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备龙头寻确定性
+  indicator: 长鑫存储设备招标中标份额
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:39:54.894236'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 长鑫存储 设备 招标 国产化 中标 2026
+  source_session: 176
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: adequate
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:40:01.060167'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 优选库存管理模组厂
+  indicator: 跌价准备占存货比例
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:40:01.060167'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 江波龙 存货跌价准备 比例 2026
+  source_session: 176
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:16:30.613118'
+    trend: rising
+    triggered: false
+    value: 长鑫存储三座12寸晶圆厂预计2026年全部达产，年底产能有望超越美光成为全球第三大DRAM制造商
+    value_numeric: null
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 国产化扩产加速
+  indicator: 长鑫存储 产能扩张
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:16:30.613118'
+  last_value: null
+  last_value_text: 长鑫存储三座12寸晶圆厂预计2026年全部达产，年底产能有望超越美光成为全球第三大DRAM制造商
+  search_query: 长鑫存储 产能 2026
+  source_session: 169
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:16:45.498706'
+    trend: rising
+    triggered: false
+    value: 约11.8%（估算，基于DRAM和NAND合计）
+    value_numeric: 11.8
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 远期产能过剩隐忧
+  indicator: 全球存储资本支出同比增速
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:16:45.498706'
+  last_value: 11.8
+  last_value_text: 约11.8%（估算，基于DRAM和NAND合计）
+  search_query: 存储芯片 资本支出 2026 同比
+  source_session: 169
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:16:54.590060'
+    trend: rising
+    triggered: false
+    value: SK海力士计划到2030-2031年将DRAM晶圆月产能从55万片提升至100万片，近乎翻倍
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 远期产能过剩隐忧
+  indicator: 计划新增晶圆厂产能
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:16:54.590060'
+  last_value: null
+  last_value_text: SK海力士计划到2030-2031年将DRAM晶圆月产能从55万片提升至100万片，近乎翻倍
+  search_query: 存储芯片 新增产能 规划 2027
+  source_session: 169
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:16:58.762419'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备订单持续性考验
+  indicator: 设备企业订单出货比(book-to-bill)
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:16:58.762419'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 北方华创 订单出货比 2026
+  source_session: 169
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:17:07.079752'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备订单持续性考验
+  indicator: 中微公司在手订单金额
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:17:07.079752'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 中微公司 在手订单 2026
+  source_session: 169
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:17:11.766749'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 模组厂库存风险积聚
+  indicator: 模组厂存货金额环比变化
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:17:11.766749'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 佰维存储 存货 2026 季度
+  source_session: 169
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:17:22.754641'
+    trend: rising
+    triggered: false
+    value: DDR4现货价较合约价高出172%，DDR5高出76%
+    value_numeric: 172
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 模组厂库存风险积聚
+  indicator: 存储芯片现货价与合约价价差
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:17:22.754641'
+  last_value: 172
+  last_value_text: DDR4现货价较合约价高出172%，DDR5高出76%
+  search_query: DRAM 现货价 合约价 价差 2026
+  source_session: 169
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:17:28.033676'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - HBM绑定标的弹性
+  indicator: HBM相关设备企业订单额
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:17:28.033676'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: HBM 设备 订单 2026
+  source_session: 169
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:17:42.379061'
+    trend: rising
+    triggered: false
+    value: 2026年中国先进封装市场规模预计达900亿元
+    value_numeric: 900
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - HBM绑定标的弹性
+  indicator: 先进封装市场规模
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:17:42.379061'
+  last_value: 900
+  last_value_text: 2026年中国先进封装市场规模预计达900亿元
+  search_query: 先进封装 市场规模 2026
+  source_session: 169
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:17:49.982810'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备龙头寻确定性
+  indicator: 国产设备龙头在手订单覆盖度
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:17:49.982810'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 北方华创 在手订单 收入比 2026
+  source_session: 169
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:17:54.662629'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备龙头寻确定性
+  indicator: 国产刻蚀/薄膜沉积设备中标率
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:17:54.662629'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 国产刻蚀设备 中标 存储产线 2026
+  source_session: 169
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T05:17:59.233684'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 优选库存管理模组厂
+  indicator: 低价库存占比
+  industry: 存储芯片
+  last_updated: '2026-07-10T05:17:59.233684'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 佰维存储 库存成本 结构 2026
+  source_session: 169
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:05:50.907005'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H0-3
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 国产化扩产加速
+  indicator: 长鑫科技/长江存储产能扩张
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:05:50.907005'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 长鑫科技 长江存储 产能扩张 2026
+  source_session: 159
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:06:35.174456'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H1-3
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 模组厂库存红利期
+  indicator: 模组厂季度毛利率
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:06:35.174456'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 佰维存储 江波龙 毛利率 2026 Q1 Q2
+  source_session: 159
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:06:42.850948'
+    trend: rising
+    triggered: false
+    value: 126.07%
+    value_numeric: 126.07
+  hypothesis_ids:
+  - H1-3
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - 模组厂库存红利期
+  indicator: 存储模组厂营收同比增长率
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:06:42.850948'
+  last_value: 126.07
+  last_value_text: 126.07%
+  search_query: 存储模组厂 营收 同比增长 2026
+  source_session: 159
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:06:59.367440'
+    trend: rising
+    triggered: false
+    value: 美光科技预计2026财年资本支出约270亿美元
+    value_numeric: 270
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 远期产能过剩隐忧
+  indicator: 原厂资本开支指引变化
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:06:59.367440'
+  last_value: 270
+  last_value_text: 美光科技预计2026财年资本支出约270亿美元
+  search_query: 三星 美光 资本开支 2026 2027
+  source_session: 159
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:07:05.684435'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 远期产能过剩隐忧
+  indicator: DRAM合约价环比涨幅收敛
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:07:05.684435'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: DRAM合约价 环比 涨幅 2026 H2
+  source_session: 159
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:07:13.676306'
+    trend: falling
+    triggered: false
+    value: 2.897亿部（2026年第一季度）
+    value_numeric: 2.897
+  hypothesis_ids:
+  - H2-1
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 远期产能过剩隐忧
+  indicator: 消费电子终端出货量
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:07:13.676306'
+  last_value: 2.897
+  last_value_text: 2.897亿部（2026年第一季度）
+  search_query: 智能手机 PC 出货量 2026
+  source_session: 159
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T03:02:53.071436'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备订单持续性考验
+  indicator: 国产设备企业新签订单环比变化
+  industry: 存储芯片
+  last_updated: '2026-07-10T03:02:53.071436'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 北方华创 中微公司 新签订单 环比 2027
+  source_session: 159
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T03:03:11.569575'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - confirmed
+  hypothesis_titles:
+  - HBM绑定标的弹性
+  indicator: HBM相关企业订单金额
+  industry: 存储芯片
+  last_updated: '2026-07-10T03:03:11.569575'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: HBM 订单 封装 设备 2026
+  source_session: 159
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T03:03:19.810861'
+    trend: stable
+    triggered: false
+    value: 公司在手订单充足
+    value_numeric: null
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备龙头寻确定性
+  indicator: 北方华创/中微公司在手订单金额
+  industry: 存储芯片
+  last_updated: '2026-07-10T03:03:19.810861'
+  last_value: null
+  last_value_text: 公司在手订单充足
+  search_query: 北方华创 中微公司 在手订单 2027
+  source_session: 159
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-10T03:03:26.390019'
+    trend: falling
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 优选库存管理模组厂
+  indicator: 模组厂毛利率环比变化
+  industry: 存储芯片
+  last_updated: '2026-07-10T03:03:26.390019'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 存储模组厂 毛利率 环比 2027
+  source_session: 159
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:07:22.196396'
+    trend: unclear
+    triggered: false
+    value: 在手订单充足
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备订单持续性考验
+  indicator: 北方华创在手订单金额
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:07:22.196396'
+  last_value: null
+  last_value_text: 在手订单充足
+  search_query: 北方华创 在手订单 2027
+  source_session: 139
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:07:28.966016'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-2
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 设备订单持续性考验
+  indicator: 长鑫科技二期扩产规划
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:07:28.966016'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 长鑫科技 二期 扩产 投资 计划 2027
+  source_session: 139
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: falling
+  frequency: weekly
+  history:
+  - timestamp: '2026-07-09T16:07:42.090672'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H2-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 模组厂库存风险积聚
+  indicator: NAND Flash现货价掉头
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:07:42.090672'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: NAND Flash 现货价格 2027 年初
+  source_session: 139
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:07:49.769011'
+    trend: rising
+    triggered: false
+    value: 预估2026Q3环比增长13-18%
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - HBM绑定标的弹性
+  indicator: 服务器DRAM合约价
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:07:49.769011'
+  last_value: null
+  last_value_text: 预估2026Q3环比增长13-18%
+  search_query: 服务器 DRAM 合约价 2026 月度
+  source_session: 139
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:07:55.529541'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - HBM绑定标的弹性
+  indicator: 澜起科技内存接口芯片出货量
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:07:55.529541'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 澜起科技 内存接口 出货量 2026
+  source_session: 139
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:08:17.931092'
+    trend: rising
+    triggered: false
+    value: 2026年HBM市场规模预计220亿美元，渗透率未找到具体数据
+    value_numeric: 220
+  hypothesis_ids:
+  - H3-1
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - HBM绑定标的弹性
+  indicator: HBM产能及渗透率
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:08:17.931092'
+  last_value: 220
+  last_value_text: 2026年HBM市场规模预计220亿美元，渗透率未找到具体数据
+  search_query: HBM 市场渗透率 2026 TrendForce
+  source_session: 139
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:08:27.482657'
+    trend: unclear
+    triggered: false
+    value: 25.80%
+    value_numeric: 25.8
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备龙头寻确定性
+  indicator: 北方华创季度营收增速
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:08:27.482657'
+  last_value: 25.8
+  last_value_text: 25.80%
+  search_query: 北方华创 季度 营收 2026
+  source_session: 139
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:08:36.056217'
+    trend: rising
+    triggered: false
+    value: 2026年存储芯片国产化率35%
+    value_numeric: 35
+  hypothesis_ids:
+  - H3-2
+  hypothesis_statuses:
+  - partial
+  hypothesis_titles:
+  - 设备龙头寻确定性
+  indicator: 存储设备国产化率
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:08:36.056217'
+  last_value: 35
+  last_value_text: 2026年存储芯片国产化率35%
+  search_query: 存储芯片 国产设备 采购率 2026 2027
+  source_session: 139
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:08:41.732742'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 优选库存管理模组厂
+  indicator: 企业级SSD出货量
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:08:41.732742'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 企业级 SSD 出货量 2026 江波龙
+  source_session: 139
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: stable
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:08:47.146495'
+    trend: unclear
+    triggered: false
+    value: 未找到相关数据
+    value_numeric: null
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 优选库存管理模组厂
+  indicator: 佰维存储存货周转天数
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:08:47.146495'
+  last_value: null
+  last_value_text: 未找到相关数据
+  search_query: 佰维存储 存货周转 天数 2026Q3
+  source_session: 139
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold
+- expected_direction: rising
+  frequency: monthly
+  history:
+  - timestamp: '2026-07-09T16:08:58.904632'
+    trend: rising
+    triggered: false
+    value: 微软预计2026年资本开支为1864亿美金（假设增速60%）
+    value_numeric: 1864
+  hypothesis_ids:
+  - H3-3
+  hypothesis_statuses:
+  - unverified
+  hypothesis_titles:
+  - 优选库存管理模组厂
+  indicator: 下游云厂商资本开支
+  industry: 存储芯片
+  last_updated: '2026-07-09T16:08:58.904632'
+  last_value: 1864
+  last_value_text: 微软预计2026年资本开支为1864亿美金（假设增速60%）
+  search_query: 北美 云厂商 Capex 2026
+  source_session: 139
+  status: checked
+  threshold: 0.2
+  trigger_condition:
+    direction: bidirectional
+    threshold: 0.2
+    type: threshold

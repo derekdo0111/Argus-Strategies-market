@@ -1,0 +1,176 @@
+
+============================================================
+  Regenerate Screening + Report: 可控核聚变
+  2026-07-02 00:22:21
+============================================================
+
+[1/5] 初始化数据库...
+   -> 数据库就绪
+
+[2/5] 加载搜索数据...
+   -> 加载搜索缓存: 01_search_2026-07-01.yaml
+   -> 41 条搜索结果
+
+[3/5] 加载已验证假设...
+   -> 加载 12 条已验证假设 (session 12)
+   -> 其中 12/12 条有陈述/推理链 (来自 wiki .md)
+
+[4/5] 运行 ScreeningAgent...
+ScreeningAgent: screening stocks for 可控核聚变
+concept_detail 失败 (attempt 1/3): 请指定正确的接口名
+concept_detail 失败 (attempt 2/3): 请指定正确的接口名
+concept_detail 失败 (attempt 3/3): 请指定正确的接口名
+concept_detail 所有重试均失败
+ths_index 失败 (attempt 1/3): 抱歉，您没有接口(ths_index)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+ths_index 失败 (attempt 2/3): 抱歉，您没有接口(ths_index)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+ths_index 失败 (attempt 3/3): 抱歉，您没有接口(ths_index)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+ths_index 所有重试均失败
+概念板块 '可控核聚变': 缓存命中 (34 只)
+搜索引擎概念板块匹配到 '可控核聚变': 34 只股票
+行业 '可控核聚变' → 34 只股票 (stock_basic + 申万 + concept_detail + 同花顺 + 搜索引擎自建)
+      -> [Stage 1/4] LLM 方向匹配（34 只成分股）...
+      -> [Stage 2/4] 业务纯度打分...
+         -> 拉取 fina_mainbz_vip（34 只）...
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+fina_mainbz_vip 失败 (attempt 1/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 2/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 失败 (attempt 3/3): 抱歉，您没有接口(fina_mainbz_vip)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+fina_mainbz_vip 所有重试均失败
+purity_scorer: fetched mainbz for 0/34 stocks
+         -> 0/34 只有主营业数据，34 只缺失
+         -> LLM 匹配业务线...
+purity_scorer: no mainbz data for any stock, fallback to keyword
+Keyword fallback: matched 0/34 stocks
+      -> [Stage 3/4] 财务打分（参考）...
+Batch fina_indicator: 34 ts_codes → 200 rows across 2/2 batches

@@ -2,6 +2,1327 @@
 
 All notable changes to Investment Strategy project.
 
+## v1.2.1 (2026-07-10) — VerifyAgent 冲突阈值修复 + ReportAgent 级联修正展示
+
+### Bug 1: 弱冲突多轮一致错判为 strong → overtuned
+- **问题**: H0-2（HBM产能结构性短缺）3轮 LLM 均打 2分（"有矛盾但不推翻"），但 `_aggregate_rounds()` 规则 `≥2轮≥2分 → strong` 导致错判为 overturned → 级联拉下 H1-1/H1-3 unreachable → 评级从高景气掉到景气
+- **修复**: 只保留 `≥1轮≥3分 且 ≥2轮有冲突` → strong。3轮全2分 → weak（weak_disputed，不切链）
+- **影响**: 弱反例（score=2）不再被聚合升级为 overtuned，仅 multi-round score=3 的一致性才算 strong
+
+### Bug 2: CounterAgent 修正信息未出现在最终报告
+- **问题**: CounterAgent 做 sentiment 修正（positive→negative）和级联裁决后，报告中看不到任何追溯痕迹
+- **修复**: `_render_report()` "验证诊断"区块新增两个子项：
+  - `original_sentiment` 存在且不同于 `sentiment` → 展示 `{old} → {new}` 方向变更
+  - `causality_note` 含 "CounterAgent" → 提取展示级联裁决原因
+- **影响**: 用户可在报告中看到每一条假设的 CounterAgent 修正痕迹
+
+### 改动文件
+- `verify_agent.py`: `_aggregate_rounds()` 冲突阈值收紧
+- `report_agent.py`: `_render_report()` +CounterAgent 修正追溯
+- `CHANGELOG.md`, `pyproject.toml`: 版本号 1.2.0 → 1.2.1
+
+### 测试
+- 208/208 ✅ | 版本: v1.2.0 → v1.2.1
+
+## v1.2.0 (2026-07-10) — ScreeningAgent v2：从穷举分类改为精选推荐
+
+### 动机
+- v1.1.0 LLM 一次性处理 201 只股票 → 超时 → 全走程序化兜底 → 假设命中全空 → 股池退化为纯财务排名
+- 用户要的是"15-20 只精选龙头、覆盖上下游"，不是"50 只无标注清单"
+
+### 架构变化
+- **旧**: Stage 1 LLM 一次全部分类+标记 → Stage 2 打分 → Stage 3 财务
+- **新**: Stage 1 程序化预筛+分段+全量财务预排 → Stage 2 LLM 分段精选（每段挑 5-8 只）→ Stage 3 打分+分段排名
+- 候选池 = 财务预排 top 18/段 + 代表公司强制豁免（防止战略重要股被财务排掉）
+- purity_estimate 从 LLM 猜测 → 程序化营收比例计算
+
+### 重写：screening_agent.py
+- Stage 1: `_programmatic_prescreen()` 精细化关键词分类（下游排他：模组/SSD/分销优先归 downstream）
+- Stage 1: `_financial_prerank()` 全量财务预排名 → 候选池
+- Stage 2: `_llm_select_batched()` 每段独立 LLM 调用，从 18-25 只候选挑 6 只
+- Stage 3: 程序化三维打分（仅精选股）
+- 新增 `_extract_rep_companies()` — YAML 代表公司→ts_code 映射
+- 新增 `_compute_purity()` — 主营业营收比例程序化计算
+- 删旧 `_llm_classify_and_match()`（一次塞 201 只的超时方案）
+- `timeout` 接通 `PROSPERITY_SCREENING_LLM_TIMEOUT`
+
+### 重写：screening_direction_prompt.md
+- 任务从「分类到环节 + 标记命中 + 估计纯度」→「从候选池挑选 top K 只最匹配假设的股票」
+- 输出从 201 条 JSON → 每段 5-8 条 {ts_code, positive_hits, negative_hits, selection_reason}
+
+### 修改
+- `screening_scorer.py`: score_stock_pool 输出 +`selection_reason`
+- `report_agent.py`: 股池表格 +「挑选理由」列
+- `config.py`: `PROSPERITY_SCREENING_BATCH_SIZE` → `PROSPERITY_SCREENING_TOP_PER_SEGMENT=6`
+
+### 测试
+- 208/208 ✅ | 版本: v1.1.0 → v1.2.0
+
+### 改动文件
+- 重写: `screening_agent.py` (~380行→~450行), `screening_direction_prompt.md`
+- 修改: `screening_scorer.py` (+1字段), `report_agent.py` (+1列), `config.py` (1配置), `pyproject.toml`, `test_prosperity_coordinator.py` (2测试适配)
+
+---
+
+## v1.1.0 (2026-07-09) — 假设树感知分赛道筛选 + 验证诊断展示（Phase 7）
+
+### 动机
+- 股池 170 只混在一张表按纯度分排名，分销商排第一、锂电设备混进存储芯池——读者分不清核心标的
+- 合成报告看不到修正陈述和因果链强度——验证环节的核心发现被丢弃
+- L3 投资含义写了筛选标准但 ScreeningAgent 完全不消费
+- LLM 方向匹配任务模糊（打分 0~1）→ 超时/随机，方向分全部 0.50
+
+### 新建：screening_scorer.py
+- `hypothesis_weight(h)` — 单条假设有效评分权重
+  - `causality_strength == "broken"` → 0.0（因果链断裂·不参与评分）
+  - `overturned / unreachable` → 0.0
+  - 有 `corrected_statement` → 基础权重 × 0.5
+  - 正常：STATUS_WEIGHT × LAYER_WEIGHT × CAUSALITY_DISCOUNT
+- `hypothesis_direction(h)` — 考虑修正陈述反转的实际方向
+- `format_hypothesis_tree()` — 假设树 → LLM prompt 摘要（分组正/负/中性，broken 标注"不参与判断"）
+- `score_stock_pool()` — 三维打分：景气适配 Σ(正面命中×权重)、风险暴露 Σ(负面命中×权重)、质量 (ROE+毛利+增速)/3
+  - 综合 = 景气适配 × 0.5 - 风险暴露 × 0.3 + 质量 × 0.2
+
+### 重写：screening_agent.py（v1.0.5 → v1.1.0）
+- **旧**: 4 阶段（LLM方向匹配 → 纯度 → 财务 → 一张大表排名）
+- **新**: 3 阶段
+  - Stage 1: `_llm_classify_and_match()` — LLM 单次调用：分类到环节(upstream/mid/downstream) + 标记命中了哪些假设 + 关联占比估计(0~1)
+  - Stage 2: 程序化三维打分（消费 `screening_scorer.hypothesis_weight()`）
+  - Stage 3: 财务拉取（仅存活股票）→ 分赛道排名
+- 删旧 4 阶段逻辑：`_llm_direction_match()` → 替换为 `_llm_classify_and_match()`
+- 删旧 `_compute_purity()` 阶段（纯度判断合并到 Stage 1 LLM 中）
+- 新增 `_programmatic_classify()` — LLM 不可用时确定性关键词兜底
+- 输出新增 `segments` 字段：`{upstream: [...], mid: [...], downstream: [...]}`
+
+### 重写：screening_direction_prompt.md
+- 任务从「给每只股票打分 0~1」→「分类到环节 + 标记命中了哪些假设 + 关联占比估计」
+- 输入从仅 L3 假设 → 完整假设树摘要（正面/负面/中性分组 + 权重标注）
+- 输出从 `{score, matched_l3, reason}` → `{segment, positive_hits, negative_hits, purity_estimate, excluded, exclude_reason}`
+
+### 修改：report_agent.py
+- 每条假设渲染段推理链后新增「验证诊断」小节：
+  - 因果链强度（✅/⚠️/🔍/⚡）+ broken 标注"不参与选股评分"
+  - 修正陈述（corrected_statement）
+  - 验证说明（reason, 限 200 字）
+- 股池从一张大表 → 三张分段独立表格（📦 上游设备与材料 / 📦 中游设计与制造 / 📦 下游模组与应用）
+  - 列名从「纯度分/方向分/ROE/毛利率/营收增速/匹配方向」→「景气适配/风险暴露/质量/综合/ROE/毛利率/营收增速/命中假设」
+
+### 设计决策
+- **LLM 不能省但任务要换**：关键词匹配不能跨行业通用 → LLM 从「打分裁判」降级为「分类+标注记分员」
+- **purity_estimate 三层折扣**：混血公司（18% 关联）不被硬排除但景气适配 × 0.18 → 自然下沉
+- **broken 假设不参与评分**：H2-1「远期产能过剩隐忧」因果链断裂 → weight=0，不扣高资本开支股票的分
+- **分赛道展示**：用户看到上游设备 vs 中游制造 vs 下游模组三张独立的表，各自排名
+
+### 测试
+- 208/208 ✅ 零回归 | 版本: v1.0.5 → v1.1.0
+- 修复 2 个旧测试（方向分/纯度分 → 景气适配/命中假设）
+
+### 改动文件
+- 新建: `tools/screening_scorer.py` (~190行)
+- 重写: `agents/screening_agent.py` (~530行, 4阶段→3阶段)
+- 重写: `prompts/screening_direction_prompt.md` (~85行)
+- 修改: `agents/report_agent.py` (+~40行 诊断 + ~20行 分段表)
+- 修改: `tests/test_prosperity_coordinator.py` (2 测试适配)
+- 修改: `pyproject.toml`, `CHANGELOG.md`
+
+---
+
+## v1.0.5 (2026-07-09) — ScreeningAgent 消费 chain_model（Phase 6）
+
+### 动机
+- ScreeningAgent 签名已预留 `chain_model=None`，但 `_llm_direction_match()` 未注入
+- LLM 方向匹配只看「搜索片段 + L3 陈述」判断股票归属，缺乏产业链上下文
+- 代表公司/环节分类/瓶颈级别等信息有助于校准方向匹配精度
+
+### 改动：screening_agent.py
+- 新增 `_format_chain_context()`：从 YAML 提取 3 块方向匹配专属上下文
+  - 代表公司表格（正例锚点 + 瓶颈级别 + 国产化率）
+  - 环节描述（股票分类参考）
+  - 方向匹配使用规则（代表公司锚定 / 环节分类 / 瓶颈校准）
+- 修改 `_llm_direction_match()`：新增 `chain_model=None` 参数 → 注入 `{chain_context}`
+- 修改 `screen()` Stage 1：透传 `chain_model` 到方向匹配
+- 头注释 + class docstring：v0.18 → v0.19
+
+### 改动：screening_direction_prompt.md
+- 搜索素材和成分股列表之间插入 `{chain_context}` 占位符
+- 新增 1 条链感知规则：股票是产业链代表公司 → 默认 0.8~1.0
+- 新增瓶颈校准规则：bottleneck=high → 方向分可上调 0.1
+
+### 不动
+- `_compute_purity()` — 确定性关键词路径，无 LLM
+- `purity_scorer.py` — 主路径确定性代码，LLM 回退路径 <1% 不值得扩接口
+
+### 设计决策
+- `_format_chain_context()` 自包含（与 Hypothesize/Verify/Counter 同模式，各 Agent 独立实现）
+- 只改 Stage 1 方向匹配，不碰 Stage 2 纯度打分（边际收益低，不值得调 3 个函数签名）
+- chain_model=None 时返回占位文本，零影响
+
+### 测试
+- 208/208 ✅ 零回归 | 版本: v1.0.4 → v1.0.5
+
+---
+
+## v1.0.4 (2026-07-09) — CounterAgent 消费 chain_model + prompt 模板化（Phase 5）
+
+### 动机
+- CounterAgent 签名已预留 `chain_model=None`，但 `_build_cascade_prompt()` 未注入
+- prompt 全部内嵌在代码（~90 行硬编码），无独立模板文件
+- LLM 做级联裁决时看不到产业链全貌 → 推翻门槛/disputed分类/sentiment校准无依据
+
+### 改动：counter_agent.py
+- 新增 `_load_templates()`：加载 `counter_cascade_prompt.md` 模板
+- 新增 `_format_chain_context()`：从 YAML 提取 6 块级联裁决专属上下文
+  - 产业链环节瓶颈视图（表格：瓶颈级别 + 国产化率 + 瓶颈说明）
+  - 全局瓶颈汇总
+  - 供需格局（disputed 分类参考：供需短缺→程度变化，产能过剩→方向反转）
+  - 技术路径成熟度（sentiment 校准：工程验证≠规模化）
+  - 级联裁决使用规则（推翻门槛、disputed分类、sentiment校准、跨环节依赖）
+- 修改 `_build_cascade_prompt()`：从硬编码迁移到模板 `.format()` + `{chain_context}` 注入
+- 新增 `_build_fallback_prompt()`：模板文件缺失时的内嵌降级
+- 修改 `_llm_cascade`：接收 `chain_model` → `_format_chain_context()` → 注入 prompt
+- 修改 `cascade()`：透传 `chain_model` 到 `_llm_cascade()`
+
+### 改动：新增 counter_cascade_prompt.md
+- `rules/prosperity/prompts/counter_cascade_prompt.md`：~110 行模板
+- 继承原 v2.1 全部硬编码规则 + 新增 `{chain_context}` 占位符 + 链感知裁决指引
+
+### 设计决策
+- CounterAgent 不适合做 VerifyAgent 式算术化拆分（级联裁决本质是全局链级语义判断，不可逐假设原子化）
+- 不新增程序化规则 — LLM 仍然做语义法官，但上下文从「盲人摸象」升级为「产业链全景地图」
+- 模板降级：`counter_cascade_prompt.md` 不可用时 fallback 到 `_build_fallback_prompt()`（与原逻辑等价）
+
+### 测试
+- 208/208 ✅ 零回归 | 版本: v1.0.3 → v1.0.4
+
+---
+
+## v1.0.3 (2026-07-09) — VerifyAgent Q5 链适配度深度重构（Phase 4）
+
+### 动机
+- v1.0.2 仅在 verify_prompt.md 中插入 `{chain_context}` 占位符，Q1-Q4 判定规则仍未链感知
+- chain_context 作为"使用规则"附在 prompt 末尾，LLM 大概率忽略
+- 产业链拓扑从"参考书"升级为"评分标准"
+
+### 改动：verify_prompt.md（Q1-Q5 全量链感知重写）
+- **Q1 信源对口**：先判断假设对应环节 → 只算涉及该环节 bottleneck/代表公司/关键指标的信源
+- **Q2 数据对齐**：参考 tracking_indicators.meaning + supply_demand.overall_judgment（如"严重供需短缺"→正方向）
+- **Q3 瓶颈校准**：bottleneck level=high/critical + 国产化率<30% → 反例至少 1 分；反例不涉瓶颈 → 最高 1 分
+- **Q4 情感联动**：sentiment 与 bottleneck level 联动（high/critical 的负面信号更严重）
+- **Q5 chain_fit（新增）**：independent dimension — aligned / misaligned，判定假设是否契合产业链拓扑现实
+
+### 改动：verify_agent.py
+- `_synthesize_confidence()`：+chain_fit ±1 级修正（aligned→升一级, misaligned→降一级）
+- `_synthesize_status()`：chain_fit **不影响** status（避免旧知识惩罚新信息）
+- `_aggregate_rounds()`：Q5 众数聚合 + 传入合成函数
+- `_parse_verification_result()`：单轮路径支持 chain_fit
+- `_format_chain_context()`：使用规则升级为 Q5 体系
+
+### 设计决策
+- chain_fit 只改 confidence 不改 status（brainstorming 结论：Q5 misaligned 可能是"新信息"而非"逻辑错误"）
+- Q5 2 档 aligned/misaligned（非 3 档）减少 LLM 自由度
+- Q4 砍掉"信号放大效应"（不可操作化），改为 bottleneck 联动
+- Q2 不依赖 tracking_indicators.expected_direction（该字段不存在），改用 meaning 文本 + overall_judgment
+
+### 测试
+- 208/208 ✅ 零回归 | 版本: v1.0.2 → v1.0.3
+
+---
+
+## v1.0.2 (2026-07-09) — VerifyAgent 消费 chain_model（Phase 3）
+
+### 动机
+- VerifyAgent 签名已预留 `chain_model=None`，但验证 prompt 中未注入产业链拓扑
+- 导致 LLM 验证信源/数据/反例时缺乏环节锚点：不知道假设对应哪个产业链环节、该环节的瓶颈级别/国产化率/跟踪指标
+- 反例搜索词生成也无法定向搜索 bottleneck 环节的薄弱点
+
+### 改动
+- **`verify_agent.py`**：
+  - 新增 `_format_chain_context(chain_model)` → YAML 转 prompt 友好文本（与 HypothesizeAgent 同逻辑，各 Agent 自包含）
+  - `chain_model` 串入 `_verify_chain_with_llm()` 和 `_generate_counter_queries()` → prompt 注入产业链拓扑
+  - `chain_model=None` 时返回空字符串，零影响
+- **`verify_prompt.md`**：新增 `{chain_context}` 占位符（位在历史上下文之后、Tushare 数据之前）
+- **`counter_query_prompt.md`**：新增 `{chain_context}` 占位符 + 优先搜索 bottleneck 环节的指引
+
+### 效果
+- Q1 信源计数：LLM 知道假设对应哪个环节，判断信源是否「对口」
+- Q2 数据对齐：参考 `tracking_indicators` 的巡检频率和方向预期
+- Q3 反例冲突：结合 bottleneck 的国产化率/瓶颈级别校准打分（如国产化率<30% 的真瓶颈 ≠ 正例不足）
+- 反例搜索词：可定向搜索 bottleneck 环节的薄弱点（如"刻蚀设备 国产化率 瓶颈"）
+
+### 测试
+- 204/204 ✅ 零回归 | 版本: v1.0.1 → v1.0.2
+
+---
+
+## v1.0.1 (2026-07-09) — HypothesizeAgent 消费 chain_model（Phase 2）
+
+### 动机
+- HypothesizeAgent 签名已预留 `chain_model=None`，但 3 个 prompt builder 均未注入产业链拓扑
+- 导致假设生成完全依赖搜索片段，无法利用已验证的产业链结构（环节/瓶颈/代表公司/跟踪指标）
+
+### 改动
+- **`hypothesize_agent.py`**：
+  - 新增 `_format_chain_context(chain_model)` → YAML 转 prompt 友好文本（7 大板块：产业链结构/瓶颈视图/供需格局/技术路径/跟踪指标/使用规则）
+  - `chain_model` 串入 `_form_single_round` / `_phase1_skeleton` / `_phase2_fill` → 所有 `_build_*_prompt()` 消费
+  - `chain_model=None` 时返回空字符串，零影响
+- **`hypothesize_prompt.md`**：新增 `{chain_context}` 占位符
+- **`hypothesize_phase1_prompt.md`**：新增 `{chain_context}` 占位符
+- **`hypothesize_phase2_prompt.md`**：新增 `{chain_context}` 占位符
+
+### 效果
+- 假设的 L3 投资落点锚定 `representative_companies`
+- L0 核心命题围绕供需矛盾展开（不再孤立引用新闻片段）
+- 瓶颈环节（high/critical）获得更多假设覆盖
+- `key_indicators` 优先参考 `tracking_indicators` 中已验证指标
+
+### 测试
+- 204/204 ✅ 零回归 | 版本: v1.0.0 → v1.0.1
+
+---
+
+## v1.0.0 (2026-07-09) — Wiki-Centric 架构 v1.0 Phase 0+1
+
+### 动机
+- wiki 被当成流水线末端「归档输出」，LearningAgent 生成的完整产业图谱（价值链/瓶颈/跟踪指标）无 agent 消费
+- CounterAgent 做上下游级联裁决，却不知道产业链拓扑结构（连 `history` 参数都没有）
+- 需要把 wiki 从「尾气」升级为所有 agent 共用的「中枢知识库」
+
+### Phase 0 — YAML Schema + LearningAgent 扩写
+- **`data/prosperity/wiki/industries/存储芯片.yaml`**（新增）：样本 YAML，含 chain.segments（上游/中游/下游含瓶颈标注）、bottlenecks、supply_demand、technology_paths、tracking_indicators
+- **`learning_prompt.md`**：新增 §8 YAML 输出要求（产业链结构化数据）
+- **`learning_agent.py`**：`learn()` 返回 `Tuple[str, Optional[dict]]` → (markdown, yaml_dict)；新增 `_extract_yaml()` 解析 LLM 输出中的 ` ```yaml ` 块
+- **`coordinator.py` `_run_learning_agent()`**：同步写入 `{name}.yaml` 伴生文件
+
+### Phase 1 — Coordinator `_load_chain_model()` + Agent 签名预留
+- **`coordinator.py`**：新增 `_load_chain_model()` → 加载 `industries/{name}.yaml`；管道注入 `chain_model` 到 4 个 agent
+- **`hypothesize_agent.py`**：`form_hypotheses()` 签名新增 `chain_model=None`（Phase 2 消费）
+- **`verify_agent.py`**：`verify()` 签名新增 `chain_model=None`
+- **`counter_agent.py`**：`cascade()` 签名新增 `history=None, chain_model=None`（**修复：Counter 之前没 history**）
+- **`screening_agent.py`**：`screen()` 签名新增 `chain_model=None`
+
+### 文档
+- **Spec**: `docs/specs/2026-06-29-prosperity-strategy-design.md` → v0.24，新增 §11 Wiki-Centric 架构
+- **Plan**: `docs/plans/2026-07-09-prosperity-wiki-centric.md`（新增）
+- **SCHEMA**: `data/prosperity/SCHEMA.md` 不变（YAML 协议在 Spec §11 定义）
+
+### 测试
+- 204/204 ✅ 零回归 | 版本: v0.23.7 → v1.0.0
+
+### 后续（Phase 2+，另案讨论）
+- HypothesizeAgent / VerifyAgent / CounterAgent 如何消费 YAML 构建分析飞轮
+- ScreeningAgent 消费 YAML → 多桶输出 + 角色标签
+
+---
+
+## v0.23.7 (2026-07-08) — resolve() 精确命中修复
+
+### 修复
+- **`concept_index.py`**: `resolve()` 不再对多个匹配概念求并集。精确命中（score=100）只用那一个概念，模糊匹配只用最佳匹配。修复"人工智能"→ AI智能体+AIGC概念并集导致 1074 只而非预期的 1060 只的 bug。
+
+## v0.23.6 (2026-07-08) — 成分股超限交互式子板块推荐
+
+### 动机
+- `screening_agent.py` 硬截断 `[:50]` 丢掉了 55% 的成分股（如"人工智能"111→50），且截断无序不等于"最好的50只"
+- 不能用财务预筛替代（会误杀景气早期优质标的），也不能无上限全量（LLM 成本可控）
+- 设计决策：超限时交互式推荐子板块，让用户决定聚焦方向
+
+### 新增
+- **`concept_index.py`**: 新增 `suggest_subconcepts(main_name)` — rapidfuzz 搜索子概念 + 成分股数过滤 + 排除自身
+- **`coordinator.py`**: 新增 `check_industry_size(industry_name)` — 预检成分股数，超阈值返回子板块推荐列表
+- **`config.py`**: 新增 `PROSPERITY_SCREENING_THRESHOLD: int = 50`（触发阈值）
+- **`run_prosperity_ai.py`**: 重构为完整 CLI 工具，`--force-full` 跳过交互，支持交互式子板块选择
+
+### 修改
+- **`screening_agent.py`**: 删除硬截断 `[:50]`，超限由上游 coordinator 处理
+
+### 测试
+- 待跑 | 版本: v0.23.5 → v0.23.6
+
+
+
+## v0.23.5 (2026-07-08) — ConceptIndex：概念板块本地索引 + rapidfuzz 模糊搜索
+
+### 动机
+- `get_industry_ts_codes()` 的 5 层信源中，信源4（ths_index → ths_member）每次查询都需逐个拉取概念板块列表 + 用 `str.contains()` 做简陋模糊匹配
+- 按名称找概念板块是高频操作（行业分类匹配、verify_agent 反例搜索），但缺乏一个预建的全量索引
+- 设计决策：ConceptIndex 是基础设施组件（类似 `tushare_client.py`），不属于 Wiki 研究内容
+
+### 新增
+- **`concept_index.py`** (`tools/concept_index.py`): 核心模块，3 个对外函数
+  - `build(force)`: 从 Tushare `ths_index(type=N)` 全量拉取概念板块列表 → 写入 `data/concept_index.yaml`（24h TTL）
+  - `search(name, threshold, limit)`: rapidfuzz `WRatio` 模糊搜索，中文友好（如 "新能源" → "新能源汽车" 90%）
+  - `resolve(name)`: 一键搜索 + 获取成分股（`ths_member`），替代原信源4 的逐次查询
+- **`data/concept_index.yaml`**: 409 个概念板块的全量索引缓存
+- **依赖**: `rapidfuzz` (pyproject.toml)
+
+### 修改
+- **`industry_metrics.py`**: `get_industry_ts_codes()` 新增信源0 — ConceptIndex rapidfuzz 优先（最快路径）
+- **`pyproject.toml`**: +rapidfuzz ^3.14.0
+
+### 测试
+- 204/204 ✅ | 版本: v0.23.4 → v0.23.5
+
+## v0.23.4 (2026-07-08) — VerifyAgent + TrackAgent 全部升级 Bocha 主搜索
+
+### 动机
+- VerifyAgent 和 TrackAgent 仍硬编码直接调 Tavily，Bocha Key 配置后依然报 Tavily 错误
+- 至此 Prosperity 的所有 4 个 Agent + 1 个 Tool 全部完成 Bocha 为主、Tavily 为备的搜索引擎架构
+
+### 改动文件
+- **`verify_agent.py`**:
+  - `__init__`: 新增 `bocha_api_key`
+  - 新增 `_detect_engine()`: Bocha > Tavily > none
+  - 新增 `_bocha_search()`: 调用 Bocha Web Search API
+  - 新增 `_tavily_counter_search()`: Tavily 降级备用
+  - `_execute_counter_searches()`: 引擎分发取代硬编码 Tavily
+- **`track_agent.py`**:
+  - `__init__`: 新增 `bocha_api_key`
+  - 新增 `_detect_engine()`: Bocha > Tavily > none
+  - 新增 `_web_search()`: 引擎分发入口
+  - 新增 `_bocha_search()`: 调用 Bocha Web Search API
+  - `_tavily_search()`: 降级为备用
+  - `_check_single()`: `_tavily_search` → `_web_search`
+
+### 架构总结
+| Agent/Tool | v0.23.3 | v0.23.4 |
+|-----------|---------|---------|
+| search_agent | ✅ Bocha | ✅ Bocha |
+| concept_builder | ✅ Bocha | ✅ Bocha |
+| verify_agent | ❌ Tavily | ✅ Bocha |
+| track_agent | ❌ Tavily | ✅ Bocha |
+| hypothesize_agent | N/A | N/A |
+| report_agent | N/A | N/A |
+
+### 副作用
+- 全部 4 处 Tavily 硬编码已收敛到降级路径，Bocha Key 配置后全网搜索走 Bocha
+
+## v0.23.3 (2026-07-08) — 概念板块构建器升级 Bocha 主搜索
+
+### 动机
+- 「人工智能」概念板块漏掉兆易创新(603986.SH)等关键标的：`concept_builder` 仍硬编码用 Tavily，未跟随 v0.23 SearchAgent 的 Bocha 升级
+- Tavily 搜索结果只有 8000 字符的 LLM 提取窗口，兆易创新可能被截断在上下文外
+- Bocha 中文覆盖更优，summary 字段可达数千字，应作为概念板块构建的主搜索引擎
+
+### 改动文件
+- **`concept_builder.py`**:
+  - 新增 `_detect_engine()`: Bocha > Tavily > none
+  - 新增 `_bocha_search()`: 调用 Bocha Web Search API (`/v1/web-search`)，与 SearchAgent 对齐参数 (`freshness=oneYear`, `summary=True`)
+  - `search_concept_stocks()`: 引擎分发取代硬编码 `_tavily_search()`，Bocha 失败自动降级 Tavily
+  - 更新 docstring: "Tavily only" → "Bocha 主搜索 + Tavily 备用"
+
+### 副作用
+- 删除 `data/prosperity/concept_boards/人工智能.yaml`（旧 Tavily 缓存），下次运行自动用 Bocha 重建
+
+### 测试
+- 204/204 ✅
+
+
+## v0.23.2 (2026-07-08) — 纯度分全 0 Bug 修复
+
+### 动机
+- 所有股票纯度分（purity_score）全为 0.00%
+- 根因：`investment_implication` 字段实际是 dict（如 `{'受益环节': 'GPU/ASIC...', '典型标的特征': '...'}`），而 `_extract_l3_keywords()` 中 `re.split()` 期望它是 str → TypeError
+- 异常被 `_compute_purity()` 的 `except Exception` 静默吞掉 → 全返回 0
+
+### 改动文件
+- **`purity_scorer.py`**:
+  - 新增 `_flatten_field()`: 安全处理 dict/str/None 三种类型，dict 时拼接 values 为字符串
+  - `_extract_l3_keywords()`: 三字段均通过 `_flatten_field()` 转换后再 `re.split()`
+  - `_llm_match_fallback()`: 投资含义使用 `_flatten_field()` 避免 ugly dict repr
+- **`screening_agent.py`**:
+  - 新增 `_flatten_implication()`: 同上功能本地版本
+  - `_llm_direction_match()`: 投资含义使用 `_flatten_implication()` 转换
+  - `_compute_purity()`: 异常处理新增 `traceback.format_exc()` 日志（不再静默吞堆栈）
+
+### 测试
+- 204/204 ✅
+
+## v0.23.1 (2026-07-08) — CounterAgent 安全网：防止 partial/unverified 被误杀
+
+### 动机
+- 「人工智能」行业：CounterAgent LLM 将 3 条 partial/unverified 假设误判为 overturned →
+  级联屠杀导致 L2/L3 全部 unreachable → 股池 = 0（行业「景气」却说不出哪个股票好）
+- 根因：LLM prompt 未区分「数据不充分」(partial) 和「被证伪」(overturned)
+- 修复方向：让 prompt 精确区分 + 代码层安全网兜底
+
+### 改动文件
+- **`counter_agent.py`**: 
+  - `_build_cascade_prompt()`: 新增「绝对禁止」章节——partial/unverified 绝不 overturned；disputed 区分强反例(方向反转)vs 弱反例(程度变化)
+  - `_apply_cascade()`: 代码层安全网——即使 LLM 不听话，partial/unverified 强行 downgrade_confidence
+  - `_hardcoded_cascade()`: LLM 失败兜底改用方向反转关键词(缩减/转负/萎缩)判定 disputed→overturned
+  - 超时从硬编码 120s → `settings.PROSPERITY_COUNTER_TIMEOUT`
+- **`config.py`**: 新增 `PROSPERITY_COUNTER_TIMEOUT: int = 120`；版本 0.23.0→0.23.1
+- **`docs/specs/2026-06-29-prosperity-strategy-design.md`**: v0.22→v0.23
+- **`pyproject.toml`**: 0.22.0→0.23.1
+
+### 效果预期
+- partial/unverified 绝不再被 overturned（有 LLM prompt + 代码安全网双重保护）
+- disputed 仅在被确凿方向反转时才 overturned
+- 「人工智能」股池预期从 0 → 15-25 只
+- 级联仍正常工作（真正被证伪的仍切断）
+
+## v0.23.0 (2026-07-08) — Bocha 中文搜索 + 截断解除 ✅ 已实施
+
+### 动机
+- 上一轮 brainstorming 分析：67% 零信源率，Tavily 中文覆盖弱占 30% 责任，截断 3000 字符占 20%
+- Bocha 免费替代：中文搜索覆盖更优 + 返回详细摘要(summary 字段)，无需截断
+- 先止血（免费措施），再评估要不要上付费数据
+
+### 改动文件
+- **`config.py`**: 新增 `BOCHA_API_KEY` 配置项；版本号 0.21→0.23
+- **`.env` / `.env.example`**: 新增 `BOCHA_API_KEY=`，Tavily 标记为备用
+- **`search_agent.py`**: 新增 `_bocha_search()` 方法（端点 `POST /v1/web-search`，Bearer 认证）；`_detect_engine()` 自动选择 Bocha > Tavily；内容截断 500→10000 字符 (`MAX_CONTENT_CHARS`)
+- **`hypothesize_agent.py`**: `_build_search_results_text()` 新情报解除 300 字截断，旧情报保持 500 字摘要
+
+### 使用方式
+1. 在 https://open.bochaai.com/dashboard 获取 API Key
+2. 填入 `.env` 的 `BOCHA_API_KEY=`
+3. 自动生效 — SearchAgent 会优先使用 Bocha，未配置时回退 Tavily
+
+### 效果预期
+- 中文搜索结果质量 ↑（Bocha 中文语料库 > Tavily）
+- LLM 可看到的素材长度 ↑（10x+），减少"数据不在素材中"的 unverified
+- 零信源率预期从 67%→40%（配合解除截断）
+
+## v0.22.0 (2026-07-07) — 精确分类级联：强反例推翻 vs 弱反例降级 ✅ 已实施
+
+### 动机
+- 「人工智能」行业 12 条假设仅 1 条是真正强反例(H1-2)，却因级联误杀导致 8 条 unreachable
+- 根因：Q3 counter_conflict 使用布尔 yes/no，弱反例(单轮 LLM 打 2 分)与强反例同等待遇 → disputed → overturned → 级联整链崩溃
+- 方案：Q3 三级分级(none/weak/strong) + 多轮一致原则 + weak_disputed 降级不切链
+
+### 改动文件
+- **`verify_agent.py`**: Q3 聚合从布尔升级为三级分级(多轮一致原则)；`_synthesize_status` 入参从 `counter_conflict: str` → `conflict_level: str`；新增 `weak_disputed` 状态(降级不切链)；`_cascade_safety_net` 切断集合移除 disputed
+- **`counter_agent.py`**: LLM 级联 prompt 更新为 v0.22 规则；`_hardcoded_cascade` 切断集合从 `{overturned, unreachable, disputed}` 收敛为 `{overturned, unreachable}`
+- **`verify_prompt.md`**: Q3 评分说明增加分级指南，强调不要把"侧面对比"打到 2/3 分
+- **`report_agent.py`**: SIGNAL_MAP 新增 weak_disputed 映射(positive+weak_disputed=0.3)；status_map 新增 🟡 emoji
+- **`coordinator.py`**: CounterAgent 日志补充 weak_disputed 统计
+- **`docs/specs/2026-06-29-prosperity-strategy-design.md`**: Spec 更新至 v0.22
+- **`tests/test_prosperity_coordinator.py`**: 测试适配 v0.22 新参数/新状态
+
+### 效果
+- 仅 `strong` 反例(≥2 轮 LLM 一致) → overturned → 切断下游
+- `weak` 反例(单轮孤立) → weak_disputed → 降级不切，靠 SIGNAL_MAP + causality_discount=0.4 自然稀释
+- 预期：「人工智能」12 条假设中 11 条保持活跃，仅 H1-2 被推翻
+
+## v0.21.2 (2026-07-06) — LLM 超时快速失败机制 ✅ 已实施
+
+### 动机
+- 07-05 收敛性实验 3 次全超时，每轮等待 7.5 分钟才退出——纯粹浪费 22+ 分钟
+- 根因：(1) `_call_llm_phase1` 硬编码 30s 超时无视 `.env` 配置；(2) 超时被 `_call_llm` 吞掉返回 `"[]"`，触发多层 fallback 重试链
+- 方案：超时 → 抛异常 → 不 fallback → 直接终止
+
+### 改动文件
+- **`hypothesize_agent.py`**:
+  - 新增 `LLMUnavailableError` 异常类
+  - `_call_llm`: Timeout/ConnectionError → `raise LLMUnavailableError`（不再吞异常返回 `"[]"`）
+  - `_call_llm_phase1`: 硬编码 `30` → `getattr(settings, "PROSPERITY_HYPOTHESIZE_PHASE1_TIMEOUT", 30)`（与 `.env` 对齐）
+  - `_phase1_skeleton`: 全轮超时时 `raise LLMUnavailableError`（不再 fallback 到 120s 单轮）
+  - `_phase2_fill`: 超时时 `raise LLMUnavailableError`（不再重试 3×60s）
+  - `form_hypotheses`: Phase 2 LLM 不可用时 propagate 异常（不再 fallback 到单轮）
+- **`convergence_experiment.py`**:
+  - `run_pipeline_with_patches`: 捕获 `LLMUnavailableError`，返回 `{"status": "failed"}`
+  - `main()`: 每个 Run 后检查 `status == "failed"`，立即终止整个实验
+- **`.env`**: `LLM_MODEL` 从 `deepseek-v4-pro-202606` 切换为 `deepseek-v4-flash`（更快更稳定）
+
+### 效果
+| 场景 | 修改前 | 修改后 |
+|------|--------|--------|
+| Phase 1 全超时 | 30s + 120s fallback + 3×60s 重试 + 120s fallback = **~450s** | **上限 45s 后立即退出** |
+| Phase 2 超时 | 3×60s + 120s fallback = **~300s** | **60s 后立即退出** |
+
+---
+
+## v0.21.1 (2026-07-05) — 分段验证工具 ✅ 已实施
+
+### 动机
+- 收敛性实验每次 10+ 分钟全流程重跑，改一个 Agent 也要等全部步骤
+- 需要改哪段验哪段的能力，节省 70-90% 验证时间
+
+### 新增文件
+- **`backend/app/strategies/prosperity/tools/checkpoint.py`** — CheckpointStore 类，管道中间状态 YAML 持久化
+  - `save(step, **kwargs)` / `load(step)` / `load_deepcopy(step)` 
+  - `missing_dependencies(step)` / `all_checkpoints_exist()` / `list_checkpoints()`
+- **`scripts/segmented_verify.py`** — 分段验证 CLI，支持 record + replay
+  - `--record`：全流程跑一次，拦截 Tavily + counter query LLM 调用并缓存，每步后存 checkpoint
+  - `--step {hypothesize|verify|counter|screening|report} --runs N`：从 checkpoint 加载上游数据，仅重放目标 Agent N 次，mock 磁盘/DB 写入，对比稳定性
+  - `--all`：一键验证全部 5 段
+
+### 设计特点
+- **Record**: 逐步执行 pipeline + 拦截 Tavily（`_tavily_cache.yaml`）+ 拦截 counter query LLM（`_counter_queries_cache.yaml`）
+- **Replay**: 从缓存回放外部依赖（零 Tavily 调用），从 checkpoint 注入上游数据，仅重放目标 Agent 的 LLM 调用
+- **Mock**: DB session + wiki 文件写入全部 mock，不污染生产数据
+- **对比**: 5 个步骤各有专用指标提取函数 + `compare_metrics()` 差异检测
+- **时间节省**: hypothesize ~80%, verify ~70%, counter ~90%, screening ~80%, report ~90%
+
+### 用法
+```bash
+python scripts/segmented_verify.py --industry 人工智能 --record --force
+python scripts/segmented_verify.py --industry 人工智能 --step verify --runs 3
+python scripts/segmented_verify.py --industry 人工智能 --all --runs 3
+```
+
+### 改动文件
+- `checkpoint.py` (新), `segmented_verify.py` (新), CHANGELOG.md
+
+---
+
+## v0.21.0 (2026-07-05) — P1 HypothesizeAgent 两阶段稳定性增强 ✅ 已实施
+
+### 背景
+- P0 修复 VerifyAgent 后，收敛性实验揭示第二大波动源：HypothesizeAgent 单次 LLM 调用产出 12≠14 条假设
+- 根因：LLM 一次调用同时产出"树结构"和"叶子内容"，结构+内容耦合放大随机性
+- 设计策略：两阶段分离 — Phase 1 3 轮投票定骨架 → Phase 2 1 轮强约束填充
+
+### 设计 Spec
+- `docs/specs/2026-07-05-prosperity-stability-p1-hypothesize.md` — P1 HypothesizeAgent 两阶段 Spec
+- `docs/plans/2026-07-05-prosperity-stability-p1-hypothesize.md` — 实施计划
+
+### 实施变更
+
+#### Phase 1: 骨架生成（3 轮投票）
+- 极简 prompt（4 字段 vs 当前 12 字段）→ 短 prompt 更高稳定性
+- ID + title 双重匹配投票 → 防止同 ID 不同概念
+- ≥2/3 规则保留假设 → 既过滤噪音又保留共识
+- 链完整性回填 → 防止投票破坏因果链
+- 三轮全分歧降级兜底 → 取第一轮
+
+#### Phase 2: 内容填充（1 轮强约束）
+- 骨架文本"不可增删改"约束 → 防止 LLM 创造性破坏
+- 程序化校验（ID 集合 + derives_from 比对）+ 最多 2 次重试
+- 仅 1 轮（下游 VerifyAgent 会覆盖 sentiment/confidence/sources）
+
+### 改动文件
+- `rules/prosperity/prompts/hypothesize_phase1_prompt.md` — **新建** Phase 1 骨架 prompt (~45 行)
+- `rules/prosperity/prompts/hypothesize_phase2_prompt.md` — **新建** Phase 2 填充 prompt (~68 行)
+- `agents/hypothesize_agent.py` — 重构为两阶段架构，新增 8 个方法，净增 ~100 行
+- `core/config.py` / `.env` / `.env.example` — 新增 PROSPERITY_HYPOTHESIZE_ROUNDS / PROSPERITY_HYPOTHESIZE_PHASE1_TIMEOUT
+- `tests/test_hypothesize_agent.py` — **新建** 21 个单元测试（投票/回填/校验/降级）
+
+### 边界
+- **仅 HypothesizeAgent**（不改 coordinator 调用接口）
+- 下游零影响：`form_hypotheses()` 返回格式不变，字段值域不变
+- LLM 调用: 1× → 4×（Phase 1 并行 3 + Phase 2 串行 1），耗时 +50%
+- 配置开关：`PROSPERITY_HYPOTHESIZE_ROUNDS=3`（可降级为 1 轮）
+- `tests/test_hypothesize_agent.py` — **新建** 单元测试 + 集成测试
+- `docs/specs/2026-07-05-prosperity-stability-p1-hypothesize.md` — **新建**
+- `docs/plans/2026-07-05-prosperity-stability-p1-hypothesize.md` — **新建**
+- `pyproject.toml` / `CHANGELOG.md` — 版本号
+
+### 不受影响
+- `coordinator.py`, `verify_agent.py`, `counter_agent.py`, `report_agent.py`
+- `screening_agent.py`, `search_agent.py`, `learning_agent.py`, `track_agent.py`
+- `tools/*`, 前端, 龟龟策略
+
+---
+
+## v0.20.0 (2026-07-05) — P0 VerifyAgent 多轮投票稳定性增强
+
+### 背景
+- 收敛性实验（`data/prosperity/raw/人工智能/convergence_report.md`）证实：temperature=0 下 3 次运行仍有 42 处差异，股池 ±40%，信号 ±18%
+- 根因：VerifyAgent LLM 单次调用的 Q1/Q2/Q3/sentiment 输出不稳定（60% 差异来源）
+- 设计策略：Self-Consistency — 3 轮并行 LLM 调用 → 字段级聚合
+
+### 设计 Spec
+- `docs/specs/2026-07-05-prosperity-stability-p0.md` — P0 稳定性增强 Spec
+- `docs/plans/2026-07-05-prosperity-stability-p0.md` — 实施计划
+
+### 核心变更
+
+#### Layer 1: verify_prompt.md 输出格式重写
+- Q1: `source_count: int` → `supporting_source_indices: [int]`（LLM 输出信源编号数组，代码做交集计数）
+- Q3: `counter_conflict: "yes"/"no"` → `counter_conflict_score: 0/1/2/3`（分级取代二元，消除随机 flip）
+- 新增：sentiment 字段输出（3 轮众数，写入 `verified_sentiment`）
+
+#### Layer 2: verify_agent.py 3 轮并行 + 字段级聚合
+- 新增 `_call_verify_llm()`: 独立 LLM 调用方法（含超时重试）
+- 新增 `_aggregate_rounds()`: 字段级聚合逻辑
+  - Q1: 3 轮交集 → source_count
+  - Q2: 3 轮众数 → data_alignment
+  - Q3: 3 轮 MAX，≥2 → counter_conflict=yes
+  - sentiment: 3 轮众数 → verified_sentiment
+- 新增 `_parse_verification_raw()`: 纯 JSON 解析（不含合成）
+- 修改 `_verify_chain_with_llm()`: 单次 LLM → ThreadPoolExecutor 3 轮并行
+- 修改 `_parse_verification_result()`: 兼容新旧两种输入格式
+- `_synthesize_status()` / `_synthesize_confidence()`: 规则不变
+
+### 边界
+- **仅 VerifyAgent**（Plan A），CounterAgent 不改
+- 下游零影响：status/sentiment 值域不变，接口不变
+- LLM 调用: 1× → 3×（并行，耗时 ≈1×），成本 +0.02 元/次
+
+### 改动文件
+- `rules/prosperity/prompts/verify_prompt.md` — 输出格式重写 (~30 行)
+- `agents/verify_agent.py` — 3 轮并行 + 聚合 + 兼容 (~150 行)
+- `tests/test_prosperity_coordinator.py` — 新增集成测试 (~80 行)
+- `docs/specs/2026-07-05-prosperity-stability-p0.md` — **新建**
+- `docs/plans/2026-07-05-prosperity-stability-p0.md` — **新建**
+- `docs/specs/2026-06-29-prosperity-strategy-design.md` — §2.3 增强备注
+- `config.py` / `pyproject.toml` / `CHANGELOG.md` — 版本号
+
+### 不受影响
+- `counter_agent.py`, `coordinator.py`, `report_agent.py`, `hypothesize_agent.py`
+- `screening_agent.py`, `search_agent.py`, `learning_agent.py`, `track_agent.py`
+- `tools/*`, 前端, 龟龟策略
+
+---
+
+## v0.19.1 (2026-07-04) — P0 wiki 锚定 + P1 搜索防覆盖
+
+### 背景
+- Brainstorming 诊断发现 VerifyAgent **完全没吃到 wiki 历史上下文**，而 HypothesizeAgent 吃到了
+- 同一日两次运行互相覆盖搜索结果文件（文件名只有日期，无 session_id）
+
+### 变更
+
+#### P0: VerifyAgent wiki 历史锚定
+- **verify_prompt.md**：新增 `{history_text}` 占位符（「行业历史背景」章节，位于「上一轮验证摘要」之后）
+- **verify_agent.py**：
+  - 新增 `_build_history_context()` — 与 HypothesizeAgent 同源的 wiki 锚定文本构建
+  - `verify()` 中预构建 `history_text`，传入 `_verify_chain_with_llm()`
+  - `_verify_chain_with_llm()` 新增 `history_text` 参数（默认空字符串，向后兼容）
+
+#### P1: 搜索文件名加 session_id
+- **search_agent.py**：文件名格式从 `01_search_{date}.yaml` → `01_search_{date}_s{session_id}.yaml`
+- 同一日内多次运行不再互相覆盖搜索结果
+
+### 测试
+- **179/179** 全部通过（零回归）
+
+---
+
+## v0.19.0 (2026-07-04) — LLM 确定性验证 + 纯度分去 LLM 化
+
+### 背景
+- Brainstorming 诊断发现两个 P0 稳定性问题：
+  1. **验证结果跳动**：同一行业两次跑，confirmed ↔ partial 随机切换
+  2. **纯度分跳动**：寒武纪 1% → 25%，LLM 业务线匹配结果不可复现
+- 根因：全链路 LLM 非确定性级联放大（Tavily × 2 + LLM × 7~15 次）
+- 核心策略：压缩 LLM 自由度 — 从「全局判断者」降级为「信息提取者」
+
+### 设计 Spec
+- `docs/specs/2026-07-04-llm-deterministic-verification.md` — 完整设计文档
+
+### 变更
+
+#### Layer 1: VerifyAgent 输出原子化
+- **verify_prompt.md**：输出格式去 `status` / `confidence`，新增 `source_count` / `data_alignment` / `counter_conflict` 三个事实字段
+  - Q1 source_count: 独立信源数量（计数判断，极低方差）
+  - Q2 data_alignment: Tushare 数据方向对齐（方向判断，低方差）
+  - Q3 counter_conflict: 反例直接冲突（二元判断，极低方差）
+- **verify_agent.py**：新增两个确定性合成函数
+  - `_synthesize_status()`: 3 个中间变量 → status（16 种组合全覆盖）
+  - `_synthesize_confidence()`: 3 个中间变量 → confidence（high/medium/low）
+  - `_parse_verification_result()` 解析后自动回填 status + confidence
+
+#### Layer 2: 纯度分去 LLM 化
+- **purity_scorer.py**：
+  - `match_business_to_l3()` 改为**确定性关键词匹配**为主（零 LLM 调用）
+  - 新增 `_extract_l3_keywords()`: 从 L3 investment_implication 动态提取关键词（停用词过滤 + 滑动窗口）
+  - LLM 匹配降级为回退（仅关键词语法零匹配时触发）
+  - 新增 `_llm_match_fallback()`: 原 LLM 匹配逻辑迁移
+
+### 测试
+- 新增 `TestV019DeterministicVerification`: 16 个 status 合成组合 + 确定性验证
+- 新增 `TestV019DeterministicPurity`: 8 个关键词提取/匹配/确定性测试
+- **179/179** 全部通过 (152 → 179, +27 新增, 零回归)
+
+### 改动文件
+- `rules/prosperity/prompts/verify_prompt.md` — 输出格式重写 (~40 行变更)
+- `agents/verify_agent.py` — +`_synthesize_status` + `_synthesize_confidence` + 解析回填 (~+70 行)
+- `tools/purity_scorer.py` — 去 LLM 化，关键词提取为主 (~+120 行)
+- `tests/test_prosperity_coordinator.py` — +2 测试类 27 测试 (~+140 行)
+- `config.py` — 版本 0.18.6 → 0.19.0
+- `pyproject.toml` — 版本 0.10.0 → 0.11.0
+- `docs/specs/2026-07-04-llm-deterministic-verification.md` — 新建设计 Spec
+
+---
+
+## v0.18.9 (2026-07-03) — Pipeline 输出修复 + LLM 超时增强
+
+### 修复
+- **Step 编号修正**: coordinator.py 搜索/假设/report 步标签从 `1/5`、`2/5`、`5/5` 改为 `1/6`、`2/6`、`6/6`（与新增 CounterAgent 后的 6 步总数一致）
+- **临时脚本字段名**: `_run_ai_temp.py` 中 `total_signal` → `signal_strength`（匹配 report_agent 实际返回字段）
+- **LLM 超时耐受**: verify_agent timeout 120→180s，counter_agent timeout 60→120s，各加一次重试
+
+---
+
+## v0.18.8 (2026-07-03) — CounterAgent 去极化 + VerifyAgent sentiment 保留修复
+
+### 背景
+- Brainstorming 全链路分析发现 **VerifyAgent 合并时丢弃了 sentiment 字段**，导致 ReportAgent 全部按 neutral 计算
+  - AI 行业证据：信号 2.86 → 0.65，评级「景气」→「弱景气」
+- 同时发现 CounterAgent 的极性规则（positive+disputed→切 / negative+disputed→保活）在逻辑上是错误的：
+  - 被证伪的前提→下游不可达，不应因"方向对我有利"而保活
+  - 真正的正向信号应来自正向假设的 confirmed，不来自错误推理的间接利好
+  - 实际数据中 HypothesizeAgent 极少产出 negative 假设（AI 行业 0/12）
+
+### Spec/Plan 更新
+- **Spec v0.12.3** (`docs/specs/2026-06-29-prosperity-strategy-design.md`):
+  - §2.3: VerifyAgent 字段保留规则（sentiment/causality/causality_note）
+  - §2.4: CounterAgent 去极性化 → 纯机械三遍扫描（DISPUTED→OVERTURNED→级联 UNREACHABLE，不区分 polarity）
+  - 新增设计决策 #10（去极化理由）+ #11（sentiment 保留理由）
+- **Plan v1.1** (`docs/plans/2026-07-03-prosperity-cascade-fix.md`):
+  - Layer 1 新增：VerifyAgent sentiment 保留修复
+  - Layer 2 改为：CounterAgent 级联去极性化
+  - 状态机/流转图/测试计划同步更新
+
+### 代码变更（待实施）
+- `verify_agent.py` L447-449：保留字段加 `"sentiment"`, `"causality_strength"`, `"causality_note"`（+3 行）
+- `counter_agent.py` `_build_cascade_prompt()`：去掉极性规则，改为三遍扫描
+- `counter_agent.py` `_hardcoded_polarity_cascade()` → `_hardcoded_cascade()`：去掉 polarity 判断
+
+---
+
+## v0.18.7 (2026-07-03) — CounterAgent LLM debug 输出增强
+
+### CounterAgent 解析失败诊断增强
+- `_llm_cascade()` 解析失败时：
+  - 日志增加 `prompt_len`、`content_len`、`finish_reason` 信息
+  - 保存 `_debug_counter_output.json`（含 prompt_preview、raw_output、finish_reason）
+- 新增 `_save_debug_output()` 方法（沿用 HypothesizeAgent 的 debug 模式）
+- Next：下次跑任意行业时捕获 LLM 原始 JSON，根据实际格式修解析器
+
+---
+
+## v0.18.6 (2026-07-03) — CounterAgent 语义级联复原 + 链结构完整性修复
+
+### 背景
+- Brainstorming 会话发现 3 个结构化 bug：
+  1. **P0**: Chain A 的 H3-1 被错误标记 unreachable — `_cascade_safety_net` 多项式检查 disputed 不看 sentiment，负向风险被否认反被切
+  2. **P1**: Chain C 终止于 L1 无 L2/L3 — HypothesizePrompt 只约束数量不约束结构
+  3. **P2**: SIGNAL_MAP 5/9 覆盖 → 缺失组合信号零化
+- 根因：CounterAgent（Spec §2.4）被删除后，LLM 五维语义被硬编码剥夺
+
+### 实现
+
+**Layer 1: CounterAgent 语义级联复原（P0 修复）**
+- 新建 `counter_agent.py`（~280 行）：LLM 语义级联裁决 + sentiment 修正（方案 B）
+  - 读五维语义（status/sentiment/reason/causality/corrected_statement）
+  - 极性感知级联：positive+disputed→切 / negative+disputed→保活
+  - 基于 `corrected_statement` 修正 sentiment（下游零感知）
+  - 三级降级：LLM → 硬编码极性规则 → 原 `_cascade_safety_net`
+- `coordinator.py`：PIPELINE_STEPS 新增 `"counter"`，Phase 3.5 插入
+- `verify_agent.py`：新增 `skip_cascade` 参数，避免双重级联
+
+**Layer 2: 链结构完整性约束（P1 修复）**
+- `hypothesize_prompt.md`：新增规则 8 — 每条 L1 必须有 L2，L2 必须有 L3
+- `hypothesize_agent.py`：新增 `_validate_chain_completeness()` 方法（警告不阻断）
+
+**Layer 3: SIGNAL_MAP 补全（P2 修复）**
+- `report_agent.py`：SIGNAL_MAP 从 5 项扩展到 10 项全覆盖
+- 移除 `unverified/partial → 0.5×` 双重折扣（已内嵌）
+- 评级排除 `overturned` 状态
+
+### 核心状态机修正
+```
+修复前: DISPUTED → _cascade_safety_net → 无差别切下游
+修复后: DISPUTED → CounterAgent LLM → positive→overturned→切 / negative→保活
+```
+
+### 改动文件
+- `agents/counter_agent.py` — **新建**
+- `coordinator.py` — PIPELINE_STEPS + Phase 3.5 + `_run_counter_agent()`
+- `verify_agent.py` — `skip_cascade` 参数
+- `hypothesize_prompt.md` — 规则 8 链结构完整性
+- `hypothesize_agent.py` — `_validate_chain_completeness()`
+- `report_agent.py` — SIGNAL_MAP 10 种全覆盖 + 移除双重折扣 + 排除 overturned
+- `config.py` — 版本 0.18.5 → 0.18.6
+- `pyproject.toml` — 版本 0.9.9 → 0.10.0
+- `docs/plans/2026-07-03-prosperity-cascade-fix.md` — 实施计划
+
+### 测试: 待验证
+
+---
+
+## v0.18.5 (2026-07-02) — Learning Agent 产业学习层实现
+
+### 背景
+- LLM 三处波动源（HypothesizeAgent/VerifyAgent/ScreeningAgent）从上游往下游级联放大
+- 根因：Pipeline 缺少结构化知识背景（Search → Hypothesize 跳过了"学习"步骤）
+- Brainstorming → Spec 设计 → 本次实现
+
+### 实现
+- **LearningAgent** (`learning_agent.py`): 从搜索素材构建产业图谱 7 节（价值链/供需/技术路径/政策/瓶颈/跟踪指标/不确定区域）
+- **Prompt 模板**: `rules/prosperity/prompts/learning_prompt.md` — 独立文件，便于调优
+- **Coordinator 集成**: Phase 1.5（Search → **Learn** → Hypothesize），静默执行
+  - 首次研究 → LLM 生成产业图谱 → 写入 `wiki/industries/{name}.md` 的 `## 产业图谱` 节
+  - 后续研究 → 检测已存在图谱 → 自动跳过
+- **下游零改动**: HypothesizeAgent 的 `_load_history()` 自动消费 wiki 页面中的产业图谱
+
+### 改动文件
+- `backend/app/strategies/prosperity/agents/learning_agent.py` — **新增**
+- `backend/rules/prosperity/prompts/learning_prompt.md` — **新增**
+- `backend/app/strategies/prosperity/coordinator.py` — 集成 `_run_learning_agent()`
+- `backend/app/core/config.py` — 版本 0.18.4 → 0.18.5
+- `backend/pyproject.toml` — 版本 0.9.8 → 0.9.9
+- `backend/tests/test_prosperity_coordinator.py` — +7 测试
+- `docs/specs/2026-07-02-industry-learning-agent.md` — 设计 Spec
+
+### 测试: 152/152 ✅
+
+---
+
+## v0.18.4 (2026-07-02) — 方向分作为股池第二参考指标展示
+
+### 问题
+- 方向分在 `screening_agent.py` Stage 1 已算出来，并参与 tuple sort 打破平局，但 **最终报告表格里没有显示**
+- 用户无法直观解释：为什么 purity=0 但方向匹配度高的股票（如哈焊华通）排在 purity=0 的其他股票前面
+- `score_detail` 里只写了 `purity` / `direction_annotation` / `finance_reference`，没有 `direction_score`
+
+### 改进
+- `screening_agent.py`: `score_detail` 新增 `direction_score` 字段（0.00~1.00，保留 3 位小数），与顶层 `direction_score` 保持一致
+- `report_agent.py`: 股池表格新增**方向分**列，格式化为 `0.00~1.00`
+- 最终表格列顺序：排名 | 股票 | 纯度分 | 方向分 | ROE | 毛利率 | 营收增速 | 匹配方向
+
+### 设计原则
+- **方向分不混入 `final_score`**：排名核心仍是物理纯度（相关业务收入占比），方向分只作为独立参考列展示
+- 这样既保留 v0.18.3 的 tuple sort 意图，又让用户一眼看到「搜索证据强度」这一第二参考维度
+
+### 效果
+- 哈焊华通：纯度 15.29% 排第 2，方向分 0.95 → 搜索证据强
+- 联创光电：纯度 5.05% 排第 6，方向分 0.40 → 证据弱，排名靠后合理
+
+### 改动文件
+- `backend/app/core/config.py`
+- `backend/app/strategies/prosperity/agents/screening_agent.py`
+- `backend/app/strategies/prosperity/agents/report_agent.py`
+- `backend/tests/test_prosperity_coordinator.py`
+
+### 测试
+- 145/145 pytest ✅
+
+---
+
+## v0.18.3 (2026-07-02) — 选股信号质量感知融合
+
+### 问题
+- **信息割裂**: ScreeningAgent 的 Stage 1（方向匹配，有搜索上下文）与 Stage 2（纯度打分，无搜索上下文）不共享素材 → 哈焊华通等股票方向分高但纯度分为 0
+- **概念入口过松**: 雪人集团（制冷）、王子新材（包装）等非相关股票通过搜索引擎自建概念进入股池
+- **H3-3 规避方向无负向信号**: 纯概念炒作匹配到规避方向后未在排名中惩罚
+- **零区随机**: purity=0 的 22 只股票（65%）随机排列，方向置信度被丢弃
+
+### 改进
+- **概念构建加相关性门** (`concept_builder.py`): LLM 提取 prompt 新增 `relevant` 字段，`_cross_validate` 后过滤 `relevant: false` 的股票
+- **L3 极性标注** (`screening_agent.py`): 新增 `_detect_polarity()`，prompt 为 L3 方向加 `[✅ 推荐方向]` / `[⚠️ 规避方向]` tag；匹配到规避方向 score 降至 0.0~0.2
+- **搜索上下文注入纯度打分** (`purity_scorer.py` + `screening_agent.py`): 新增 `_build_search_context_for_purity()`，从搜索素材中提取公司上下文注入 purity prompt；`screen()` 将 `search_result` 透传至 `_compute_purity()`
+- **Tuple sort 排名 + 硬过滤** (`screening_agent.py`): `sort(key=(purity_score, direction_score))`；移除 `matched_l3=null + purity=0` 的完全无关股票
+
+### 效果（可控核聚变）
+- 排名 1~12: 纯度 > 0 的股票不受影响
+- 排名 13~22: purity=0 但 direction > 0 的股票按方向分有序排列（如哈焊华通）
+- 排名 23~34: 完全无关股票被硬过滤移除
+
+### 改动文件
+- `backend/app/strategies/prosperity/tools/concept_builder.py`
+- `backend/app/strategies/prosperity/agents/screening_agent.py`
+- `backend/app/strategies/prosperity/tools/purity_scorer.py`
+
+---
+
+## v0.18.2 (2026-07-02) — 方向匹配允许 null（不强制全覆盖）
+
+### Bug
+- LLM 方向匹配提示词强制"覆盖所有成分股" → 每只股票都被分配了一个 L3 方向
+- 中钨高新(硬质合金)、王子新材(包装)、浙能电力(火电) 等明显不相关的股票被强行归类
+
+### 修复
+- `screening_agent.py` `_llm_direction_match()`: 
+  - 新增规则「完全不匹配任何 L3 方向 → score: 0.0, matched_l3: null」
+  - 输出示例增加 null 条目，提示词明确「不要强行给每只股票分配 L3 方向」
+  - Stage 4 融合 `direction_annotation`: `"-"` → `"不匹配"`
+- `purity_scorer.py` `match_business_to_l3()`: 输出示例同步增加 null 条目
+
+### 改动文件
+- `backend/app/strategies/prosperity/agents/screening_agent.py`
+- `backend/app/strategies/prosperity/tools/purity_scorer.py`
+
+---
+
+## v0.18.1 (2026-07-02) — Bugfix: fina_indicator 字段名纠正
+
+### Bug
+- `tushare_client.get_fina_indicator()` 使用错误字段名：`revenue_yoy` / `net_profit_yoy`
+- Tushare 正确字段名是 `or_yoy`(营业收入同比) / `netprofit_yoy`(归母净利同比)
+- 免费层不认识错误字段名 → 静默忽略 → 34只股票 YAML 中 `revenue_yoy` / `net_profit_yoy` 全为 null
+- **finance_score 的 70% 权重（营收增速+利润增速）实际用假值 0 计算百分位**
+
+### 修复
+- `tushare_client.py`: API fields 改正确 + `or_yoy→revenue_yoy` / `netprofit_yoy→net_profit_yoy` rename
+- 下游代码（stock_screener/industry_metrics/report_agent）**零改动**，内部变量名不变
+
+---
+
+## v0.18.0 (2026-07-02) — 股池筛选：业务纯度排名
+
+**v0.18.0 补丁 (2026-07-02)**：`fina_mainbz_vip`(5000积分) → `fina_mainbz`(500积分)，2000积分足够
+
+### 问题
+- **业务纯度盲区**：方向和财务分都看公司整体，不区分子业务。永鼎股份超导仅占营收 16%，但因光纤 AI 增速+卖房收益，财务分行业第一，LLM 方向分也被券商研报"光环效应"带高 → 排名虚高第一
+- **一次性损益污染**：利润增速因子被卖房等非经常性收益污染（永鼎 ~2.5 亿卖房 → profit_yoy +226%）
+- **动量绝对值分档**：与营收增速/ROE 等其他因子的行业内百分位排名不一致，无区分度
+
+### 设计
+筛选阶段回答「跟投资方向多大关系」，不是「公司好不好」：
+- **排名依据**：业务纯度分 = 相关业务收入 / 总收入（fina_mainbz_vip + LLM 匹配）
+- **方向分**：降为标注（matched_l3），不参与排名
+- **财务分**：保留 4 因子百分位（去动量），仅作为参考列展示
+- **报告表格**：排名 | 股票 | 纯度分 | ROE | 毛利率 | 营收增速 | 匹配方向
+
+### 新增
+- `tools/purity_scorer.py` — 批量拉取 fina_mainbz_vip + LLM 业务线匹配 + 纯度分计算
+- `tushare_client.py` — `get_fina_mainbz()` 方法
+- 7 个新测试（TestV018PurityScreening）
+
+### 修改
+- `stock_screener.py` — 移除动量因子，权重重分配（营收35/利润35/ROE20/质量10），新增 `raw_indicators` 输出
+- `screening_agent.py` — 4 阶段流程：方向标注 → 纯度打分 → 财务参考 → 纯度排名
+- `report_agent.py` — 股池表格列改为纯度分/ROE/毛利率/营收增速
+- `config.py` — 删除 `PROSPERITY_DIRECTION_WEIGHT` / `PROSPERITY_FINANCE_WEIGHT`
+- `.env` — 清理旧权重配置
+
+### 预期效果（可控核聚变）
+| 旧排名 | 股票 | 旧总分 | → | 新排名 | 纯度分 |
+|--------|------|--------|---|--------|--------|
+| 1 | 永鼎股份 | 81.8 | → | 4+ | 0.16 |
+| 3 | 西部超导 | 64.3 | → | 1 | ~0.55 |
+| 4 | 国光电气 | 58.5 | → | 2 | ~0.40 |
+| 2 | 合锻智能 | 72.9 | → | 3 | ~0.30 |
+
+### 改动文件
+- `backend/app/services/tushare_client.py` — +get_fina_mainbz()
+- `backend/app/strategies/prosperity/tools/purity_scorer.py` — 新文件
+- `backend/app/strategies/prosperity/tools/stock_screener.py` — 去动量/调权重
+- `backend/app/strategies/prosperity/agents/screening_agent.py` — 融合改纯度排名
+- `backend/app/strategies/prosperity/agents/report_agent.py` — 表格列更新
+- `backend/app/core/config.py` — 版本号 + 删旧权重
+- `backend/.env` — 清理旧权重
+- `backend/tests/test_prosperity_coordinator.py` — 更新/新增测试
+
+## v0.17.4 (2026-07-01) — regenerate_screening.py 报告数据源修复
+
+### Bug: 独立刷新脚本生成报告陈述/推理链为空 + Mermaid 图节点 ID 不匹配
+
+- **根因 1**: `load_verified_hypotheses()` 只从 DB 查询，DB `Hypothesis` 表没有 `statement`/`reasoning` 列 → 报告全部为空
+- **根因 2**: 节点 ID 用 DB 自增 ID（`H0-50`），但 `derives_from` 存的 wiki ID（`H0-1`）→ Mermaid 箭头指向不存在的节点
+- **根因 3**: `for title, db in db_data.items()` 中循环变量 `db` 覆盖了外层 session `db` → `db.close()` AttributeError
+
+### 修复
+- `load_verified_hypotheses()` 新增三步合并:
+  1. DB 获取验证状态/置信度/因果强度
+  2. 解析 `wiki/hypotheses/{行业}-*.md` 获取陈述/推理链/wiki ID/上游/时间窗口/跟踪指标/投资含义
+  3. 按标题匹配合并，mermaid 节点 ID 统一使用 wiki ID
+- 循环变量 `db` → `d` 消除遮蔽
+
+### 验证
+- 可控核聚变: 12/12 条假设陈述/推理链完整，Mermaid 图 10 条箭头全部匹配，评级弱景气(1.20)
+
+### 改动文件
+- `scripts/regenerate_screening.py` — load_verified_hypotheses() 重写 (+~90行)
+
+## v0.17.3 (2026-07-01) — Agent max_tokens 统一 + 股池全量展示 + 独立刷新脚本
+
+### max_tokens 全局统一
+- 6 个 Agent 各自写死 max_tokens（500/1024/4096/8192/8000），config.py 的 `LLM_MAX_TOKENS=32768` 从未被使用
+- **修复**: 全部改为 `settings.LLM_MAX_TOKENS`，以后改 `.env` 即可全局生效
+- **影响**: screening_agent 方向匹配从 4096→32768，34 只成分股 LLM 输出不再被截断
+
+### 股池全量展示
+- report_agent 写死 `[:10]` 只展示 Top 10 → 改为全量 `stock_pool`
+- 标题 `Top 10` → `共 {N} 只`
+
+### 新增独立刷新脚本
+- `scripts/regenerate_screening.py [行业名]`：加载已有 search + verified hypotheses，单独重跑 Screening → Report
+- 不用跑全流程即可刷新股池和报告
+- 可控核聚变验证：34 只全部成功匹配 L3 方向 + 财务分正常化
+
+### 改动文件
+- `screening_agent.py`, `hypothesize_agent.py`, `verify_agent.py`(2处), `track_agent.py`, `concept_builder.py` — max_tokens → settings.LLM_MAX_TOKENS
+- `report_agent.py` — Top 10 → 全量
+- 新增 `scripts/regenerate_screening.py`
+
+## v0.17.2 (2026-07-01) — 财务分归一化 Bug 修复
+
+### Bug: 财务分被错误除以 100 → 50/50 融合变成 99/1
+
+- **根因**: `screening_agent.py` 第 90 行 `s.get("score_total", 0) / 100.0` 假设 `score_total` 是 0~100，但 `stock_screener.py` 实际返回 0~1（权重 sum=1.0，每个子因子 0~1）
+- **影响**: 财务分被压 100 倍（0.5→0.005），融合中几乎不做贡献，所有股票总分差异仅由 LLM 方向契合度决定
+- **修复**: 
+  - `screening_agent.py`: `/ 100.0` 删除，直接用 `s.get("score_total", 0)`
+  - `stock_screener.py`: `min(total, 100)` → `round(total, 4)`（total 天然 0~1，钳顶 100 无意义）
+- **效果**: 中等股票总分从 ~25 → ~50，财务维度重新参与排名
+- **测试**: 138/138 ✅
+
+## v0.17.1 (2026-07-01) — Bug Fixes
+
+### Watchlist 巡检三项 Bug 修复 + Seed Run 验证
+
+**Bug 1** — hypothesize_agent.py f-string `{` `}` 未转义 → pipeline 崩溃
+- L3 示例 `key_indicators: [{"name": ...}]` 在 f-string 中被解释为 format specifier → ValueError
+- 修复: 第 227 行 `{`→`{{`、`}`→`}}`
+
+**Bug 2** — `_filter_due` 只看时间不检查 `last_value` → 永远 0 巡检
+- 旧 watchlist 有 `last_updated`（extract_tracking 写入当天）但 `last_value: None`
+- frequency=monthly(30天) → `0 >= 30` = False → 不认为到期 → 全部跳过
+- 修复: `last_value is None && last_value_text is empty` → 视为首次巡检
+
+**Bug 3** — extract_tracking 覆盖 pre_check 灌入的 `last_value`
+- pipeline 末尾 extract_tracking 全量重写 watchlist → 把刚巡检来的值盖回 `None`
+- 修复: 新增 `_merge_with_existing()` → 保留已有巡检值
+
+### 改动: track_agent.py, hypothesize_agent.py | 测试: 138/138 ✅ | pyproject: v0.9.3
+
+## v0.17.0 (2026-07-01) — Implemented
+
+### Watchlist 巡检系统 — 全自动研究触发器
+
+**动机**: watchlist 是"备忘录"而非"巡检系统"——`check_watchlist()` 只判断日期到期，不获取指标数据，`last_value` 永远为 `None`。升级为全自动研究触发器（路径 C）。
+
+**设计 Spec**: `docs/specs/2026-07-01-watchlist-inspection-system.md`
+
+**核心变更**:
+
+1. **HypothesizeAgent: key_indicators string[] → object[]** — 每个指标新增 `name`/`frequency`/`search_query`/`expected_direction` 四个字段，LLM 一次性生成检索方向
+2. **TrackAgent.check_industry()** — 新增行业级巡检入口：Tavily 搜索 → LLM 提取值 → 触发判定 → 更新 YAML + 同步 SQLite
+3. **触发判定规则** — 数值变化超 20% 阈值 OR 方向反转 → 标记 triggered
+4. **跟踪范围过滤** — 只跟踪 confirmed/partial/unverified/disputed，排除 unreachable/overturned
+5. **YAML 权威源 + SQLite 查询缓存** — 单向同步，消除双写不一致
+6. **coordinator.py pre_check** — pipeline 开头（search 前）自动调用 TrackAgent.check_industry()
+
+**数据库变更**:
+- `tracking_items` 表: +indicator_name, +frequency, +last_value, +last_value_text, +search_query, +expected_direction, +history_json（7 列）
+- 新增 `migrate_v4()` 迁移函数
+
+**改动文件**: hypothesize_agent.py, track_agent.py(重写), coordinator.py, models.py, report_agent.py
+**新增文件**: docs/specs/2026-07-01-watchlist-inspection-system.md
+**测试**: 138/138 ✅
+**版本**: v0.16.0 → v0.17.0 | pyproject: v0.9.1 → v0.9.2
+
+## v0.16.0 (2026-07-01) — Implemented
+
+### 高景气策略核心增强
+
+**动机**: 投资决策质量缺陷分析揭示了两个致命缺陷——①验证环节是"伪验证"（纯代码 3 条 if-else，LLM 从未参与）、②股池与推理链完全脱节（L3 选股方向未用到评分中）。根源是整条 6 Agent 管道只有 HypothesizeAgent 用到了 LLM。
+
+**设计 Spec**: `docs/specs/2026-07-01-prosperity-strategy-v16-enhancement.md`
+
+**核心变更**:
+
+1. **VerifyAgent LLM 完全重构** — LLM 串行验证推理链（Tushare 数据 + 搜索素材 + 反例搜索 → status/reason/corrected/causality_strength），替代 3 条 if-else 伪验证
+2. **新增 ScreeningAgent** — LLM 方向匹配（基于 L3 investment_implication） + 代码财务打分 50/50 融合
+3. **HypothesizeAgent +sentiment** — positive/negative/neutral 方向标注
+4. **ReportAgent 评级重构** — 从计数改为加权信号聚合（sentiment × 层级权重 × causality 折扣）
+5. **VerifyAgent 反例搜索** — LLM 自动生成反例搜索词 → Tavily 执行 → 喂入验证
+6. **CounterAgent 移除** — 合并进 VerifyAgent，管道 6→5 Agent
+
+**管道**: Search → Hypothesize → Verify → Screening → Report → Track（5 Agent）
+**LLM 调用**: 1 次 → (推理链条数 + 2) 次
+
+**数据库变更**:
+- `hypotheses` 表: +sentiment, +causality_strength, +causality_note
+- `stock_pools` 表: +direction_score, +finance_score, +matched_l3, +matched_reason
+- 新增 `migrate_v3()` 迁移函数
+
+**配置新增**: `PROSPERITY_DIRECTION_WEIGHT`, `PROSPERITY_FINANCE_WEIGHT` (默认各 0.5)
+
+**改动文件**: coordinator.py, verify_agent.py(重写), screening_agent.py(新增), hypothesize_agent.py, report_agent.py, api.py, models.py, config.py, .env, test_prosperity_coordinator.py
+**删除文件**: agents/counter_agent.py
+**测试**: 35/35 prosperity ✅ + 37/37 spec compliance ✅
+**版本**: v0.15.0 → v0.16.0 | pyproject: v0.9.0 → v0.9.1
+
+### DISPUTED/OVERTURNED 语义精化 (2026-07-01)
+
+**问题**: 旧设计中 disputed 语义模糊（同时表示"证据不足"和"已证伪"），多个活跃文件中级联规则不一致。
+
+**新语义**:
+- `disputed` → **证据不足**，不触发级联（不标记下游 UNREACHABLE）
+- `overturned` → **已证伪**，触发下游 UNREACHABLE
+
+**文档修正** (8 文件):
+- `data/prosperity/SCHEMA.md` — 补 OVERTURNED 状态、区分反推语义、修正 emoji
+- `docs/CONTEXT.md` — 级联规则 DISPUTED → OVERTURNED
+- `docs/specs/2026-07-01-prosperity-strategy-v16-enhancement.md` — 状态枚举 + 级联规则 + CounterAgent 移除说明更新
+- wiki/ + tracking/ + index.md + log.md — 生成物，下次 pipeline 自动更新
+- `docs/specs/2026-06-29-*` — 历史 snapshot，不改
+
+## v0.15.0 (2026-07-01) — Implemented
+
+### 代理下线 + AKShare 替换为搜索引擎自建概念板块
+
+**动机**: 代理服务器到期（2026-07-02），2000 积分直连已稳定。AKShare 作为概念板块兜底不稳定（爬虫），替换为搜索引擎自建方案。
+
+**改动**:
+
+#### 1. Tushare 客户端精简 (`tushare_client.py`)
+- 删除代理两阶段重试逻辑（Stage 0 直连 → Stage 1 代理），简化为单次直连 + 重试
+- 删除 `_PROXY_RATE_INTERVAL`、`_class_proxy_determined`、`_class_using_proxy`、`_proxy_url` 等代理状态
+- `call()` 从 75 行降到 30 行，`__init__` 从 14 行降到 5 行
+- 净减 ~100 行
+
+#### 2. 搜索引擎自建概念板块 (`tools/concept_builder.py` — 新增)
+- Tavily 搜索 → LLM 提取股票列表 → Tushare stock_basic 交叉验证 → YAML 缓存
+- 零外部依赖，支持任何自定义概念（可控核聚变/固态电池/低空经济等）
+- 首次查询 ~5s（搜索+LLM），后续缓存秒出
+- 缓存目录: `data/prosperity/concept_boards/{theme}.yaml`
+
+#### 3. 信源链路更新 (`industry_metrics.py`)
+- 信源5: AKShare → `concept_builder.search_concept_stocks()`
+- 删除 `_akshare_code_to_ts_code()` 函数
+- docstring 从「AKShare 概念板块成分股（完全独立，无 token）」→「搜索引擎自建概念板块（Tavily + LLM + stock_basic 交叉验证，终极兜底）」
+- batch_size: 10 → 30（直连上限更高）
+
+#### 4. 代理配置全量清理
+- `config.py`: 删除 `TUSHARE_PROXY_URL`
+- `.env`: 删除代理段（7 行）
+- `pyproject.toml`: 删除 `akshare` 依赖
+
+#### 5. 清理过时代理脚本（8 个文件）
+- 删除 `scripts/test_ths_slow.py`, `test_ths_debug.py`, `test_ths_single.py`, `test_ths_one.py`, `test_ths_deep.py`, `test_ths_all.py`, `test_ths_concepts.py`, `test_ths_union.py`
+
+#### 6. 测试
+- T20: AKShare mock → concept_builder mock
+
+**最终信源链路**:
+```
+get_industry_ts_codes("可控核聚变")
+  ├── ① stock_basic.industry     → 0 (无此名)
+  ├── ② index_classify SW2021    → 0 (无此名)
+  ├── ③ concept_detail           → 0 (无权限/无此板块)
+  ├── ④ ths_index → ths_member   → 0 (无权限/无此板块)
+  └── ⑤ 搜索引擎自建             → ✅ (Tavily+LLM+stock_basic)
+```
+
+**改动文件**: tushare_client.py, industry_metrics.py, concept_builder.py(新增), config.py, .env, pyproject.toml, test_prosperity_coordinator.py, test_new_energy_pool.py
+**删除文件**: 8 个 test_ths_*.py
+**版本**: v0.14.7 → v0.15.0 | pyproject: v0.8.11 → v0.9.0
+
+## v0.14.7 (2026-06-30)
+
+### Wiki 增强第二阶段：验证锚定 + 索引修复
+
+**背景**: Wiki 系统部分起作用（Search Agent URL 去重、HypothesizeAgent 历史锚定已生效），但 VerifyAgent 的 `_build_history_context()` 定义了却从未调用，验证环节是"盲"的。
+
+**修复**:
+- **VerifyAgent 历史锚定**: `verify()` 中构建 `previous_map`（title→上次状态），传入 `_verify_single()` 做 3 条锚定规则：
+  1. 上次 CONFIRMED + 当前仍 CONFIRMED → 标注累积置信度
+  2. 上次 CONFIRMED + 当前数据不支撑 → 拐点预警 DISPUTED
+  3. 上次 DISPUTED/OVERTURNED → 标注连续存疑
+- **wiki_indexer 索引修复**: `update_index()` 改为先按 category 分组再组内排序，消除重复分组标题
+
+**不改动**: CounterAgent 的 wiki 历史接入——反推本质是内部逻辑一致性检查，历史对判断帮助有限，暂不接。
+
+**改动文件**: verify_agent.py, wiki_indexer.py
+**版本**: v0.14.6 → v0.14.7 | pyproject: v0.8.10 → v0.8.11
+
+## v0.14.6 (2026-06-30)
+
+### Tushare 代理限频修复 — 重试控频 + 空结果重试
+
+**问题**: 代理限额 150次/分钟，但 `call()` 重试循环不走 `_rate_limit()`，3次重试在 3s 内连打代理可能超限。空结果（代理繁忙返回空 DataFrame）直接返回不重试。
+
+**修复**:
+- `call()` 每个 retry 前调用 `_rate_limit()`，重试不再突发打爆代理
+- 空结果 `attempt < 1` 时重试一次（代理繁忙可能返回空 DataFrame）
+- 移除 `_PROXY_RATE_INTERVAL` 的 "TEST-ONLY" 标记，正式化代理限频注释
+
+**改动文件**: tushare_client.py
+**版本**: v0.14.5 → v0.14.6 | pyproject: v0.8.9 → v0.8.10
+
+## v0.14.5 (2026-06-30)
+
+### 景气管道性能优化 — 批量 API + Progress 反馈
+
+**诊断**: 景气管道 run_full_pipeline 跑 30 分钟无任何输出。根因三件套：
+1. 每个 `TushareClient()` 新实例在必败直连上浪费 ~8s × N 次
+2. `_fetch_batch_financials` 逐只调 API（200 只串行 = 5min+）
+3. `run_full_pipeline` 零用户可见进度
+
+**方案**:
+- `tushare_client.py`: 类级别 `_class_using_proxy` / `_class_proxy_determined`，首次实例确定代理后所有后续实例跳过直连
+- `industry_metrics.py`: `_fetch_batch_financials` 批量 API（逗号分隔 100 只/次，200 只 = 2 次调用 ~3s）；`_compute_acceleration` 复用缓存的 `_cached_fina_full` 不再二次拉取
+- `coordinator.py`: `run_full_pipeline` 6 步均 `print` 时间戳 + 统计；`verify_agent` 拉数据/验证层级也输出进度
+- `run_prosperity_ne.py`: logging 级别 INFO→WARNING 减少噪音，脚本输出时间戳
+
+**改动文件**: tushare_client.py, industry_metrics.py, coordinator.py, verify_agent.py, run_prosperity_ne.py
+**测试**: 133/133 ✅ | 版本: v0.14.4 → v0.14.5 | pyproject: v0.8.8 → v0.8.9
+
+## v0.14.4 (2026-06-30)
+
+### AKShare 概念板块兜底
+
+**诊断**: 旧 token 直连 Tushare 下，"新能源"在信源①-④全部返回 0 只。原因是"新能源"是民间概念名，不在 Tushare stock_basic 105 个行业名或申万 L1/L2/L3 分类中。concept_detail 和 ths_index 旧 token 无权限。
+
+**方案**: 信源⑤ — AKShare `stock_board_concept_cons_em("新能源")`，完全独立于 Tushare，无需任何 token。
+
+**改动**:
+- `industry_metrics.py`: 新增 `_akshare_code_to_ts_code()` 代码转换 + 信源 5 AKShare 概念板块兜底
+- 测试新增 T20（AKShare 概念板块 mock + 代码格式转换验证）
+- 版本: v0.8.7 → v0.8.8 / v0.14.3 → v0.14.4
+
+**最终信源链路**:
+```
+get_industry_ts_codes("新能源")
+  ├── ① stock_basic.industry     → 0 (无此名)
+  ├── ② index_classify SW2021    → 0 (无此名)
+  ├── ③ concept_detail           → 0 (无权限)
+  ├── ④ ths_index → ths_member   → 0 (无权限)
+  └── ⑤ AKShare concept_cons     → ✅ (免费/无token)
+```
+
+## v0.14.3 (2026-06-30)
+
+### 概念股池多信源兜底
+
+**动机**: `get_industry_ts_codes("新能源")` 返回 0 只股票。"新能源"是跨行业主题概念，不在标准行业分类（申万/Tushare stock_basic）中，导致 VerifyAgent 全链条 UNVERIFIED、评级错误落入兜底弱景气。
+
+**方案**: 在现有两层匹配（`stock_basic.industry` + 申万 `index_classify`）之后追加两层概念兜底：
+1. `concept_detail("新能源")` — Tushare 免费概念板块（0 积分）
+2. `ths_index → ths_member` — 同花顺概念板块（6000 积分，通过 15000 积分代理访问）
+
+**改动**:
+- `tushare_client.py`: 新增 `get_concept_detail()`, `get_ths_index()`, `get_ths_member()` 三个方法
+- `industry_metrics.py`: `get_industry_ts_codes()` 新增信源 3（concept_detail）和信源 4（同花顺概念）
+- 测试新增 T17-T19（concept_detail 兜底 / 同花顺兜底 / 缓存跳过概念接口）
+
+**测试**: 132 passed, 0 failed | 版本: v0.8.6 → v0.8.7 / v0.14.2 → v0.14.3
+
+## v0.14.2 (2026-06-29)
+
+### watchlist 拆分为每行业独立文件
+
+**动机**: `watchlist.yaml` 随着行业增多会越来越长（当前 37 项/525行），当研究 ≥5 个行业时单文件难以维护。
+
+**改动**:
+- 数据文件从 `tracking/watchlist.yaml`（顶层 `{行业名: [指标列表]}`）拆为 `tracking/watchlist/{行业名}.yaml`（每行业一个文件）
+- `_load_watchlist()` 改为遍历目录 `*.yaml`，文件名 stem 作为行业名，内容直接是 `[指标列表]`
+- 新增 `_load_watchlist_legacy()` 保持对 v0.14.0/v0.14.1 旧格式的后向兼容
+- `extract_tracking()` 写入目标从单个文件改为 `watchlist/{行业名}.yaml`
+- `check_watchlist()` 逻辑不变（仍通过 `_load_watchlist` 获得 `{行业: [指标]}` dict）
+
+**优势**:
+- 单个行业文件独立可读，新增行业不需修改已有文件
+- 内存表示 `{行业名: [指标列表]}` 不变，调用方零改动
+- 完全后向兼容旧格式
+
+**改动文件**: track_agent.py, test_prosperity_coordinator.py, watchlist.yaml→watchlist/电气设备.yaml
+**测试**: 129/129 ✅
+
+## v0.14.1 (2026-06-29)
+
+### watchlist.yaml 按行业分组重构
+
+**问题**: watchlist 所有行业指标混在扁平 `items` 列表，且 `_merge_indicators` 仅用指标名做 key，导致跨行业同名指标（如"营收增速"在半导体和电气设备）被错误合并。
+
+**修复**:
+- `_merge_indicators` key 从 `indicator` → `(indicator, industry)` 复合 key，修复跨行业误合并 bug
+- `extract_tracking` 写入格式从 `{"items": [...]}` → `{行业名: [指标列表]}`，同行业替换不追加
+- `_load_watchlist()` 新方法，兼容旧扁平格式自动迁移
+- `check_watchlist` 遍历适配新格式，返回结果带 `_industry` 标注
+
+**改动文件**: `track_agent.py`, `watchlist.yaml`（迁移 37条→1行业组）, `test_prosperity_coordinator.py`（+3条测试）
+**测试**: 129/129 ✅ (126→129, +3 新增)
+**版本**: v0.14.0 → v0.14.1 | pyproject.toml: v0.8.4 → v0.8.5
+
 ## v0.14.0 (2026-06-29)
 
 ### Wiki 智能增强 — 重复行业研究优化

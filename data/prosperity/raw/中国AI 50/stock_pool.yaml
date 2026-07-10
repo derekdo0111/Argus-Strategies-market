@@ -1,0 +1,819 @@
+- direction_score: 0.2
+  final_score: 0.5516
+  finance_score: 0.229
+  matched_l3: H3-3
+  matched_reason: 电信运营商，可能成为国产AI芯片的导入方，但自身不是芯片企业
+  name: 中国联通
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 数据及其他互联网应用收入
+    - 宽带及移动数据服务
+    - 电信行业
+    related_share: 0.5516
+  purity_score: 0.5516
+  rank: 1
+  raw_indicators:
+    gross_margin: 23.7
+    net_profit_yoy: -18.0
+    revenue_yoy: -0.5
+    roe: 1.3
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.2
+    finance_reference: 0.229
+    purity: 0.5516
+  score_total: 55.2
+  ts_code: 600050.SH
+- direction_score: 0.2
+  final_score: 0.5
+  finance_score: 0.295
+  matched_l3: H3-3
+  matched_reason: 电信运营商，类似中国联通
+  name: 中国电信
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 电信业
+    - 全业务运营销售模式
+    related_share: 0.5
+  purity_score: 0.5
+  rank: 2
+  raw_indicators:
+    gross_margin: 28.1
+    net_profit_yoy: -17.1
+    revenue_yoy: -2.3
+    roe: 1.6
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.2
+    finance_reference: 0.295
+    purity: 0.5
+  score_total: 50.0
+  ts_code: 601728.SH
+- direction_score: 0.3
+  final_score: 0.4898
+  finance_score: 0.284
+  matched_l3: H3-3
+  matched_reason: 通信设备商，旗下中兴微电子具备芯片设计能力，但主要聚焦通信芯片，并非AI专用GPU/ASIC；未直接涉及H3-3方向
+  name: 中兴通讯
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 运营商网络
+    - 计算机、通信和其他电子设备制造业
+    related_share: 0.4898
+  purity_score: 0.4898
+  rank: 3
+  raw_indicators:
+    gross_margin: 28.3
+    net_profit_yoy: -46.6
+    revenue_yoy: 6.1
+    roe: 1.7
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.3
+    finance_reference: 0.284
+    purity: 0.4898
+  score_total: 49.0
+  ts_code: 000063.SZ
+- direction_score: 0.0
+  final_score: 0.3308
+  finance_score: 0.648
+  matched_l3: H3-3
+  matched_reason: 液压件，与AI芯片无关
+  name: 恒立液压
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 机械装备制造
+    related_share: 0.3308
+  purity_score: 0.3308
+  rank: 4
+  raw_indicators:
+    gross_margin: 38.6
+    net_profit_yoy: 5.6
+    revenue_yoy: 32.5
+    roe: 3.7
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.648
+    purity: 0.3308
+  score_total: 33.1
+  ts_code: 601100.SH
+- direction_score: 0.4
+  final_score: 0.2605
+  finance_score: 0.736
+  matched_l3: H3-3
+  matched_reason: ICT设备商，旗下新华三拥有网络芯片能力，但非典型AI芯片设计公司；搜索素材未提及具体AI芯片业务
+  name: 紫光股份
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - IT产品分销与供应链服务
+    - ICT基础设施及服务
+    related_share: 0.2605
+  purity_score: 0.2605
+  rank: 5
+  raw_indicators:
+    gross_margin: 12.9
+    net_profit_yoy: 126.1
+    revenue_yoy: 34.6
+    roe: 5.2
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.4
+    finance_reference: 0.736
+    purity: 0.2605
+  score_total: 26.1
+  ts_code: 000938.SZ
+- direction_score: 0.0
+  final_score: 0.25
+  finance_score: 0.72
+  matched_l3: H3-3
+  matched_reason: 主营柴油发动机及发电机组，与AI芯片方向完全无关
+  name: 潍柴重机
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 通用设备制造业
+    - 船舶设备制造业
+    related_share: 0.25
+  purity_score: 0.25
+  rank: 6
+  raw_indicators:
+    gross_margin: 8.9
+    net_profit_yoy: 76.5
+    revenue_yoy: 87.0
+    roe: 2.6
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.72
+    purity: 0.25
+  score_total: 25.0
+  ts_code: 000880.SZ
+- direction_score: 0.0
+  final_score: 0.25
+  finance_score: 0.559
+  matched_l3: H3-3
+  matched_reason: 网络设备，非芯片设计
+  name: 锐捷网络
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - ICT行业
+    related_share: 0.25
+  purity_score: 0.25
+  rank: 7
+  raw_indicators:
+    gross_margin: 35.7
+    net_profit_yoy: 14.6
+    revenue_yoy: 18.3
+    roe: 2.4
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.559
+    purity: 0.25
+  score_total: 25.0
+  ts_code: 301165.SZ
+- direction_score: 0.0
+  final_score: 0.2493
+  finance_score: 0.89
+  matched_l3: H3-3
+  matched_reason: 光模块，同中际旭创
+  name: 新易盛
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 光互联产品
+    related_share: 0.2493
+  purity_score: 0.2493
+  rank: 8
+  raw_indicators:
+    gross_margin: 49.2
+    net_profit_yoy: 76.8
+    revenue_yoy: 105.8
+    roe: 14.5
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.89
+    purity: 0.2493
+  score_total: 24.9
+  ts_code: 300502.SZ
+- direction_score: 0.9
+  final_score: 0.2491
+  finance_score: 0.805
+  matched_l3: H3-3
+  matched_reason: 国产AIoT芯片设计公司，已有成熟的AI加速单元SoC芯片量产并得到客户验证，属于典型国产AI芯片设计标的
+  name: 瑞芯微
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 智能应用处理芯片
+    - 数模混合芯片
+    - 其他芯片
+    related_share: 0.2491
+  purity_score: 0.2491
+  rank: 9
+  raw_indicators:
+    gross_margin: 43.0
+    net_profit_yoy: 57.1
+    revenue_yoy: 36.2
+    roe: 7.2
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.9
+    finance_reference: 0.805
+    purity: 0.2491
+  score_total: 24.9
+  ts_code: 603893.SH
+- direction_score: 0.0
+  final_score: 0.2478
+  finance_score: 0.446
+  matched_l3: H3-3
+  matched_reason: 干式变压器，不相关
+  name: 金盘科技
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 电器机械及器材制造业
+    - 专用设备制造业
+    related_share: 0.2478
+  purity_score: 0.2478
+  rank: 10
+  raw_indicators:
+    gross_margin: 25.7
+    net_profit_yoy: 4.8
+    revenue_yoy: 13.4
+    roe: 2.1
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.446
+    purity: 0.2478
+  score_total: 24.8
+  ts_code: 688676.SH
+- direction_score: 0.0
+  final_score: 0.2431
+  finance_score: 0.552
+  matched_l3: H3-3
+  matched_reason: 智能硬件ODM，不设计AI芯片
+  name: 华勤技术
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 计算及数据业务
+    - AIoT产品
+    - 计算及数据业务(行业)
+    - AIoT及其他(行业)
+    related_share: 0.2431
+  purity_score: 0.2431
+  rank: 11
+  raw_indicators:
+    gross_margin: 8.5
+    net_profit_yoy: 26.0
+    revenue_yoy: 16.4
+    roe: 4.0
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.552
+    purity: 0.2431
+  score_total: 24.3
+  ts_code: 603296.SH
+- direction_score: 0.95
+  final_score: 0.2332
+  finance_score: 0.309
+  matched_l3: H3-3
+  matched_reason: 中国大陆先进制造代工龙头，深度参与AI芯片供应链，直接受益于国产AI芯片制造需求提升
+  name: 中芯国际
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 集成电路晶圆代工
+    related_share: 0.2332
+  purity_score: 0.2332
+  rank: 12
+  raw_indicators:
+    gross_margin: 21.5
+    net_profit_yoy: 0.4
+    revenue_yoy: 8.1
+    roe: 0.9
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.95
+    finance_reference: 0.309
+    purity: 0.2332
+  score_total: 23.3
+  ts_code: 688981.SH
+- direction_score: 0.0
+  final_score: 0.2247
+  finance_score: 0.346
+  matched_l3: H3-3
+  matched_reason: 软件服务，非芯片
+  name: 中国软件
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 面向企业客户提供数智化业务
+    - 面向中央部委与地方政府客户提供解决方案
+    related_share: 0.2247
+  purity_score: 0.2247
+  rank: 13
+  raw_indicators:
+    gross_margin: 52.0
+    net_profit_yoy: 8.6
+    revenue_yoy: 10.8
+    roe: -2.1
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.346
+    purity: 0.2247
+  score_total: 22.5
+  ts_code: 600536.SH
+- direction_score: 0.0
+  final_score: 0.2225
+  finance_score: 0.147
+  matched_l3: H3-3
+  matched_reason: 软件与解决方案，非芯片
+  name: 东软集团
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 智能汽车互联
+    - 企业互联及其他
+    related_share: 0.2225
+  purity_score: 0.2225
+  rank: 14
+  raw_indicators:
+    gross_margin: 26.9
+    net_profit_yoy: -1120.1
+    revenue_yoy: 2.5
+    roe: -1.7
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.147
+    purity: 0.2225
+  score_total: 22.2
+  ts_code: 600718.SH
+- direction_score: 0.0
+  final_score: 0.208
+  finance_score: 0.281
+  matched_l3: H3-3
+  matched_reason: 交换芯片，非AI芯片
+  name: 盛科通信
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 以太网交换芯片模组
+    - 以太网交换芯片
+    related_share: 0.208
+  purity_score: 0.208
+  rank: 15
+  raw_indicators:
+    gross_margin: 49.4
+    net_profit_yoy: -12.1
+    revenue_yoy: 11.4
+    roe: -0.8
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.281
+    purity: 0.208
+  score_total: 20.8
+  ts_code: 688702.SH
+- direction_score: 0.0
+  final_score: 0.1366
+  finance_score: 0.204
+  matched_l3: H3-3
+  matched_reason: IT服务与软件，非芯片
+  name: 软通动力
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 高科技与制造
+    - 互联网服务
+    related_share: 0.1366
+  purity_score: 0.1366
+  rank: 16
+  raw_indicators:
+    gross_margin: 7.8
+    net_profit_yoy: -77.0
+    revenue_yoy: 15.8
+    roe: -2.9
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.204
+    purity: 0.1366
+  score_total: 13.7
+  ts_code: 301236.SZ
+- direction_score: 0.7
+  final_score: 0.1328
+  finance_score: 0.155
+  matched_l3: H3-3
+  matched_reason: 智能音视频SoC芯片，集成AI加速，属于AI ASIC，已大规模量产并用于终端客户，但算力层级较低
+  name: 恒玄科技
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 智能蓝牙音频芯片
+    - 普通蓝牙音频芯片
+    related_share: 0.1328
+  purity_score: 0.1328
+  rank: 17
+  raw_indicators:
+    gross_margin: 42.6
+    net_profit_yoy: -53.3
+    revenue_yoy: -32.7
+    roe: 1.3
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.7
+    finance_reference: 0.155
+    purity: 0.1328
+  score_total: 13.3
+  ts_code: 688608.SH
+- direction_score: 0.0
+  final_score: 0.129
+  finance_score: 0.824
+  matched_l3: H3-3
+  matched_reason: 物联网设备商，不涉及AI芯片设计或制造
+  name: 智微智能
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 工业物联网
+    - ICT基础设施
+    - 工业物联网(行业)
+    - ICT基础设施(行业)
+    related_share: 0.129
+  purity_score: 0.129
+  rank: 18
+  raw_indicators:
+    gross_margin: 31.0
+    net_profit_yoy: 159.1
+    revenue_yoy: 53.0
+    roe: 4.7
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.824
+    purity: 0.129
+  score_total: 12.9
+  ts_code: 001339.SZ
+- direction_score: 0.25
+  final_score: 0.1159
+  finance_score: 0.535
+  matched_l3: H3-3
+  matched_reason: 智能操作系统及边缘AI，适配芯片但不设计芯片
+  name: 中科创达
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 物联网智能设备
+    related_share: 0.1159
+  purity_score: 0.1159
+  rank: 19
+  raw_indicators:
+    gross_margin: 32.7
+    net_profit_yoy: 10.6
+    revenue_yoy: 19.0
+    roe: 1.0
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.25
+    finance_reference: 0.535
+    purity: 0.1159
+  score_total: 11.6
+  ts_code: 300496.SZ
+- direction_score: 0.0
+  final_score: 0.1106
+  finance_score: 0.739
+  matched_l3: H3-3
+  matched_reason: 数据中心运营，不参与芯片
+  name: 润泽科技
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - AIDC业务
+    related_share: 0.1106
+  purity_score: 0.1106
+  rank: 20
+  raw_indicators:
+    gross_margin: 46.8
+    net_profit_yoy: 35.3
+    revenue_yoy: 53.6
+    roe: 4.2
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.739
+    purity: 0.1106
+  score_total: 11.1
+  ts_code: 300442.SZ
+- direction_score: 0.6
+  final_score: 0.0955
+  finance_score: 0.618
+  matched_l3: H3-3
+  matched_reason: IoT芯片设计，内置AI加速，属于AI边缘ASIC芯片，但算力与GPU/大算力ASIC有差距，匹配度中等
+  name: 乐鑫科技
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 芯片
+    related_share: 0.0955
+  purity_score: 0.0955
+  rank: 21
+  raw_indicators:
+    gross_margin: 48.5
+    net_profit_yoy: 44.8
+    revenue_yoy: 16.2
+    roe: 3.0
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.6
+    finance_reference: 0.618
+    purity: 0.0955
+  score_total: 9.6
+  ts_code: 688018.SH
+- direction_score: 0.2
+  final_score: 0.0907
+  finance_score: 0.419
+  matched_l3: H3-3
+  matched_reason: 电源设备公司，覆盖数据中心电源但不属于芯片环节
+  name: 中恒电气
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 数据中心电源
+    related_share: 0.0907
+  purity_score: 0.0907
+  rank: 22
+  raw_indicators:
+    gross_margin: 25.7
+    net_profit_yoy: 22.9
+    revenue_yoy: 7.8
+    roe: 1.0
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.2
+    finance_reference: 0.419
+    purity: 0.0907
+  score_total: 9.1
+  ts_code: 002364.SZ
+- direction_score: 0.0
+  final_score: 0.0699
+  finance_score: 0.489
+  matched_l3: H3-3
+  matched_reason: 金融IT，无关芯片
+  name: 恒生电子
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 运营与机构科技服务
+    - 数据服务
+    related_share: 0.0699
+  purity_score: 0.0699
+  rank: 23
+  raw_indicators:
+    gross_margin: 68.0
+    net_profit_yoy: 342.9
+    revenue_yoy: -11.8
+    roe: 1.4
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.489
+    purity: 0.0699
+  score_total: 7.0
+  ts_code: 600570.SH
+- direction_score: 0.0
+  final_score: 0.0566
+  finance_score: 0.581
+  matched_l3: H3-3
+  matched_reason: 医疗IT，无关AI芯片
+  name: 卫宁健康
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 互联网医疗
+    - 互联网医疗健康行业
+    related_share: 0.0566
+  purity_score: 0.0566
+  rank: 24
+  raw_indicators:
+    gross_margin: 30.8
+    net_profit_yoy: 165.3
+    revenue_yoy: 15.2
+    roe: 0.3
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.581
+    purity: 0.0566
+  score_total: 5.7
+  ts_code: 300253.SZ
+- direction_score: 0.35
+  final_score: 0.0464
+  finance_score: 0.396
+  matched_l3: H3-3
+  matched_reason: AI语音龙头，有专用语音处理芯片，但并非大算力GPU/ASIC；不属于典型AI芯片突破标的
+  name: 科大讯飞
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 运营商业务
+    - 移动互联网产品及服务
+    - 企业AI解决方案
+    related_share: 0.0464
+  purity_score: 0.0464
+  rank: 25
+  raw_indicators:
+    gross_margin: 39.0
+    net_profit_yoy: 12.2
+    revenue_yoy: 13.2
+    roe: -0.9
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.35
+    finance_reference: 0.396
+    purity: 0.0464
+  score_total: 4.6
+  ts_code: 002230.SZ
+- direction_score: 0.0
+  final_score: 0.0183
+  finance_score: 0.756
+  matched_l3: H3-3
+  matched_reason: AI训练数据服务，不涉及芯片
+  name: 海天瑞声
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 数据资源相关的应用服务
+    related_share: 0.0183
+  purity_score: 0.0183
+  rank: 26
+  raw_indicators:
+    gross_margin: 56.4
+    net_profit_yoy: 2161.1
+    revenue_yoy: 38.6
+    roe: 1.1
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.756
+    purity: 0.0183
+  score_total: 1.8
+  ts_code: 688787.SH
+- direction_score: 0.0
+  final_score: 0.0153
+  finance_score: 0.604
+  matched_l3: H3-3
+  matched_reason: 网络安全与云，非芯片
+  name: 深信服
+  purity_detail:
+    matched_l3: H3-3
+    related_items:
+    - 基础网络和物联网业务
+    related_share: 0.0153
+  purity_score: 0.0153
+  rank: 27
+  raw_indicators:
+    gross_margin: 60.3
+    net_profit_yoy: 74.2
+    revenue_yoy: 28.9
+    roe: -0.6
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.0
+    finance_reference: 0.604
+    purity: 0.0153
+  score_total: 1.5
+  ts_code: 300454.SZ
+- direction_score: 0.95
+  final_score: 0.0
+  finance_score: 0.729
+  matched_l3: H3-3
+  matched_reason: 国产AI芯片龙头，深算系列DCU已在头部互联网企业导入，符合流片成功且通过客户验证的典型GPU/ASIC设计标的
+  name: 海光信息
+  purity_detail:
+    matched_l3: H3-3
+    related_items: []
+    related_share: 0.0
+  purity_score: 0.0
+  rank: 28
+  raw_indicators:
+    gross_margin: 55.6
+    net_profit_yoy: 35.8
+    revenue_yoy: 68.1
+    roe: 3.0
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.95
+    finance_reference: 0.729
+    purity: 0.0
+  score_total: 0.0
+  ts_code: 688041.SH
+- direction_score: 0.95
+  final_score: 0.0
+  finance_score: 0.935
+  matched_l3: H3-3
+  matched_reason: 国产AI芯片设计龙头，思元系列已获头部客户测试与导入，完全符合H3-3方向
+  name: 寒武纪
+  purity_detail:
+    matched_l3: H3-3
+    related_items: []
+    related_share: 0.0
+  purity_score: 0.0
+  rank: 29
+  raw_indicators:
+    gross_margin: 54.3
+    net_profit_yoy: 185.0
+    revenue_yoy: 159.6
+    roe: 8.2
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.95
+    finance_reference: 0.935
+    purity: 0.0
+  score_total: 0.0
+  ts_code: 688256.SH
+- direction_score: 0.85
+  final_score: 0.0
+  finance_score: 0.625
+  matched_l3: H3-3
+  matched_reason: 半导体设备龙头，直接受益于国产先进制造扩产，是芯片制造环节的核心供应商；属于先进制造受益范畴
+  name: 北方华创
+  purity_detail:
+    matched_l3: H3-3
+    related_items: []
+    related_share: 0.0
+  purity_score: 0.0
+  rank: 30
+  raw_indicators:
+    gross_margin: 40.8
+    net_profit_yoy: 3.4
+    revenue_yoy: 25.8
+    roe: 4.2
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.85
+    finance_reference: 0.625
+    purity: 0.0
+  score_total: 0.0
+  ts_code: 002371.SZ
+- direction_score: 0.5
+  final_score: 0.0
+  finance_score: 0.535
+  matched_l3: H3-3
+  matched_reason: 高性能计算服务器厂商，与海光信息深度关联，间接受益于国产AI芯片导入；但自身不是芯片设计公司
+  name: 中科曙光
+  purity_detail:
+    matched_l3: H3-3
+    related_items: []
+    related_share: 0.0
+  purity_score: 0.0
+  rank: 31
+  raw_indicators:
+    gross_margin: 26.6
+    net_profit_yoy: 22.2
+    revenue_yoy: 23.7
+    roe: 1.0
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.5
+    finance_reference: 0.535
+    purity: 0.0
+  score_total: 0.0
+  ts_code: 603019.SH
+- direction_score: 0.3
+  final_score: 0.0
+  finance_score: 0.417
+  matched_l3: H3-3
+  matched_reason: 涉及国产CPU（飞腾），但CPU并非AI GPU/ASIC；与H3-3国产AI芯片突破关联度较弱
+  name: 中国长城
+  purity_detail:
+    matched_l3: H3-3
+    related_items: []
+    related_share: 0.0
+  purity_score: 0.0
+  rank: 32
+  raw_indicators:
+    gross_margin: 18.8
+    net_profit_yoy: 47.6
+    revenue_yoy: 12.7
+    roe: -0.8
+  score_detail:
+    direction_annotation: H3-3
+    direction_score: 0.3
+    finance_reference: 0.417
+    purity: 0.0
+  score_total: 0.0
+  ts_code: 000066.SZ

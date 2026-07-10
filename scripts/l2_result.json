@@ -1,0 +1,14 @@
+{
+  "session_id": 6,
+  "status": "completed",
+  "industry": "半导体",
+  "report": {
+    "industry": "半导体",
+    "session_id": 6,
+    "prosperity_level": "高景气",
+    "report_path": "wiki\\synthesis\\20260629-半导体景气分析.md",
+    "pool_path": "raw\\半导体\\stock_pool.yaml",
+    "stock_count": 20,
+    "tracking_items": 0
+  }
+}

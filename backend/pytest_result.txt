@@ -1,0 +1,288 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\harry\AppData\Local\Programs\Python\Python311\python.exe
+cachedir: .pytest_cache
+rootdir: d:\project\Investment Strategy\backend
+configfile: pyproject.toml
+plugins: anyio-4.13.0, asyncio-1.4.0, cov-7.1.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 208 items
+
+tests/test_cash_quality.py::TestCashQualityGate::test_all_dimensions_pass PASSED [  0%]
+tests/test_cash_quality.py::TestCashQualityGate::test_dim1_opcf_netprofit_fails PASSED [  0%]
+tests/test_cash_quality.py::TestCashQualityGate::test_dim2_fcf_positive_fails PASSED [  1%]
+tests/test_cash_quality.py::TestCashQualityGate::test_dim3_receivables_fails PASSED [  1%]
+tests/test_cash_quality.py::TestCashQualityGate::test_insufficient_data PASSED [  2%]
+tests/test_cash_quality.py::TestCashQualityGate::test_dim6_borrowing_dividend PASSED [  2%]
+tests/test_cash_quality.py::TestCashQualityGate::test_dim6_all_covered PASSED [  3%]
+tests/test_cash_quality.py::TestCashQualityGate::test_dim7_supplier_squeezed PASSED [  3%]
+tests/test_cash_quality.py::TestCashQualityGate::test_dim7_healthy_advances PASSED [  4%]
+tests/test_cash_quality.py::TestCashQualityGate::test_dim8_leverage_rising PASSED [  4%]
+tests/test_cash_quality.py::TestCashQualityGate::test_dim8_stable_leverage PASSED [  5%]
+tests/test_cash_quality.py::TestCashQualityGate::test_to_computed_format PASSED [  5%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_build_summary_structure PASSED [  6%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_a1_expanded_fields PASSED [  6%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_a1_latest_signals PASSED [  7%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_a7_business_profile PASSED [  7%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_data_sufficiency PASSED [  8%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_data_sufficiency_empty_websearch PASSED [  8%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_classify_asset_lightness PASSED [  9%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_classify_payment_terms PASSED [  9%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_classify_capex PASSED [ 10%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_empty_data_graceful PASSED [ 10%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_calc_trends_expanded PASSED [ 11%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_build_summary_has_data_sufficiency PASSED [ 11%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_industry_profile_loaded PASSED [ 12%]
+tests/test_data_summarizer.py::TestDataSummarizerV2::test_calc_trends PASSED [ 12%]
+tests/test_hypothesize_agent.py::TestAggregateSkeletons::test_normal_all_3_agree PASSED [ 12%]
+tests/test_hypothesize_agent.py::TestAggregateSkeletons::test_partial_2_of_3 PASSED [ 13%]
+tests/test_hypothesize_agent.py::TestAggregateSkeletons::test_drop_single_round_only PASSED [ 13%]
+tests/test_hypothesize_agent.py::TestAggregateSkeletons::test_title_voting PASSED [ 14%]
+tests/test_hypothesize_agent.py::TestAggregateSkeletons::test_empty_skeleton_on_total_divergence PASSED [ 14%]
+tests/test_hypothesize_agent.py::TestAggregateSkeletons::test_2_rounds_minority_rule PASSED [ 15%]
+tests/test_hypothesize_agent.py::TestFixChainCompleteness::test_l1_missing_l2_rescued PASSED [ 15%]
+tests/test_hypothesize_agent.py::TestFixChainCompleteness::test_l1_has_l2_no_change PASSED [ 16%]
+tests/test_hypothesize_agent.py::TestFixChainCompleteness::test_l2_missing_l3_rescued PASSED [ 16%]
+tests/test_hypothesize_agent.py::TestFixChainCompleteness::test_l0_skipped PASSED [ 17%]
+tests/test_hypothesize_agent.py::TestRescueDownstream::test_rescue_existing PASSED [ 17%]
+tests/test_hypothesize_agent.py::TestRescueDownstream::test_rescue_none PASSED [ 18%]
+tests/test_hypothesize_agent.py::TestRescueDownstream::test_rescue_wrong_level PASSED [ 18%]
+tests/test_hypothesize_agent.py::TestValidateFillOutput::test_perfect_match PASSED [ 19%]
+tests/test_hypothesize_agent.py::TestValidateFillOutput::test_missing_id PASSED [ 19%]
+tests/test_hypothesize_agent.py::TestValidateFillOutput::test_extra_id PASSED [ 20%]
+tests/test_hypothesize_agent.py::TestValidateFillOutput::test_derives_from_changed PASSED [ 20%]
+tests/test_hypothesize_agent.py::TestValidateFillOutput::test_derives_from_order_independent PASSED [ 21%]
+tests/test_hypothesize_agent.py::TestBuildSearchResultsText::test_basic PASSED [ 21%]
+tests/test_hypothesize_agent.py::TestBuildSearchResultsText::test_new_old_split PASSED [ 22%]
+tests/test_hypothesize_agent.py::TestFallbackMode::test_rounds_0_triggers_fallback PASSED [ 22%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_positive_pr_stable PASSED [ 23%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_pr_below_threshold PASSED [ 23%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_cv_gate_rejects PASSED [ 24%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_distribution_ratio_capped PASSED [ 24%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_only_cancellation_repurchase PASSED [ 25%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_insufficient_years PASSED [ 25%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_negative_disposable_cash_avg PASSED [ 25%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_zero_market_cap PASSED [ 26%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_lt_eqt_invest_increase PASSED [ 26%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_acq_subsidiary_deduction PASSED [ 27%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_to_computed_format PASSED [ 27%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_custom_risk_free_rate PASSED [ 28%]
+tests/test_penetration_return.py::TestPenetrationReturnV2::test_distribution_ratio_zero_when_no_dividends PASSED [ 28%]
+tests/test_prosperity_coordinator.py::test_coordinator_import PASSED     [ 29%]
+tests/test_prosperity_coordinator.py::test_session_lifecycle PASSED      [ 29%]
+tests/test_prosperity_coordinator.py::test_models_import PASSED          [ 30%]
+tests/test_prosperity_coordinator.py::test_tools_import PASSED           [ 30%]
+tests/test_prosperity_coordinator.py::test_agents_import PASSED          [ 31%]
+tests/test_prosperity_coordinator.py::test_api_router PASSED             [ 31%]
+tests/test_prosperity_coordinator.py::test_data_directories PASSED       [ 32%]
+tests/test_prosperity_coordinator.py::TestSourceCrawler::test_sia_crawler_no_crash PASSED [ 32%]
+tests/test_prosperity_coordinator.py::TestSourceCrawler::test_wsts_stub_returns_none PASSED [ 33%]
+tests/test_prosperity_coordinator.py::TestSourceCrawler::test_crawl_single_source_known PASSED [ 33%]
+tests/test_prosperity_coordinator.py::TestSourceCrawler::test_crawl_single_source_unknown PASSED [ 34%]
+tests/test_prosperity_coordinator.py::TestSourceCrawler::test_crawl_industry_sources_semiconductor PASSED [ 34%]
+tests/test_prosperity_coordinator.py::TestStockScreener::test_default_weights_no_momentum PASSED [ 35%]
+tests/test_prosperity_coordinator.py::TestStockScreener::test_score_stocks_returns_raw_indicators PASSED [ 35%]
+tests/test_prosperity_coordinator.py::TestWikiEnhancement::test_cooldown_first_study_returns_none PASSED [ 36%]
+tests/test_prosperity_coordinator.py::TestWikiEnhancement::test_cooldown_within_5_days PASSED [ 36%]
+tests/test_prosperity_coordinator.py::TestWikiEnhancement::test_cooldown_over_5_days_returns_none PASSED [ 37%]
+tests/test_prosperity_coordinator.py::TestWikiEnhancement::test_start_session_force_bypasses_cooldown PASSED [ 37%]
+tests/test_prosperity_coordinator.py::TestWikiEnhancement::test_load_history_returns_none_for_first_study PASSED [ 37%]
+tests/test_prosperity_coordinator.py::TestWikiEnhancement::test_industry_history_dataclass PASSED [ 38%]
+tests/test_prosperity_coordinator.py::TestWikiEnhancement::test_cooldown_error_exception PASSED [ 38%]
+tests/test_prosperity_coordinator.py::TestWikiEnhancement::test_merge_indicators_dedup PASSED [ 39%]
+tests/test_prosperity_coordinator.py::TestWikiEnhancement::test_merge_indicators_cross_industry_no_merge PASSED [ 39%]
+tests/test_prosperity_coordinator.py::TestWikiEnhancement::test_load_watchlist_new_format PASSED [ 40%]
+tests/test_prosperity_coordinator.py::TestWikiEnhancement::test_load_watchlist_old_format_compat PASSED [ 40%]
+tests/test_prosperity_coordinator.py::TestConceptStockPool::test_concept_detail_fallback PASSED [ 41%]
+tests/test_prosperity_coordinator.py::TestConceptStockPool::test_ths_concept_fallback PASSED [ 41%]
+tests/test_prosperity_coordinator.py::TestConceptStockPool::test_cache_hit_skips_concept PASSED [ 42%]
+tests/test_prosperity_coordinator.py::TestConceptStockPool::test_concept_builder_fallback PASSED [ 42%]
+tests/test_prosperity_coordinator.py::TestV3Enhancement::test_pipeline_steps_v4 PASSED [ 43%]
+tests/test_prosperity_coordinator.py::TestV3Enhancement::test_api_has_screening_not_counter PASSED [ 43%]
+tests/test_prosperity_coordinator.py::TestV3Enhancement::test_models_have_v3_fields PASSED [ 44%]
+tests/test_prosperity_coordinator.py::TestV3Enhancement::test_config_v018_no_old_weights PASSED [ 44%]
+tests/test_prosperity_coordinator.py::TestV3Enhancement::test_rating_formula_v3 PASSED [ 45%]
+tests/test_prosperity_coordinator.py::TestV018PurityScreening::test_purity_scorer_import PASSED [ 45%]
+tests/test_prosperity_coordinator.py::TestV018PurityScreening::test_purity_scores_no_data_fallback PASSED [ 46%]
+tests/test_prosperity_coordinator.py::TestV018PurityScreening::test_purity_scores_calculation PASSED [ 46%]
+tests/test_prosperity_coordinator.py::TestV018PurityScreening::test_screening_agent_new_output_fields PASSED [ 47%]
+tests/test_prosperity_coordinator.py::TestV018PurityScreening::test_screening_agent_has_v120_fields PASSED [ 47%]
+tests/test_prosperity_coordinator.py::TestV018PurityScreening::test_screening_agent_sorts_by_composite FAILED [ 48%]
+tests/test_prosperity_coordinator.py::TestV018PurityScreening::test_report_table_has_direction_score_column PASSED [ 48%]
+tests/test_prosperity_coordinator.py::TestV018PurityScreening::test_report_table_has_purity_columns PASSED [ 49%]
+tests/test_prosperity_coordinator.py::TestLearningAgent::test_learning_agent_import PASSED [ 49%]
+tests/test_prosperity_coordinator.py::TestLearningAgent::test_learning_agent_template_loaded PASSED [ 50%]
+tests/test_prosperity_coordinator.py::TestLearningAgent::test_format_search_results PASSED [ 50%]
+tests/test_prosperity_coordinator.py::TestLearningAgent::test_format_search_results_empty PASSED [ 50%]
+tests/test_prosperity_coordinator.py::TestLearningAgent::test_learn_empty_search PASSED [ 51%]
+tests/test_prosperity_coordinator.py::TestLearningAgent::test_clean_output_strips_preamble PASSED [ 51%]
+tests/test_prosperity_coordinator.py::TestLearningAgent::test_learn_industry_name_in_template PASSED [ 52%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[3-\u652f\u6301-none-confirmed-3\u4fe1\u6e90+\u6570\u636e\u652f\u6301+\u65e0\u51b2\u7a81] PASSED [ 52%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[2-\u652f\u6301-none-confirmed-2\u4fe1\u6e90+\u6570\u636e\u652f\u6301+\u65e0\u51b2\u7a81] PASSED [ 53%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[2-\u90e8\u5206\u652f\u6301-none-confirmed-2\u4fe1\u6e90+\u90e8\u5206\u652f\u6301+\u65e0\u51b2\u7a81] PASSED [ 53%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[3-\u90e8\u5206\u652f\u6301-none-confirmed-3\u4fe1\u6e90+\u90e8\u5206\u652f\u6301+\u65e0\u51b2\u7a81] PASSED [ 54%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[1-\u652f\u6301-none-partial-1\u4fe1\u6e90\u4e0d\u8db3\u2192partial] PASSED [ 54%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[2-\u4e0d\u652f\u6301-none-partial-\u6570\u636e\u65b9\u5411\u4e0d\u652f\u6301\u2192partial] PASSED [ 55%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[1-\u4e0d\u652f\u6301-none-partial-1\u4fe1\u6e90+\u6570\u636e\u4e0d\u652f\u6301\u2192partial] PASSED [ 55%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[1-\u90e8\u5206\u652f\u6301-none-partial-1\u4fe1\u6e90+\u90e8\u5206\u652f\u6301\u2192partial] PASSED [ 56%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[1-\u65e0\u76f8\u5173\u6570\u636e-none-partial-1\u4fe1\u6e90+\u65e0\u6570\u636e\u2192partial] PASSED [ 56%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[0-\u652f\u6301-none-unverified-0\u4fe1\u6e90\u2192unverified] PASSED [ 57%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[0-\u65e0\u76f8\u5173\u6570\u636e-none-unverified-0\u4fe1\u6e90+\u65e0\u6570\u636e\u2192unverified] PASSED [ 57%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[0-\u4e0d\u652f\u6301-none-unverified-0\u4fe1\u6e90+\u6570\u636e\u4e0d\u652f\u6301\u2192unverified] PASSED [ 58%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[3-\u652f\u6301-strong-overturned-\u5f3a\u53cd\u4f8b\u63a8\u7ffb\u2192overturned\uff08\u65e0\u89c6\u4fe1\u6e90/\u6570\u636e\uff09] PASSED [ 58%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[0-\u65e0\u76f8\u5173\u6570\u636e-strong-overturned-0\u4fe1\u6e90+\u5f3a\u53cd\u4f8b\u63a8\u7ffb\u2192overturned] PASSED [ 59%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[2-\u90e8\u5206\u652f\u6301-strong-overturned-2\u4fe1\u6e90+\u5f3a\u53cd\u4f8b\u63a8\u7ffb\u2192overturned] PASSED [ 59%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[1-\u4e0d\u652f\u6301-strong-overturned-\u4fe1\u6e90\u4e0d\u8db3+\u6570\u636e\u4e0d\u652f\u6301+\u5f3a\u53cd\u4f8b\u63a8\u7ffb\u2192overturned] PASSED [ 60%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[3-\u652f\u6301-weak-weak_disputed-3\u4fe1\u6e90+\u5f31\u53cd\u4f8b\u2192weak_disputed] PASSED [ 60%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[2-\u4e0d\u652f\u6301-weak-weak_disputed-2\u4fe1\u6e90+\u6570\u636e\u4e0d\u652f\u6301+\u5f31\u53cd\u4f8b\u2192weak_disputed] PASSED [ 61%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[1-\u652f\u6301-weak-weak_disputed-1\u4fe1\u6e90+\u5f31\u53cd\u4f8b\u2192weak_disputed\uff08\u964d\u7ea7\u4e0d\u5207\uff09] PASSED [ 61%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status[0-\u65e0\u76f8\u5173\u6570\u636e-weak-unverified-0\u4fe1\u6e90+\u5f31\u53cd\u4f8b\u2192\u4ecd\u4e3aunverified\uff08\u65e0\u8bc1\u636e\u4f18\u5148\u4e8e\u5f31\u53cd\u4f8b\uff09] PASSED [ 62%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_status_deterministic PASSED [ 62%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_confidence_high PASSED [ 62%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_confidence_medium PASSED [ 63%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_synthesize_confidence_low PASSED [ 63%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_chain_fit_no_status_impact PASSED [ 64%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_chain_fit_confidence_boost PASSED [ 64%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_chain_fit_confidence_drop PASSED [ 65%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicVerification::test_chain_fit_confidence_overturned_unchanged PASSED [ 65%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicPurity::test_extract_l3_keywords_from_ai PASSED [ 66%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicPurity::test_extract_l3_keywords_empty PASSED [ 66%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicPurity::test_extract_l3_keywords_deterministic PASSED [ 67%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicPurity::test_filter_stop_words PASSED [ 67%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicPurity::test_keyword_fallback_deterministic PASSED [ 68%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicPurity::test_purity_keyword_match_ai_chips PASSED [ 68%]
+tests/test_prosperity_coordinator.py::TestV019DeterministicPurity::test_purity_keyword_no_match PASSED [ 69%]
+tests/test_screener.py::TestTurtleScreener::test_normal_stock_passes PASSED [ 69%]
+tests/test_screener.py::TestTurtleScreener::test_st_stock_excluded PASSED [ 70%]
+tests/test_screener.py::TestTurtleScreener::test_delisted_stock_excluded PASSED [ 70%]
+tests/test_screener.py::TestTurtleScreener::test_star_st_excluded PASSED [ 71%]
+tests/test_screener.py::TestTurtleScreener::test_cyclical_industry_excluded PASSED [ 71%]
+tests/test_screener.py::TestTurtleScreener::test_list_years_insufficient PASSED [ 72%]
+tests/test_screener.py::TestTurtleScreener::test_list_years_exactly_8_passes PASSED [ 72%]
+tests/test_screener.py::TestTurtleScreener::test_list_years_under_8_fails PASSED [ 73%]
+tests/test_screener.py::TestTurtleScreener::test_market_cap_too_small PASSED [ 73%]
+tests/test_screener.py::TestTurtleScreener::test_market_cap_exactly_200_passes PASSED [ 74%]
+tests/test_screener.py::TestTurtleScreener::test_roe_zero_or_negative PASSED [ 74%]
+tests/test_screener.py::TestTurtleScreener::test_roe_below_12_fails PASSED [ 75%]
+tests/test_screener.py::TestTurtleScreener::test_pe_out_of_range PASSED  [ 75%]
+tests/test_screener.py::TestTurtleScreener::test_no_dividend PASSED      [ 75%]
+tests/test_screener.py::TestTurtleScreener::test_dividend_below_2_5_fails PASSED [ 76%]
+tests/test_screener.py::TestTurtleScreener::test_gross_margin_too_low PASSED [ 76%]
+tests/test_screener.py::TestTurtleScreener::test_debt_ratio_too_high PASSED [ 77%]
+tests/test_screener.py::TestTurtleScreener::test_opcf_not_screened PASSED [ 77%]
+tests/test_screener.py::TestTurtleScreener::test_pb_zero_or_negative PASSED [ 78%]
+tests/test_screener.py::TestTurtleScreener::test_multiple_stocks_mixed PASSED [ 78%]
+tests/test_screener.py::TestTurtleScreener::test_fail_summary_format PASSED [ 79%]
+tests/test_spec_compliance.py::TestScreenerSpec::test_no_opcf_to_netprofit_field PASSED [ 79%]
+tests/test_spec_compliance.py::TestScreenerSpec::test_opcf_not_in_fail_stats PASSED [ 80%]
+tests/test_spec_compliance.py::TestScreenerSpec::test_opcf_not_in_summary_output PASSED [ 80%]
+tests/test_spec_compliance.py::TestScreenerSpec::test_candidate_count_warning PASSED [ 81%]
+tests/test_spec_compliance.py::TestCoordinatorValidation::test_validate_raw_data_valid PASSED [ 81%]
+tests/test_spec_compliance.py::TestCoordinatorValidation::test_validate_raw_data_insufficient_financials PASSED [ 82%]
+tests/test_spec_compliance.py::TestCoordinatorValidation::test_validate_raw_data_missing_revenue PASSED [ 82%]
+tests/test_spec_compliance.py::TestCoordinatorValidation::test_validate_raw_data_missing_total_mv PASSED [ 83%]
+tests/test_spec_compliance.py::TestCandidatePoolOutput::test_write_candidate_pool_creates_file PASSED [ 83%]
+tests/test_spec_compliance.py::TestFetchTermination::test_low_fetch_rate_terminates PASSED [ 84%]
+tests/test_spec_compliance.py::TestStepResultsRecording::test_step_results_recorded PASSED [ 84%]
+tests/test_spec_compliance.py::TestSoftGateBehavior::test_cq_fail_stock_still_in_pool PASSED [ 85%]
+tests/test_spec_compliance.py::TestSoftGateBehavior::test_pr_excluded_disposable_cash_negative PASSED [ 85%]
+tests/test_spec_compliance.py::TestSoftGateBehavior::test_pr_excluded_single_vs_multiple PASSED [ 86%]
+tests/test_spec_compliance.py::TestQRVInputBuilder::test_qrv_input_contains_all_sections PASSED [ 86%]
+tests/test_spec_compliance.py::TestQRVInputBuilder::test_qrv_input_websearch_append PASSED [ 87%]
+tests/test_spec_compliance.py::TestQRVAgentOutput::test_qrv_agent_module_importable PASSED [ 87%]
+tests/test_spec_compliance.py::TestQRVAgentOutput::test_qrv_prompt_contains_qrv_framework PASSED [ 87%]
+tests/test_spec_compliance.py::TestQRVAgentOutput::test_llm_placeholder_when_no_key PASSED [ 88%]
+tests/test_spec_compliance.py::TestRuleVersion::test_coordinator_default_rule_version PASSED [ 88%]
+tests/test_spec_compliance.py::TestRuleVersion::test_qrv_rules_exist PASSED [ 89%]
+tests/test_spec_compliance.py::TestRuleVersion::test_cq_pr_soft_gate_in_rules PASSED [ 89%]
+tests/test_spec_compliance.py::TestRuleVersion::test_cq_8dimensions_in_result PASSED [ 90%]
+tests/test_spec_compliance.py::TestRuleVersion::test_cq_8dimensions_in_computed_format PASSED [ 90%]
+tests/test_spec_compliance.py::TestDataFetcherCache::test_cache_path_configurable PASSED [ 91%]
+tests/test_spec_compliance.py::TestDataFetcherCache::test_force_flag_bypasses_cache PASSED [ 91%]
+tests/test_spec_compliance.py::TestR4CorporateEvents::test_qrv_prompt_contains_r4 PASSED [ 92%]
+tests/test_spec_compliance.py::TestR4CorporateEvents::test_qrv_rules_has_r4_module PASSED [ 92%]
+tests/test_spec_compliance.py::TestR4CorporateEvents::test_data_sufficiency_has_r4 PASSED [ 93%]
+tests/test_spec_compliance.py::TestR4CorporateEvents::test_websearch_extractor_has_corporate_events PASSED [ 93%]
+tests/test_spec_compliance.py::TestR4CorporateEvents::test_qrv_input_schema_has_extracted_facts PASSED [ 94%]
+tests/test_spec_compliance.py::TestR4CorporateEvents::test_scorecard_has_r4 PASSED [ 94%]
+tests/test_spec_compliance.py::TestFourPieceSync::test_cq_rules_dimensions_match_code PASSED [ 95%]
+tests/test_spec_compliance.py::TestFourPieceSync::test_pr_rules_gate_type_matches_coordinator_behavior PASSED [ 95%]
+tests/test_spec_compliance.py::TestFourPieceSync::test_cq_rules_gate_type_matches_coordinator_behavior PASSED [ 96%]
+tests/test_spec_compliance.py::TestFourPieceSync::test_coordinator_md_has_maintenance_rules PASSED [ 96%]
+tests/test_spec_compliance.py::TestFourPieceSync::test_refresh_script_present PASSED [ 97%]
+tests/test_websearch_extractor.py::TestCorporateEvents::test_extract_placement_event PASSED [ 97%]
+tests/test_websearch_extractor.py::TestCorporateEvents::test_extract_merger_event PASSED [ 98%]
+tests/test_websearch_extractor.py::TestCorporateEvents::test_extract_multiple_events PASSED [ 98%]
+tests/test_websearch_extractor.py::TestCorporateEvents::test_empty_events PASSED [ 99%]
+tests/test_websearch_extractor.py::TestCorporateEvents::test_event_date_extraction PASSED [ 99%]
+tests/test_websearch_extractor.py::TestCorporateEvents::test_corporate_events_in_extract_result PASSED [100%]
+
+================================== FAILURES ===================================
+_______ TestV018PurityScreening.test_screening_agent_sorts_by_composite _______
+tests\test_prosperity_coordinator.py:627: in test_screening_agent_sorts_by_composite
+    assert pool[2]["name"] == "永鼎股份"
+E   AssertionError: assert '有研硅' == '永鼎股份'
+E     
+E     - 永鼎股份
+E     + 有研硅
+============================== warnings summary ===============================
+app\core\config.py:7
+  d:\project\Investment Strategy\backend\app\core\config.py:7: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class Settings(BaseSettings):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.11.9-final-0 _______________
+
+Name                                                    Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------
+app\__init__.py                                             0      0   100%
+app\api\__init__.py                                         0      0   100%
+app\api\strategies.py                                      27     27     0%   3-50
+app\core\__init__.py                                        0      0   100%
+app\core\config.py                                         49      0   100%
+app\core\logging.py                                        14      2    86%   26-41
+app\core\registry.py                                       20     20     0%   17-73
+app\main.py                                                30     30     0%   3-65
+app\models\__init__.py                                      0      0   100%
+app\services\__init__.py                                    0      0   100%
+app\services\data_fetcher.py                              429    310    28%   71-79, 117-127, 132-133, 177-178, 199-202, 236-242, 253-254, 267, 279-290, 294-300, 316-394, 407-793, 809-837, 841-853, 865-876
+app\services\tushare_client.py                             88     22    75%   46, 70-74, 88, 107, 118, 135, 156, 178-192, 204, 217, 231, 247, 260, 274, 330
+app\strategies\prosperity\__init__.py                       0      0   100%
+app\strategies\prosperity\agents\__init__.py                0      0   100%
+app\strategies\prosperity\agents\hypothesize_agent.py     508    247    51%   65-66, 73-74, 81-82, 94-200, 227-257, 328-377, 381-389, 393-396, 416, 498, 518-523, 542-565, 572-586, 611, 668-688, 698, 722-732, 743-750, 754-762, 768, 795, 804, 815, 859
+app\strategies\prosperity\agents\learning_agent.py         94     45    52%   44-45, 61-62, 71-93, 98-119, 144-183, 194
+app\strategies\prosperity\agents\report_agent.py          187    103    45%   72-96, 131, 139, 141, 158-159, 173-176, 179-182, 192-248, 255-257, 301-343
+app\strategies\prosperity\agents\screening_agent.py       350    302    14%   78-79, 103-277, 291-310, 316-343, 364-424, 436-458, 464-495, 505-536, 541-569, 585-623, 633-652, 661-670, 675-678, 682
+app\strategies\prosperity\agents\search_agent.py          104     86    17%   40-42, 51-108, 112-118, 122-129, 140-186, 192-215, 224-239
+app\strategies\prosperity\agents\track_agent.py           417    319    24%   73-74, 82-158, 173-226, 237-267, 271-275, 284-308, 316-357, 367-371, 375-382, 386-422, 426-449, 454-503, 507-532, 535, 552-575, 579-595, 604-617, 625-672, 717, 725, 743-778, 786-804, 812, 828
+app\strategies\prosperity\agents\verify_agent.py          611    537    12%   88, 132-136, 140-147, 157-264, 292-371, 386-396, 407-433, 437-446, 454-498, 502-506, 510-547, 551-576, 580-593, 601-624, 632-641, 648-680, 695-759, 763-775, 788-906, 918-979, 983-996, 1000-1017, 1021-1029, 1041-1072, 1080-1118, 1122-1136
+app\strategies\prosperity\api.py                          136     99    27%   39-43, 49-53, 60-82, 88-129, 135-154, 160-180, 186-199, 210-213, 219-230
+app\strategies\prosperity\coordinator.py                  355    226    36%   94, 98-99, 127-128, 134-136, 174, 206-229, 246-373, 385-430, 433-435, 438-440, 443-446, 450-452, 455-457, 460-463, 466-468, 472-474, 486-493, 506-517, 528-529, 554, 573, 585-589, 606-648
+app\strategies\prosperity\industry_history.py              34      9    74%   44, 48-55
+app\strategies\prosperity\models.py                       142     16    89%   144, 155-158, 165, 180-182, 189, 202-204, 215-217
+app\strategies\prosperity\tools\__init__.py                 0      0   100%
+app\strategies\prosperity\tools\concept_builder.py        238     93    61%   78-79, 87-93, 95-96, 132-134, 150-151, 158-160, 173-174, 211-213, 218-253, 262-263, 285-290, 297-298, 304-306, 325, 336-346, 358-365, 385-388, 393-396, 437-439, 449, 457-459, 477, 482-492, 496-498
+app\strategies\prosperity\tools\concept_index.py          154     85    45%   46, 61-73, 85-135, 164-165, 182, 247-248, 268-332, 337-338, 343-344
+app\strategies\prosperity\tools\industry_metrics.py       234    148    37%   73-74, 82, 108-114, 146, 150-162, 165-170, 184-188, 242-267, 287-346, 351-356, 361-371, 390-400, 418-452, 463-468, 473-484
+app\strategies\prosperity\tools\purity_scorer.py          265    181    32%   36-88, 117-166, 177-187, 231, 257-353, 358-369, 381-413, 473-481, 491-524, 569-574
+app\strategies\prosperity\tools\screening_scorer.py       138    123    11%   62-92, 101-117, 124-134, 143-192, 213-281, 291-294, 299-304
+app\strategies\prosperity\tools\source_crawler.py          76     32    58%   31-61, 66-68, 109-110, 123-125, 150-152
+app\strategies\prosperity\tools\stock_screener.py          85     71    16%   45-110, 115-120, 129-133, 142-152, 161-179, 184-193
+app\strategies\prosperity\tools\wiki_indexer.py            89     21    76%   100-117, 132-133, 149, 151, 153, 155, 179
+app\strategies\turtle\__init__.py                           5      0   100%
+app\strategies\turtle\cash_quality.py                     197      9    95%   108, 172-173, 190-191, 267-269, 278
+app\strategies\turtle\coordinator.py                      491    235    52%   35-66, 71-84, 89-98, 103-109, 206-215, 218-220, 242-243, 278-279, 344-347, 354, 369, 499-530, 557-642, 659-660, 666-667, 731, 743-791, 795-803, 808, 832-897, 924-931, 968, 1007, 1060
+app\strategies\turtle\data_summarizer.py                  436     80    82%   61-64, 90, 123, 127-129, 131, 136, 356-362, 369-371, 468-472, 477, 517, 533, 537, 542-544, 548, 553, 605, 608, 656-679, 788, 796, 802, 814, 826, 830, 834, 893, 897, 989-990, 1049, 1052-1055, 1060-1067, 1073
+app\strategies\turtle\penetration_return.py               134      7    95%   98, 208, 213, 218, 224, 233, 240
+app\strategies\turtle\qrv_agent.py                        176     97    45%   50-52, 56-138, 164, 169-170, 213, 260-317, 321, 360, 388-393, 402-411, 419-431, 435
+app\strategies\turtle\screener.py                         136      8    94%   134-139, 210-211
+app\strategies\turtle\utils.py                             12      1    92%   19
+app\strategies\turtle\websearch_extractor.py              201     25    88%   115, 143, 146, 149-150, 167, 209-210, 228-233, 281, 283, 326, 345, 364, 394, 398, 407-413, 417-418
+-------------------------------------------------------------------------------------
+TOTAL                                                    6662   3616    46%
+=========================== short test summary info ===========================
+FAILED tests/test_prosperity_coordinator.py::TestV018PurityScreening::test_screening_agent_sorts_by_composite - AssertionError: assert '有研硅' == '永鼎股份'
+  
+  - 永鼎股份
+  + 有研硅
+============= 1 failed, 207 passed, 1 warning in 78.02s (0:01:18) =============
