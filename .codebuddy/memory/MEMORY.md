@@ -1,5 +1,10 @@
 # Investment Strategy — 长期记忆
 
+## v1.2.2 版本号全项目统一 (2026-07-10)
+- **问题**: 版本号散落5处不一致 — CHANGELOG v1.2.2 / pyproject.toml v1.2.1 / config.py v1.0.0(跨20+版本未更新) / frontend package.json v0.8.1(40+版本脱节) / MEMORY.md v1.2.1
+- **修复**: 全部统一到 v1.2.2（CHANGELOG 为权威源），4 文件统一
+- **联动**: `/api/health` 返回 `config.APP_VERSION` → 改 config.py 后前端自动同步
+
 ## v1.2.1 VerifyAgent 冲突阈值 + ReportAgent 级联修正展示 (2026-07-10)
 - **Bug 1**: `_aggregate_rounds()` 弱冲突(score=2)多轮一致→strong 错判为 overturned。修复: 仅 ≥1轮=3分 + ≥2轮有冲突 → strong
 - **Bug 2**: `_render_report()` 不展示 CounterAgent 修正信息(original_sentiment/causality_note)。修复: 新增 sentiment 变更 + 级联裁决原因展示

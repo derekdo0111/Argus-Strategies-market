@@ -7,7 +7,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     # 应用
     APP_NAME: str = "Investment Strategy"
-    APP_VERSION: str = "1.0.0"
+    APP_VERSION: str = "1.2.2"
     DEBUG: bool = False
 
     # 路径
