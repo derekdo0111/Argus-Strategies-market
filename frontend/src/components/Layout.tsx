@@ -2,20 +2,21 @@ import { useState, useCallback } from 'react';
 import Sidebar from './Sidebar';
 import TurtleStockPool from './turtle/StockPool';
 import TurtleReportViewer from './turtle/ReportViewer';
-import ProsperityHypothesisBoard from './prosperity/HypothesisBoard';
-import ProsperityReportViewer from './prosperity/ReportViewer';
+import ProsperityMindmap from './prosperity/ProsperityMindmap';
+import ProsperityStockPanel from './prosperity/ProsperityStockPanel';
+import ProsperitySectorPanel from './prosperity/SectorPanel';
 import ResizablePanel from './ResizablePanel';
 import styles from './Layout.module.css';
 
 // 策略组件映射表 — 加新策略只需在此注册一行
 const poolComponents: Record<string, React.ComponentType<any>> = {
   turtle: TurtleStockPool,
-  prosperity: ProsperityHypothesisBoard,
+  prosperity: ProsperityMindmap,
 };
 
 const reportComponents: Record<string, React.ComponentType<any>> = {
   turtle: TurtleReportViewer,
-  prosperity: ProsperityReportViewer,
+  prosperity: ProsperityStockPanel,
 };
 
 export default function Layout() {
@@ -64,11 +65,14 @@ export default function Layout() {
         />
       </div>
 
+      {/* 高景气策略专属：概念板块竖排侧边栏 */}
+      {selectedStrategy === 'prosperity' && <ProsperitySectorPanel />}
+
       <div className={styles.contentArea}>
         <ResizablePanel
-          defaultLeftWidth={380}
-          minLeftWidth={220}
-          maxLeftWidth={720}
+          defaultLeftWidth={560}
+          minLeftWidth={320}
+          maxLeftWidth={900}
           storageKey="layout-stockpool"
           left={
             <PoolComponent

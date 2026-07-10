@@ -1,5 +1,5 @@
 # Investment Strategy
-## 个人投资策略分析平台 | v0.16.0
+## 个人投资策略分析平台 | v1.2.2
 
 ### 龟龟策略 ✅ 运行中
 全流程 A 股分析工具：选股 → 软门筛选 → QRV 深度报告，从全市场自动筛选出高质量标的并生成 10 维度量化报告。
@@ -8,6 +8,8 @@
 
 ### 高景气策略 ✅ 运行中
 LLM 多 Agent 认知循环体系：搜索 → 产业学习 → 假设形成 → 交叉验证 → 反推修正 → 精选股池 → 综合报告。基于产业链拓扑和 Wiki-Centric 知识复用，实现假设驱动的行业景气分析。
+
+**前端 UI**: 四层推理链脑图（L0 现状→L1 推演→L2 矛盾→L3 落点）+ 扇区概念板块导航 + 上中下游股票面板 + 六维 SVG 雷达图，色系与全局设计系统统一。
 
 <img width="1901" height="865" alt="image" src="https://github.com/user-attachments/assets/71e47d50-92d2-45c1-8752-2adb96b1e045" />
 
@@ -75,9 +77,13 @@ LLM 多 Agent 认知循环体系：搜索 → 产业学习 → 假设形成 → 
 │   └── .env.example        环境变量模板
 ├── frontend/               React SPA
 │   ├── src/
-│   │   ├── components/     布局/侧栏/股池/报告查看器/打分卡
+│   │   ├── components/
+│   │   │   ├── turtle/       龟龟策略 UI（股池/报告/打分卡）
+│   │   │   └── prosperity/   高景气 UI（脑图/股票面板/扇区导航/雷达图）
 │   │   └── hooks/          API hooks + 轮询
+│   ├── mockups/            UI 设计原型
 │   └── tests/e2e/          Playwright E2E (13 用例)
+├── start.bat               一键启动后端+前端
 ├── data/
 │   ├── stock_cache/        个股缓存 (raw/computed/websearch/qrv_analysis)
 │   └── templates/          数据 Schema
@@ -124,6 +130,10 @@ python -m scripts.run_turtle_refresh --full
 ### 4. 启动服务
 
 ```bash
+# 一键启动（推荐）
+start.bat
+
+# 或分别启动：
 # 后端 (端口 8000)
 cd backend
 uvicorn app.main:app --reload

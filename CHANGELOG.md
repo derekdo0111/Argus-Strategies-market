@@ -2,6 +2,24 @@
 
 All notable changes to Investment Strategy project.
 
+## v1.2.2 (2026-07-10) — 高景气策略 Mockup → React 前端合并
+
+### 前端重构
+- **ProsperityMindmap.tsx + .module.css**: Mockup HTML 拆为 React 组件，含摘要卡片、知识图谱、L0-L3 四层推理链（12张假设卡片，展开/收起）
+- **ProsperityStockPanel.tsx + .module.css**: 股票面板（上/中/下游 Tab × 18 只 + SVG 六边形雷达图 + 点击联动）
+- **prosperity-types.ts + prosperity-data.ts**: 类型定义 + Mock 数据（后续接后端 API 替换）
+- **Layout.tsx**: `poolComponents` 映射替换 `ProsperityHypothesisBoard → ProsperityMindmap`，`reportComponents` 映射替换 `ProsperityReportViewer → ProsperityStockPanel`
+- **index.css**: 新增 `--l0/--l1/--l2/--l3` 四色层级变量
+
+### 联动效果
+- 左侧边栏切到「高景气策略」→ 中栏显示脑图推演看板 → 右栏显示股票面板
+- 点击任意股票 → 右栏底部弹出该股六维雷达图
+- 点击推理卡片 → 展开显示假设陈述/推理链/验证诊断/跟踪指标
+- 色系与全局设计系统完全统一（CSS 变量复用）
+
+### 待保留旧文件
+- `HypothesisBoard.tsx` / `ReportViewer.tsx` 不再被引用，暂留备查
+
 ## v1.2.1 (2026-07-10) — VerifyAgent 冲突阈值修复 + ReportAgent 级联修正展示
 
 ### Bug 1: 弱冲突多轮一致错判为 strong → overtuned

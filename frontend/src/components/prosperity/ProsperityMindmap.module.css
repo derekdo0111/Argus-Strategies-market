@@ -1,0 +1,472 @@
+/* ═══════════════════════════════════════════════════════
+   ProsperityMindmap — 高景气策略推理看板
+   左栏：摘要 + 知识图谱 + L0-L3 推理链
+   ═══════════════════════════════════════════════════════ */
+
+.container {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  background: var(--bg-base);
+  padding: 20px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+}
+
+/* ── 摘要卡片 ── */
+.summaryCard {
+  background: linear-gradient(135deg, #1a1f2e, #252d3d 40%, #1e2435);
+  border-radius: var(--radius-xl);
+  padding: 18px 24px;
+  color: #e8ecf1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.summaryInfo {
+  flex: 1;
+}
+
+.summaryTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #fff;
+  margin: 0 0 4px;
+}
+
+.summaryMeta {
+  font-size: 11px;
+  color: oklch(75% 0.02 250);
+  display: flex;
+  gap: 16px;
+}
+
+.summarySignal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+.signalHot {
+  background: rgba(244, 161, 77, 0.15);
+}
+
+.signalWarm {
+  background: rgba(13, 166, 132, 0.12);
+}
+
+.signalCool {
+  background: oklch(52% 0.03 250 / 0.12);
+}
+
+.signalIcon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.signalLabel {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.signalHot .signalLabel {
+  color: var(--warning);
+}
+
+.signalWarm .signalLabel {
+  color: var(--positive);
+}
+
+.signalCool .signalLabel {
+  color: oklch(52% 0.08 250);
+}
+
+/* ── 知识图谱 ── */
+.kgSection {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  padding: 16px 20px;
+  flex-shrink: 0;
+}
+
+.kgTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.kgTitleNote {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 10px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.kgSpotlight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(244, 161, 77, 0.14), rgba(244, 161, 77, 0.04));
+  border-radius: var(--radius-lg);
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  border: 1px solid rgba(244, 161, 77, 0.15);
+}
+
+.kgSpotlightBadge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--warning);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.kgSpotlightItem {
+  font-size: 11px;
+  font-weight: 600;
+  color: #25282d;
+  padding: 3px 10px;
+  background: rgba(244, 161, 77, 0.12);
+  border-radius: 5px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.kgGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 24px;
+  margin-bottom: 10px;
+}
+
+.kgItem {
+  display: flex;
+  gap: 6px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.kgKey {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  min-width: 60px;
+  font-weight: 500;
+}
+
+.kgVal {
+  color: var(--text-secondary);
+}
+
+.kgChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.kgChip {
+  font-size: 10px;
+  padding: 3px 9px;
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  color: var(--text-tertiary);
+  font-weight: 500;
+  cursor: default;
+}
+
+.kgChipHighlight {
+  background: var(--accent-faint);
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* ── 层级头部 ── */
+.layerHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 4px 0;
+  flex-shrink: 0;
+}
+
+.layerDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.layerTitle {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.layerRole {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+/* ── 卡片行 ── */
+.cardRow {
+  display: flex;
+  gap: 14px;
+  flex-shrink: 0;
+  padding: 0 4px;
+}
+
+.cardCol {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.depHint {
+  position: absolute;
+  top: -18px;
+  left: 6px;
+  font-size: 9px;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ── 假设卡片 ── */
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.cardExpanded {
+  border-color: var(--accent-primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
+
+.l0 .card { border-left: 3px solid var(--l0); }
+.l1 .card { border-left: 3px solid var(--l1); }
+.l2 .card { border-left: 3px solid var(--l2); }
+.l3 .card { border-left: 3px solid var(--l3); }
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+}
+
+.cardStatus {
+  font-size: 16px;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.cardBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardId {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.cardTitle {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardExpanded .cardTitle {
+  -webkit-line-clamp: unset;
+}
+
+.cardTags {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+  flex-wrap: wrap;
+}
+
+.cardTag {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.tagConfirmed {
+  background: var(--positive-subtle);
+  color: var(--positive);
+}
+
+.tagPartial {
+  background: var(--warning-subtle);
+  color: var(--warning);
+}
+
+.tagUnverified {
+  background: var(--bg-elevated);
+  color: var(--text-tertiary);
+}
+
+.tagBroken {
+  background: var(--negative-subtle);
+  color: var(--negative);
+}
+
+.tagTime {
+  background: var(--accent-faint);
+  color: var(--accent-primary);
+}
+
+/* ── 卡片展开详情 ── */
+.cardDetail {
+  padding: 0 14px 14px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.dSection {
+  margin-bottom: 10px;
+}
+
+.dLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 3px;
+}
+
+.dStmt {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 8px 10px;
+  background: var(--accent-faint);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent-primary);
+}
+
+.dReason {
+  font-size: 12px;
+  padding: 8px 10px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius);
+  margin-top: 4px;
+  line-height: 1.7;
+}
+
+.arr {
+  color: var(--accent-primary);
+  font-weight: 700;
+}
+
+.dVerify {
+  font-size: 11px;
+  margin-top: 4px;
+  padding-left: 4px;
+  line-height: 1.6;
+}
+
+.strength {
+  font-weight: 700;
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  margin-right: 6px;
+}
+
+.strStrong {
+  background: var(--positive-subtle);
+  color: var(--positive);
+}
+
+.strModerate {
+  background: var(--warning-subtle);
+  color: var(--warning);
+}
+
+.strBroken {
+  background: var(--negative-subtle);
+  color: var(--negative);
+}
+
+.strWeak {
+  background: var(--bg-elevated);
+  color: var(--text-tertiary);
+}
+
+.dTrack {
+  font-size: 11px;
+  margin-top: 4px;
+  color: var(--text-tertiary);
+}
+
+.dTrack b {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* ── 连接线区域 ── */
+.connectorZone {
+  height: 34px;
+  flex-shrink: 0;
+  position: relative;
+  margin: 0 4px;
+}
+
+.connectorSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.flowText {
+  font-size: 9px;
+  fill: var(--text-muted);
+}
